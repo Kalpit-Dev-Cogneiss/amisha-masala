@@ -214,9 +214,9 @@ async function listFiles() {
 async function updateDetails() {
   const defs = [
     ["highlights", "Highlights", "multi_line_text_field"],
-    ["how_to_use", "How to use", "multi_line_text_field"],
     ["best_for", "Best for", "single_line_text_field"],
     ["ingredients", "Ingredients", "single_line_text_field"],
+    ["reviews", "Customer reviews", "json"],
   ];
   for (const [key, name, type] of defs) {
     const r = await gql(

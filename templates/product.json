@@ -103,41 +103,10 @@
         "enable_sticky_content": true,
         "enable_collection_list": false,
         "collection_list": [],
-        "media_style": "sticky_columns",
-        "media_size": "large",
+        "media_style": "thumbs_horizontal",
+        "media_size": "medium",
         "enable_image_zoom": true,
         "enable_video_looping": true
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "settings": {
-        "layout": "container page-width",
-        "heading": "RELATED PRODUCTS",
-        "heading_tag": "h2",
-        "heading_size": "h2",
-        "heading_alignment": "text-start",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_tablet": 4,
-        "columns_mobile": "2",
-        "gutter": 4,
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "enable_quick_add": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "enable_parallax": true,
-        "type": "scroll",
-        "speed": 0.5,
-        "margin_top": 0,
-        "margin_bottom": 100,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "custom_id": "",
-        "custom_class": ""
       }
     },
     "newsletter_9pqkFR": {
@@ -234,12 +203,30 @@
         "cta_text": "Tell us the pack size and quantity you need, for home use or bulk orders, and we will get back to you.",
         "phone": "+91-757 303 0683"
       }
+    },
+    "amisha_reviews": {
+      "type": "amisha-reviews",
+      "settings": {
+        "heading": "Customer Reviews",
+        "phone": "+91-757 303 0683"
+      }
+    },
+    "amisha_recommendations": {
+      "type": "amisha-recommendations",
+      "settings": {
+        "eyebrow": "More to explore",
+        "heading": "You may also like",
+        "products_to_show": 8,
+        "button_label": "View all spices",
+        "button_link": "shopify://collections/spices"
+      }
     }
   },
   "order": [
     "main",
     "amisha_product_details",
-    "related-products",
+    "amisha_reviews",
+    "amisha_recommendations",
     "newsletter_9pqkFR"
   ]
 }
