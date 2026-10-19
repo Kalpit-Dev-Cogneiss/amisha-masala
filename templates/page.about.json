@@ -7,37 +7,6 @@
         "layout": "container page-width"
       }
     },
-    "rich_text_ciTEVL": {
-      "type": "rich-text",
-      "settings": {
-        "layout": "container page-width",
-        "full_width": false,
-        "style": "style-2",
-        "preheading": "J. B. Food Products",
-        "heading": "<p>Owner's Pride</p>",
-        "heading_tag": "h2",
-        "heading_size": "h1",
-        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. To ensure superior quality, we have quality checks at each stage; processing of raw material, packaging and delivery &amp; distribution. We will continuously strive to be the Best.</p><p>Selecting the finest materials from all over the country, we begin our processing with the best of raw materials. Being centrally located, in Vadodara, (Gujarat) India. Accessible from anywhere in the country enables us to procure and send our material from and to any destination in India at the earliest.</p>",
-        "button_label": "Shop Spices",
-        "button_link": "shopify://collections/spices",
-        "button_style": "link",
-        "text_alignment": "text-md-center text-lg-center",
-        "text_alignment_mobile": "text-center",
-        "use_custom_colors": false,
-        "color_text": "#ec1d1d",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "enable_parallax": false,
-        "type": "scroll",
-        "speed": 0.5,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 100,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
     "marque_UN9zh3": {
       "type": "marque",
       "blocks": {
@@ -394,12 +363,94 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "icon_with_text_pride": {
+      "type": "icon-with-text",
+      "blocks": {
+        "card_icon_pride1": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi-people",
+            "enable_svg": false,
+            "svg": "",
+            "heading": "Customer Satisfaction",
+            "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We believe in building and maintaining long term relationships, not only in selling quality spices.</p>",
+            "button_link": ""
+          }
+        },
+        "card_icon_pride2": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi-patch-check",
+            "enable_svg": false,
+            "svg": "",
+            "heading": "Quality at Each Stage",
+            "subheading": "<p>To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery &amp; distribution.</p>",
+            "button_link": ""
+          }
+        },
+        "card_icon_pride3": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi-geo-alt",
+            "enable_svg": false,
+            "svg": "",
+            "heading": "Easy Accessibility",
+            "subheading": "<p>We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest.</p>",
+            "button_link": ""
+          }
+        },
+        "card_icon_pride4": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi-tag",
+            "enable_svg": false,
+            "svg": "",
+            "heading": "Best at a Reasonable Price",
+            "subheading": "<p>Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene &amp; quality.</p>",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_icon_pride1",
+        "card_icon_pride2",
+        "card_icon_pride3",
+        "card_icon_pride4"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "preheading": "J. B. Food Products",
+        "heading": "Owner's Pride",
+        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. We will continuously strive to be the Best.</p>",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "heading_alignment": "text-center",
+        "show_read_more": false,
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 4,
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "color_background": "#e5ddbc",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 60,
+        "padding_top": 70,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "main",
     "image_with_text_story",
-    "rich_text_ciTEVL",
+    "icon_with_text_pride",
     "image_with_text_quality",
     "image_with_text_packaging",
     "multicolumn_9TgiUX",

@@ -17,12 +17,10 @@
         "enable_quick_add": false,
         "enable_collection_list": true,
         "collection_list": [
-          "newarrivals",
-          "herbaceou",
-          "miso-gluten-free",
-          "hot-spicy",
-          "original",
-          "sweet-honey"
+          "spices",
+          "plain-spices",
+          "mixed-spices",
+          "other-spices"
         ],
         "enable_sorting": true,
         "enable_filtering": true,
