@@ -21,8 +21,10 @@ if (!TOKEN) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, grant_type: "client_credentials" }),
   });
-  const j = await r.json();
-  if (!j.access_token) throw new Error("Token exchange failed: " + JSON.stringify(j));
+  const raw = await r.text();
+  let j = {};
+  try { j = JSON.parse(raw); } catch { /* not JSON */ }
+  if (!j.access_token) throw new Error(`Token exchange failed (HTTP ${r.status}): ${raw.slice(0, 300)}`);
   TOKEN = j.access_token;
 }
 const here = path.dirname(fileURLToPath(import.meta.url));
