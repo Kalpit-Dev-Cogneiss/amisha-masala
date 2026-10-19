@@ -19,7 +19,7 @@
         "heading_size": "h1",
         "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. To ensure superior quality, we have quality checks at each stage; processing of raw material, packaging and delivery &amp; distribution. We will continuously strive to be the Best.</p><p>Selecting the finest materials from all over the country, we begin our processing with the best of raw materials. Being centrally located, in Vadodara, (Gujarat) India. Accessible from anywhere in the country enables us to procure and send our material from and to any destination in India at the earliest.</p>",
         "button_label": "Shop Spices",
-        "button_link": "shopify://collections/all",
+        "button_link": "shopify://collections/spices",
         "button_style": "link",
         "text_alignment": "text-md-center text-lg-center",
         "text_alignment_mobile": "text-center",

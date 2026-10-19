@@ -52,7 +52,7 @@
         "heading_size": "h5",
         "subheading": "<p>If you have a question about Amisha Masala spices, packaging or bulk orders, please get in touch.</p>",
         "button_label": "",
-        "button_link": "shopify://collections/all",
+        "button_link": "shopify://collections/spices",
         "button_style": "primary",
         "text_alignment": "text-md-center text-lg-center",
         "text_alignment_mobile": "text-center",

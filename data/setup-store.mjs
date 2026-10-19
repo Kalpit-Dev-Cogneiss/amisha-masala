@@ -107,6 +107,7 @@ async function createProducts() {
 
 // ---------------------------------------------------------------- 2. collections (smart, by tag)
 const collections = [
+  ["Spices", "spices", "All Amisha Masala spice powders and masalas."],
   ["Plain Spices", "plain-spices", "Single spice powders: chilli, turmeric, coriander, black pepper and more."],
   ["Mixed Spices", "mixed-spices", "Masalas and spice blends for every dish."],
   ["Other Spices", "other-spices", "Kasuri methi, batrisu vasanu and asafoetida (hing)."],
@@ -164,13 +165,13 @@ const menus = {
   "main-menu": ["Main menu", [
     item("Home", "/"),
     item("About Us", "/pages/about-us"),
-    item("Spices", "/collections/all", [
+    item("Spices", "/collections/spices", [
       item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]),
     item("Contact Us", "/pages/contact")]],
   "spices-menu": ["Spices", [
     item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]],
   footer: ["Footer menu", [
-    item("About Us", "/pages/about-us"), item("Spices", "/collections/all"), item("Contact Us", "/pages/contact")]],
+    item("About Us", "/pages/about-us"), item("Spices", "/collections/spices"), item("Contact Us", "/pages/contact")]],
 };
 async function setMenus() {
   const existing = (await gql(`{menus(first:50){nodes{id handle}}}`)).menus.nodes;
