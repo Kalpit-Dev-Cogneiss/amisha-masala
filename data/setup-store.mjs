@@ -1,6 +1,7 @@
 // Optional: sets up store data that a theme push cannot carry (images in Files, collections, pages, menus).
 //
-//   SHOP=your-store.myshopify.com TOKEN=shpat_xxx node data/setup-store.mjs
+//   SHOP=your-store.myshopify.com CLIENT_ID=xxx CLIENT_SECRET=xxx node data/setup-store.mjs   (Dev Dashboard app)
+//   SHOP=your-store.myshopify.com TOKEN=shpat_xxx node data/setup-store.mjs                    (token you already have)
 //
 // TOKEN = Admin API access token of a custom app with scopes:
 //   write_files, write_products, write_content, write_online_store_navigation
@@ -9,8 +10,21 @@ import { readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
 
-const { SHOP, TOKEN, API_VERSION = "2026-07" } = process.env;
-if (!SHOP || !TOKEN) throw new Error("Set SHOP and TOKEN env vars");
+const { SHOP, CLIENT_ID, CLIENT_SECRET, API_VERSION = "2026-07" } = process.env;
+let { TOKEN } = process.env;
+if (!SHOP) throw new Error("Set SHOP (e.g. amisha-masala.myshopify.com)");
+if (!TOKEN) {
+  // Dev Dashboard apps: exchange client id + secret for a short-lived Admin API token
+  if (!CLIENT_ID || !CLIENT_SECRET) throw new Error("Set TOKEN, or CLIENT_ID and CLIENT_SECRET");
+  const r = await fetch(`https://${SHOP}/admin/oauth/access_token`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET, grant_type: "client_credentials" }),
+  });
+  const j = await r.json();
+  if (!j.access_token) throw new Error("Token exchange failed: " + JSON.stringify(j));
+  TOKEN = j.access_token;
+}
 const here = path.dirname(fileURLToPath(import.meta.url));
 const endpoint = `https://${SHOP}/admin/api/${API_VERSION}/graphql.json`;
 
