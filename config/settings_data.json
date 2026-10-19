@@ -1,9 +1,9 @@
 {
   "current": {
     "favicon": "shopify://shop_images/amisha-logo.png",
-    "logo": "shopify://shop_images/amisha-logo-white.png",
-    "logo_white": "shopify://shop_images/amisha-logo-white.png",
-    "logo_width": 170,
+    "logo": "shopify://shop_images/amisha-logo-new-white.svg",
+    "logo_white": "shopify://shop_images/amisha-logo-new-white.svg",
+    "logo_width": 120,
     "currency_code_enabled": false,
     "type_base_font": "helvetica_n4",
     "type_base_size": 16,

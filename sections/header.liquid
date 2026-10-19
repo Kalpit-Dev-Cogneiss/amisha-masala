@@ -178,16 +178,12 @@
                 </div>
             {% endif %}
             {% if section.settings.logo_position == 'middle-center' %}
-                {% liquid
-                    assign nav_count = linklists[section.settings.main_linklist].links.size
-                    assign nav_half = nav_count | divided_by: 2.0 | ceil
-                %}
                 <div class="container page-width">
                     <div class="row d-flex align-items-center">
-                        <div class="col-5 d-none d-lg-flex justify-content-end">
+                        <div class="col-5 d-none d-lg-flex justify-content-start">
                             <div class="header__inline-menu">
                                 {% # theme-check-disable %}
-                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline', limit: nav_half %}
+                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline' %}
                                 {% # theme-check-enable %}
                             </div>
                         </div>
@@ -229,12 +225,7 @@
                             </h1>
                             {% endif %}
                         </div>
-                        <div class="col-6 col-lg-5 d-flex justify-content-end justify-content-lg-between align-items-center">
-                            <div class="header__inline-menu d-none d-lg-block">
-                                {% # theme-check-disable %}
-                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline', offset: nav_half %}
-                                {% # theme-check-enable %}
-                            </div>
+                        <div class="col-6 col-lg-5 d-flex justify-content-end">
                             <div class="site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
                                 <div class="site-header__icons-wrapper d-flex align-items-center">
                                     {% if section.settings.enable_search %}

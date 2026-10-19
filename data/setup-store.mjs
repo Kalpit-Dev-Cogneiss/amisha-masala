@@ -48,7 +48,7 @@ const userErrors = (label, node) => {
 
 // ---------------------------------------------------------------- 1. theme images -> Files
 async function stage(file, name) {
-  const mime = name.endsWith(".png") ? "image/png" : "image/webp";
+  const mime = name.endsWith(".png") ? "image/png" : name.endsWith(".svg") ? "image/svg+xml" : "image/webp";
   const buf = await readFile(file);
   const staged = await gql(
     `mutation($input:[StagedUploadInput!]!){stagedUploadsCreate(input:$input){stagedTargets{url resourceUrl parameters{name value}} userErrors{message}}}`,
