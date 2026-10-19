@@ -478,6 +478,12 @@
                                                             <button type="button" class="btn w-100 mb-2 btn-primary order-now-btn"
                                                                     data-order-now data-product-title="{{ product.title | escape }}"
                                                                     data-product-url="{{ product.url }}">Order Now</button>
+                                                            <a class="am-btn am-pd-call w-100 justify-content-center mb-3" href="tel:+917573030683"><i class="bi bi-telephone-fill"></i> Call +91-757 303 0683</a>
+                                                            <ul class="am-pd-chips">
+                                                                <li><i class="bi bi-patch-check"></i> Quality checked</li>
+                                                                <li><i class="bi bi-geo-alt"></i> Made in Vadodara</li>
+                                                                {% unless product.has_only_default_variant %}<li><i class="bi bi-box-seam"></i> {{ product.variants.size }} pack sizes</li>{% endunless %}
+                                                            </ul>
                                                             <button
                                                                     type="submit"
                                                                     name="add"

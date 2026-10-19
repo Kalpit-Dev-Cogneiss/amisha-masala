@@ -210,6 +210,34 @@ async function listFiles() {
   for (const f of d.files.nodes) console.log(f.fileStatus, f.alt || "", f.image?.url ?? f.url ?? "(no url yet)");
 }
 
+// ---------------------------------------------------------------- product details (description + custom fields)
+async function updateDetails() {
+  const defs = [
+    ["highlights", "Highlights", "multi_line_text_field"],
+    ["how_to_use", "How to use", "multi_line_text_field"],
+    ["best_for", "Best for", "single_line_text_field"],
+    ["ingredients", "Ingredients", "single_line_text_field"],
+  ];
+  for (const [key, name, type] of defs) {
+    const r = await gql(
+      `mutation($d:MetafieldDefinitionInput!){metafieldDefinitionCreate(definition:$d){createdDefinition{id} userErrors{message code}}}`,
+      { d: { name, namespace: "custom", key, type, ownerType: "PRODUCT", pin: true } },
+    );
+    const errs = r.metafieldDefinitionCreate.userErrors.filter((e) => e.code !== "TAKEN");
+    if (errs.length) console.warn(`  ! definition ${key}:`, errs.map((e) => e.message).join("; "));
+  }
+  const items = JSON.parse(await readFile(path.join(here, "products.json"), "utf8"));
+  for (const p of items) {
+    const found = (await gql(`query($h:String!){productByIdentifier(identifier:{handle:$h}){id}}`, { h: p.handle })).productByIdentifier;
+    if (!found) { console.warn(`  ! not found: ${p.handle}`); continue; }
+    const r = await gql(
+      `mutation($p:ProductUpdateInput!){productUpdate(product:$p){product{id} userErrors{message}}}`,
+      { p: { id: found.id, descriptionHtml: p.desc, metafields: p.metafields } },
+    );
+    if (userErrors(p.title, r.productUpdate)) console.log("  details", p.handle);
+  }
+}
+
 // STEPS=collections,pages,menus node data/setup-store.mjs  (default: files,products,collections,pages,menus; "publish" is run separately)
 const steps = (process.env.STEPS ?? "files,products,collections,pages,menus").split(",");
 if (steps.includes("files")) { console.log("1/5 theme images -> Files"); await uploadFiles(); }
@@ -218,5 +246,6 @@ if (steps.includes("collections")) { console.log("3/5 collections"); await creat
 if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); await deletePages(); }
 if (steps.includes("menus")) { console.log("5/5 menus"); await setMenus(); }
 if (steps.includes("listfiles")) { console.log("files in store"); await listFiles(); }
+if (steps.includes("details")) { console.log("product details"); await updateDetails(); }
 if (steps.includes("publish")) { console.log("publish to Online Store"); await publishAll(); }
 console.log("done.");

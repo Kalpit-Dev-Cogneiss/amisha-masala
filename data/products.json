@@ -4,7 +4,33 @@
   "handle": "kashmiri-kumthi-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Kashmiri Kumthi chilli powder from Amisha Masala. Finely ground and quality checked, for vibrant colour in everyday cooking.",
+  "desc": "<p>Kashmiri Kumthi chilli powder, finely ground for the rich red colour it gives to everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from 100 g to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add to hot oil with onions to build the colour of your gravy.\nMix into marinades for paneer, vegetables or meat.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Gravies, tadka, marinades and pickles"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Kashmiri Kumthi chilli"
+   }
+  ],
   "sizes": [
    "100 g",
    "200 g",
@@ -29,7 +55,33 @@
   "handle": "extra-hot-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Extra hot chilli powder from Amisha Masala. Finely ground, available from a handy pouch up to bulk packs.",
+  "desc": "<p>For those who like it hot. Extra hot chilli powder in handy ₹5 and ₹10 pouches, retail packs and bulk bags up to 10 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Start with a small pinch, it is extra hot.\nAdd to hot oil, gravies, chutneys and snack seasonings.\nIncrease gradually to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Spicy curries, chutneys, snacks and pickles"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Chilli"
+   }
+  ],
   "sizes": [
    "₹5 pouch",
    "₹10 pouch",
@@ -58,7 +110,33 @@
   "handle": "patna-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Patna chilli powder from Amisha Masala. Finely ground and quality checked.",
+  "desc": "<p>Patna chilli powder, finely ground and quality checked, for everyday curries and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Ask us for the available pack sizes.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nEasy-to-store pack\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add to hot oil when cooking curries, dals and sabzis.\nUse in marinades and spice mixes.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Curries, dals, sabzis and marinades"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Patna chilli"
+   }
+  ],
   "sizes": [],
   "grams": {},
   "images": [
@@ -70,7 +148,33 @@
   "handle": "turmeric-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Turmeric powder (haldi) from Amisha Masala. Finely ground and quality checked, from pouch to bulk packs.",
+  "desc": "<p>Turmeric (haldi) powder, finely ground, for the golden colour and warm flavour found in almost every Indian kitchen.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a pinch to hot oil or boiling dal while cooking.\nUse in marinades, sabzis and rice.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Dals, curries, sabzis, rice and marinades"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Turmeric (haldi)"
+   }
+  ],
   "sizes": [
    "₹5 pouch",
    "₹10 pouch",
@@ -99,7 +203,33 @@
   "handle": "coriander-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Coriander powder (dhania) from Amisha Masala. Finely ground and quality checked, from pouch to bulk packs.",
+  "desc": "<p>Coriander (dhania) powder, finely ground, a base spice for countless curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add along with other spices to hot oil at the start of cooking.\nUse in gravies, sabzis and marinades.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Dals, curries, sabzis and chutneys"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Coriander (dhania)"
+   }
+  ],
   "sizes": [
    "₹5 pouch",
    "₹10 pouch",
@@ -128,7 +258,33 @@
   "handle": "coriander-cumin-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Ready blend of coriander and cumin powder (dhana jeera) from Amisha Masala.",
+  "desc": "<p>A ready blend of coriander and cumin (dhana jeera) powder that saves a step in everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 100 g, 200 g and 500 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from ₹10 pouch to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add to hot oil or directly to sabzis and dals.\nUse in marinades and gravies.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Sabzis, dals, curries and marinades"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Coriander and cumin"
+   }
+  ],
   "sizes": [
    "₹10 pouch",
    "100 g",
@@ -151,7 +307,33 @@
   "handle": "black-pepper-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Black pepper powder from Amisha Masala. Finely ground and quality checked.",
+  "desc": "<p>Black pepper powder, finely ground, for warmth and bite in soups, salads, eggs and curries.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nPack size: 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Sprinkle over soups, salads and eggs before serving.\nAdd to gravies and marinades.\nA little goes a long way, add to taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Soups, salads, eggs, curries and marinades"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Black pepper"
+   }
+  ],
   "sizes": [
    "100 g"
   ],
@@ -167,7 +349,33 @@
   "handle": "dry-ginger-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Dry ginger powder (sunth) from Amisha Masala. Finely ground and quality checked.",
+  "desc": "<p>Dry ginger (sunth) powder, finely ground, for a warm, pungent note in tea, sweets and curries.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a pinch to tea while it boils.\nUse in sweets, kadha and curries.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Masala chai, kadha, sweets and curries"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Dry ginger (sunth)"
+   }
+  ],
   "sizes": [
    "50 g",
    "100 g"
@@ -186,7 +394,33 @@
   "handle": "dry-mango-powder-aamchur",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Dry mango powder (aamchur) from Amisha Masala. Finely ground and quality checked.",
+  "desc": "<p>Dry mango powder (aamchur), a tangy souring spice that brightens sabzis, chaats and chutneys.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nPack size: 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add towards the end of cooking sabzis for a tangy finish.\nSprinkle over chaat and snacks.\nUse in marinades and chutneys."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chaat, sabzis, chutneys and marinades"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Raw mango (aamchur)"
+   }
+  ],
   "sizes": [
    "100 g"
   ],
@@ -202,7 +436,33 @@
   "handle": "ganthoda-powder-pepramool",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "Ganthoda (Pepramool) powder from Amisha Masala. Finely ground and quality checked.",
+  "desc": "<p>Ganthoda (pepramool) powder, finely ground, for traditional Indian recipes.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Use in small quantities as directed in your recipe.\nStore the pack tightly closed after each use."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Traditional Indian recipes"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Ganthoda (pepramool)"
+   }
+  ],
   "sizes": [
    "50 g",
    "100 g"
@@ -221,7 +481,27 @@
   "handle": "punjabi-chhole-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Punjabi Chhole Masala from Amisha Masala, a spice blend for chhole. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spice blend made for Punjabi-style chhole, with the flavour that goes with soft chickpeas and a rich gravy.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Cook onions and tomatoes into a masala base.\nAdd the chhole masala and stir for a minute.\nAdd boiled chickpeas, simmer and serve with bhature or rice."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chhole, chana and rajma curries"
+   }
+  ],
   "sizes": [
    "100 g",
    "1 kg"
@@ -240,7 +520,27 @@
   "handle": "pav-bhaji-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Pav Bhaji Masala from Amisha Masala, a spice blend for pav bhaji. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spice blend made for the classic street-style pav bhaji.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Cook mashed vegetables with onion, tomato and butter.\nAdd the pav bhaji masala and mix well.\nSimmer, top with butter and serve with toasted pav."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Pav bhaji, mashed vegetable curries and tawa pulao"
+   }
+  ],
   "sizes": [
    "100 g",
    "1 kg"
@@ -259,7 +559,27 @@
   "handle": "chaat-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Chaat Masala from Amisha Masala, a tangy spice blend for chaat and snacks. Isme Hai Kuch Khaas.",
+  "desc": "<p>A tangy chaat masala to sprinkle over snacks, salads and fruit for that street-side flavour.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Sprinkle over chaat, papdi, fruit or salads just before serving.\nMix into curd or raita.\nAdd to taste, a little goes a long way."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chaat, fruit salads, raita and snacks"
+   }
+  ],
   "sizes": [
    "100 g",
    "1 kg"
@@ -278,7 +598,27 @@
   "handle": "pani-puri-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Pani Puri Masala from Amisha Masala, a spice blend for pani puri. Isme Hai Kuch Khaas.",
+  "desc": "<p>A masala made for pani puri water, in small 15 g and 50 g packs as well as 100 g and 1 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Mix the masala into chilled water with mint and tamarind.\nTaste and adjust the flavour.\nChill and serve with crisp puris."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Pani puri water and chaat"
+   }
+  ],
   "sizes": [
    "15 g",
    "50 g",
@@ -300,7 +640,27 @@
   "handle": "sambhar-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Sambhar Masala from Amisha Masala, a spice blend for sambhar. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spice blend for South Indian sambhar, in small 15 g and 50 g packs as well as 100 g and 1 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Cook toor dal with vegetables and tamarind.\nAdd the sambhar masala and simmer.\nFinish with a tadka of mustard seeds and curry leaves."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Sambhar and South Indian lentil stews"
+   }
+  ],
   "sizes": [
    "15 g",
    "50 g",
@@ -322,7 +682,27 @@
   "handle": "biryani-pulav-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Biryani Pulav Masala from Amisha Masala, a spice blend for biryani and pulav. Isme Hai Kuch Khaas.",
+  "desc": "<p>A masala for fragrant biryani and pulav.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Fry onions and vegetables in ghee or oil.\nAdd the biryani pulav masala and stir.\nAdd rice and water, then cook until fluffy."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Veg biryani, pulav and flavoured rice"
+   }
+  ],
   "sizes": [
    "100 g",
    "1 kg"
@@ -341,7 +721,27 @@
   "handle": "kitchen-king-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Kitchen King Masala from Amisha Masala, an all-purpose spice blend for curries. Isme Hai Kuch Khaas.",
+  "desc": "<p>An all-purpose masala for rich curries and gravies, from everyday sabzis to special-occasion dishes.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Cook onions and tomatoes into a base.\nAdd the kitchen king masala and stir for a minute.\nAdd paneer or vegetables and simmer."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Paneer and vegetable curries and gravies"
+   }
+  ],
   "sizes": [
    "100 g",
    "1 kg"
@@ -360,7 +760,27 @@
   "handle": "meat-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Meat Masala from Amisha Masala, a spice blend for meat dishes. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spice blend for meat curries, in a small ₹5 pouch, jars and bulk packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from ₹5 pouch to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Marinate the meat with curd and the masala.\nCook with onions and tomatoes until tender.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Mutton and meat curries"
+   }
+  ],
   "sizes": [
    "₹5 pouch",
    "100 g",
@@ -381,7 +801,27 @@
   "handle": "chicken-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Chicken Masala from Amisha Masala, a spice blend for chicken dishes. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spice blend for chicken curries, in a ₹10 pouch, jars and bulk packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from ₹10 pouch to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Marinate the chicken with curd and the masala.\nCook with onions and tomatoes until tender.\nAdjust the quantity to your taste."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chicken curries, gravies and marinades"
+   }
+  ],
   "sizes": [
    "₹10 pouch",
    "100 g",
@@ -402,7 +842,27 @@
   "handle": "garam-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Garam Masala from Amisha Masala, a classic whole-spice blend. Isme Hai Kuch Khaas.",
+  "desc": "<p>A classic garam masala to finish curries, dals and sabzis with warmth and aroma.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a small amount at the end of cooking.\nSprinkle over finished dishes for aroma.\nUse sparingly, a little goes a long way."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Curries, dals, sabzis and rice"
+   }
+  ],
   "sizes": [
    "15 g",
    "50 g",
@@ -425,7 +885,27 @@
   "handle": "rajwadi-garam-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Rajwadi Garam Masala from Amisha Masala. Isme Hai Kuch Khaas.",
+  "desc": "<p>Rajwadi garam masala for a rich, aromatic finish to curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g, 100 g, 200 g and 500 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 50 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a small amount at the end of cooking.\nSprinkle over finished dishes for aroma.\nUse sparingly, a little goes a long way."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Curries, dals, sabzis and rice"
+   }
+  ],
   "sizes": [
    "50 g",
    "100 g",
@@ -448,7 +928,27 @@
   "handle": "supreme-garam-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Supreme Garam Masala from Amisha Masala. Isme Hai Kuch Khaas.",
+  "desc": "<p>Supreme garam masala, in 250 g and 1 kg packs, to finish curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 250 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 250 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a small amount at the end of cooking.\nSprinkle over finished dishes for aroma.\nUse sparingly, a little goes a long way."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Curries, dals, sabzis and rice"
+   }
+  ],
   "sizes": [
    "250 g",
    "1 kg"
@@ -467,7 +967,27 @@
   "handle": "tea-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Tea Masala from Amisha Masala, a spice blend for masala chai. Isme Hai Kuch Khaas.",
+  "desc": "<p>A tea masala for a spiced cup of masala chai, in a ₹10 pouch and larger packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 50 g and 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from ₹10 pouch to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Boil water with tea leaves and a pinch of tea masala.\nAdd milk and sugar to taste and bring to a boil.\nStrain and serve hot."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Masala chai"
+   }
+  ],
   "sizes": [
    "₹10 pouch",
    "50 g",
@@ -488,7 +1008,27 @@
   "handle": "pickle-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Pickle Masala from Amisha Masala, a spice blend for homemade pickles. Isme Hai Kuch Khaas.",
+  "desc": "<p>A masala for homemade pickles, in 200 g and 500 g packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 200 g and 500 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Mix the masala with your chosen vegetable or fruit and oil.\nFollow your usual pickle recipe.\nStore in a clean, dry jar."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Homemade pickles"
+   }
+  ],
   "sizes": [
    "200 g",
    "500 g"
@@ -507,7 +1047,27 @@
   "handle": "spicy-pickle-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "Spicy Pickle Masala from Amisha Masala, a spicier blend for homemade pickles. Isme Hai Kuch Khaas.",
+  "desc": "<p>A spicier masala for homemade pickles, in 200 g and 500 g packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 200 g and 500 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Mix the masala with your chosen vegetable or fruit and oil.\nFollow your usual pickle recipe.\nStore in a clean, dry jar."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Homemade spicy pickles"
+   }
+  ],
   "sizes": [
    "200 g",
    "500 g"
@@ -525,7 +1085,33 @@
   "handle": "kasuri-methi",
   "type": "Other Spices",
   "tag": "other-spices",
-  "desc": "Kasuri Methi (dried fenugreek leaves) from Amisha Masala.",
+  "desc": "<p>Kasuri methi (dried fenugreek leaves) for the signature flavour of restaurant-style gravies, parathas and dals.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 500 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready to use in your kitchen\nPack size: 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Crush the leaves between your palms.\nAdd near the end of cooking curries and dals.\nMix into dough for methi parathas."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Gravies, parathas, dals and breads"
+   },
+   {
+    "namespace": "custom",
+    "key": "ingredients",
+    "type": "single_line_text_field",
+    "value": "Dried fenugreek leaves (kasuri methi)"
+   }
+  ],
   "sizes": [
    "500 g"
   ],
@@ -541,7 +1127,27 @@
   "handle": "batrisu-vasanu",
   "type": "Other Spices",
   "tag": "other-spices",
-  "desc": "Batrisu Vasanu from Amisha Masala.",
+  "desc": "<p>Batrisu Vasanu from Amisha Masala, in 50 g and 100 g packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 100 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready to use in your kitchen\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Use as directed on the pack or in your family recipe.\nStore the pack tightly closed after each use."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Traditional recipes"
+   }
+  ],
   "sizes": [
    "50 g",
    "100 g"
@@ -560,7 +1166,27 @@
   "handle": "asafoetida-hing",
   "type": "Other Spices",
   "tag": "other-spices",
-  "desc": "Asafoetida (hing) from Amisha Masala.",
+  "desc": "<p>Strong compounded asafoetida (hing), for the tadka that gives dals, sabzis and kadhi their familiar aroma.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 200 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready to use in your kitchen\nAvailable from 50 g to 200 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+   },
+   {
+    "namespace": "custom",
+    "key": "how_to_use",
+    "type": "multi_line_text_field",
+    "value": "Add a pinch to hot oil before the other spices.\nLet it sizzle for a few seconds.\nUse sparingly, it is strong."
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Tadka for dals, sabzis, kadhi and pickles"
+   }
+  ],
   "sizes": [
    "50 g",
    "200 g"

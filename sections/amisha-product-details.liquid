@@ -1,0 +1,323 @@
+{% comment %}
+  Amisha Masala - product detail showcase. Reads the product's own fields:
+  custom.highlights (one per line), custom.how_to_use (one step per line), custom.best_for, custom.ingredients.
+{% endcomment %}
+{%- liquid
+  assign hl_raw = product.metafields.custom.highlights.value
+  assign how_raw = product.metafields.custom.how_to_use.value
+  assign best_for = product.metafields.custom.best_for.value
+  assign ingredients = product.metafields.custom.ingredients.value
+  assign hl_items = blank
+  assign how_items = blank
+  if hl_raw != blank
+    assign hl_items = hl_raw | newline_to_br | split: '<br />'
+  endif
+  if how_raw != blank
+    assign how_items = how_raw | newline_to_br | split: '<br />'
+  endif
+  assign icons = 'bi-stars,bi-box-seam,bi-patch-check,bi-geo-alt' | split: ','
+  assign phone_digits = section.settings.phone | replace: ' ', '' | replace: '-', ''
+-%}
+<div id="AmPD-{{ section.id }}" class="am-pd">
+
+  {%- if hl_items != blank -%}
+    <section class="pd-hl">
+      <svg class="pd-wave pd-wave--top" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,0 L1440,0 L1440,24 C1100,104 380,104 0,24 Z"></path></svg>
+      <svg class="pd-wave pd-wave--bottom" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,90 L1440,90 L1440,66 C1100,-14 380,-14 0,66 Z"></path></svg>
+      <div class="container page-width pd-hl__inner" data-watermark="{{ product.type | escape }}">
+        <header class="pd-hl__head">
+          <span class="am-eyebrow am-eyebrow--center am-eyebrow--light" data-reveal>{{ product.type | default: 'Amisha Masala' | escape }}</span>
+          <h2 class="am-title am-title--gold" data-reveal style="--i: 1;">{{ section.settings.highlights_heading | escape }}</h2>
+        </header>
+        <div class="pd-hl__grid">
+          {%- assign shown = 0 -%}
+          {%- for item in hl_items -%}
+            {%- assign t = item | strip -%}
+            {%- if t != blank and shown < 4 -%}
+              <article class="pd-card" data-reveal style="--i: {{ shown }};">
+                <span class="pd-card__icon"><i class="bi {{ icons[shown] }}"></i></span>
+                <p>{{ t | escape }}</p>
+              </article>
+              {%- assign shown = shown | plus: 1 -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <section class="pd-details">
+    <div class="container page-width">
+      <div class="pd-details__grid">
+        <div class="pd-panel" data-reveal="left">
+          <h2 class="pd-panel__title">Product details</h2>
+          <dl class="pd-dl">
+            <div><dt>Brand</dt><dd>{{ product.vendor | default: 'Amisha Masala' | escape }}</dd></div>
+            {%- if product.type != blank -%}<div><dt>Category</dt><dd>{{ product.type | escape }}</dd></div>{%- endif -%}
+            <div><dt>Made by</dt><dd>J. B. Food Products, Vadodara, Gujarat, India</dd></div>
+            {%- unless product.has_only_default_variant -%}
+              <div>
+                <dt>Pack sizes</dt>
+                <dd class="pd-chips">
+                  {%- for v in product.variants -%}<span class="pd-chip">{{ v.title | escape }}</span>{%- endfor -%}
+                </dd>
+              </div>
+            {%- endunless -%}
+            {%- if ingredients != blank -%}<div><dt>Ingredients</dt><dd>{{ ingredients | escape }}</dd></div>{%- endif -%}
+            {%- if best_for != blank -%}<div><dt>Best for</dt><dd>{{ best_for | escape }}</dd></div>{%- endif -%}
+            <div><dt>Storage</dt><dd>{{ section.settings.storage_text | escape }}</dd></div>
+          </dl>
+        </div>
+
+        <div class="pd-panel pd-panel--how" data-reveal="right">
+          <h2 class="pd-panel__title">How to use</h2>
+          {%- if how_items != blank -%}
+            <ol class="pd-steps">
+              {%- for item in how_items -%}
+                {%- assign t = item | strip -%}
+                {%- if t != blank -%}<li><span class="pd-steps__n"></span><span>{{ t | escape }}</span></li>{%- endif -%}
+              {%- endfor -%}
+            </ol>
+          {%- else -%}
+            <p class="pd-muted">Use as directed on the pack.</p>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <ul class="pd-trust">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'trust' -%}
+            <li data-reveal style="--i: {{ forloop.index0 }};" {{ block.shopify_attributes }}>
+              <span class="pd-trust__icon"><i class="bi {{ block.settings.icon | escape }}"></i></span>
+              <span class="pd-trust__text"><strong>{{ block.settings.heading | escape }}</strong><span>{{ block.settings.text | escape }}</span></span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </section>
+
+  <section class="pd-cta">
+    <div class="container page-width pd-cta__inner" data-reveal="zoom">
+      <div>
+        <h2 class="pd-cta__title">Interested in {{ product.title | escape }}?</h2>
+        <p class="pd-cta__text">{{ section.settings.cta_text | escape }}</p>
+      </div>
+      <div class="pd-cta__btns">
+        <button type="button" class="am-btn am-btn--gold" data-order-now data-product-title="{{ product.title | escape }}" data-product-url="{{ product.url }}">Order now <i class="bi bi-arrow-right"></i></button>
+        <a class="am-btn pd-cta__call" href="tel:{{ phone_digits }}"><i class="bi bi-telephone-fill"></i> {{ section.settings.phone | escape }}</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="pd-sticky" data-pd-sticky>
+    <span class="pd-sticky__name">{{ product.title | escape }}</span>
+    <button type="button" class="am-btn am-btn--gold" data-order-now data-product-title="{{ product.title | escape }}" data-product-url="{{ product.url }}">Order now</button>
+  </div>
+</div>
+
+<style>
+  #AmPD-{{ section.id }} { --pd-top: #ffffff; --pd-bottom: var(--am-cream); }
+
+  /* ---- highlights band ---- */
+  #AmPD-{{ section.id }} .pd-hl {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: clamp(100px, 11vw, 160px) 0 clamp(90px, 10vw, 150px);
+    background: radial-gradient(circle at 18% 0%, #9b1212 0%, #4a0808 48%, #170202 100%);
+  }
+  #AmPD-{{ section.id }} .pd-wave { position: absolute; left: 0; width: 100%; height: clamp(40px, 6vw, 90px); }
+  #AmPD-{{ section.id }} .pd-wave--top { top: -1px; }
+  #AmPD-{{ section.id }} .pd-wave--bottom { bottom: -1px; }
+  #AmPD-{{ section.id }} .pd-wave--top path { fill: var(--pd-top); }
+  #AmPD-{{ section.id }} .pd-wave--bottom path { fill: var(--pd-bottom); }
+  #AmPD-{{ section.id }} .pd-hl__inner { position: relative; z-index: 1; }
+  #AmPD-{{ section.id }} .pd-hl__inner::before {
+    content: attr(data-watermark);
+    position: absolute;
+    top: -0.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--bs-font-heading-family);
+    font-size: clamp(100px, 18vw, 280px);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    text-transform: uppercase;
+    pointer-events: none;
+    z-index: -1;
+  }
+  #AmPD-{{ section.id }} .pd-hl__head { text-align: center; margin-bottom: clamp(34px, 5vw, 60px); }
+  #AmPD-{{ section.id }} .pd-hl__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  #AmPD-{{ section.id }} .pd-card {
+    position: relative;
+    padding: 34px 26px 30px;
+    border-radius: 24px;
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    transition: transform 0.4s var(--am-ease), border-color 0.4s, box-shadow 0.4s;
+  }
+  #AmPD-{{ section.id }} .pd-card:hover { transform: translateY(-10px); border-color: var(--am-gold); box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5), 0 0 36px rgba(245, 184, 61, 0.18); }
+  #AmPD-{{ section.id }} .pd-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    font-size: 26px;
+    color: #3a0606;
+    background: linear-gradient(135deg, var(--am-gold-soft), var(--am-gold));
+    box-shadow: 0 0 0 7px rgba(245, 184, 61, 0.16);
+  }
+  #AmPD-{{ section.id }} .pd-card p { margin: 0; font-size: 17px; line-height: 1.55; color: rgba(255, 255, 255, 0.92); }
+
+  /* ---- details ---- */
+  #AmPD-{{ section.id }} .pd-details { background: var(--am-cream); padding: clamp(50px, 6vw, 90px) 0 clamp(60px, 7vw, 100px); }
+  #AmPD-{{ section.id }} .pd-details__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
+  #AmPD-{{ section.id }} .pd-panel {
+    padding: clamp(26px, 3vw, 44px);
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 26px 56px rgba(74, 8, 8, 0.14);
+    border-top: 6px solid var(--am-red);
+  }
+  #AmPD-{{ section.id }} .pd-panel__title { margin: 0 0 22px; font-family: var(--bs-font-heading-family); font-size: clamp(26px, 2.6vw, 38px); color: var(--am-ink); }
+  #AmPD-{{ section.id }} .pd-dl { margin: 0; display: grid; }
+  #AmPD-{{ section.id }} .pd-dl > div { display: grid; grid-template-columns: 150px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid #eee3d3; }
+  #AmPD-{{ section.id }} .pd-dl > div:last-child { border-bottom: 0; }
+  #AmPD-{{ section.id }} .pd-dl dt { font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--am-red); padding-top: 2px; }
+  #AmPD-{{ section.id }} .pd-dl dd { margin: 0; font-size: 16.5px; line-height: 1.6; color: #3b2a2a; }
+  #AmPD-{{ section.id }} .pd-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  #AmPD-{{ section.id }} .pd-chip { padding: 6px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; background: #fbf1d6; color: #5b3a06; border: 1px solid #f2dca0; }
+  #AmPD-{{ section.id }} .pd-steps { margin: 0; padding: 0; list-style: none; counter-reset: pd; display: grid; gap: 20px; }
+  #AmPD-{{ section.id }} .pd-steps li { display: flex; gap: 18px; align-items: flex-start; font-size: 17px; line-height: 1.6; color: #3b2a2a; }
+  #AmPD-{{ section.id }} .pd-steps__n {
+    flex: 0 0 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--bs-font-heading-family);
+    font-size: 20px;
+    color: #3a0606;
+    background: linear-gradient(135deg, var(--am-gold-soft), var(--am-gold));
+    box-shadow: 0 0 0 6px rgba(245, 184, 61, 0.2);
+  }
+  #AmPD-{{ section.id }} .pd-steps__n::before { counter-increment: pd; content: counter(pd); }
+  #AmPD-{{ section.id }} .pd-muted { margin: 0; color: #6b5a5a; }
+
+  #AmPD-{{ section.id }} .pd-trust { list-style: none; margin: clamp(34px, 4vw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  #AmPD-{{ section.id }} .pd-trust li { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 22px; background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(74, 8, 8, 0.1); }
+  #AmPD-{{ section.id }} .pd-trust__icon { flex: 0 0 52px; height: 52px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 22px; color: #fff; background: linear-gradient(135deg, var(--am-red), #a30f0f); }
+  #AmPD-{{ section.id }} .pd-trust__text { display: grid; gap: 2px; font-size: 14px; color: #5a4848; line-height: 1.4; }
+  #AmPD-{{ section.id }} .pd-trust__text strong { font-size: 16px; color: var(--am-ink); }
+
+  /* ---- call to action ---- */
+  #AmPD-{{ section.id }} .pd-cta { padding: clamp(50px, 6vw, 90px) 0; }
+  #AmPD-{{ section.id }} .pd-cta__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px 40px;
+    padding: clamp(32px, 4vw, 60px);
+    border-radius: 36px;
+    color: #fff;
+    background: radial-gradient(circle at 12% 0%, #c41414 0%, #7a0d0d 55%, #3a0606 100%);
+    box-shadow: 0 34px 70px rgba(74, 8, 8, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  #AmPD-{{ section.id }} .pd-cta__inner::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 40px solid rgba(245, 184, 61, 0.14);
+  }
+  #AmPD-{{ section.id }} .pd-cta__title { margin: 0 0 10px; font-family: var(--bs-font-heading-family); font-size: clamp(28px, 3.6vw, 52px); line-height: 1.1; color: #fff; }
+  #AmPD-{{ section.id }} .pd-cta__text { margin: 0; max-width: 560px; font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.88); }
+  #AmPD-{{ section.id }} .pd-cta__btns { display: flex; flex-wrap: wrap; gap: 14px; position: relative; z-index: 1; }
+  #AmPD-{{ section.id }} .pd-cta__call { background: transparent; border: 2px solid rgba(255, 255, 255, 0.7); box-shadow: none; }
+  #AmPD-{{ section.id }} .pd-cta__call:hover { background: #fff; color: var(--am-wine); box-shadow: none; }
+
+  /* ---- mobile sticky order bar ---- */
+  #AmPD-{{ section.id }} .pd-sticky { display: none; }
+  @media (max-width: 767px) {
+    #AmPD-{{ section.id }} .pd-sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(23, 2, 2, 0.94);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      transform: translateY(110%);
+      transition: transform 0.4s var(--am-ease);
+    }
+    #AmPD-{{ section.id }} .pd-sticky.is-on { transform: none; }
+    #AmPD-{{ section.id }} .pd-sticky__name { flex: 1; min-width: 0; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    #AmPD-{{ section.id }} .pd-sticky .am-btn { padding: 12px 22px; }
+  }
+
+  @media (max-width: 1100px) {
+    #AmPD-{{ section.id }} .pd-hl__grid { grid-template-columns: repeat(2, 1fr); }
+    #AmPD-{{ section.id }} .pd-trust { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) { #AmPD-{{ section.id }} .pd-details__grid { grid-template-columns: 1fr; } }
+  @media (max-width: 575px) {
+    #AmPD-{{ section.id }} .pd-hl__grid, #AmPD-{{ section.id }} .pd-trust { grid-template-columns: 1fr; }
+    #AmPD-{{ section.id }} .pd-dl > div { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+
+<script>
+  (function () {
+    var bar = document.querySelector('#AmPD-{{ section.id }} [data-pd-sticky]');
+    if (!bar) return;
+    function onScroll() { bar.classList.toggle('is-on', window.scrollY > 520); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Amisha - Product details",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "highlights_heading", "label": "Highlights heading", "default": "At a glance" },
+    { "type": "textarea", "id": "storage_text", "label": "Storage text", "default": "Store in a cool, dry place, away from direct sunlight. Keep the pack tightly closed after opening." },
+    { "type": "textarea", "id": "cta_text", "label": "Call-to-action text", "default": "Tell us the pack size and quantity you need, for home use or bulk orders, and we will get back to you." },
+    { "type": "text", "id": "phone", "label": "Phone number", "default": "+91-757 303 0683" }
+  ],
+  "blocks": [
+    {
+      "type": "trust",
+      "name": "Trust item",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Bootstrap icon class", "default": "bi-patch-check" },
+        { "type": "text", "id": "heading", "label": "Heading", "default": "Quality checked" },
+        { "type": "text", "id": "text", "label": "Text", "default": "At every stage" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Amisha - Product details" }]
+}
+{% endschema %}

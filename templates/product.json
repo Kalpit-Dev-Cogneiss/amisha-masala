@@ -185,10 +185,60 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "amisha_product_details": {
+      "type": "amisha-product-details",
+      "blocks": {
+        "trust_1": {
+          "type": "trust",
+          "settings": {
+            "icon": "bi-patch-check",
+            "heading": "Quality checked",
+            "text": "At every stage"
+          }
+        },
+        "trust_2": {
+          "type": "trust",
+          "settings": {
+            "icon": "bi-award",
+            "heading": "25+ years",
+            "text": "In spice powders"
+          }
+        },
+        "trust_3": {
+          "type": "trust",
+          "settings": {
+            "icon": "bi-snow2",
+            "heading": "Cold storage",
+            "text": "400-ton in-house capacity"
+          }
+        },
+        "trust_4": {
+          "type": "trust",
+          "settings": {
+            "icon": "bi-box-seam",
+            "heading": "Packaging for every need",
+            "text": "Pouch to 10 kg bag"
+          }
+        }
+      },
+      "block_order": [
+        "trust_1",
+        "trust_2",
+        "trust_3",
+        "trust_4"
+      ],
+      "settings": {
+        "highlights_heading": "At a glance",
+        "storage_text": "Store in a cool, dry place, away from direct sunlight. Keep the pack tightly closed after opening.",
+        "cta_text": "Tell us the pack size and quantity you need, for home use or bulk orders, and we will get back to you.",
+        "phone": "+91-757 303 0683"
+      }
     }
   },
   "order": [
     "main",
+    "amisha_product_details",
     "related-products",
     "newsletter_9pqkFR"
   ]
