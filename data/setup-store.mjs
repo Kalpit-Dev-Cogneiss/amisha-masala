@@ -114,7 +114,7 @@ async function createCollections() {
   for (const [title, handle, desc] of collections) {
     const r = await gql(
       `mutation($input:CollectionInput!){collectionCreate(input:$input){collection{id} userErrors{message}}}`,
-      { input: { title, handle, descriptionHtml: `<p>${desc}</p>`, ruleSet: { appliesDisjunctively: false, rules: [{ column: "TAG", relation: "EQUALS", condition: handle }] } } },
+      { input: { title, handle, descriptionHtml: `<p>${desc}</p>`, ruleSet: { appliedDisjunctively: false, rules: [{ column: "TAG", relation: "EQUALS", condition: handle }] } } },
     );
     if (userErrors(title, r.collectionCreate)) console.log("  collection", handle);
   }
@@ -147,7 +147,15 @@ async function createPages() {
       `mutation($page:PageCreateInput!){pageCreate(page:$page){page{id} userErrors{message}}}`,
       { page: { title: p.title, handle: p.handle, body: p.body, isPublished: true, ...(p.templateSuffix ? { templateSuffix: p.templateSuffix } : {}) } },
     );
-    if (userErrors(p.title, r.pageCreate)) console.log("  page", p.handle);
+    if (r.pageCreate.userErrors.some((e) => /already been taken/i.test(e.message))) {
+      // page exists (e.g. Shopify's default "contact" page): update it instead
+      const found = (await gql(`query($q:String!){pages(first:1,query:$q){nodes{id}}}`, { q: `handle:${p.handle}` })).pages.nodes[0];
+      const u = await gql(
+        `mutation($id:ID!,$page:PageUpdateInput!){pageUpdate(id:$id,page:$page){page{id} userErrors{message}}}`,
+        { id: found.id, page: { title: p.title, body: p.body, isPublished: true, templateSuffix: p.templateSuffix || null } },
+      );
+      if (userErrors(p.title, u.pageUpdate)) console.log("  page updated", p.handle);
+    } else if (userErrors(p.title, r.pageCreate)) console.log("  page", p.handle);
   }
 }
 
@@ -179,9 +187,32 @@ async function setMenus() {
   }
 }
 
-console.log("1/5 theme images -> Files"); await uploadFiles();
-console.log("2/5 products"); await createProducts();
-console.log("3/5 collections"); await createCollections();
-console.log("4/5 pages"); await createPages();
-console.log("5/5 menus"); await setMenus();
+// ---------------------------------------------------------------- 6. publish products + collections to Online Store
+// (API-created products/collections are not on the Online Store channel by default. Needs write_publications.)
+async function publishAll() {
+  const pubs = (await gql(`{publications(first:20){nodes{id name}}}`)).publications.nodes;
+  const online = pubs.find((x) => /online store/i.test(x.name));
+  if (!online) throw new Error("Online Store publication not found: " + JSON.stringify(pubs));
+  for (const kind of ["products", "collections"]) {
+    let after = null;
+    do {
+      const d = await gql(`query($after:String){${kind}(first:100,after:$after){nodes{id title} pageInfo{hasNextPage endCursor}}}`, { after });
+      for (const n of d[kind].nodes) {
+        const r = await gql(`mutation($id:ID!,$input:[PublicationInput!]!){publishablePublish(id:$id,input:$input){userErrors{message}}}`,
+          { id: n.id, input: [{ publicationId: online.id }] });
+        if (userErrors(n.title, r.publishablePublish)) console.log("  published", n.title);
+      }
+      after = d[kind].pageInfo.hasNextPage ? d[kind].pageInfo.endCursor : null;
+    } while (after);
+  }
+}
+
+// STEPS=collections,pages,menus node data/setup-store.mjs  (default: files,products,collections,pages,menus; "publish" is run separately)
+const steps = (process.env.STEPS ?? "files,products,collections,pages,menus").split(",");
+if (steps.includes("files")) { console.log("1/5 theme images -> Files"); await uploadFiles(); }
+if (steps.includes("products")) { console.log("2/5 products"); await createProducts(); }
+if (steps.includes("collections")) { console.log("3/5 collections"); await createCollections(); }
+if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); }
+if (steps.includes("menus")) { console.log("5/5 menus"); await setMenus(); }
+if (steps.includes("publish")) { console.log("publish to Online Store"); await publishAll(); }
 console.log("done.");
