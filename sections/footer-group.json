@@ -29,7 +29,8 @@
       },
       "block_order": [
         "096ab8fd-a5c0-433e-8584-aa909c50d611",
-        "7365877b-6f95-4d5b-8f40-78e2be698f37"
+        "7365877b-6f95-4d5b-8f40-78e2be698f37",
+        "text_facilities"
       ],
       "settings": {
         "heading": "AMISHA MASALA",
@@ -46,3 +47,9 @@
         "show_locale_selector": false,
         "copyright": "<p>© 2026 Amisha Masala (J. B. Food Products). All rights reserved.</p>"
       }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

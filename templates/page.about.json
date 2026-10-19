@@ -7,65 +7,34 @@
         "layout": "container page-width"
       }
     },
-    "rich_text_ciTEVL": {
-      "type": "rich-text",
-      "settings": {
-        "layout": "container page-width",
-        "full_width": false,
-        "style": "style-2",
-        "preheading": "About me",
-        "heading": "<p>Lafonre Sauces<\/p>",
-        "heading_tag": "h2",
-        "heading_size": "h0",
-        "subheading": "<p>Welcome to our website! Since 2003, our goal has been to provide high-quality sauces that enhance your culinary experiences while ensuring sustainability and reliability. Whether you're a home cook or a professional chef, our wide range of premium sauces is crafted to elevate your dishes to the next level. <\/p><p>We pride ourselves on using only the finest ingredients, all while maintaining a commitment to eco-friendly practices. Explore our collection and discover the perfect sauce to bring flavor and excitement to your kitchen.<\/p>",
-        "button_label": "Explore Now",
-        "button_link": "shopify:\/\/collections\/all",
-        "button_style": "link",
-        "text_alignment": "text-md-center text-lg-center",
-        "text_alignment_mobile": "text-center",
-        "use_custom_colors": false,
-        "color_text": "#ec1d1d",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "enable_parallax": false,
-        "type": "scroll",
-        "speed": 0.5,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 100,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
     "marque_UN9zh3": {
       "type": "marque",
       "blocks": {
         "marque_tUCKp8": {
           "type": "marque",
           "settings": {
-            "content": "<p>\"Sauce Perfection: Elevate Your Dishes to New Heights\"<\/p>",
+            "content": "<p>Amisha - Isme Hai Kuch Khaas</p>",
             "link": ""
           }
         },
         "marque_CUrAkg": {
           "type": "marque",
           "settings": {
-            "content": "<p>\"Flavors That Wow: Discover the Best Sauces for Every Meal\"<\/p>",
+            "content": "<p>Over 25 years of experience in spice powders</p>",
             "link": ""
           }
         },
         "marque_M38XCR": {
           "type": "marque",
           "settings": {
-            "content": "<p>\"Unleash Bold Flavors with Our Premium Sauces\"<\/p>",
-            "link": "shopify:\/\/collections\/newarrivals"
+            "content": "<p>Quality checks at every stage</p>",
+            "link": ""
           }
         },
         "marque_LcNUHU": {
           "type": "marque",
           "settings": {
-            "content": "<p>\"Crafted for Taste: Sauces That Make Every Bite Better\"<\/p>",
+            "content": "<p>Pouch to 10 kg bag packaging</p>",
             "link": ""
           }
         }
@@ -94,95 +63,20 @@
         "custom_class": ""
       }
     },
-    "multicolumn_9TgiUX": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_Phaz6Q": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_125.jpg",
-            "preheading": "",
-            "heading": "Sarah Brown",
-            "subheading": "",
-            "button_label": "",
-            "button_link": "shopify:\/\/collections\/all",
-            "button_style": "primary"
-          }
-        },
-        "column_REPTMd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_127.jpg",
-            "preheading": "",
-            "heading": "Michael Johnson",
-            "subheading": "",
-            "button_label": "",
-            "button_link": "shopify:\/\/collections\/all",
-            "button_style": "primary"
-          }
-        },
-        "column_TnHjH7": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Frame_128.jpg",
-            "preheading": "",
-            "heading": "Emily Davis",
-            "subheading": "",
-            "button_label": "",
-            "button_link": "shopify:\/\/collections\/all",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "column_Phaz6Q",
-        "column_REPTMd",
-        "column_TnHjH7"
-      ],
-      "settings": {
-        "layout": "container page-width",
-        "style": "style-1",
-        "preheading": "",
-        "heading": "Our Team",
-        "subheading": "",
-        "heading_tag": "h2",
-        "heading_size": "h2",
-        "heading_alignment": "text-center",
-        "image_width": "100",
-        "image_height": "adapt",
-        "text_alignment": "text-center",
-        "heading_size_card": "h6",
-        "heading_tag_card": "h3",
-        "border_radius": 0,
-        "columns_desktop": 3,
-        "columns_tablet": 2,
-        "gutter": 4,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 36,
-        "custom_id": "team",
-        "custom_class": ""
-      }
-    },
     "newsletter_aKwrQr": {
       "type": "newsletter",
       "blocks": {
         "heading_MptK3F": {
           "type": "heading",
           "settings": {
-            "heading": "Get 10% off your first purchase*",
+            "heading": "Stay in touch",
             "heading_size": "h1"
           }
         },
         "paragraph_GXdVp9": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>*The coupon code will be sent via email and can be used for a maximum discount of $100.<\/p>"
+            "text": "<p>Subscribe for news and updates from Amisha Masala.</p>"
           }
         },
         "email_form_tMA74C": {
@@ -203,7 +97,7 @@
         "color_background": "#e5ddbc",
         "color_background_gradient": "",
         "enable_parallax": true,
-        "background_image": "shopify:\/\/shop_images\/Frame_126.jpg",
+        "background_image": "shopify://shop_images/newsletter-bg.webp",
         "border_radius": 0,
         "type": "scroll-opacity",
         "speed": 0.5,
@@ -214,13 +108,245 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "owners_pride": {
+      "type": "owners-pride",
+      "blocks": {
+        "pillar_1": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-people",
+            "heading": "Long Term Relationships",
+            "text": "At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers."
+          }
+        },
+        "pillar_2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-patch-check",
+            "heading": "Quality at Each Stage",
+            "text": "To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery & distribution."
+          }
+        },
+        "pillar_3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-geo-alt",
+            "heading": "Easy Accessibility",
+            "text": "We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest."
+          }
+        },
+        "pillar_4": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-tag",
+            "heading": "Best at a Reasonable Price",
+            "text": "Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene & quality."
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "25+",
+            "label": "Years of experience"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "Tons cold storage"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "Factory units in Vadodara"
+          }
+        }
+      },
+      "block_order": [
+        "pillar_1",
+        "pillar_2",
+        "pillar_3",
+        "pillar_4",
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "preheading": "J. B. Food Products",
+        "heading": "Owner's Pride",
+        "watermark": "PRIDE",
+        "quote": "Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.",
+        "background_image": "shopify://shop_images/about-pride-bg.webp",
+        "edge_color": "#ffffff"
+      }
+    },
+    "amisha_feature_story": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "white",
+        "eyebrow": "Our Story",
+        "heading": "About Amisha Masala",
+        "text": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "image": "shopify://shop_images/about-story.webp",
+        "badge_number": "25+",
+        "badge_label": "Years of experience",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      }
+    },
+    "amisha_feature_quality": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "left",
+        "background": "white",
+        "eyebrow": "Quality Assurance",
+        "heading": "Nothing but the BEST!",
+        "text": "<p>Our products conform to stringent international quality standards. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
+        "image": "shopify://shop_images/about-quality.webp",
+        "badge_number": "400",
+        "badge_label": "Tons cold storage",
+        "button_label": "Know more",
+        "button_link": "shopify://pages/about-us"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Tested for purity, quality and safety: pesticide residues, aflatoxin and heavy metals"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Microbiological tests including total plate count, Salmonella, E. coli and yeast & mould"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Curcumin, capsaicin, Scoville index, pungency and colour value checked"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "International protocols followed: ASTA, AOAC, AOCS and EU"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "amisha_feature_packaging": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "cream",
+        "eyebrow": "Packaging",
+        "heading": "Packaging for every need",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging.</p>",
+        "image": "shopify://shop_images/about-packaging.webp",
+        "badge_number": "7 g - 10 kg",
+        "badge_label": "Pouch to bag",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Pouches and boxes for everyday use"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Jars for masalas"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Bags up to 10 kg for bulk needs"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "Designed to preserve aroma and freshness"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "amisha_locations": {
+      "type": "amisha-locations",
+      "settings": {
+        "background": "white",
+        "eyebrow": "Find Us",
+        "heading": "Our Facilities"
+      },
+      "blocks": {
+        "place_1": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-office.webp",
+            "tag": "Corporate Office",
+            "name": "Corporate Office",
+            "address": "A-74, Hathikhana,\nVadodara-390 006, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=J+B+Food+Products+Hathikhana+Vadodara"
+          }
+        },
+        "place_2": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-1.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 1",
+            "address": "C1/145/A, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=C1/145/A+GIDC+Makarpura+Vadodara"
+          }
+        },
+        "place_3": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-2.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 2",
+            "address": "984/2, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=984/2+GIDC+Makarpura+Vadodara"
+          }
+        }
+      },
+      "block_order": [
+        "place_1",
+        "place_2",
+        "place_3"
+      ]
     }
   },
   "order": [
     "main",
-    "rich_text_ciTEVL",
+    "amisha_feature_story",
+    "owners_pride",
+    "amisha_feature_quality",
+    "amisha_feature_packaging",
+    "amisha_locations",
     "marque_UN9zh3",
-    "multicolumn_9TgiUX",
     "newsletter_aKwrQr"
   ]
 }
