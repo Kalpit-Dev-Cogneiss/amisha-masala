@@ -69,7 +69,7 @@
         e.preventDefault();
         var title = opener.getAttribute('data-product-title') || '';
         var size = '';
-        var pf = opener.closest('form[data-product-form]') || document.querySelector('form[data-product-form]');
+        var pf = opener.closest('form[data-product-form]');
         var sel = pf && pf.querySelector('select[name="id"]');
         if (sel && sel.selectedOptions[0] && !/^default title$/i.test(sel.selectedOptions[0].textContent.trim())) {
           size = sel.selectedOptions[0].textContent.replace(/\s*-\s*sold out.*/i, '').trim();

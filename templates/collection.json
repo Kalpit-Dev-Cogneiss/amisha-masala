@@ -6,7 +6,7 @@
         "show_collection_image": true,
         "show_collection_description": true,
         "style": "style-4",
-        "products_per_page": 9,
+        "products_per_page": 12,
         "columns_desktop": 3,
         "columns_tablet": 3,
         "columns_mobile": 2,
