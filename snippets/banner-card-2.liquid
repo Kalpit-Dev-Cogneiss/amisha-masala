@@ -1,0 +1,79 @@
+{% style %}
+    {% if use_custom_colors_block %}
+        .block-extras-color-{{ block_id }} {
+        --gradient-background-block: {% if color_background_gradient_block != blank %}{{ color_background_gradient_block }}{% else %}{{ color_background_block }}{% endif %};
+        --color-background-block: {{ color_background_block.red }}, {{ color_background_block.green }}, {{ color_background_block.blue }};
+        }
+    {% endif %}
+{% endstyle %}
+
+<div
+        class="cs-card card-banner card-banner-v2"
+>
+    {% if button_link %}
+        <a class="full-width-link" href="{{ button_link }}">
+            <span class="d-none">{{ heading }}</span>
+        </a>
+    {% endif %}
+    <div class="clearfix position-relative {% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}">
+
+        <div class="card-img-top p-3 lh-0 d-block position-relative">
+            <div class="position-absolute top-0 start-0 end-0 bg-back{% if use_custom_colors_block %} block-extras-color block-extras-color-{{ block_id }}{% endif %}">
+                <span class="d-none">{{ heading }}</span>
+            </div>
+            {% if preheading != blank %}
+                <div class="text-center pt-4">
+                    <h6 class="sub-1 preheading fs-16 mb-1 text-uppercase d-inline-block bg-white rounded-3 px-2 py-1">
+                        {{ preheading }}
+                    </h6>
+                </div>
+            {% endif %}
+            {% if image != blank %}
+                <div class="media-wrap{% if image_mobile != blank or video_mobile != blank %} d-none d-md-flex{% else %} d-flex{% endif %}">
+                    {% render 'image', lazyload: true, image: image %}
+                </div>
+            {% else %}
+                <div class="media-wrap{% if image_mobile != blank or video_mobile != blank %} d-none d-md-flex{% else %} d-flex{% endif %}">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                </div>
+            {% endif %}
+        </div>
+        <div class="px-3 pt-5 card-body-2 {{ text_box_position }} {{ text_alignment }} {{ text_alignment_mobile }}">
+                <div class="card-top overflow-hidden">
+                    {% if heading or subheading %}
+                        <div class="heading heading-wrap {{ class }} {{ heading_alignment_mobile }} {{ heading_alignment }}">
+                            {% if heading %}
+                                {% render 'h-heading',
+                                        heading_tag: heading_tag,
+                                        heading_size: heading_size,
+                                        heading: heading,
+                                        animation: 'no'
+                                %}
+                            {% endif %}
+                            {% if subheading != blank %}
+                                <div class="sub-3 fs-16 rte mt-3 text-start {{ subheading_class }}" >
+                                    <div class="opacity-85">
+                                        {{ subheading }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+                {% if button_link != '' and button_label != '' %}
+                    <div class="button-show z-index-10">
+                        <a
+                                {% if button_link == blank %}
+                                    role="link" aria-disabled="true"
+                                {% else %}
+                                    href="{{ button_link }}"
+                                {% endif %}
+                                class="btn btn-{{ button_style }} position-relative z-index-1"
+                        >
+                            <span>{{- button_label | escape -}}</span>
+                        </a>
+                    </div>
+                {% endif %}
+        </div>
+    </div>
+</div>

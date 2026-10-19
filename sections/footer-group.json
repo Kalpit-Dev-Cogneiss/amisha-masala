@@ -1,0 +1,47 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "096ab8fd-a5c0-433e-8584-aa909c50d611": {
+          "type": "link_list",
+          "settings": {
+            "title": "OUR SPICES",
+            "menu": "spices-menu"
+          }
+        },
+        "7365877b-6f95-4d5b-8f40-78e2be698f37": {
+          "type": "link_list",
+          "settings": {
+            "title": "COMPANY",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "096ab8fd-a5c0-433e-8584-aa909c50d611",
+        "7365877b-6f95-4d5b-8f40-78e2be698f37"
+      ],
+      "settings": {
+        "heading": "AMISHA MASALA",
+        "subheading": "<p>A-74, Hathikhana, Vadodara-390 006, Gujarat, India.</p><p>+91-757 303 0683<br>mail@amishamasala.com</p>",
+        "show_socials_icons": true,
+        "show_newsletter": true,
+        "show_policy": true,
+        "show_payment_icons": true,
+        "color_footer_bg": "#ec1d1d",
+        "color_footer_text": "#ffffff",
+        "border_top": true,
+        "enable_follow_on_shop": false,
+        "show_currency_selector": false,
+        "show_locale_selector": false,
+        "copyright": "<p>© 2026 Amisha Masala (J. B. Food Products). All rights reserved.</p>"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

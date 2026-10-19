@@ -1,0 +1,40 @@
+{% comment %}
+  Renders a product card using "List" style
+
+  Accepts:
+  - product: {Object} Product Liquid object (required)
+  - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+  Usage:
+  {% render 'product-card-list', product: product, show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+<div class="product-card-list-small text-start">
+
+  <div class="row align-items-center gx-2 gx-lg-4">
+    {% unless product.featured_media == null %}
+      <div class="col-3">
+        <div class="card-img-top lh-0 position-relative">
+            <a class="full-width-link" href="{{ product.url }}">
+                <span class="d-none">{{ product.title }}</span>
+            </a>
+          {% render 'image', lazyload: true, image: product.featured_media, class: image_position, size: small %}
+        </div>
+      </div>
+    {% endunless %}
+    <div class="col-9">
+      <div class="card-content">
+          {% if settings.enable_rating_badge_stars %}
+              <div class="star-wrap fs-12">
+                  <!-- Start of Judge.me code -->
+                  <div class='jdgm-widget jdgm-preview-badge'>
+                      {{ product.metafields.judgeme.badge }}
+                  </div>
+                  <!-- End of Judge.me code -->
+              </div>
+          {% endif %}
+        <h3 class="fs-18 mb-0" aria-hidden="true"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+          <a class="hover-underline-1 d-inline-block text-uppercase fs-12" href="{{ product.url }}">  {{ 'products.product.view_full_details' | t }} <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

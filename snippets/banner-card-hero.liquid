@@ -1,0 +1,106 @@
+{% style %}
+    {% if use_custom_colors_block %}
+        .block-extras-color-{{ block_id }} {
+        --gradient-background-block: {% if color_background_gradient_block != blank %}{{ color_background_gradient_block }}{% else %}{{ color_background_block }}{% endif %};
+        --color-background-block: {{ color_background_block.red }}, {{ color_background_block.green }}, {{ color_background_block.blue }};
+        --color-foreground-block: {{ color_text_block.red }}, {{ color_text_block.green }}, {{ color_text_block.blue }};
+        }
+    {% endif %}
+    {% if use_overlay %}
+        .card-overlay-{{ block_id }} {
+        --color-overlay: {{ colors_overlay.red }}, {{ colors_overlay.green }}, {{ colors_overlay.blue }};
+        --color-overlay-opacity: {{ overlay_opacity }};
+        }
+    {% endif %}
+{% endstyle %}
+
+<div
+        class="cs-card card-banner card-banner-one {{ style }} {{ style_hover }}"
+>
+    <div
+            class="
+      clearfix position-relative {% if image_height_mobile != 'mb-adapt' or image_height != 'adapt' %}card-img-custom-height {% endif %}
+      {% if image_height_mobile == 'mb-adapt' %}mb-card-adapt{% else %} {{ image_height_mobile }} {% endif %} {% if image_height == 'adapt' %}card-adapt {% else %}{{ image_height }} {% endif %}
+    "
+    >
+        <div class="card-img-top lh-0 d-block overflow-hidden{% if use_overlay %} card-overlay card-overlay-{{ block_id }}{% endif %}">
+            {% if button_link %}
+                <a class="full-width-link" href="{{ button_link }}">
+                    <span class="d-none">{{ heading }}</span>
+                </a>
+            {% endif %}
+            {% if video_mobile or video_mobile_url != '' %}
+                <div class="d-block d-md-none">
+                    {% if video_mobile_url != '' %}
+                        {% # theme-check-disable %}
+                        <video width="" height="" autoplay muted loop>
+                            <source src="{{ video_mobile_url }}" type="video/mp4">
+                        </video>
+                        {% # theme-check-enable %}
+                    {% else %}
+                        {{ video_mobile | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false }}
+                    {% endif %}
+                </div>
+            {% else %}
+                {% if image_mobile != blank %}
+                    <div class="d-block d-md-none">
+                        {% render 'image-lg', lazyload: true, image: image_mobile, class: 'w-100' %}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if video != blank or video_url != '' %}
+                <div class="media-wrap {% if image_mobile != blank or video_mobile != blank or video_mobile_url != '' %}d-none d-md-block{% endif %}">
+                    {% if video_url != '' %}
+                        {% # theme-check-disable %}
+                        <video width="" height="" autoplay muted loop>
+                            <source src="{{ video_url }}" type="video/mp4">
+                        </video>
+                        {% # theme-check-enable %}
+                    {% else %}
+                        {{ video | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false }}
+                    {% endif %}
+                </div>
+            {% else %}
+                {% if image != blank %}
+                    <div class="media-wrap {% if image_mobile != blank or video_mobile != blank or video_mobile_url != '' %}d-none d-md-block{% endif %}">
+                        {% render 'image-lg', lazyload: true, image: image, class: 'w-100' %}
+                    </div>
+                {% else %}
+                    <div class="media-wrap {% if image_mobile != blank or video_mobile != blank or video_mobile_url != '' %}d-none d-md-block{% endif %}">
+                        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="cs-card-body animation-active {{ animation }} container page-width {{ text_box_position_mobile }} {{ text_box_position }} {{ text_alignment }} {{ text_alignment_mobile }}">
+            <div class="cs-card-body-inner {% if use_custom_colors_block %} p-3 p-lg-5 rounded-3{% else %} py-4 px-0{% endif %} {% if use_custom_colors_block %} block-extras-color block-extras-color-{{ block_id }}{% endif %}"{% if max_width != '' %} style="max-width: {{ max_width }}px;" {% endif %}>
+                <div class="card-top">
+                    {% render 'heading',
+                            heading: heading,
+                            heading_2: heading_2,
+                            heading_tag: heading_tag,
+                            heading_size: heading_size,
+                            preheading: preheading,
+                            subheading: subheading,
+                            animation: 'off'
+                    %}
+                </div>
+                {% if button_link and button_label != '' %}
+                    <div class="card-bottom sub-4"{% if animation_slide != "on" %} data-aos="fade-up" data-aos-delay="400"{% endif %}>
+                        <a
+                                {% if button_link == blank %}
+                                    role="link" aria-disabled="true"
+                                {% else %}
+                                    href="{{ button_link }}"
+                                {% endif %}
+                                class="btn btn-{{ button_style }} position-relative z-index-10"
+                        >
+                            <span>{{- button_label | escape -}}</span>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

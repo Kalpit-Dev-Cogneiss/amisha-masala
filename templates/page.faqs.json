@@ -1,0 +1,230 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_text": "#0b0b0b",
+        "layout": "container page-width"
+      }
+    },
+    "collapsible_content_Y7j4Ab": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_9xpdeJ": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Where do you source your product from?",
+            "row_content": "<p>At my store, we take great care in sourcing our products to ensure the highest quality and ethical standards. Our products come from a network of trusted suppliers and manufacturers located in North America, renowned for their craftsmanship and expertise. We prioritize working with partners who share our values, including ethical labor practices and sustainable production methods, ensuring that every item has a positive impact on both people and the planet. Additionally, we collaborate with local artisans and small businesses whenever possible, celebrating traditional techniques and supporting local communities. Every product is thoroughly inspected to meet our quality standards before it reaches you, guaranteeing excellence in every purchase.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cdGJNL": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "What kind of products do you offer?",
+            "row_content": "<p>We offer a carefully curated selection of products designed to meet your needs and complement your lifestyle. Our collection includes unique handcrafted accessories\". Each item is chosen with an emphasis on quality, functionality, and design, ensuring you receive products that are both practical and aesthetically pleasing. You'll find something to love in our store.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_e9nYNj": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Are your products sustainable\/eco-friendly?",
+            "row_content": "<p>Sustainability is at the heart of what we do. Many of our products are crafted with eco-friendly materials and sustainable practices, ensuring a minimal environmental impact. We prioritize working with suppliers who share our commitment to ethical production, fair labor practices, and reducing waste.<br\/><br\/>If you’d like more details about specific sustainable features of our products, feel free to reach out!<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_9xpdeJ",
+        "collapsible_row_cdGJNL",
+        "collapsible_row_e9nYNj"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "style": "style-1",
+        "preheading": "",
+        "heading": "",
+        "subheading": "<h6>Products<\/h6>",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "image_second": false,
+        "image_height": "adapt",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#f6f6f6",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collapsible_content_zmgmtP": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_brn9Q9": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "What is the shipping fees?",
+            "row_content": "<ul><li>Domestic Shipping:<br\/>All shipping charges include handling, order processing, item selection, packaging and transportation of items.<br\/>Shipping fees start at $5.99 for domestic standard shipping and all other rates are calculated by our providers at checkout.<\/li><li>International Shipping:<br\/>International shipping fees start at $35.00<br\/>Shipping to Canada starts at $15.00<br\/><\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_knFiNQ": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "How can I Track my shipment?",
+            "row_content": "<p>You can track your shipment by heading to our dedicated Tracking page. Simply enter your 'Tracking Number' into the box and you can track your order.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_aHbfVc": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Do you ship outside USA?",
+            "row_content": "<p>Yes, we do ship outside USA. Till date we have shipped our premium teas to consumers in more than 130 countries around the world.<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_brn9Q9",
+        "collapsible_row_knFiNQ",
+        "collapsible_row_aHbfVc"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "style": "style-3",
+        "preheading": "",
+        "heading": "",
+        "subheading": "<h6>Shipping<\/h6>",
+        "heading_size": "h4",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "image_second": false,
+        "image_height": "adapt",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collapsible_content_MKaftm": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_73a6jW": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Which methods of payment do you accept?",
+            "row_content": "<ul><li>We accept Visa, Mastercard, Discover, American Express, PayPal, Apple Pay, Google Pay, Store gift cards.<\/li><\/ul>",
+            "page": ""
+          }
+        },
+        "collapsible_row_DEBfDC": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Do you offer free shipping?",
+            "row_content": "<p>With just a few exceptions, all orders over $99 include FREE value shipping. Orders under $99 are charged flat rate shipping for standard ground.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RXdeCH": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "From where will my order ship?",
+            "row_content": "<p>Most of our web orders ship from Minnesota, USA. But some products do ship directly from the manufacturer. <\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_MerGjk": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "How quickly will my order leave your warehouse?",
+            "row_content": "<p>Our goal is to get your order out in a hurry. Depending on which level of shipping you choose, your order will leave our warehouse within 1 to 4 business days.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_PLbpBt": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "How do you choose the products for the site?",
+            "row_content": "<p>Our selection is handpicked by a team of buyers that includes a mom of one, a dad of three, and a veteran guru. Their mission is to find gear that is useful, practical and innovative, and toys that inspire creative interactions.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_tbNb7t": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "Can I use more than one coupon?",
+            "row_content": "<p>Only one coupon may be used per transaction.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_KYxhHq": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "The item I want is not in stock. What do I do?",
+            "row_content": "<p>If you would like to order an item that is out of stock, you can call us at 1-234-567-STORE (8910) to place the order and it will ship as soon as it is back in stock. Please note we cannot accept back orders on certain items.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_cimJWJ": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "I saw an item in the store, but I don't see it online. How can I order it?",
+            "row_content": "<p>We are more than happy to accept telephone orders for items like these. You can call us at 1-234-567-STORE (8910).<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_73a6jW",
+        "collapsible_row_DEBfDC",
+        "collapsible_row_RXdeCH",
+        "collapsible_row_MerGjk",
+        "collapsible_row_PLbpBt",
+        "collapsible_row_tbNb7t",
+        "collapsible_row_KYxhHq",
+        "collapsible_row_cimJWJ"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "style": "style-3",
+        "preheading": "",
+        "heading": "",
+        "subheading": "<h6>Others<\/h6>",
+        "heading_size": "h4",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "image_second": false,
+        "image_height": "adapt",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collapsible_content_Y7j4Ab",
+    "collapsible_content_zmgmtP",
+    "collapsible_content_MKaftm"
+  ]
+}

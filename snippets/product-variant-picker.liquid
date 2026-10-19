@@ -1,0 +1,79 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - update_url: {Boolean} whether or not to update url when changing variants. If false, the url isn't updated. Default: true (optional).
+  Usage:
+  {% render 'product-variant-picker', product: product, block: block %}
+{% endcomment %}
+
+{% unless product.has_only_default_variant %}
+  {% if block.settings.picker_type == 'button' %}
+    <variant-radios
+      id="variant-radios-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {% for option in product.options_with_values %}
+        <fieldset class="js product-form__input">
+          <legend
+            class="form__label fs-16 mb-0 {% if option.name == 'default' %} label--hidden{% endif %}"
+            for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+          >
+            {{ option.name }}
+          </legend>
+
+          {% assign option_position = forloop.index %}
+          <div class="mb-3 position-relative">
+            {% render 'product-variant-options',
+              product: product,
+              option: option,
+              block: block,
+              option_position: option_position
+            %}
+          </div>
+        </fieldset>
+      {% endfor %}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-radios>
+  {% elsif block.settings.picker_type == 'dropdown' %}
+    <variant-selects
+      id="variant-selects-{{ section.id }}"
+      class="no-js-hidden"
+      data-section="{{ section.id }}"
+      data-url="{{ product.url }}"
+      {% if update_url == false %}
+        data-update-url="false"
+      {% endif %}
+      {{ block.shopify_attributes }}
+    >
+      {% for option in product.options_with_values %}
+        <div class="selector-wrapper js product-form__item">
+          <label class="fw-bold" for="SingleOptionSelector-{{ forloop.index0 }}">
+            {{ option.name }}
+          </label>
+          <select
+            class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+            id="SingleOptionSelector-{{ forloop.index0 }}"
+            data-index="option{{ forloop.index }}"
+          >
+            {% render 'product-variant-options', product: product, option: option, block: block %}
+          </select>
+        </div>
+      {% endfor %}
+      <script type="application/json">
+        {{ product.variants | json }}
+      </script>
+    </variant-selects>
+  {% endif %}
+{% endunless %}

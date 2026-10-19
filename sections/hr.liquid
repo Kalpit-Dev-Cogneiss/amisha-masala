@@ -1,0 +1,166 @@
+{% style %}
+    .section-extras-spacing-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-margin-top: {{ section.settings.margin_top }}px;
+    --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+{% endstyle %}
+
+<div
+        class="section-extras-spacing section-extras-spacing-{{ section.id }}"
+        {% if section.settings.custom_id != blank %}
+            id="{{ section.settings.custom_id }}"
+        {% endif %}
+>
+    <div class="section-{{ section.id }}-padding py-1 text-center {{ section.settings.layout }} position-relative">
+        <div class="position-relative">
+          {% if section.settings.style == 'style-2' and section.settings.image != "" %}
+                <div class="image-wrap">
+                  {% render 'image', lazyload: true, image: section.settings.image %}
+                </div>
+
+          {% else %}
+            {% if section.settings.content != blank %}
+                <div class="d-inline-block bg-body px-5 mw-650px">
+                    {{ section.settings.content }}
+                </div>
+            {% endif %}
+            <div class="hr hr-{{ section.settings.style }}" style="--hr-color: {{ section.settings.color_background }}">
+                <span class="d-none">Border</span>
+            </div>
+          {% endif %}
+        </div>
+
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.hr.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "container page-width",
+          "label": "t:sections.all.layout.options__1.label"
+        },
+        {
+          "value": "container container-inner",
+          "label": "t:sections.all.layout.options__2.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.all.layout.options__3.label"
+        },
+        {
+          "value": "full-width",
+          "label": "t:sections.all.layout.options__4.label"
+        }
+      ],
+      "default": "container page-width",
+      "label": "t:sections.all.layout.header"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "default": "<p>Market</p>",
+      "label": "t:sections.all.content.name"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.all.image.label",
+      "info": "t:sections.hr.settings.info"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "options": [
+        {
+          "value": "style-1",
+          "label": "t:sections.all.style.options__1.label"
+        },
+        {
+          "value": "style-2",
+          "label": "t:sections.all.style.options__2.label"
+        },
+        {
+          "value": "style-3",
+          "label": "t:sections.all.style.options__3.label"
+        }
+      ],
+      "default": "style-1",
+      "label": "t:sections.all.style.label"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "t:sections.all.color_options.color_background",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hr.presets.name"
+    }
+  ]
+}
+{% endschema %}

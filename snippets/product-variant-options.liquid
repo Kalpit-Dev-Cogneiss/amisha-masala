@@ -1,0 +1,121 @@
+{% comment %}
+  Renders product variant options
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+
+
+  Usage:
+  {% render 'product-variant-options',
+    product: product,
+    option: option,
+    block: block
+  %}
+{% endcomment %}
+
+{% liquid
+  assign variants_available_array = product.variants | map: 'available'
+  assign variants_option_first_array = product.variants | map: 'option1'
+  assign variants_option_second_array = product.variants | map: 'option2'
+  assign variants_option_third_array = product.variants | map: 'option3'
+%}
+
+{% for value in option.values %}
+  {% liquid
+    assign option_disabled = true
+
+    for option1_name in variants_option_first_array
+      case option.position
+        when 1
+          if variants_option_first_array[forloop.index0] == value and variants_available_array[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 2
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option_second_array[forloop.index0] == value and variants_available_array[forloop.index0]
+            assign option_disabled = false
+          endif
+        when 3
+          if option1_name == product.selected_or_first_available_variant.option1 and variants_option_second_array[forloop.index0] == product.selected_or_first_available_variant.option2 and variants_option_third_array[forloop.index0] == value and variants_available_array[forloop.index0]
+            assign option_disabled = false
+          endif
+      endcase
+    endfor
+  %}
+
+  {% if block.settings.picker_type == 'button' %}
+    {% liquid
+      assign is_color = false
+      if block.settings.enable_color_swatches
+        assign swatch_option_name = block.settings.swatch_option_name | downcase
+        assign downcased_option = option.name | downcase
+        if downcased_option == swatch_option_name
+          assign is_color = true
+        endif
+      endif
+
+      assign swatch_type = block.settings.swatch_type
+    %}
+    <input
+      type="radio"
+      class="single-option-selector-{{ section.id }}{% if option_disabled %} disabled{% endif %}"
+      {% if option.selected_value == value %}
+        checked="checked"
+      {% endif %}
+      value="{{ value | escape }}"
+      data-index="option{{ option_position }}"
+      name="{{ option.name | handleize }}"
+      id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+    >
+    <label
+      for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
+      class="{% if is_color and swatch_type == "html_color_names" %}html_color_names{% endif %}"
+    >
+      {% liquid
+        if is_color
+          assign found = false
+          for variant in product.variants
+            for opt in variant.options
+              if opt == value
+                if found == false and variant.featured_image
+                  assign img_swatch = variant.image
+                  assign found = true
+                endif
+              endif
+            endfor
+          endfor
+        endif
+      %}
+      {% if is_color %}
+        {% case swatch_type %}
+          {% when 'variant_img' %}
+            {{ img_swatch | image_url: width: 60 | image_tag: class: 'number' }}
+          {% when 'btn_with_variant_img' %}
+            {{ img_swatch | image_url: width: 60 | image_tag: class: 'd-block mb-2 mx-auto' }}
+            {{- value -}}
+          {% when 'html_color_names' %}
+            <div class="b_swatch_type_html_color_names" style="background-color: {{ value | downcase }};" data-color="{{ value | handle }}"></div>
+        {% endcase %}
+      {% else %}
+        {{- value -}}
+      {% endif %}
+    </label>
+  {% elsif block.settings.picker_type == 'dropdown' %}
+    <option
+      value="{{ value | escape }}"
+      {% if option.selected_value == value %}
+        selected="selected"
+      {% endif %}
+    >
+      {{- value -}}
+      {% comment %}
+        {% if option_disabled %}
+          {{ value }} - {{ 'products.product.sold_out' | t }}
+        {% else %}
+          {{ value }}
+        {% endif %}
+      {% endcomment %}
+    </option>
+  {% endif %}
+{% endfor %}

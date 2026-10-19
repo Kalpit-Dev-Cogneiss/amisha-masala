@@ -1,0 +1,206 @@
+{% comment %}
+    Renders a list of menu items
+    Accepts:
+    - linklist: {Object} Linklist Liquid object (required)
+    - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+
+    Usage:
+    {% render 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+{% endcomment %}
+<ul class="site-nav {{ class }}{% if class == 'list--inline' %} d-flex flex-wrap {% endif %} {% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}">
+    {% for link in linklists[linklist].links %}
+
+        {% comment %}
+          Check if third-level nav exists on each parent link.
+        {% endcomment %}
+        {% liquid
+            assign three_level_nav = false
+            if link.links != blank
+                if link.levels == 2
+                    assign three_level_nav = true
+                endif
+            endif
+        %}
+        {% comment %}theme-check-disable MegaMenu{% endcomment %}
+        {% liquid
+            assign enable_mega_menu = false
+            assign link_title_mega = link.title
+
+            for block in section.blocks
+                assign mega_menu_block_title = block.settings.mega_menu_block_title
+                if mega_menu_block_title == link_title_mega
+                    assign enable_mega_menu = true
+                    assign block = block
+                    break
+                endif
+            endfor
+        %}
+        {% comment %}theme-check-disable MegaMenu{% endcomment %}
+        {% if enable_mega_menu %}
+            <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %} mega-menu mega-menu-5col mega-menu-image">
+                <div class="site-nav__item">
+                    <div class="item-link">
+                        <a class="site-nav__link" href="{{ link.url }}"><span
+                                    class="site-nav__label">{{ link.title | escape }}</span></a><i
+                                class="bi bi-chevron-down fs-10"></i>
+                    </div>
+                    <ul>
+                        <div class="container page-width">
+                            <div class="row {% if block.settings.enable_html_code %} row-html{% endif %}">
+                                <div class="col px-3 px-lg-0 col-12 mb-2 col-lg-{{ block.settings.mm_dropdown_w }}">
+                                    <div class="align-items-start row-custom-2 row row-cols-1 row-cols-md-{{ block.settings.mm_dropdown_prow }}">
+                                        {% for childlink in link.links %}
+                                            <div class="col">
+                                                <li>
+                                                    {% if childlink.links != blank %}
+                                                        <div class="site-nav__item">
+                                                            <div class="item-link">
+                                                                <a href="{{ childlink.url }}"
+                                                                   class="site-nav__link_mega site-nav__link site-nav__child-link site-nav__child-link--parent"
+                                                                        {% if childlink.current %} aria-current="page"{% endif %}
+                                                                >
+                                                                    <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                                                                </a>
+                                                                <i class="bi bi-chevron-down fs-10"></i>
+                                                            </div>
+                                                            <ul>
+                                                                {% for grandchildlink in childlink.links %}
+                                                                    <li>
+                                                                        <a href="{{ grandchildlink.url }}"
+                                                                           class="site-nav__link site-nav__child-link"
+                                                                                {% if grandchildlink.current %} aria-current="page"{% endif %}
+                                                                        >
+                                                                            <span class="site-nav__label">{{ grandchildlink.title | escape }}</span>
+                                                                        </a>
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    {% else %}
+                                                        <a href="{{ childlink.url }}"
+                                                           class="site-nav__link_mega site-nav__link site-nav__child-link"
+                                                                {% if childlink.current %} aria-current="page"{% endif %}
+                                                        >
+                                                            <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                                                        </a>
+                                                    {% endif %}
+                                                </li>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="col px-3 px-lg-0 col-12 col-lg-{{ block.settings.mm_extra_w }}{% if block.settings.enable_html_code %} col-html{% endif %}">
+                                    {% if block.settings.enable_product_list %}
+                                        <div class="row px-3 gx-2 gx-lg-4 row-cols-2 row-cols-md-{{ block.settings.mm_extra_item_prow }}">
+                                            {% for product in block.settings.product_list %}
+                                                <div class="col my-2 position-relative">
+                                                    {% render 'product-card-grid-small',
+                                                            max_height: 550,
+                                                            product: product,
+                                                            style_product: 'style-1',
+
+                                                            image_height: 'adapt' %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    {% if block.settings.enable_collection_list %}
+                                        <div class="row px-3 gx-2 gx-lg-4 row-cols-2 row-cols-md-{{ block.settings.mm_extra_item_prow }}{% if block.settings.enable_collection_list %} row-custom{% endif %}">
+                                            {% for collection in block.settings.collection_list %}
+                                                <div class="col my-2 position-relative">
+                                                    {% render 'collection-grid-item',
+                                                            collection: collection,
+                                                            heading_tag: 'h4',
+                                                            section_id: '',
+                                                            b_bg: '',
+                                                            style: 'style-3',
+                                                            heading_size: 'fs-16' %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                    {% if block.settings.enable_html_code %}
+                                        {{ block.settings.html_code }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </li>
+        {% else %}
+
+            {% if link.links != blank %}
+                <li class="site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
+                    <div class="site-nav__item">
+                        <div class="item-link">
+                            <a class="site-nav__link" href="{{ link.url }}"><span
+                                        class="site-nav__label">{{ link.title | escape }}</span></a><i
+                                    class="bi bi-chevron-down fs-10"></i>
+                        </div>
+                        {% if three_level_nav %}
+                            <ul class="site-nav__childlist-grid">
+                                {% if link.links != blank %}
+                                    {% for childlink in link.links %}
+                                        <li class="site-nav__childlist-item">
+                                            <div class="site-nav__item">
+                                                <div class="item-link">
+                                                    <a href="{{ childlink.url }}"
+                                                       class="site-nav__link site-nav__child-link {% if childlink.links != blank %}site-nav__child-link--parent{% endif %}"
+                                                            {% if childlink.current %} aria-current="page"{% endif %}
+                                                    >
+                                                        <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                                                    </a>
+                                                    {% if childlink.links != blank %}<i
+                                                            class="bi bi-chevron-down fs-10"></i>{% endif %}
+
+                                                </div>
+                                                {% if childlink.links != blank %}
+                                                    <ul>
+                                                        {% for grandchildlink in childlink.links %}
+                                                            <li>
+                                                                <a href="{{ grandchildlink.url }}"
+                                                                   class="site-nav__link site-nav__child-link"
+                                                                        {% if grandchildlink.current %} aria-current="page"{% endif %}
+                                                                >
+                                                                    <span class="site-nav__label">{{ grandchildlink.title | escape }}</span>
+                                                                </a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+                            </ul>
+                        {% else %}
+                            <ul>
+                                {% for childlink in link.links %}
+                                    <li>
+                                        <a href="{{ childlink.url }}"
+                                           class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}"
+                                                {% if childlink.current %} aria-current="page"{% endif %}
+                                        >
+                                            <span class="site-nav__label">{{ childlink.title | escape }}</span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                </li>
+            {% else %}
+                <li {% if link.active %} class="site-nav--active"{% endif %}>
+                    <a href="{{ link.url }}"
+                       class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
+                            {% if link.current %} aria-current="page"{% endif %}
+                    >
+                        <span class="site-nav__label">{{ link.title | escape }}</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>

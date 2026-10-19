@@ -1,0 +1,540 @@
+{
+  "sections": {
+    "banner_parallax_TRBQgD": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/blog-1-4.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.5,
+        "preheading": "Special Sauce",
+        "heading": "Ignite Your Taste Buds  With Our Signature Special Sauce!",
+        "subheading": "<p>Sale Off 30%<\/p>",
+        "time": "",
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 970,
+        "image_height": "h-100vh",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "text_box_position": "flex-middle-center",
+        "text_alignment": "text-md-center text-lg-center",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#0b0b0b",
+        "overlay_opacity": 0.4,
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collection_list_w9h6kA": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_UX9c6r": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "herbaceou",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#56d76f"
+          }
+        },
+        "featured_collection_wrntkV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "miso-gluten-free",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#e5ddbc"
+          }
+        },
+        "featured_collection_HgcFpW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hot-spicy",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#e75959"
+          }
+        },
+        "featured_collection_rDjAtb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "original",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#bfb5b5"
+          }
+        },
+        "featured_collection_LkRgzp": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sweet-honey",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ae12129c"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_UX9c6r",
+        "featured_collection_wrntkV",
+        "featured_collection_HgcFpW",
+        "featured_collection_rDjAtb",
+        "featured_collection_LkRgzp"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-1",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "heading_size_card": "fs-16",
+        "heading_tag_card": "h2",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": 2,
+        "gutter": 4,
+        "enable_slider": true,
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_creative_v2_qxKEer": {
+      "type": "banner-creative-v2",
+      "settings": {
+        "layout": "container page-width",
+        "image_second": true,
+        "image1": "shopify:\/\/shop_images\/banner-4-1_1.jpg",
+        "image2": "shopify:\/\/shop_images\/Frame_139.jpg",
+        "preheading": "About Me",
+        "heading": "Lafonre Sauce",
+        "heading_size": "h2",
+        "heading_tag": "h3",
+        "subheading": "<p>Welcome to our website! Since 2003, our goal has been to provide high-quality sauces that enhance your culinary experiences while ensuring sustainability and reliability. Whether you're a home cook or a professional chef, our wide range of premium sauces is crafted to elevate your dishes to the next level.<\/p><p>We pride ourselves on using only the finest ingredients, all while maintaining a commitment to eco-friendly practices. Explore our collection and discover the perfect sauce to bring flavor and excitement to your kitchen.<\/p>",
+        "button_label": "View More",
+        "button_link": "shopify:\/\/pages\/about-us",
+        "button_style": "primary",
+        "text_alignment": "text-start",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_iGqkfP": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container-fluid",
+        "style": "style-1",
+        "preheading": "Sale Off 30%",
+        "heading": "New Arrivals",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "subheading": "",
+        "collection": "newarrivals",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "columns_tablet": 4,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": false,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/all",
+        "enable_slider": false,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "color_background": "#f7f7f2",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 100,
+        "padding_bottom": 90,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "marque_LCXYfB": {
+      "type": "marque",
+      "blocks": {
+        "marque_Xb6ga9": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Sauce Perfection: Elevate Your Dishes to New Heights\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_33.png",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "marque_mcJFPh": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Flavors That Wow: Discover the Best Sauces for Every Meal\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_28.png",
+            "link": "shopify:\/\/collections\/herbaceou"
+          }
+        },
+        "marque_RVwjHy": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Unleash Bold Flavors with Our Premium Sauces\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_27.png",
+            "link": "shopify:\/\/collections\/miso-gluten-free"
+          }
+        },
+        "marque_gwH3k7": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Sauce Perfection: Elevate Your Dishes to New Heights\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_33.png",
+            "link": "shopify:\/\/collections"
+          }
+        },
+        "marque_MEXkUD": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Crafted for Taste: Sauces That Make Every Bite Better\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_29.png",
+            "link": "shopify:\/\/collections\/miso-gluten-free"
+          }
+        },
+        "marque_zjdhDB": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>Offer valid until stocks last.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_31.png",
+            "link": "shopify:\/\/collections\/hot-spicy"
+          }
+        },
+        "marque_dHGj4C": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>Offer valid until stocks last.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_32.png",
+            "link": "shopify:\/\/collections\/original"
+          }
+        },
+        "marque_jYKbdy": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Flavors That Wow: Discover the Best Sauces for Every Meal\"<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_28.png",
+            "link": "shopify:\/\/collections\/herbaceou"
+          }
+        },
+        "marque_KpRDCm": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>Offer valid until stocks last.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_32.png",
+            "link": "shopify:\/\/collections\/original"
+          }
+        },
+        "marque_qdQtGc": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>Offer valid until stocks last.<\/p>",
+            "image": "shopify:\/\/shop_images\/Group_30.png",
+            "link": "shopify:\/\/collections\/sweet-honey"
+          }
+        }
+      },
+      "block_order": [
+        "marque_Xb6ga9",
+        "marque_mcJFPh",
+        "marque_RVwjHy",
+        "marque_gwH3k7",
+        "marque_MEXkUD",
+        "marque_zjdhDB",
+        "marque_dHGj4C",
+        "marque_jYKbdy",
+        "marque_KpRDCm",
+        "marque_qdQtGc"
+      ],
+      "settings": {
+        "layout": "container-fluid",
+        "time": 51,
+        "reverse": true,
+        "label_font_size": "h1",
+        "height_image": "icon-h-medium",
+        "use_custom_colors": true,
+        "color_text": "#f5f5f5",
+        "color_background": "#ec1d1d",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "quotes_v1_tKxRgN": {
+      "type": "quotes-v1",
+      "blocks": {
+        "quote_NpiaAm": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_125.jpg",
+            "quote": "<p>\"The design of this product is sleek & modern, and the color options are absolutely stunning. It’s the perfect blend of style & functionality.\"<\/p>",
+            "author": "Aiden Anderson",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_JtrRcf": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_127.jpg",
+            "quote": "<p>\"I love how lightweight and comfortable this product is! It’s perfect for everyday use, and I can use it for hours without any discomfort.\"<\/p>",
+            "author": "James Carter",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_UGP8EA": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_126.jpg",
+            "quote": "<p>\"This product exceeded my expectations in terms of durability. It’s built to last and feels sturdy while maintaining a sleek, premium look.\"<\/p>",
+            "author": "Emily Johnson",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_mLCUYV": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_128.jpg",
+            "quote": "<p>\"The color of this product is absolutely gorgeous! It adds a vibrant touch to my space and really stands out. Highly recommend it!\"<\/p>",
+            "author": "Liam Taylor",
+            "info": "Senior Marketing Manager"
+          }
+        }
+      },
+      "block_order": [
+        "quote_NpiaAm",
+        "quote_JtrRcf",
+        "quote_UGP8EA",
+        "quote_mLCUYV"
+      ],
+      "settings": {
+        "layout": "container-fluid",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "enable_container": false,
+        "enable_slider": true,
+        "style_slider": "slide-light",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "gutter": 4,
+        "text_alignment": "text-center",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "#0b0b0b",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "background_image": "shopify:\/\/shop_images\/Frame_110_1.jpg",
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 90,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collapsible_content_cMhkNK": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_GVJD3r": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "1. What makes your sauces special?",
+            "row_content": "<p>Our sauces are crafted from unique, high-quality ingredients with traditional recipes passed down through generations. We use no artificial preservatives or additives—just pure, bold flavor in every bottle.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_jppGiN": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "2. How should I store the sauce after opening?",
+            "row_content": "<p>Once opened, our sauces should be kept in the refrigerator to maintain freshness and flavor. Be sure to close the cap tightly after each use.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_yBxJFA": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "3. Do you offer international shipping?",
+            "row_content": "<p>Yes! We offer international shipping to most countries. Shipping costs and delivery times will vary depending on your location. You can check shipping options during checkout.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_EgFdWn": {
+          "type": "collapsible-row",
+          "settings": {
+            "heading": "4. Are your sauces spicy?",
+            "row_content": "<p>We offer a variety of sauces ranging from mild to extra spicy. Each product has a spice level indicated on the label, so you can choose the perfect one for your taste buds!<\/p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_GVJD3r",
+        "collapsible_row_jppGiN",
+        "collapsible_row_yBxJFA",
+        "collapsible_row_EgFdWn"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "style": "style-2",
+        "image": "shopify:\/\/shop_images\/banner-3_2.jpg",
+        "preheading": "",
+        "heading": "Frequently Asked Questions",
+        "subheading": "",
+        "heading_size": "h3",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "image_second": true,
+        "image_height": "adapt",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ec1d1d",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 40,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "newsletter_gb4bLa": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_V8cNyh": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_htbUFr": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "email_form_6Azzhe": {
+          "type": "email_form",
+          "settings": {
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_V8cNyh",
+        "paragraph_htbUFr",
+        "email_form_6Azzhe"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "banner_parallax_TRBQgD",
+    "collection_list_w9h6kA",
+    "banner_creative_v2_qxKEer",
+    "featured_collection_iGqkfP",
+    "marque_LCXYfB",
+    "quotes_v1_tKxRgN",
+    "collapsible_content_cMhkNK",
+    "newsletter_gb4bLa"
+  ]
+}

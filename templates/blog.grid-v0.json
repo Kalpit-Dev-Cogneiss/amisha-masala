@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "color_text": "#0b0b0b",
+        "layout_container": "container page-width",
+        "posts_per_page": 6,
+        "columns_desktop": 3,
+        "gutter": 4,
+        "border_radius": 0,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "layout": "grid",
+        "pagination": "paginated",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {
+        "layout": "container page-width",
+        "full_width": true,
+        "style": "style-1",
+        "preheading": "",
+        "heading": "<p><em>Explore our exclusive range of products!<\/em><\/p>",
+        "heading_tag": "h3",
+        "heading_size": "h2",
+        "subheading": "",
+        "button_label": "DISCOVER MORE",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "text_alignment": "text-md-center text-lg-center",
+        "text_alignment_mobile": "text-center",
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "color_background": "#f5f5f5",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 70,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich-text"
+  ]
+}

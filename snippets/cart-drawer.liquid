@@ -1,0 +1,259 @@
+{{ 'cart-drawer.css' | asset_url | stylesheet_tag }}
+
+
+<cart-drawer class="cart__drawer right-to-left-open">
+
+  <div
+    class="cart__drawer-section"
+    data-section-type="cart-template"
+  >
+    <div class="cart__drawer-top bg-body">
+      <div class="px-3 py-1 d-flex align-items-center justify-content-between bg-primary">
+        <h2 class="heading fs-18 mb-0">{{ 'cart.general.title' | t }}</h2>
+        <button class="cross close-button" aria-label="Close"></button>
+      </div>
+      <div class="mx-3 pt-3">
+        {% if settings.cart_goal_enable %}
+          {% render 'cart-goal' %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="cart__drawer-center ps-3 py-0 h-100">
+      <form
+        action="{{ routes.cart_url }}"
+        method="post"
+        enctype="multipart/form-data"
+        class="cart__drawer-form pe-3 {% if cart.item_count == 0 %} hide{% endif %}"
+      >
+        <div class="cart-loading-overlay" style="display: none;"></div>
+        <div
+          class="cart__error-message-wrapper hide d-none"
+          role="alert"
+          data-cart-error-message-wrapper
+        >
+          <span class="d-none">{{ 'general.accessibility.error' | t }} </span>
+          <i class="bi bi-exclamation-circle"></i>
+          <span class="cart__error-message" data-cart-error-message></span>
+        </div>
+        <cart-items class="cart__drawer-item">
+          {% for item in cart.items %}
+            <div
+              class="cart_item py-3 border-bottom"
+              data-cart-item
+              data-cart-item-key="{{ item.key }}"
+              data-cart-item-url="{{ item.url }}"
+              data-cart-item-title="{{ item.title }}"
+              data-cart-item-index="{{ forloop.index }}"
+              data-cart-item-quantity="{{ item.quantity }}"
+            >
+              <div class="row gx-3">
+                <div class="col-3">
+                  <div class="item__image">
+                    <a href="{{ item.url }}">
+                      <img
+                        class="img-fluid{% if item.image == null %} hide{% endif %}"
+                        src="{{ item | image_url: height: 200 }}"
+                        loading="lazy"
+                        alt="{{ item.image.alt | escape }}"
+                        width="100"
+                        height="100"
+                      >
+                    </a>
+                  </div>
+                </div>
+                <div class="col-9">
+                  <div class="d-flex justify-content-between">
+                    <div class="cart__item-title">
+                      <a href="{{ item.url }}">
+                        <h3 class="fs-16 mb-0">
+                          {{ item.product.title }}
+                        </h3>
+                      </a>
+                    </div>
+                    <div class="cart__item-price">
+                      {{ item.final_price | money }}
+                    </div>
+                  </div>
+
+                  {% assign variant_options = 'template ' | split: ' ' %}
+                  {% if item.product.has_only_default_variant != true %}
+                    {% assign variant_options = item.options_with_values %}
+                  {% endif %}
+                  {%- unless product.has_only_default_variant -%}
+                  <div class="cart__item-options fs-12 {% if item.product.has_only_default_variant %}hide{% endif %}">
+                    {% for option in variant_options %}
+                      {% if option.value != blank and option.name != 'Title' %}
+                        <span class="product-option opacity-75">{{ option.name }}: {{ option.value }}</span>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                  {%- endunless -%}
+
+                  <div data-group-quantity-remove class="d-flex align-items-center justify-content-between mt-2">
+                    <div class="cart__item-quantitty quantity-selector d-flex">
+                      <button
+                        class="quantity__button disabled"
+                        name="minus"
+                        type="button"
+                        onclick="updateQuantity(this, -1)"
+                      >
+                        -
+                      </button>
+                      <input
+                        id="updates_large_{{ item.key }}"
+                        class="cart__qty-input"
+                        type="number"
+                        name="updates[]"
+                        value="{{ item.quantity }}"
+                        min="0"
+                        pattern="[0-9]*"
+                        data-quantity-input
+                        data-quantity-item="{{ forloop.index }}"
+                        data-quantity-input-desktop
+                        data-role="product-quantity-desktop"
+                      >
+                      <button
+                        class="quantity__button"
+                        name="plus"
+                        type="button"
+                        onclick="updateQuantity(this, 1)"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <div class="cart__item-remove">
+                      <button type="button" class="btn btn-link" data-item-remove>
+                        <i class="rm-icon bi bi-trash3 fs-14"></i>
+                        <div class="rm-loading spinner-border spinner-border-sm" role="status"></div>
+                      </button>
+                      <!-- <a data-item-remove href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0">
+                        <i class="rm-icon bi bi-trash3 fs-14"></i>
+                        <div class="rm-loading spinner-border spinner-border-sm" role="status"></div>
+                      </a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </cart-items>
+
+        <div class="my-3">
+          {% if settings.title_collection_suggest != null %}
+            <h3 class="my-3 fs-20">{{ settings.title_collection_suggest }}</h3>
+          {% else %}
+            <h3 class="my-3 fs-20">{{ 'cart.general.all_so_like' | t }}</h3>
+          {% endif %}
+          <div
+                  class="hero-slider slide-dark">
+            <div
+                    class="swiper-container overflow-hidden"
+                    data-slide='
+                {
+                  "slidesPerView": 1,
+                    "autoplay": {"delay": 3000},
+                  "speed": 400,
+                  "loop": true,
+                  "autoHeight": true,
+                  "spaceBetween": 0,
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "clickable": true
+                    },
+                  "spaceBetween": 0
+                }
+              '
+            >
+              <div class="swiper-wrapper">
+                {% for product in settings.collection_suggest.products limit: 6 %}
+                  <div class="swiper-slide">
+                    {%- render 'product-card-list-small', product: product -%}
+                  </div>
+                {% else %}
+                  {% for i in (1..6) %}
+                    <div class="swiper-slide">
+                      <div class="product-card position-relative">
+                        <a class="full-width-link" href="#">
+                          <span class="d-none">{{ 'homepage.onboarding.product_title' | t }}</span>
+                        </a>
+                        <div class="card-img-top mb-2 card-adapt">
+                          {% capture current %}{% cycle 1, 2, 3, 4 %}{% endcapture %}
+                          {{ 'product-apparel-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                        <h3 class="fs-base mb-1"
+                            aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</h3>
+                        {% render 'product-price-listing', product: product %}
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% endfor %}
+              </div>
+              <div class="swiper-pagination position-relative"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart__drawer-bottom position-absolute start-0 end-0 bottom-0 px-3 pb-3 bg-body z-index-999">
+          
+        {% comment %}  <details class="cart__note py-2 border-bottom ">
+            <summary class="fs-14 fw-semibold cursor-pointer">
+              📝 {{ 'cart.general.note' | t }}
+            </summary>
+            <textarea
+              name="note"
+              class="form-control mt-2"
+              rows="3"
+            >{{ cart.note }}</textarea>
+          </details>
+
+          
+          <details class="cart__coupon py-2 border-bottom">
+            <summary class="fs-14 fw-semibold cursor-pointer">
+              💸 Enter discount code
+            </summary>
+            <div class="coupon-input-wrapper mt-2">
+              {% render 'cart-discount-code' %}
+            </div>
+          </details>{% endcomment %}
+       
+          
+          <div class="py-3">
+            <div class="d-flex align-items-center justify-content-between fs-18 fw-bold">
+              <span class="subtotal_text">{{ 'cart.general.subtotal' | t }}</span>
+              <span class="subtotal_price" data-drawercart-subtotal data-cart-subtotal>{{ cart.total_price | money }}</span>
+            </div>
+
+            {% capture taxes_shipping_checkout %}
+                {% if cart.taxes_included and shop.shipping_policy.body != blank %}
+                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {% elsif cart.taxes_included %}
+                  {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                {% elsif shop.shipping_policy.body != blank %}
+                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {% else %}
+                  {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+                {% endif %}
+              {% endcapture %}
+            <p class="fs-14 opacity-75 mb-0">{{ taxes_shipping_checkout }}</p>
+          </div>
+          <button
+            type="submit"
+            name="checkout"
+            class="cart__submit btn btn-primary w-100"
+          >
+            {{ 'cart.general.checkout' | t }}
+          </button>
+          <div class="text-center mt-3">
+            <a href="{{ routes.cart_url }}" class="text-link hover-underline">
+              {{ 'products.product.view_cart' | t }}
+              <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </form>
+      <div class="cart__drawer-empty text-center m-3{% if cart.item_count > 0 %} hide{% endif %}">
+        <p>{{ 'cart.general.empty' | t }}</p>
+      </div>
+    </div>
+  </div>
+</cart-drawer>

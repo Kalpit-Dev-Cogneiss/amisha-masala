@@ -1,0 +1,65 @@
+{% style %}
+  {%- for block in section.blocks -%}
+      {%- liquid
+          assign title = block.settings.title | handle
+          assign background = block.settings.background
+          assign background_gradient = block.settings.background_gradient
+          assign background_image = block.settings.background_image
+      -%}
+    
+      {%- if title != blank -%}
+          [data-color="{{ title }}"] {
+            background-color: {{ background }} !important;
+            {%- if background_gradient != blank -%}
+                background: {{ background_gradient }} !important;
+            {%- endif -%}
+            {%- if background_image != blank -%}
+                background-image: url({{ background_image.src | image_url: width: 28 }}) !important;
+                background-position: center;
+            {%- endif -%}
+          }
+      {%- endif -%}
+  {%- endfor -%}
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Color swatches",
+  "class": "custom_color",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Customize color",
+      "info": "This setting help you customize color for filter and variant swatch"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "color_item",
+      "name": "Color item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Color name (variant)"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "t:settings_schema.colors.settings.background.label"
+        },
+        {
+          "type": "color_background",
+          "id": "background_gradient",
+          "label": "t:settings_schema.colors.settings.background_gradient.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_image",
+          "label": "Background image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,119 @@
+{% style %}
+  {% if use_custom_colors_block %}
+      .block-extras-color-{{ block_id }} {
+      --gradient-background-block: {% if color_background_gradient_block != blank %}{{ color_background_gradient_block }}{% else %}{{ color_background_block }}{% endif %};
+      --color-background-block: {{ color_background_block.red }}, {{ color_background_block.green }}, {{ color_background_block.blue }};
+      --color-foreground-block: {{ color_text_block.red }}, {{ color_text_block.green }}, {{ color_text_block.blue }};
+      }
+  {% endif %}
+  {% if use_overlay %}
+      .card-overlay-{{ block_id }} {
+      --color-overlay: {{ colors_overlay.red }}, {{ colors_overlay.green }}, {{ colors_overlay.blue }};
+      --color-overlay-opacity: {{ overlay_opacity }};
+      }
+  {% endif %}
+{% endstyle %}
+
+{% liquid
+  assign forloop = forloop | modulo: 2
+  case image_layout
+    when 'alternate-left'
+      if forloop == 0
+        assign image_layout = 'flex-md-row-reverse'
+      else
+        assign image_layout = ''
+      endif
+    when 'alternate-right'
+      if forloop != 0
+        assign image_layout = 'flex-md-row-reverse'
+      else
+        assign image_layout = ''
+      endif
+    when 'align-left'
+      assign image_layout = ''
+    when 'align-right'
+      assign image_layout = 'flex-md-row-reverse'
+  endcase
+%}
+<div class="cs-card card-banner banner-card-4 {{ style }}">
+  <div class="clearfix position-relative">
+    <div class="row gx-0 {{ image_layout }}">
+      <div class="col-12 col-md-{{ image_width }}">
+        <div class="card-img-top hover-scale-image position-relative lh-0 d-block overflow-hidden {% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}{% if use_overlay %} card-overlay card-overlay-{{ block_id }}{% endif %}">
+            {% if button_link %}
+                <a class="full-width-link" href="{{ button_link }}">
+                    <span class="d-none">{{ heading }}</span>
+                </a>
+            {% endif %}
+          {% if video_mobile != blank %}
+            <div class="d-block d-md-none">
+              {{
+                video_mobile
+                | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false
+              }}
+            </div>
+          {% else %}
+            {% if image_mobile != blank %}
+              <div class="d-block d-md-none">
+                {% if enable_slider %}
+                  {% render 'image', lazyload: false, image: image_mobile %}
+                {% else %}
+                  {% render 'image', lazyload: true, image: image_mobile %}
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endif %}
+          {% if video != blank %}
+            <div class="media-wrap {% if image_mobile != blank or video_mobile != blank %}d-none d-md-block{% endif %}">
+              {{ video | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false }}
+            </div>
+          {% else %}
+            {% if image != blank %}
+              <div class="media-wrap {% if image_mobile != blank or video_mobile != blank %}d-none d-md-block{% endif %}">
+                {% if enable_slider %}
+                  {% render 'image', lazyload: false, image: image %}
+                {% else %}
+                  {% render 'image', lazyload: true, image: image %}
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="media-wrap {% if image_mobile != blank or video_mobile != blank %}d-none d-md-block{% endif %}">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+              </div>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="{% if enable_slider %}col-content{% endif %} col-12 col-md-{{ 12 | minus: image_width }} {% if use_custom_colors_block %} block-extras-color block-extras-color-{{ block_id }}{% endif %}">
+        <div class="cs-card-body {% if animation %}animation-active {{ animation }}{% endif %} position-relative {{ text_box_position }} {{ text_alignment }} {{ text_alignment_mobile }}">
+          <div class="cs-card-body-inner px-3 pt-4 pb-4 p-lg-5"{% if max_width != '' %} style="max-width: {{ max_width }}px"{% endif %}>
+            <div class="card-top">
+              {% render 'heading',
+                heading: heading,
+                heading_tag: heading_tag,
+                heading_size: heading_size,
+                preheading: preheading,
+                subheading: subheading,
+                animation: 'disable'
+              %}
+            </div>
+            {% if button_link != '' and button_label != '' %}
+              <div class="card-bottom" data-aos="fade-up" data-aos-delay="400">
+                <a
+                  {% if button_link == blank %}
+                    role="link" aria-disabled="true"
+                  {% else %}
+                    href="{{ button_link }}"
+                  {% endif %}
+                  class="w-xs-100 btn btn-{{ button_style }} position-relative z-index-1"
+                >
+                  <span>{{- button_label | escape -}}</span>
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container page-width text-center">
+    {% render 'breadcrumb' %}
+  <div class="row row-cols-2 row-cols-md-3">
+    <div class="col">
+      <div class="cs-section-header mb-4 mb-md-5">
+        <h1 class="h5">{{ 'customer.activate_account.title' | t }}</h1>
+        <p>{{ 'customer.activate_account.subtext' | t }}</p>
+      </div>
+
+      <div class="form-vertical">
+        {% form 'activate_customer_password' %}
+          {% if form.errors %}
+            <div class="form-message form-message--error">
+              {{ form.errors | default_errors }}
+            </div>
+          {% endif %}
+
+          <label for="CustomerPassword" class="label--hidden">{{ 'customer.activate_account.password' | t }}</label>
+          <input
+            type="password"
+            value=""
+            name="customer[password]"
+            id="CustomerPassword"
+            placeholder="{{ 'customer.activate_account.password' | t }}"
+          >
+
+          <label for="CustomerPasswordConfirmation" class="label--hidden">
+            {{- 'customer.activate_account.password_confirm' | t -}}
+          </label>
+          <input
+            type="password"
+            value=""
+            name="customer[password_confirmation]"
+            id="CustomerPasswordConfirmation"
+            placeholder="{{ 'customer.activate_account.password_confirm' | t }}"
+          >
+
+          <input type="submit" class="btn btn-secondary" value="{{ 'customer.activate_account.submit' | t }}">
+          <div><input type="submit" name="decline" value="{{ 'customer.activate_account.cancel' | t }}"></div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-activate-account.name",
+  "settings": [
+
+  ]
+}
+{% endschema %}

@@ -1,0 +1,63 @@
+{% assign featured_media = product.selected_or_first_available_variant.featured_media
+        | default: product.featured_media
+%}
+{% liquid
+    case style
+        when '1'
+            assign class = 'col-12'
+        when '2'
+            assign class = 'col-6'
+        when '3'
+            assign class = 'col-4 col-lg-4'
+        when '4'
+            assign class = 'col-6 col-lg-3'
+    endcase
+%}
+<div class="row gx-3">
+    {% for media in product.media %}
+        {% assign mod = forloop.index0 | modulo: 6 %}
+        <div
+                class="col position-relative item mb-3{% if style != "1-2-3" %} {{ class }}{% else %}{% if mod == 0 or mod == 1 %} col-lg-6{% endif %}{% if mod == 2 %} col-lg-12{% endif %}{% if mod == 3 or mod == 4 or mod == 5 %} col-lg-4{% endif %}{% endif %}"
+                data-target="{{ section_id }}-{{ media.id }}"
+                data-media-position="{{ forloop.index0 }}"
+        >
+            <div class="border">
+                {% render 'product-media-main', media: media, loop: enable_video_looping, enable_image_zoom: enable_image_zoom %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<noscript>
+    {% capture product_image_size %}{{ height }}x{% endcapture %}
+    <img
+            src="{{ featured_media | image_url: product_image_size, scale: product_image_scale }}"
+            loading="lazy"
+            alt="{{ featured_media.alt }}"
+            id="FeaturedMedia-{{ section_id }}"
+            class="product-featured-media"
+            width="auto"
+            height="auto"
+            style="max-width: {{ height }}px;"
+    >
+</noscript>
+
+{% assign three_d_model_media = product.media | where: 'media_type', 'model' | first %}
+
+{% if three_d_model_media %}
+    <button
+            aria-label="{{ 'products.product.view_in_space_label' | t }}"
+            class="product-single__view-in-space"
+            data-shopify-xr
+            data-shopify-model3d-id="{{ three_d_model_media.id }}"
+            data-shopify-title="{{ product.title | escape }}"
+            data-shopify-xr-hidden
+    >
+        <i class="bi bi-hexagon-half"></i>
+        <span
+                class="product-single__view-in-space-text"
+        >
+      {{- 'products.product.view_in_space' | t -}}
+    </span>
+    </button>
+{% endif %}

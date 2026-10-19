@@ -1,0 +1,224 @@
+{
+  "current": {
+    "favicon": "shopify://shop_images/amisha-logo.png",
+    "logo": "shopify://shop_images/amisha-logo.png",
+    "logo_white": "shopify://shop_images/amisha-logo-white.png",
+    "logo_width": 170,
+    "currency_code_enabled": false,
+    "type_base_font": "helvetica_n4",
+    "type_base_size": 16,
+    "type_header_font": "grandstander_n9",
+    "type_header_base_size": 20,
+    "type_font": "heading",
+    "type_card_product_font": "heading",
+    "type_navigation_size": 18,
+    "page_width": 1600,
+    "enable_shadow": true,
+    "color_primary": "#ec1d1d",
+    "button_color_primary": "#ffffff",
+    "body_bg": "#ffffff",
+    "body_color": "#0b0b0b",
+    "color_border_main": "#000000",
+    "enable_wishlist": true,
+    "wishlist_page": "wishlist",
+    "type_button_size": 18,
+    "buttons_letter_spacing": 0,
+    "type_button_font": "heading",
+    "buttons_text_style": "uppercase",
+    "style_products": "style-1",
+    "show_vendor": true,
+    "show_border": true,
+    "color_border": "#000000",
+    "background_card": "#ffffff",
+    "background_card_gradient": "",
+    "border_radius": 0,
+    "title_collection": "OUR SPICES",
+    "collection": "plain-spices",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_facebook_link": "https://www.facebook.com/masalaamisha/",
+    "social_instagram_link": "https://www.instagram.com/amishamasala/",
+    "social_youtube_link": "",
+    "social_tiktok_link": "",
+    "social_twitter_link": "https://twitter.com/AmishaMasala",
+    "social_snapchat_link": "",
+    "social_pinterest_link": "",
+    "social_vimeo_link": "",
+    "enable_ajax": true,
+    "enable_drawer_cart": false,
+    "title_collection_suggest": "You may also like these products",
+    "collection_suggest": "all",
+    "text_style": "uppercase",
+    "background_card_image": "#f8f7f4",
+    "spacing_header": 50,
+    "enable_breadcrumbs": true,
+    "breadcrumbs_alignment": "text-start",
+    "breadcrumbs_background_color": "#f9f9f9",
+    "breadcrumbs_background_image": "shopify://shop_images/breadcrumb-bg.webp",
+    "rating_badge_stars": "<!-- Start of Judge.me code -->\n              <div class='jdgm-widget jdgm-preview-badge'>\n                  {{ product.metafields.judgeme.badge }} \n              </div>\n              <!-- End of Judge.me code -->",
+    "mode_version": false,
+    "social_tumblr_link": "",
+    "enable_product_suggest": true,
+    "predictive_search_show_vendor": false,
+    "predictive_search_show_price": true,
+    "color_badge_background": "#000000",
+    "color_sale_text": "#000000",
+    "color_sale_background": "#ff8500",
+    "enable_bootstrap": false,
+    "buttons_border_thickness": 1,
+    "buttons_radius": 0,
+    "buttons_min_height": 50,
+    "color_image_overlay": "#000000",
+    "color_secondary": "#000000",
+    "color_text": "#000000",
+    "color_body_text": "#000000",
+    "color_button": "#ff8500",
+    "color_button_text": "#000000",
+    "color_button_secondary": "#269700",
+    "color_small_button_text_border": "#fff",
+    "color_schemes": {
+      "background-1": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#000000",
+          "button": "#ff8500",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#ffffff"
+        }
+      },
+      "background-2": {
+        "settings": {
+          "background": "#f6f6f6",
+          "background_gradient": "",
+          "text": "#000000",
+          "button": "#ff8500",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#121212"
+        }
+      },
+      "inverse": {
+        "settings": {
+          "background": "#242833",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff"
+        }
+      },
+      "accent-1": {
+        "settings": {
+          "background": "#121212",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ffffff",
+          "button_label": "#121212",
+          "secondary_button_label": "#ffffff"
+        }
+      },
+      "accent-2": {
+        "settings": {
+          "background": "#fcf9ec",
+          "background_gradient": "",
+          "text": "#000000",
+          "button": "#113034",
+          "button_label": "#ffffff",
+          "secondary_button_label": "#000000"
+        }
+      },
+      "scheme-ac0dd53c-d5a9-4639-9a77-0e9add251e4d": {
+        "settings": {
+          "background": "#f5f7f7",
+          "background_gradient": "",
+          "text": "#ffffff",
+          "button": "#ff8500",
+          "button_label": "#000000",
+          "secondary_button_label": "#ffffff"
+        }
+      }
+    },
+    "sections": {
+      "custom-color-swatches": {
+        "type": "custom-color-swatches",
+        "blocks": {
+          "color_item_K4eWW7": {
+            "type": "color_item",
+            "settings": {
+              "title": "Ivory",
+              "background": "#e5ddbc",
+              "background_gradient": ""
+            }
+          },
+          "color_item_ygF3Qk": {
+            "type": "color_item",
+            "settings": {
+              "title": "Buffalo",
+              "background": "",
+              "background_gradient": "",
+              "background_image": "shopify://shop_images/Frame_119_8bc70c9c-dfd2-4e86-b7fe-db8a8db96741.png"
+            }
+          },
+          "color_item_jxfbQd": {
+            "type": "color_item",
+            "settings": {
+              "title": "Hot",
+              "background": "#ec1d1d",
+              "background_gradient": "",
+              "background_image": "shopify://shop_images/Frame_117_918dae09-07bf-4e0e-be3e-20e8e8a6ab10.png"
+            }
+          },
+          "color_item_H8Ad8T": {
+            "type": "color_item",
+            "settings": {
+              "title": "Mustard",
+              "background": "#17a659",
+              "background_gradient": "",
+              "background_image": "shopify://shop_images/Frame_122_44e2bf82-f239-46cb-91f0-3fa5a9d714c6.png"
+            }
+          },
+          "color_item_PRWnQi": {
+            "type": "color_item",
+            "settings": {
+              "title": "Tartar",
+              "background": "#d6c10d",
+              "background_gradient": "",
+              "background_image": "shopify://shop_images/Frame_118_d6a76b99-cfa0-48b5-a4ba-e3f00f6f9cce.png"
+            }
+          }
+        },
+        "block_order": [
+          "color_item_K4eWW7",
+          "color_item_ygF3Qk",
+          "color_item_jxfbQd",
+          "color_item_H8Ad8T",
+          "color_item_PRWnQi"
+        ],
+        "settings": {}
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo": "shopify://shop_images/logo-black.png",
+          "logo_max_width": 260,
+          "header": "Coming Soon"
+        }
+      },
+      "password-footer": {
+        "type": "password-footer",
+        "settings": {
+          "show_share_buttons": true
+        }
+      }
+    },
+    "content_for_index": [],
+    "blocks": {
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  }
+}

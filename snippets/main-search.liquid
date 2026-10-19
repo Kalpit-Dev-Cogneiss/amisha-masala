@@ -1,0 +1,30 @@
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+<predictive-search>
+    <form action="{{ routes.search_url }}" method="get" role="search">
+        <div class="pb-4">
+            <div class="position-relative">
+                <input
+                        id="Search"
+                        type="search"
+                        placeholder="{{ 'general.search.placeholder' | t }}"
+                        name="q"
+                        value="{{ search.terms | escape }}"
+                        class="form-control form-control-v1"
+                        aria-owns="predictive-search-results-list"
+                        aria-controls="predictive-search-results-list"
+                        aria-haspopup="listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        autocapitalize="off"
+                        spellcheck="false"
+                >
+                <button type="submit" class="btn btn-link text-white position-absolute end-0 top-50 translate-middle-y me-3 w-svg-sm">
+                    {% render 'icon-search' %}
+                </button>
+            </div>
+        </div>
+
+        <input name="options[prefix]" type="hidden" value="last">
+        <div id="predictive-search" tabindex="-1"></div>
+    </form>
+</predictive-search>

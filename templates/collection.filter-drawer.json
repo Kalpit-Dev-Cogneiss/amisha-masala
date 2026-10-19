@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_collection_image": true,
+        "show_collection_description": true,
+        "style": "style-4",
+        "products_per_page": 12,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "gutter": 4,
+        "pagination": "click",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "enable_collection_list": true,
+        "collection_list": [
+          "newarrivals",
+          "herbaceou",
+          "miso-gluten-free",
+          "hot-spicy",
+          "original",
+          "sweet-honey"
+        ],
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "filter_type": "drawer",
+        "enable_color_swatches": true,
+        "swatch_color_filter_name": "Color",
+        "open_dropdown": true,
+        "limit_height": false,
+        "margin_top": 8,
+        "margin_bottom": 0,
+        "padding_top": 30,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

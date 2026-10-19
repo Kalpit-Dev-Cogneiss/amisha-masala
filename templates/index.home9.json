@@ -1,0 +1,438 @@
+{
+  "sections": {
+    "banner_hero_WyfCUa": {
+      "type": "banner-hero",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/Frame_129_2.jpg",
+        "video": "shopify:\/\/files\/videos\/VIDEO.mp4",
+        "preheading": "New in",
+        "heading": "FLAVOR",
+        "heading_2": "EXPLOSION",
+        "subheading": "<p>Sale Off 30%<\/p>",
+        "button_label": "Buy it now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "image_height": "adapt",
+        "heading_tag": "h2",
+        "heading_size": "h0",
+        "text_box_position": "flex-middle-left",
+        "text_alignment": "text-md-start text-lg-start",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#000000",
+        "overlay_opacity": 0.3,
+        "margin_top": 0,
+        "margin_bottom": 4,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_grid_xNmG8k": {
+      "type": "banner-grid",
+      "blocks": {
+        "card_banner_JmEQeF": {
+          "type": "card-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-3-1_1.jpg",
+            "heading": "Garlic & Onion",
+            "subheading": "Sale Off 30%",
+            "button_link": "shopify:\/\/collections\/herbaceou",
+            "use_custom_colors": true,
+            "color_text": "#ffffff",
+            "use_overlay": true,
+            "colors_overlay": "#1b1f2d",
+            "overlay_opacity": 0.3
+          }
+        },
+        "card_banner_FcD8R4": {
+          "type": "card-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-4.jpg",
+            "heading": "Gluten-Free",
+            "subheading": "Sale Off 30%",
+            "button_link": "shopify:\/\/collections\/miso-gluten-free",
+            "use_custom_colors": true,
+            "color_text": "#ffffff",
+            "use_overlay": true,
+            "colors_overlay": "#1b1f2d",
+            "overlay_opacity": 0.3
+          }
+        },
+        "card_banner_rY46ey": {
+          "type": "card-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-3.jpg",
+            "heading": "Hot & Spicy",
+            "subheading": "Sale Off 30%",
+            "button_link": "shopify:\/\/collections\/hot-spicy",
+            "use_custom_colors": true,
+            "color_text": "#fcfcfc",
+            "use_overlay": false,
+            "colors_overlay": "#ffffff",
+            "overlay_opacity": 0.3
+          }
+        },
+        "card_banner_RfF6rn": {
+          "type": "card-banner",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-3_1.jpg",
+            "heading": "Sweet Honey",
+            "subheading": "Sale Off 30%",
+            "button_link": "shopify:\/\/collections\/sweet-honey",
+            "use_custom_colors": true,
+            "color_text": "#fcfcfc",
+            "use_overlay": false,
+            "colors_overlay": "#ffffff",
+            "overlay_opacity": 0.3
+          }
+        }
+      },
+      "block_order": [
+        "card_banner_JmEQeF",
+        "card_banner_FcD8R4",
+        "card_banner_rY46ey",
+        "card_banner_RfF6rn"
+      ],
+      "settings": {
+        "layout": "full-width",
+        "style": "style-v1",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "image_height": "adapt",
+        "heading_size_card": "h6",
+        "heading_tag_card": "h3",
+        "text_box_position": "flex-bottom-left",
+        "text_alignment": "text-md-start text-lg-start",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 1,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 90,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_7yPFcT": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-4",
+        "preheading": "",
+        "heading": "New Arrivals",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "subheading": "",
+        "collection": "miso-gluten-free",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": true,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/newarrivals",
+        "enable_slider": true,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "fraction",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 90,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "video_with_text_XdY9cx": {
+      "type": "video-with-text",
+      "blocks": {
+        "heading_LVqeJU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Crafted with Passio",
+            "heading_tag": "h2",
+            "heading_size": "h2",
+            "margin_top": 0
+          }
+        },
+        "text_cXTica": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover the secret behind our irresistible sauce — a unique blend of natural ingredients, slow-cooked to perfection. Every bottle carries years of tradition, flavor, and a whole lot of love. One taste, and you'll know why it's called special.<\/p>",
+            "margin_top": 3
+          }
+        },
+        "button_JWDYBf": {
+          "type": "button",
+          "settings": {
+            "button_label": "Buy it now",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style": "primary",
+            "margin_top": 3
+          }
+        }
+      },
+      "block_order": [
+        "heading_LVqeJU",
+        "text_cXTica",
+        "button_JWDYBf"
+      ],
+      "settings": {
+        "video": "shopify:\/\/files\/videos\/video_fbcb3e1c-088b-4c01-9998-25770953d179.mp4",
+        "layout": "container page-width",
+        "image_width": "50",
+        "text_box_position": "flex-top-left",
+        "text_alignment": "text-md-center text-lg-center",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "color_background_block": "#ffffff",
+        "color_background_gradient_block": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_MniE4i": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-4",
+        "preheading": "",
+        "heading": "Bestsellers",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "subheading": "",
+        "collection": "miso-gluten-free",
+        "products_to_show": 6,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": true,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/hot-spicy",
+        "enable_slider": true,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "fraction",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "compare_wDy8QQ": {
+      "type": "compare",
+      "settings": {
+        "layout": "container container-inner",
+        "image1": "shopify:\/\/shop_images\/Frame_130_2.jpg",
+        "image2": "shopify:\/\/shop_images\/Frame_129_2.jpg",
+        "border_radius": 0,
+        "preheading": "",
+        "heading": "Feel The Difference",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "subheading": "<p>Elevate your meals with our premium sauces, crafted to enhance your outdoor dining experience.<\/p>",
+        "button_label": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_style": "primary",
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "color_background": "#f5f5f5",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "quotes_v1_tKxRgN": {
+      "type": "quotes-v1",
+      "blocks": {
+        "quote_NpiaAm": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_127.jpg",
+            "quote": "<h3>\"The design of this product is sleek & modern, and the color options are absolutely stunning. It’s the perfect blend of style & functionality.\"<\/h3>",
+            "author": "Aiden Anderson",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_JtrRcf": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_125.jpg",
+            "quote": "<h3>\"I love how lightweight and comfortable this product is! It’s perfect for everyday use, and I can use it for hours without any discomfort.\"<\/h3>",
+            "author": "James Carter",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_UGP8EA": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_126.jpg",
+            "quote": "<h3>\"This product exceeded my expectations in terms of durability. It’s built to last and feels sturdy while maintaining a sleek, premium look.\"<\/h3>",
+            "author": "Emily Johnson",
+            "info": "Senior Marketing Manager"
+          }
+        },
+        "quote_mLCUYV": {
+          "type": "quote",
+          "settings": {
+            "avatar": "shopify:\/\/shop_images\/Frame_128.jpg",
+            "quote": "<h3>\"The color of this product is absolutely gorgeous! It adds a vibrant touch to my space and really stands out. Highly recommend it!\"<\/h3>",
+            "author": "Liam Taylor",
+            "info": "Senior Marketing Manager"
+          }
+        }
+      },
+      "block_order": [
+        "quote_NpiaAm",
+        "quote_JtrRcf",
+        "quote_UGP8EA",
+        "quote_mLCUYV"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "enable_container": false,
+        "enable_slider": true,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "fraction",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 1,
+        "columns_tablet": 1,
+        "columns_mobile": 1,
+        "gutter": 4,
+        "text_alignment": "text-center",
+        "use_custom_colors": true,
+        "color_text": "#0b0b0b",
+        "color_background": "#f5f5f5",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 90,
+        "padding_top": 50,
+        "padding_bottom": 90,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_blog_v1_C9pK8C": {
+      "type": "featured-blog-v1",
+      "settings": {
+        "blog": "news",
+        "preheading": "",
+        "heading": "News",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "post_limit": 5,
+        "blog_show_date": true,
+        "blog_show_excerpt": true,
+        "blog_show_comment": false,
+        "blog_show_read_more": true,
+        "show_view_all": false,
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 4,
+        "border_radius": 0,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "banner_hero_WyfCUa",
+    "banner_grid_xNmG8k",
+    "featured_collection_7yPFcT",
+    "video_with_text_XdY9cx",
+    "featured_collection_MniE4i",
+    "compare_wDy8QQ",
+    "quotes_v1_tKxRgN",
+    "featured_blog_v1_C9pK8C"
+  ]
+}

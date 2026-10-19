@@ -1,0 +1,372 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "layout_container": "container page-width",
+        "style": "style-1",
+        "color_background_card": "#e5ddbc",
+        "preheading": "",
+        "heading": "Add Background",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "display_type": "all",
+        "sort": "alphabetical",
+        "heading_size_card": "h6",
+        "heading_tag_card": "h3",
+        "columns_desktop": 3,
+        "columns_tablet": 3,
+        "columns_mobile": 1,
+        "gutter": 4,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "collection_list_RHpyN9": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_NLchei": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "herbaceou",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#80ff81"
+          }
+        },
+        "featured_collection_jWN9xM": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "miso-gluten-free",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#e5ddbc"
+          }
+        },
+        "featured_collection_aCYMAq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hot-spicy",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#d7cece"
+          }
+        },
+        "featured_collection_jJryTH": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "newarrivals",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#eac736"
+          }
+        },
+        "featured_collection_kLPfbW": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "original",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#c1b47d"
+          }
+        },
+        "featured_collection_7hLLqb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sweet-honey",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#e46b6b"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_NLchei",
+        "featured_collection_jWN9xM",
+        "featured_collection_aCYMAq",
+        "featured_collection_jJryTH",
+        "featured_collection_kLPfbW",
+        "featured_collection_7hLLqb"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-2",
+        "preheading": "",
+        "heading": "Change Background",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "heading_size_card": "h6",
+        "heading_tag_card": "h2",
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "gutter": 4,
+        "enable_slider": false,
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collection_list_PR9GL6": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_yVHGPC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "herbaceou",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        },
+        "featured_collection_gJUeFg": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "miso-gluten-free",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        },
+        "featured_collection_jKECnN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hot-spicy",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        },
+        "featured_collection_a6MYVT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "newarrivals",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        },
+        "featured_collection_Yq69ra": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "original",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        },
+        "featured_collection_34d8x8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sweet-honey",
+            "b_enable": false,
+            "b_title": "",
+            "b_url": "",
+            "color_background": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_yVHGPC",
+        "featured_collection_gJUeFg",
+        "featured_collection_jKECnN",
+        "featured_collection_a6MYVT",
+        "featured_collection_Yq69ra",
+        "featured_collection_34d8x8"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-3",
+        "preheading": "",
+        "heading": "Change Columns",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "heading_size_card": "fs-16",
+        "heading_tag_card": "h2",
+        "columns_desktop": 6,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "gutter": 4,
+        "enable_slider": false,
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 70,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "collection_list_7CDP4F": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_rVDdMh": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "herbaceou",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_132.jpg",
+            "b_title": "Gluten-Free",
+            "b_url": "shopify:\/\/collections\/miso-gluten-free",
+            "color_background": "#eac736"
+          }
+        },
+        "featured_collection_jmYbKX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "miso-gluten-free",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_138.jpg",
+            "b_title": "Original",
+            "b_url": "shopify:\/\/collections\/original",
+            "color_background": "#e46b6b"
+          }
+        },
+        "featured_collection_bxBhVa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "hot-spicy",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_141.jpg",
+            "b_title": "Sweet Honey",
+            "b_url": "shopify:\/\/collections\/sweet-honey",
+            "color_background": "#c1b47d"
+          }
+        },
+        "featured_collection_fXEXyT": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "newarrivals",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_140.jpg",
+            "b_title": "New Arrivals",
+            "b_url": "shopify:\/\/collections\/newarrivals",
+            "color_background": "#2aa0e2"
+          }
+        },
+        "featured_collection_Xebi8e": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "original",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_139.jpg",
+            "b_title": "Garlic & Onion",
+            "b_url": "shopify:\/\/collections\/herbaceou",
+            "color_background": "#e46b6b"
+          }
+        },
+        "featured_collection_ABWY9V": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sweet-honey",
+            "b_enable": true,
+            "b_img": "shopify:\/\/shop_images\/Frame_137.jpg",
+            "b_title": "Hot & Spicy",
+            "b_url": "shopify:\/\/collections\/hot-spicy",
+            "color_background": "#ec1d1d"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_rVDdMh",
+        "featured_collection_jmYbKX",
+        "featured_collection_bxBhVa",
+        "featured_collection_fXEXyT",
+        "featured_collection_Xebi8e",
+        "featured_collection_ABWY9V"
+      ],
+      "settings": {
+        "layout": "full-width",
+        "style": "style-4",
+        "preheading": "",
+        "heading": "Custom Thumbnail & Content",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "heading_size_card": "h6",
+        "heading_tag_card": "h2",
+        "columns_desktop": 6,
+        "columns_tablet": 3,
+        "columns_mobile": 2,
+        "gutter": 0,
+        "enable_slider": false,
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collection_list_RHpyN9",
+    "collection_list_PR9GL6",
+    "collection_list_7CDP4F"
+  ]
+}

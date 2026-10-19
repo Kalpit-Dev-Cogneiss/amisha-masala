@@ -1,0 +1,384 @@
+{
+  "sections": {
+    "banner_parallax_dpdNPb": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/image_561_1.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.5,
+        "preheading": "New in",
+        "heading": "SAUCE SPECIAL",
+        "subheading": "<p>Discover the perfect sauce to bring flavor.<\/p>",
+        "time": "",
+        "button_label": "Shop aLL",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "light",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 920,
+        "image_height": "h-100vh",
+        "heading_tag": "h2",
+        "heading_size": "h-custom",
+        "text_box_position": "flex-bottom-center",
+        "text_alignment": "text-md-center text-lg-center",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": false,
+        "colors_overlay": "#0b0b0b",
+        "overlay_opacity": 0.4,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "marque_VHVAgD": {
+      "type": "marque",
+      "blocks": {
+        "marque_b7CTDj": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>GARLIC & ONION<\/p>",
+            "link": "shopify:\/\/collections\/herbaceou"
+          }
+        },
+        "marque_PRqr7a": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>GLUTEN-FREE<\/p>",
+            "link": "shopify:\/\/collections\/miso-gluten-free"
+          }
+        },
+        "marque_3tYwCb": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>HOT & SPICY<\/p>",
+            "link": "shopify:\/\/collections\/hot-spicy"
+          }
+        },
+        "marque_dMLTcM": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>ORIGINAL<\/p>",
+            "link": "shopify:\/\/collections\/original"
+          }
+        },
+        "marque_M67aXC": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>SWEET HONEY<\/p>",
+            "link": "shopify:\/\/collections\/sweet-honey"
+          }
+        }
+      },
+      "block_order": [
+        "marque_b7CTDj",
+        "marque_PRqr7a",
+        "marque_3tYwCb",
+        "marque_dMLTcM",
+        "marque_M67aXC"
+      ],
+      "settings": {
+        "layout": "full-width",
+        "time": 40,
+        "reverse": false,
+        "label_font_size": "h1",
+        "height_image": "icon-h-medium",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "#fd6035",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 86,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_WRjJHN": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-1",
+        "preheading": "",
+        "heading": "Look We Love",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "subheading": "<p>Explore the latest search trends in children's shopping this week.<\/p>",
+        "collection": "newarrivals",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": true,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/all",
+        "enable_slider": false,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "progressbar",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_parallax_n7zi3R": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/image_562_1.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.4,
+        "preheading": "Best choice",
+        "heading": "Bold Sauce for Roasts",
+        "subheading": "",
+        "time": "",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "light",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 430,
+        "image_height": "h-700",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "text_box_position": "flex-middle-left",
+        "text_alignment": "text-md-start text-lg-start",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#000000",
+        "overlay_opacity": 0.3,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_parallax_3N4Jgz": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/image_559_1.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.4,
+        "preheading": "Best Choice",
+        "heading": "Irresistibly Fried Flavor",
+        "subheading": "",
+        "time": "",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "light",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 490,
+        "image_height": "h-100vh",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "text_box_position": "flex-middle-right",
+        "text_alignment": "text-md-end text-lg-end",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#0b0b0b",
+        "overlay_opacity": 0.3,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_parallax_kGjPGD": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/image_563_1.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.4,
+        "preheading": "Best Choice",
+        "heading": "Steamed to Perfection",
+        "subheading": "",
+        "time": "",
+        "button_label": "Shop Now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "light",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 550,
+        "image_height": "h-100vh",
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "text_box_position": "flex-middle-left",
+        "text_alignment": "text-md-start text-lg-start",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#0b0b0b",
+        "overlay_opacity": 0.3,
+        "margin_top": 0,
+        "margin_bottom": 90,
+        "image_height_mobile": "h-mb-400",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "tiktok_wLRHYk": {
+      "type": "tiktok",
+      "blocks": {
+        "item_6eaa8L": {
+          "type": "item",
+          "settings": {
+            "tiktok_url": "https:\/\/www.tiktok.com\/@meatlicious_\/video\/7516185613435931946"
+          }
+        },
+        "item_UwnCAF": {
+          "type": "item",
+          "settings": {
+            "tiktok_url": "https:\/\/www.tiktok.com\/@meatlicious_\/video\/7444568623487946030"
+          }
+        },
+        "item_DQj4kt": {
+          "type": "item",
+          "settings": {
+            "tiktok_url": "https:\/\/www.tiktok.com\/@meatlicious_\/video\/7512485600084167979"
+          }
+        },
+        "item_gYBTyT": {
+          "type": "item",
+          "settings": {
+            "tiktok_url": "https:\/\/www.tiktok.com\/@meatlicious_\/video\/7509509867619568938"
+          }
+        }
+      },
+      "block_order": [
+        "item_6eaa8L",
+        "item_UwnCAF",
+        "item_DQj4kt",
+        "item_gYBTyT"
+      ],
+      "name": "t:sections.tiktok.presets.name",
+      "settings": {
+        "layout": "container page-width",
+        "preheading": "",
+        "heading": "Trend On Tiktok",
+        "subheading": "",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "button_label": "Follow us on Tiktok.",
+        "button_link": "#",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "gutter": 4,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_blog_qPW8fC": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "preheading": "",
+        "heading": "Blog post",
+        "subheading": "<p>Stay updated with the latest news, bringing you exclusive insights.<\/p>",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "post_limit": 3,
+        "blog_show_date": true,
+        "blog_show_excerpt": false,
+        "blog_show_comment": false,
+        "blog_show_read_more": true,
+        "show_view_all": true,
+        "button_style": "outline-dark",
+        "enable_slider": false,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 4,
+        "border_radius": 0,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "banner_parallax_dpdNPb",
+    "marque_VHVAgD",
+    "featured_collection_WRjJHN",
+    "banner_parallax_n7zi3R",
+    "banner_parallax_3N4Jgz",
+    "banner_parallax_kGjPGD",
+    "tiktok_wLRHYk",
+    "featured_blog_qPW8fC"
+  ]
+}

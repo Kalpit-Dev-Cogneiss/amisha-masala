@@ -1,0 +1,13 @@
+<div class="d-flex align-items-start">
+  <div class="clearfix w180-image me-3">
+    <p class="fw-bold mb-0 fs-18">{{ comment.author }}</p>
+    <p class="mb-1 opacity-85 fs-12 text-uppercase letter-spacing-2">
+      {{ comment.created_at | time_tag: format: 'date' }}
+    </p>
+  </div>
+  <div class="flex-1-1-0">
+    <div class="opacity-85 rte">
+      {{ comment.content }}
+    </div>
+  </div>
+</div>

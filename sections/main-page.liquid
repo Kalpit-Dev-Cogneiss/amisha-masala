@@ -1,0 +1,68 @@
+{% style %}
+  .section-extras-color-{{ section.id }} {
+  --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+  }
+{% endstyle %}
+
+<div class="clearfix">
+  <div class="section-extras-color section-extras-color-{{ section.id }}">
+      {% render 'breadcrumb-banner',
+              banner_image: section.settings.banner_image,
+              layout_container: section.settings.layout,
+              heading: page.title,
+              class_img: 'mb-4 mb-lg-5'
+      %}
+  </div>
+  <div class="{{ section.settings.layout }} position-relative">
+    {% if page.content.size > 0 %}
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.page-template.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.page_title.name"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "t:sections.all.page_title.settings.background"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "container page-width",
+          "label": "t:sections.all.layout.options__1.label"
+        },
+        {
+          "value": "container container-inner",
+          "label": "t:sections.all.layout.options__2.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.all.layout.options__3.label"
+        }
+      ],
+      "default": "container page-width",
+      "label": "t:sections.all.layout.header"
+    }
+  ]
+}
+{% endschema %}

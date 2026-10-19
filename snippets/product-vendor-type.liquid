@@ -1,0 +1,14 @@
+{% if show_vendor and product %}
+  <div class="price__vendor price__vendor--listing fs-12 mb-1 opacity-85 fst-italic font-monospace">
+    <div>
+      <span class="d-none">{{ 'products.product.vendor' | t }}</span>
+    </div>
+    <div>
+      {{ product.vendor | link_to_vendor: class: 'link-class' }}
+      {% if product.type != blank %}
+        &#x2022;
+        {{ product.type | link_to_type: class: 'link-class' }}
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,391 @@
+{% style %}
+  .section-extras-spacing-{{ section.id }} {
+  --section-padding-top: {{ section.settings.padding_top }}px;
+  --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  --section-margin-top: {{ section.settings.margin_top }}px;
+  --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+
+  }
+
+  {% if section.settings.use_custom_colors %}
+    .section-extras-color-{{ section.id }} {
+    --gradient-background: {% if section.settings.color_background_gradient != blank %}{{ section.settings.color_background_gradient }}{% else %}{{ section.settings.color_background }}{% endif %};
+    --color-background: {{ section.settings.color_background.red }}, {{ section.settings.color_background.green }}, {{ section.settings.color_background.blue }};
+    --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+    }
+  {% endif %}
+  {% if section.settings.use_overlay %}
+    .card-overlay-{{ section.id }} {
+    --color-overlay: {{ section.settings.colors_overlay.red }}, {{ section.settings.colors_overlay.green }}, {{ section.settings.colors_overlay.blue }};
+    --color-overlay-opacity: {{ section.settings.overlay_opacity }};
+    }
+  {% endif %}
+{% endstyle %}
+
+{% liquid
+  assign display_map = false
+  assign onboarding = false
+  assign bg_image = section.settings.background_image
+
+  if section.settings.api_key == blank and bg_image == blank
+    assign onboarding = true
+  endif
+  if section.settings.api_key != blank and section.settings.map_address
+    assign display_map = true
+  endif
+%}
+
+<style>
+  {% if bg_image.src != blank %}
+  #MapSection--{{ section.id }} .map-section__image {
+    background-position: {{ section.settings.background_image_position }};
+  }
+
+  @media only screen and (max-width: 750px) {
+    #MapSection--{{ section.id }} .map-section__image {
+      padding-top: {{ 1 | divided_by: bg_image.aspect_ratio | times: 100 }}%;
+    }
+  }
+  {% endif %}
+</style>
+
+<div
+  class="section-extras-spacing section-extras-spacing-{{ section.id }} {% if section.settings.use_custom_colors %} section-extras-color section-extras-color-{{ section.id }} {% endif %}  {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %} "
+  {% if section.settings.custom_id != blank %}
+    id="{{ section.settings.custom_id }}"
+  {% endif %}
+>
+  <div
+    id="MapSection--{{ section.id }}"
+    class="
+      map-section {% if section.settings.use_overlay %} card-overlay card-overlay-{{ section.id }}{% endif %}
+      {% if display_map %}map-section--display-map{% endif %}
+      {% if onboarding == true %}map-section--onboarding{% endif %}
+    "
+    data-section-id="{{ section.id }}"
+    data-section-type="map"
+  >
+    <div class="container page-width map-section__wrapper">
+      <div class="map-section__content-wrapper">
+        <div class="map-section__content">
+          <h2 class="d-none d-none--static">{{ 'sections.map.section_heading' | t }}</h2>
+          {% if section.settings.heading != blank %}
+            <div class="d-flex flex-nowrap">
+              <p class="mb-0 me-3 h1 d-inline-block"><i class="bi bi-geo-alt"></i></p>
+ <h2 class="{{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
+            </div>
+           
+          {% endif %}
+          {% if section.settings.address != blank %}
+            <div class="rte-setting">{{ section.settings.address }}</div>
+            {% if section.settings.map_address != blank and section.settings.button_text != blank %}
+              <p>
+                <a
+                  href="https://maps.google.com?daddr={{ section.settings.map_address | escape }}"
+                  class="btn btn-primary map_section__directions-btn"
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="a11y-new-window-external-message"
+                >
+                  {% if section.settings.show_pin %}<i class="bi bi-geo"></i>{% endif %}
+                  <span>{{ section.settings.button_text | escape }}</span>
+                </a>
+              </p>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <div class="map-section__background-wrapper" >
+        {% if bg_image != blank %}
+          <div
+            class="map-section__image jarallax" data-jarallax data-speed="0.3" data-type="scroll"
+            style="background-image: url({{ bg_image | image_url: height: 800, crop: 'top' }});"
+          ></div>
+        {% elsif onboarding == true %}
+          <div class="placeholder-background">
+            {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+        {% if display_map %}
+          <div
+            class="map-section__container"
+            id="Map-{{ section.id }}"
+            data-map
+            data-address-setting="{{ section.settings.map_address | escape }}"
+            data-api-key="{{ section.settings.api_key }}"
+          ></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.map.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.map.settings.header__1.content"
+    },
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "t:sections.map.settings.heading.label",
+      "default": "Our store"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h-custom-v1",
+          "label": "t:sections.all.heading_size.options__custom1.label"
+        },
+        {
+          "value": "h-custom",
+          "label": "t:sections.all.heading_size.options__custom.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__0.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_size.options__6.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "id": "address",
+      "type": "richtext",
+      "label": "t:sections.map.settings.address.label",
+      "default": "<p>123 Fake St.<br>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br>Saturday, 11am - 9pm<br>Sunday, 11am - 5pm</p>"
+    },
+    {
+      "id": "map_address",
+      "type": "text",
+      "label": "t:sections.map.settings.map_address.label",
+      "info": "t:sections.map.settings.map_address.info",
+      "default": "301 Front St W, Toronto"
+    },
+    {
+      "id": "button_text",
+      "type": "text",
+      "label": "t:sections.map.settings.button_text.label",
+      "default": "Get directions"
+    },
+    {
+      "id": "show_pin",
+      "type": "checkbox",
+      "label": "t:sections.map.settings.show_pin.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.map.settings.header__1.content"
+    },
+    {
+      "id": "api_key",
+      "type": "text",
+      "label": "t:sections.map.settings.api_key.label",
+      "info": "t:sections.map.settings.api_key.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.map.settings.background_image.label",
+      "info": "t:sections.map.settings.background_image.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_overlay",
+      "default": false,
+      "label": "t:sections.all.colors.use_overlay.label"
+    },
+    {
+      "type": "color",
+      "id": "colors_overlay",
+      "label": "t:sections.all.colors.colors_overlay.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "t:sections.all.colors.overlay_opacity.label",
+      "default": 0.3
+    },
+    {
+      "type": "select",
+      "id": "background_image_position",
+      "label": "t:sections.map.settings.background_image_position.label",
+      "default": "center center",
+      "options": [
+        {
+          "label": "t:sections.map.settings.background_image_position.options__1.label",
+          "value": "top left"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__2.label",
+          "value": "top center"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__3.label",
+          "value": "top right"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__4.label",
+          "value": "center left"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__5.label",
+          "value": "center center"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__6.label",
+          "value": "center right"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__7.label",
+          "value": "bottom left"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__8.label",
+          "value": "bottom center"
+        },
+        {
+          "label": "t:sections.map.settings.background_image_position.options__9.label",
+          "value": "bottom right"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.color_options.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_colors",
+      "default": false,
+      "label": "t:sections.all.color_options.use_custom_colors"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "t:sections.all.color_options.color_background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "color_background_gradient",
+      "label": "t:sections.all.color_options.color_background_gradient"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+
+    {
+      "type": "header",
+      "content": "t:sections.all.custom.header"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "t:sections.all.custom.custom_id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "t:sections.all.custom.custom_class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.map.presets.name"
+    }
+  ]
+}
+{% endschema %}

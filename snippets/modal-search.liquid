@@ -1,0 +1,13 @@
+<div class="modal fade" id="modalSearch" tabindex="-1" aria-labelledby="modalSearch" aria-hidden="true">
+    <div class="modal-dialog container page-width rounded-0">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-header d-flex align-items-center justify-content-between border-0 px-0 pt-2 pt-lg-4 pb-0">
+                <h2 class="fs-20 font-body" id="exampleModalToggleLabel"><span class="d-none">{{ 'general.search.search' | t }}</span></h2>
+                <button type="button" class="close-button style-body style-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                {%- render 'main-search' -%}
+            </div>
+        </div>
+    </div>
+</div>

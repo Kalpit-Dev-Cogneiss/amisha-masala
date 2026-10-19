@@ -1,0 +1,54 @@
+<div class="cs-card blog-card position-relative h-100 d-flex flex-column {{ class }}">
+  <div class="blog-card-top position-relative rounded-{{ border_radius }} overflow-hidden">
+    {% if article.image %}
+      <div class="card-img-top card-hover-overlay-dark lh-0 d-block{% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}">
+        <a class="full-width-link" href="{{ article.url }}">
+          <span class="d-none">{{ article.title }}</span>
+        </a>
+        {% render 'image', lazyload: true, image: article.image, class: image_position %}
+      </div>
+      <noscript>
+        <div class="article__grid-image-wrapper position-relative">
+          <a class="full-width-link" href="{{ article.url }}">
+            <span class="d-none">{{ article.title }}</span>
+          </a>
+          {{ article | image_url: width: 690, height: 690 | image_tag: article.title, 'article__grid-image' }}
+        </div>
+      </noscript>
+    {% endif %}
+  </div>
+  <div class="cs-card-body pt-3">
+    <div class="clearfix">
+      <div class="d-flex align-items-center flex-wrap fs-14 text-uppercase">
+        <a href="{{ blog_url }}" class="mb-2">{{ blog_title }}</a>
+        {% if blog_show_date %}
+          <span class="mx-2 mb-2 opacity-85">|</span>
+          <p class="opacity-85 mb-2">{{ article.published_at | time_tag: format: 'date' }}</p>
+        {% endif %}
+      </div>
+      <h3 class="{{ title_size }} mb-0">
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </h3>
+      {% if blog_show_excerpt %}
+        <div class="rte opacity-85 mt-2 fs-18">
+          {% if article.excerpt.size > 0 %}
+            {{ article.excerpt }}
+          {% else %}
+            {{ article.content | strip_html | truncate: 150 }}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+    {% if blog_show_read_more %}
+      <div class="clearfix mt-4">
+        <a
+          href="{{ article.url }}"
+          class="{% if class_button != blank %}{{ class_button }}{% else %}hover-underline d-inline-block text-uppercase fs-14{% endif %}"
+          aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}"
+        >
+          {{ 'blogs.article.read_more' | t }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>

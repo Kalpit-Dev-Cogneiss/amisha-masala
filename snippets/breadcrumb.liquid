@@ -1,0 +1,55 @@
+{% unless request.page_type == 'index' %}
+    <nav
+            class="nav-breadcrumb fs-14 {% if settings.breadcrumbs_background_image != blank and background != 'none' or background_second != blank %} nav-breadcrumb-image content-absolute {% endif %}"
+            role="navigation"
+            aria-label="breadcrumbs"
+    >
+        <div class="breadcrumb-content">
+            {% if heading != blank %}
+                <h2 class="mb-2">{{ heading }}</h2>
+            {% endif %}
+            <ol class="breadcrumb mb-0 {{ class }}">
+                <li class="breadcrumb-item">
+                    <a href="/" title="Home"><i class="bi bi-house me-1"></i>{{ 'general.breadcrumbs.home' | t }}</a>
+                </li>
+                {% if request.page_type == 'page' %}
+                    <li class="breadcrumb-item opacity-85" aria-current="page">{{ page.title }}</li>
+                {% elsif request.page_type == 'product' %}
+                    {% for collection in product.collections %}
+                        {% if collection.url %}
+                            {% if forloop.last %}
+                                <li
+                                        class="breadcrumb-item"
+                                        aria-current="page"
+                                >
+                                    {{ collection.title | link_to: collection.url }}
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    <li class="breadcrumb-item opacity-85" aria-current="page">{{ product.title }}</li>
+                {% elsif request.page_type == 'collection' and collection.handle %}
+                    {% if current_tags %}
+                        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+                        <li class="breadcrumb-item" aria-current="page">{{ collection.title | link_to: url }}</li>
+                        <li class="breadcrumb-item opacity-85" aria-current="page">{{ current_tags | join: ' + ' }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item opacity-85" aria-current="page">{{ collection.title }}</li>
+                    {% endif %}
+                {% elsif request.page_type == 'blog' %}
+                    {% if current_tags %}
+                        <li class="breadcrumb-item" aria-current="page">{{ blog.title | link_to: blog.url }}</li>
+                        <li class="breadcrumb-item opacity-85" aria-current="page">{{ current_tags | join: ' + ' }}</li>
+                    {% else %}
+                        <li class="breadcrumb-item opacity-85" aria-current="page">{{ blog.title }}</li>
+                    {% endif %}
+                {% elsif request.page_type == 'article' %}
+                    <li class="breadcrumb-item" aria-current="page">{{ blog.title | link_to: blog.url }}</li>
+                    <li class="breadcrumb-item opacity-85" aria-current="page">{{ article.title }}</li>
+                {% else %}
+                    <li class="breadcrumb-item opacity-85" aria-current="page">{{ page_title }}</li>
+                {% endif %}
+            </ol>
+        </div>
+    </nav>
+{% endunless %}

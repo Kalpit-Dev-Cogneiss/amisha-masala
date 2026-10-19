@@ -1,0 +1,68 @@
+<div class="cs-card blog-card position-relative {{ class }}">
+  <div class="row align-items-center">
+    {% if article.image %}
+      <div class="col-12 col-md-6">
+        <div class="blog-card-top k overflow-hidden position-relative rounded-{{ border_radius }}">
+          <a class="full-width-link" href="{{ article.url }}">
+            <span class="d-none">{{ article.title }}</span>
+          </a>
+          <div class="card-img-top lh-0 d-block mb-3 mb-md-0 overflow-hidden card-hover-overlay-dar{% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}">
+            {% render 'image', lazyload: true, image: article.image, class: image_position %}
+          </div>
+          <noscript>
+            <div class="article__grid-image-wrapper">
+              {{ article | image_url: width: 690, height: 690 | image_tag: article.title, 'article__grid-image' }}
+            </div>
+          </noscript>
+        </div>
+      </div>
+    {% endif %}
+    <div class="col-12 {% if article.image %}col-md-6{% endif %}">
+      <div class="cs-card-body p-3 d-flex flex-column justify-content-between flex-1">
+        <div class="clearfix">
+          <div class="d-flex align-items-center flex-wrap fs-14 text-uppercase">
+            <a href="{{ blog_url }}" class="mb-2">{{ blog_title }}</a>
+            {% if blog_show_date %}
+              <span class="ms-2 me-2 mb-2 opacity-85">|</span>
+              <p class="opacity-85 mb-2">{{ article.published_at | time_tag: format: 'date' }}</p>
+            {% endif %}
+          </div>
+          <h3 class="pe-0 pe-xl-5 {{ title_size }} mb-0">
+            <a href="{{ article.url }}">{{ article.title }}</a>
+          </h3>
+          {% if blog_show_excerpt %}
+            <div class="pe-0 pe-xl-5 rte opacity-85 mt-3 fs-18">
+              {% if article.excerpt.size > 0 %}
+                {{ article.excerpt }}
+              {% else %}
+                {{ article.content | strip_html | truncate: 150 }}
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if blog.comments_enabled? and article.comments_count > 0 and blog_show_comment %}
+            <p>
+              <a
+                href="{{ article.url }}#comments"
+                class="article__comment-count btn button-sm btn-{{ button_style }}"
+              >
+                {{ 'blogs.comments.comments_with_count' | t: count: article.comments_count }}
+              </a>
+            </p>
+          {% endif %}
+        </div>
+        {% if blog_show_read_more %}
+          <div class="clearfix mt-4">
+            <a
+              href="{{ article.url }}"
+              class="hover-underline d-inline-block text-uppercase fs-14"
+              aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}"
+            >
+              {{ 'blogs.article.read_more' | t }}
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

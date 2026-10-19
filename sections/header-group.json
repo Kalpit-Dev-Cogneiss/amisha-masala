@@ -1,0 +1,52 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_nR34Tq": {
+          "type": "announcement",
+          "settings": {
+            "text": "",
+            "subtext": "<p>Manufacturers of spice powders &amp; masalas - Vadodara, Gujarat</p>",
+            "button_link": "",
+            "use_custom_colors": true,
+            "color_text": "#ffffff",
+            "color_background": "#000000",
+            "color_background_gradient": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_nR34Tq"
+      ],
+      "settings": {
+        "show": true
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "main_linklist": "main-menu",
+        "enable_search": true,
+        "enable_account": true,
+        "enable_wishlist": false,
+        "enable_cart": true,
+        "logo_position": "middle-center",
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "#ec1d1d",
+        "color_background_gradient": "",
+        "padding_top": 3,
+        "padding_bottom": 3
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

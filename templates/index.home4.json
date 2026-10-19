@@ -1,0 +1,612 @@
+{
+  "sections": {
+    "slideshow_v1_CanH3h": {
+      "type": "slideshow-v1",
+      "blocks": {
+        "item_YXrqGN": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-4_1_9a6e09ea-8803-40ac-ac42-1d9ee5391772.jpg",
+            "image_position": "object_position_middle_center",
+            "preheading": "ON SALE",
+            "heading": "Garlic & Onion",
+            "subheading": "<p>Explore Our Collection<\/p>",
+            "button_label": "Shop All",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style": "primary",
+            "use_custom_colors_block": true,
+            "color_text_block": "#0b0b0b",
+            "color_background_block": "#ffffff",
+            "color_background_gradient_block": "",
+            "use_overlay": false,
+            "colors_overlay": "#ffffff",
+            "overlay_opacity": 0.3
+          }
+        },
+        "item_7jH3JN": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/banner-4_2.jpg",
+            "image_position": "object_position_middle_center",
+            "preheading": "ON SALE",
+            "heading": "Hot & Spicy",
+            "subheading": "<p>Explore Our Collection<\/p>",
+            "button_label": "Shop All",
+            "button_link": "shopify:\/\/collections\/all",
+            "button_style": "primary",
+            "use_custom_colors_block": false,
+            "color_text_block": "#ffffff",
+            "color_background_block": "#dedede",
+            "color_background_gradient_block": "",
+            "use_overlay": false,
+            "colors_overlay": "#ffffff",
+            "overlay_opacity": 0.3
+          }
+        }
+      },
+      "block_order": [
+        "item_YXrqGN",
+        "item_7jH3JN"
+      ],
+      "settings": {
+        "heading_tag": "h2",
+        "heading_size": "h1",
+        "layout": "full-width",
+        "image_width": "8",
+        "image_height": "h-800",
+        "text_box_position": "flex-middle-center",
+        "text_alignment": "text-md-center text-lg-center",
+        "enable_controls": false,
+        "animation": "animation-top-to-bottom",
+        "style_slider": "slide-light",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "margin_top": 0,
+        "margin_bottom": 90,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "text_alignment_mobile": "text-center",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "rich_text_H47icC": {
+      "type": "rich-text",
+      "settings": {
+        "layout": "container page-width",
+        "full_width": false,
+        "style": "style-2",
+        "preheading": "About Me",
+        "heading": "<p>Lafonre<\/p>",
+        "heading_tag": "h2",
+        "heading_size": "h0",
+        "subheading": "<p>Welcome to our website! Since 2003, our goal has been to provide high-quality sauces that enhance your culinary experiences while ensuring sustainability and reliability. <\/p>",
+        "button_label": "View More Details",
+        "button_link": "shopify:\/\/pages\/about-us",
+        "button_style": "link",
+        "text_alignment": "text-md-center text-lg-center",
+        "text_alignment_mobile": "text-center",
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "image_with_hotspots_iz4ACc": {
+      "type": "image-with-hotspots",
+      "blocks": {
+        "hotspots_RPF4Xk": {
+          "type": "hotspots",
+          "settings": {
+            "vertical_position": 26,
+            "horizontal_position": 40,
+            "heading": "",
+            "subheading": "",
+            "product": "rich-tomato-burst"
+          }
+        },
+        "hotspots_8LEkeh": {
+          "type": "hotspots",
+          "settings": {
+            "vertical_position": 49,
+            "horizontal_position": 50,
+            "heading": "",
+            "subheading": "",
+            "product": "roasted-garlic-passion"
+          }
+        },
+        "hotspots_aWBymw": {
+          "type": "hotspots",
+          "settings": {
+            "vertical_position": 72,
+            "horizontal_position": 40,
+            "heading": "",
+            "subheading": "",
+            "product": "sassy-honey-glaze"
+          }
+        }
+      },
+      "block_order": [
+        "hotspots_RPF4Xk",
+        "hotspots_8LEkeh",
+        "hotspots_aWBymw"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "image": "shopify:\/\/shop_images\/ddd_1_1.jpg",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "button_label": "",
+        "button_link": "shopify:\/\/collections\/all",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "text_alignment": "text-md-center text-lg-center",
+        "use_custom_colors": true,
+        "color_text": "#000000",
+        "use_overlay": false,
+        "colors_overlay": "#0b0b0b",
+        "overlay_opacity": 0,
+        "margin_top": 0,
+        "margin_bottom": 50,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "icon_with_text_EcfQ6N": {
+      "type": "icon-with-text",
+      "blocks": {
+        "card_icon_cYmFUA": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"#1f1f1f\"><path d=\"M426-160q-9-26-23-48t-33-41q-19-19-41-33.5T281-306q2 29 14 54t32 45q20 20 45 32.5t54 14.5Zm108 0q29-3 54-15t45-32q20-20 32-45t15-54q-26 9-48.5 23T590-250q-19 19-33 41.5T534-160Zm-54-360q66 0 113-47t47-113v-48l-70 59-90-109-90 109-70-59v48q0 66 47 113t113 47ZM440-80q-100 0-170-70t-70-170v-80q71-1 134 29t106 81v-153q-86-14-143-80.5T240-680v-136q0-26 23-36.5t43 6.5l74 64 69-84q12-14 31-14t31 14l69 84 74-64q20-17 43-6.5t23 36.5v136q0 90-57 156.5T520-443v153q43-51 106-81t134-29v80q0 100-70 170T520-80h-80Zm40-569Zm127 416Zm-253 0Z\"><\/path><\/svg>",
+            "heading": "Certified Organic",
+            "subheading": "<p>Meets strict organic standards and is free from synthetic pesticides<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_pjaNk7": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"#1f1f1f\"><path d=\"M440-80v-166L310-118l-56-56 186-186v-80h-80L174-254l-56-56 128-130H80v-80h166L118-650l56-56 186 186h80v-80L254-786l56-56 130 128v-166h80v166l130-128 56 56-186 186v80h80l186-186 56 56-128 130h166v80H714l128 130-56 56-186-186h-80v80l186 186-56 56-130-128v166h-80Z\"><\/path><\/svg>",
+            "heading": "Cold Filled",
+            "subheading": "<p>Packaged without heat, preserving nutrients and flavor<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_ebMq3y": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"#1f1f1f\"><path d=\"M342-160h276l40-160H302l40 160Zm0 80q-28 0-49-17t-28-44l-45-179h520l-45 179q-7 27-28 44t-49 17H342ZM200-400h560v-80H200v80Zm280-240q0-100 70-170t170-70q0 90-57 156t-143 80v84h320v160q0 33-23.5 56.5T760-320H200q-33 0-56.5-23.5T120-400v-160h320v-84q-86-14-143-80t-57-156q100 0 170 70t70 170Z\"><\/path><\/svg>",
+            "heading": "Preservative Free",
+            "subheading": "<p>No artificial preservatives, offering a more natural product<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_iAdDXa": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"#1f1f1f\"><path d=\"M480-480Zm0 360q-18 0-34.5-6.5T416-146L148-415q-35-35-51.5-80T80-589q0-103 67-177t167-74q48 0 90.5 19t75.5 53q32-34 74.5-53t90.5-19q100 0 167.5 74T880-590q0 49-17 94t-51 80L543-146q-13 13-29 19.5t-34 6.5Zm40-520q10 0 19 5t14 13l68 102h166q7-17 10.5-34.5T801-590q-2-69-46-118.5T645-758q-31 0-59.5 12T536-711l-27 29q-5 6-13 9.5t-16 3.5q-8 0-16-3.5t-14-9.5l-27-29q-21-23-49-36t-60-13q-66 0-110 50.5T160-590q0 18 3 35.5t10 34.5h187q10 0 19 5t14 13l35 52 54-162q4-12 14.5-20t23.5-8Zm12 130-54 162q-4 12-15 20t-24 8q-10 0-19-5t-14-13l-68-102H236l237 237q2 2 3.5 2.5t3.5.5q2 0 3.5-.5t3.5-2.5l236-237H600q-10 0-19-5t-15-13l-34-52Z\"><\/path><\/svg>",
+            "heading": "BPA Free",
+            "subheading": "<p>Packaging does not contain Bisphenol A (BPA), ensuring it's safe<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "card_icon_cYmFUA",
+        "card_icon_pjaNk7",
+        "card_icon_ebMq3y",
+        "card_icon_iAdDXa"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_tag": "h3",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "show_read_more": false,
+        "button_label": "Buy it now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#f5f5f5",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 76,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "marque_UN9zh3": {
+      "type": "marque",
+      "blocks": {
+        "marque_tUCKp8": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Sauce Perfection: Elevate Your Dishes to New Heights\"<\/p>",
+            "link": ""
+          }
+        },
+        "marque_CUrAkg": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Flavors That Wow: Discover the Best Sauces for Every Meal\"<\/p>",
+            "link": ""
+          }
+        },
+        "marque_M38XCR": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Unleash Bold Flavors with Our Premium Sauces\"<\/p>",
+            "link": "shopify:\/\/collections\/newarrivals"
+          }
+        },
+        "marque_LcNUHU": {
+          "type": "marque",
+          "settings": {
+            "content": "<p>\"Crafted for Taste: Sauces That Make Every Bite Better\"<\/p>",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "marque_tUCKp8",
+        "marque_CUrAkg",
+        "marque_M38XCR",
+        "marque_LcNUHU"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "time": 51,
+        "reverse": false,
+        "label_font_size": "h5",
+        "height_image": "icon-h-large",
+        "use_custom_colors": true,
+        "color_text": "#f5f5f5",
+        "color_background": "#ec1d1d",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 90,
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_KeyN9p": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-4",
+        "preheading": "",
+        "heading": "TOP TRENDING",
+        "heading_tag": "h2",
+        "heading_size": "h3",
+        "subheading": "",
+        "collection": "newarrivals",
+        "products_to_show": 10,
+        "columns_desktop": 5,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": false,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/all",
+        "enable_slider": false,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": false,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "quotes_eBfqDR": {
+      "type": "quotes",
+      "blocks": {
+        "quote_ejrth7": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"I love how lightweight and comfortable this product is! It’s perfect for everyday use, and I can use it for hours without any discomfort.\"<\/p>",
+            "author": "– Michael-Brown",
+            "product": "garlic-herb-infusion"
+          }
+        },
+        "quote_QGrBPb": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"This product exceeded my expectations in terms of durability. It’s built to last and feels sturdy while maintaining a sleek, premium look.\"<\/p>",
+            "author": "– James Clark",
+            "product": "sassy-honey-glaze"
+          }
+        },
+        "quote_Tk3iPH": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"The color of this product is absolutely gorgeous! It adds a vibrant touch to my space and really stands out. Highly recommend it!\"<\/p>",
+            "author": "– Sophia Miller",
+            "product": "spicy-sesame-sauce"
+          }
+        },
+        "quote_UY4h94": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>\"The design of this product is sleek & modern, and the color options are absolutely stunning. It’s the perfect blend of style & functionality.\"<\/p>",
+            "author": "– Daniel Wilson",
+            "product": "spicy-chipotle-heat"
+          }
+        }
+      },
+      "block_order": [
+        "quote_ejrth7",
+        "quote_QGrBPb",
+        "quote_Tk3iPH",
+        "quote_UY4h94"
+      ],
+      "settings": {
+        "preheading": "",
+        "heading": "TESTIMONIALS",
+        "subheading": "",
+        "heading_tag": "h2",
+        "heading_size": "h3",
+        "heading_alignment": "text-center",
+        "enable_slider": true,
+        "style_slider": "slide-light",
+        "enable_navigation": true,
+        "navigation_icon": "style-1",
+        "enable_pagination": true,
+        "slider_visual": "",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": 1,
+        "gutter": 4,
+        "use_custom_colors": true,
+        "color_text": "#ffffff",
+        "color_background": "#f5f5f5",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "background_image": "shopify:\/\/shop_images\/Frame_110_1.jpg",
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_v1_bVJ9QQ": {
+      "type": "featured-collection-v1",
+      "blocks": {
+        "content_left_LBFiNX": {
+          "type": "content_left",
+          "settings": {
+            "col_width": 6,
+            "image": "shopify:\/\/shop_images\/banner-3-1_1.jpg",
+            "preheading": "New in",
+            "heading": "Hot Spicy",
+            "subheading": "<p>Sale Off 30%<\/p>",
+            "button_label": "",
+            "button_link": "shopify:\/\/collections\/newarrivals",
+            "button_style": "link",
+            "heading_tag": "h2",
+            "heading_size": "h1",
+            "text_alignment": "text-md-center text-lg-center",
+            "use_overlay": true,
+            "colors_overlay": "#1b1f2d",
+            "overlay_opacity": 0.3,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "image_height_mobile": "h-mb-450",
+            "text_alignment_mobile": "text-center"
+          }
+        },
+        "product_rm3YxT": {
+          "type": "product",
+          "settings": {
+            "col_width": 6,
+            "collection": "hot-spicy",
+            "products_to_show": 6,
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "columns_mobile": "2",
+            "gutter": 4,
+            "image_height": "adapt",
+            "image_position": "object_position_middle_center",
+            "enable_quick_add": true
+          }
+        }
+      },
+      "block_order": [
+        "content_left_LBFiNX",
+        "product_rm3YxT"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "reverse_mobile": false,
+        "use_custom_colors": true,
+        "color_text": "#f5f5f5",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_collection_v1_WxqUUd": {
+      "type": "featured-collection-v1",
+      "blocks": {
+        "product_YLmh38": {
+          "type": "product",
+          "settings": {
+            "col_width": 7,
+            "collection": "newarrivals",
+            "products_to_show": 6,
+            "columns_desktop": 3,
+            "columns_tablet": 2,
+            "columns_mobile": "2",
+            "gutter": 4,
+            "image_height": "adapt",
+            "image_position": "object_position_middle_center",
+            "enable_quick_add": true
+          }
+        },
+        "content_left_d98d6k": {
+          "type": "content_left",
+          "settings": {
+            "col_width": 5,
+            "image": "shopify:\/\/shop_images\/banner-3_1.jpg",
+            "preheading": "New in",
+            "heading": "New Arrivals",
+            "subheading": "<p>Sale Off 30%<\/p>",
+            "button_label": "",
+            "button_link": "shopify:\/\/collections",
+            "button_style": "primary",
+            "heading_tag": "h2",
+            "heading_size": "h1",
+            "text_alignment": "text-md-center text-lg-center",
+            "use_overlay": true,
+            "colors_overlay": "#0b0b0b",
+            "overlay_opacity": 0.3,
+            "margin_top": 0,
+            "margin_bottom": 0,
+            "image_height_mobile": "h-mb-450",
+            "text_alignment_mobile": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "product_YLmh38",
+        "content_left_d98d6k"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "reverse_mobile": true,
+        "use_custom_colors": true,
+        "color_text": "#f5f5f5",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_blog_m3TfmY": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "preheading": "",
+        "heading": "OUR BLOG",
+        "subheading": "",
+        "heading_size": "h3",
+        "heading_tag": "h2",
+        "heading_alignment": "text-center",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "post_limit": 5,
+        "blog_show_date": true,
+        "blog_show_excerpt": false,
+        "blog_show_comment": false,
+        "blog_show_read_more": false,
+        "show_view_all": true,
+        "button_style": "primary",
+        "enable_slider": true,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 4,
+        "border_radius": 0,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "slideshow_v1_CanH3h",
+    "rich_text_H47icC",
+    "image_with_hotspots_iz4ACc",
+    "icon_with_text_EcfQ6N",
+    "marque_UN9zh3",
+    "featured_collection_KeyN9p",
+    "quotes_eBfqDR",
+    "featured_collection_v1_bVJ9QQ",
+    "featured_collection_v1_WxqUUd",
+    "featured_blog_m3TfmY"
+  ]
+}

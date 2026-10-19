@@ -1,0 +1,40 @@
+{% comment %}
+  Renders a product card using "Grid" style
+  Accepts:
+  - max_height: {Number} Maximum height of the product's image (required)
+  - product: {Object} Product Liquid object (required)
+  - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+  Usage:
+  {% render 'product-card-grid',
+                            product: product,
+                            image_position: image_position,
+                            image_height: image_height,
+                            show_quick_add: enable_quick_add,
+                            button_style: button_style
+                    %}
+{% endcomment %}
+<div class="col d-flex justify-content-between flex-column mb-2">
+  <div class="{% unless product.available %} product-card-sold-out{% endunless %} product-card position-relative h-100">
+    <div class="mb-3 overflow-hidden position-relative text-center">
+      <a class="full-width-link" href="{{ product.url }}">
+        <span class="d-none">{{ product.title }}</span>
+      </a>
+      {% if product.featured_media != blank %}
+      <div class="card-img-top hover-secondary-image style-hover-1 card-adapt">
+        {% render 'image', lazyload: true, image: product.featured_media, class: image_position %}
+        {% if product.media[1] != null %}
+          {% render 'image', lazyload: true, image: product.media[1], class: image_position %}
+        {% endif %}
+      </div>
+      {% endif %}
+      <div class="position-absolute top-0 start-0 ms-2 mt-2">
+        {% render 'product-badge', product: product %}
+      </div>
+    </div>
+    <div class="card-content text-center px-1 px-lg-2 pb-2">
+      <h3 class="card-product-title text-body fs-16 mb-0" aria-hidden="true">{{ product.title }}</h3>
+        {% render 'product-price-listing', product: product, style: 'large' %}
+    </div>
+  </div>
+</div>

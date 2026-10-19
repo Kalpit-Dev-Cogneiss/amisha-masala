@@ -1,0 +1,62 @@
+<div class="col-12 col-xl-4 col-xxl-3 mt-2">
+  <div class="col-sticky">
+    <nav class="p-0 flex-wrap w-100 ">
+      <div class="d-flex align-items-center justify-content-between w-100 background-white ps-3 pe-3 py-4">
+        <div class="d-flex flex-wrap align-items-center">
+          <div class="avatar me-3">
+            <div class="rounded-circle w100-text bg-dark text-white h6 d-flex align-items-center justify-content-center">
+              {{ customer.first_name | slice: 0 -}}
+              {{- customer.last_name | slice: 0 }}
+            </div>
+          </div>
+          <div class="text-start">
+            <p class="mb-0 small">{{ 'customer.hi' | t }}</p>
+            <h5 class="mb-0 h6 text-uppercase">{{ customer.name }}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="w-100 mt-2 background-white" id="nav_menu_user">
+        <ul class="ul-list-group w-100 fw-normal">
+          <li class="px-4{% if active == 'order' %} bg-light{% endif %}">
+            <a class="text-black d-flex align-items-center" href="{{ routes.account_url }}">
+              <span class="me-2 lh-1"><i class="bi bi-bag"></i></span>
+              {{ 'customer.orders.title' | t }}
+            </a>
+            <span class="small text-dark">{{ customer.orders.size }}</span>
+          </li>
+          <li class="px-4{% if active == 'address' %} bg-light{% endif %}">
+            <a
+              class="text-black d-flex align-items-center"
+              href="{{ routes.account_addresses_url }}"
+            >
+              <span class="me-2 lh-1"><i class="bi bi-geo-alt"></i></span>
+              {{ 'customer.addresses.title' | t }}
+            </a>
+            <span class="small text-dark">{{ customer.addresses_count }}</span>
+          </li>
+          <li class="px-4">
+            <a
+              class="text-black d-flex align-items-center"
+              href="{{ routes.all_products_collection_url }}"
+            >
+              <span class="me-2 lh-1"><i class="bi bi-grid"></i></span>
+              {{ 'general.continue_shopping' | t }}
+            </a>
+          </li>
+          <li class="px-4">
+            <a class="text-black d-flex align-items-center" href="{{ routes.root_url }}">
+              <span class="me-2 lh-1"><i class="bi bi-house"></i></span>
+              {{ 'general.go_to_the_homepage' | t }}
+            </a>
+          </li>
+          <li class="px-4">
+            <a class="text-black d-flex align-items-center" href="{{ routes.account_logout_url }}">
+              <span class="me-2 lh-1"><i class="bi bi-box-arrow-in-left"></i></span>
+              {{ 'customer.log_out' | t }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>

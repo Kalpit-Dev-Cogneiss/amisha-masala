@@ -1,0 +1,110 @@
+.cart-popup-wrapper {
+  display: none !important;
+}
+.bg--show-cart__drawer{
+  overflow: hidden;
+}
+
+.body-opened-pop-up .page-overlay:after,
+.body-opened-pop-up.bg--show-cart__drawer .page-overlay:after {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 0;
+}
+
+.bg--show-cart__drawer:before{
+  position: fixed;
+  content: "";
+  background-color: #00000080;
+  transition: all .45s cubic-bezier(.29,.63,.44,1);
+  height: 100%;
+  width: 100%;
+  z-index: 9999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.cart__drawer {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999999;
+  background:#FFFFFF;
+  -webkit-transition: all 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+  -moz-transition: all 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+  -ms-transition: all 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+  -o-transition: all 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+  transition: all 0.35s cubic-bezier(0.46, 0.01, 0.32, 1);
+  max-width: 100%;
+  right: -100%;
+  width: 400px;
+}
+.cart__drawer .description{
+  font-size: 16px !important;
+}
+.cart__drawer-form{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: calc(100% - 300px);
+  scrollbar-width: thin;
+}
+.cart__drawer.show-cart__drawer {
+  -webkit-transform: translateX(-400px);
+  -moz-transform: translateX(-400px);
+  -ms-transform: translateX(-400px);
+  -o-transform: translateX(-400px);
+  transform: translateX(-400px);
+  right: -400px;
+}
+
+.cart__drawer-section {
+  height: 100%;
+  background:#FFFFFF;
+}
+
+.show-cart__drawer {
+  display: block;
+}
+
+.cart__drawer-top .heading {
+  color: var(--bs-btn-primary-color);
+}
+.cart__drawer-top .close-button:after, 
+.cart__drawer-top .close-button:before {
+  background-color: var(--bs-btn-primary-color);
+}
+.cart__drawer-bottom{
+  border-top: 1px solid var(--bs-border-color);
+}
+.cart__item-options .product-option:not(:first-child):before {
+  content: "/";
+  padding: 0 3px;
+}
+
+[data-item-remove] .rm-icon {
+  display: block;
+}
+[data-item-remove] .rm-loading {
+  display: none;
+}
+
+[data-item-remove].loading .rm-icon {
+  display: none;
+}
+[data-item-remove].loading .rm-loading {
+  display: block;
+}
+.dark-mode .cart__drawer-section{
+  background: #1c1c1d;
+}
+.cart_item.fade-out {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.coupon-input-wrapper .row > [class^="col"] {
+  width: 100% !important;
+}

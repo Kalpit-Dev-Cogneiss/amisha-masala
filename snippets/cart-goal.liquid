@@ -1,0 +1,30 @@
+{% liquid
+    assign goal_value_with_cents = settings.goal_value | times: 100
+    if cart.total_price < goal_value_with_cents
+        assign percentage = cart.total_price | divided_by: settings.goal_value
+        assign goal_remaining_money = goal_value_with_cents | minus: cart.total_price | money
+        assign description = settings.not_completed_text | strip_html | replace: '[amount]', goal_remaining_money
+    else
+        assign percentage = 100
+        assign description = settings.completed_text | strip_html
+    endif
+%}
+
+<cart-goal class="cart-goal d-block text-center mb-2" data-promote="{{ settings.not_completed_text | strip_html }}" data-unlocked="{{ settings.completed_text | strip_html }}" data-treshold="{{goal_value_with_cents}}">
+    <h3 class="fs-20 description mb-2">
+        {{ description }}
+    </h3>
+    <div class="progress position-relative overflow-visible" style="height: 8px;">
+        <div
+                class="progress-bar progress-bar-animated progress-bar-striped bg-primary"
+                role="progressbar"
+                aria-valuenow="{{- cart.total_price | money_with_currency -}}"
+                aria-valuemin="0"
+                aria-valuemax="{{- goal_value_with_cents | money_with_currency -}}"
+                style="width: {{ percentage }}%"
+        ></div>
+        <div class="cart-goal-icon position-absolute top-50 translate-middle-y" style="right: {{ 100 | minus: percentage }}%">
+            <span class="badge rounded-pill bg-primary"><i class="bi bi-truck fs-16"></i></span>
+        </div>
+    </div>
+</cart-goal>

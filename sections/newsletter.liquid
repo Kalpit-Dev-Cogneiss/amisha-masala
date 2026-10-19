@@ -1,0 +1,395 @@
+{% style %}
+  .section-extras-margin-{{ section.id }} {
+  --section-margin-top: {{ section.settings.margin_top }}px;
+  --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+  .section-extras-padding-{{ section.id }} {
+  --section-padding-top: {{ section.settings.padding_top }}px;
+  --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+    {% if section.settings.use_custom_colors %}
+        .section-extras-color-{{ section.id }} {
+        --gradient-background: {% if section.settings.color_background_gradient != blank %}{{ section.settings.color_background_gradient }}{% else %}{{ section.settings.color_background }}{% endif %};
+        --color-background: {{ section.settings.color_background.red }}, {{ section.settings.color_background.green }}, {{ section.settings.color_background.blue }};
+        --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+        }
+    {% endif %}
+{% endstyle %}
+
+<div
+        class="position-relative section-extras-margin section-extras-margin-{{ section.id }}
+    {% if section.settings.use_custom_colors %} section-extras-color section-extras-color-{{ section.id }} {% endif %}
+    {% if section.settings.background_image != blank %} section-have-background-image position-relative overflow-hidden{% endif %}
+    {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}
+  "
+        {% if section.settings.custom_id != blank %}
+            id="{{ section.settings.custom_id }}"
+        {% endif %}
+>
+    <div class="section-extras-padding section-extras-padding-{{ section.id }}">
+        <div class="container page-width position-relative">
+          <div class="row {% if section.settings.enable_parallax and section.settings.background_image != blank %}row-cols-1 row-cols-sm-2{% else %} text-center d-flex justify-content-center {% endif %} d-flex">
+            {% if section.settings.enable_parallax and section.settings.background_image != blank %}
+            <div class="col h-300">
+              <div class="h-100 overflow-hidden rounded-{{ section.settings.border_radius }}">
+                <div class="h-100 jarallax"
+                     data-jarallax data-speed="{{ section.settings.speed }}" data-type="{{ section.settings.type }}"
+                     style="background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}')">
+                </div>
+              </div>
+
+            </div>
+              {% endif %}
+            <div class="{% if section.settings.enable_parallax and section.settings.background_image != blank %}col{% else %} col-12 col-lg-7{% endif %}">
+            <div class="p-3 p-lg-5">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when '@app' %}
+                    {% render block %}
+                  {% when 'heading' %}
+                    <h2 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                      {{ block.settings.heading | escape }}
+                    </h2>
+                  {% when 'paragraph' %}
+                    <div class="mb-4 rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+                  {% when 'email_form' %}
+                    <div {{ block.shopify_attributes }}>
+                      {% assign form_id = 'Contact_' | append: section.id %}
+                      {% form 'customer', id: form_id, novalidate: 'novalidate', class: 'contact-form' %}
+                        {% if form.posted_successfully? %}
+                          <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                            {{ 'general.newsletter_form.confirmation' | t }}
+                          </p>
+                        {% endif %}
+                        <input type="hidden" name="contact[tags]" value="newsletter">
+                        <div class="input-group d-flex flex-column {% if form.errors %} input-group--error{% endif %}">
+                          <input
+                                  type="email"
+                                  name="contact[email]"
+                                  id="{{ form_id }}-email"
+                                  class="mb-0 form-control w-100 mb-3 input-group__field{% if form.errors %} input--error{% endif %}"
+                                  value="{{ form.email }}"
+                                  placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                  aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                  aria-required="true"
+                                  autocorrect="off"
+                                  autocapitalize="off"
+                                  {% if form.errors %}
+                                    aria-invalid="true"
+                                    aria-describedby="{{ form_id }}-email-error"
+                                    data-form-status
+                                  {% endif %}
+                          >
+                          <button type="submit" class="btn btn-{{ block.settings.button_style }} w-100"
+                                  name="commit">
+                            <span>{{ 'general.newsletter_form.submit' | t }}</span>
+                          </button>
+                        </div>
+                        {% if form.errors contains 'email' %}
+                          <span id="{{ form_id }}-email-error" class="input-error-message">
+                  <span class="d-none">{{ 'general.accessibility.error' | t }} </span>
+                  <i class="bi bi-exclamation-circle"></i>
+                  <span>
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email }}.</span
+                  >
+                </span>
+                        {% endif %}
+                      {% endform %}
+                    </div>
+                {% endcase %}
+              {% endfor %}
+            </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.newsletter.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header"
+    ]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.newsletter.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.color_options.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_colors",
+      "default": false,
+      "label": "t:sections.all.color_options.use_custom_colors"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "t:sections.all.color_options.color_background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "color_background_gradient",
+      "label": "t:sections.all.color_options.color_background_gradient"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.image.background_image.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_parallax",
+      "label": "t:sections.all.image.background_image.enable_parallax.label",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.image.background_image.label"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "default": 0,
+      "label": "t:sections.all.border.border_radius"
+    },
+    {
+      "type": "select",
+      "id": "type",
+      "options": [
+        {
+          "value": "scroll",
+          "label": "t:sections.all.parallax.type.option_1"
+        },
+        {
+          "value": "scale",
+          "label": "t:sections.all.parallax.type.option_2"
+        },
+        {
+          "value": "opacity",
+          "label": "t:sections.all.parallax.type.option_3"
+        },
+        {
+          "value": "scroll-opacity",
+          "label": "t:sections.all.parallax.type.option_4"
+        },
+        {
+          "value": "scale-opacity",
+          "label": "t:sections.all.parallax.type.option_5"
+        }
+      ],
+      "default": "scroll",
+      "label": "t:sections.all.parallax.type.label"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": -1,
+      "max": 2,
+      "step": 0.1,
+      "label": "t:sections.all.parallax.speed",
+      "default": 0.5
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.custom.header"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "t:sections.all.custom.custom_id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "t:sections.all.custom.custom_class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.newsletter.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Subscribe to our emails",
+          "label": "t:sections.newsletter.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.newsletter.blocks.paragraph.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Be the first to know about new collections and exclusive offers.</p>",
+          "label": "t:sections.newsletter.blocks.paragraph.settings.paragraph.label"
+        }
+      ]
+    },
+    {
+      "type": "email_form",
+      "name": "t:sections.newsletter.blocks.email_form.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.all.button.button_style.options__1.label"
+            },
+            {
+              "value": "outline-primary",
+              "label": "t:sections.all.button.button_style.options__2.label"
+            },
+            {
+              "value": "light",
+              "label": "t:sections.all.button.button_style.options__3.label"
+            },
+            {
+              "value": "dark",
+              "label": "t:sections.all.button.button_style.options__4.label"
+            },
+            {
+              "value": "outline",
+              "label": "t:sections.all.button.button_style.options__5.label"
+            },
+            {
+              "value": "link hover-underline",
+              "label": "t:sections.all.button.button_style.options__6.label"
+            }
+          ],
+          "default": "primary",
+          "label": "t:sections.all.button.button_style.label"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.newsletter.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "paragraph"
+        },
+        {
+          "type": "email_form"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

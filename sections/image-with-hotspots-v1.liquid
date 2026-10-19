@@ -1,0 +1,387 @@
+{% style %}
+    .section-extras-margin-{{ section.id }} {
+    --section-margin-top: {{ section.settings.margin_top }}px;
+    --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  {% if section.settings.use_custom_colors %}
+    .section-extras-color-{{ section.id }} {
+    --gradient-background: {% if section.settings.color_background_gradient != blank %}{{ section.settings.color_background_gradient }}{% else %}{{ section.settings.color_background }}{% endif %};
+    --color-background: {{ section.settings.color_background.red }}, {{ section.settings.color_background.green }}, {{ section.settings.color_background.blue }};
+    --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+    }
+  {% endif %}
+    {% if section.settings.use_overlay %}
+        .card-overlay-{{ section.id }} {
+        --color-overlay: {{ section.settings.colors_overlay.red }}, {{ section.settings.colors_overlay.green }}, {{ section.settings.colors_overlay.blue }};
+        --color-overlay-opacity: {{ section.settings.overlay_opacity }};
+        }
+    {% endif %}
+{% endstyle %}
+<div
+        class="position-relative overflow-hidden
+    card-image-with-hotspots-v1 section-extras-margin section-extras-margin-{{ section.id }} {% if section.settings.use_custom_colors %} section-extras-color section-extras-color-{{ section.id }} {% endif %}
+    {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}
+  "
+        {% if section.settings.custom_id != blank %}
+            id="{{ section.settings.custom_id }}"
+        {% endif %}
+>
+    <div class="{{ section.settings.layout }} position-relative">
+        <div
+                class="cs-card card-banner card-banner-one {{ section.settings.style }} {{ section.settings.style_hover }}"
+        >
+            <div
+                    class="
+      clearfix position-relative overflow-hidden"
+            >
+                <div class="row d-flex align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="position-relative">
+                            <div class="card-img-top lh-0 d-block overflow-hidden{% if section.settings.use_overlay %} card-overlay card-overlay-{{ section.id }}{% endif %}">
+                                {% if section.settings.image != blank %}
+                                    <div class="media-wrap {% if section.settings.image_mobile != blank or section.settings.video_mobile != blank %}d-none d-md-block{% endif %}">
+                                        {% render 'image-lg', lazyload: true, image: section.settings.image, class: 'w-100' %}
+                                    </div>
+                                {% else %}
+                                    <div class="media-wrap {% if section.settings.image_mobile != blank or section.settings.video_mobile != blank %}d-none d-md-block{% endif %}">
+                                        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                          {% for block in section.blocks %}
+                            {% if block.settings.product != blank %}
+                              <div class="item-hotspots item-hotspots-style" {{ block.shopify_attributes }}
+                                   style="--bs-hotspot-vertical-position: {{ block.settings.vertical_position }}%;
+                                           --bs-hotspot-horizontal-position: {{ block.settings.horizontal_position }}%;">
+                                <button class="item-hotspots-btn btn-icon-plus btn-icon-plus-style"><i
+                                          class="bi bi-plus"></i></button>
+                                <div class="content-hotspots content-hotspots-style">
+                                  <button class="btn-close-modal btn-close-modal-style"><i
+                                            class="bi bi-plus"></i></button>
+                                  <div class="content-inner">
+                                    {% render 'product-card-list-small',
+                                            product: block.settings.product,
+                                            image_height: 'adapt'
+                                    %}
+                                  </div>
+                                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="px-3 px-lg-5 py-5">
+                            {% render 'heading',
+                                    heading: section.settings.heading,
+                                    heading_tag: section.settings.heading_tag,
+                                    heading_size: section.settings.heading_size,
+                                    preheading: section.settings.preheading,
+                                    subheading: section.settings.subheading
+                            %}
+                            <div class="row row-cols-2 row-cols-sm-3 gx-2 gx-xl-4">
+                                {% for product in section.settings.products %}
+                                    <div class="mb-4">
+                                        {% render 'product-card-grid',
+                                                product: product,
+                                                image_height: 'adapt',
+                                                style_product: 'style-1',
+                                                show_quick_add: true
+                                        %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.image-with-hotspots-v1.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "container page-width",
+          "label": "t:sections.all.layout.options__1.label"
+        },
+        {
+          "value": "container container-inner",
+          "label": "t:sections.all.layout.options__2.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.all.layout.options__3.label"
+        },
+        {
+          "value": "full-width",
+          "label": "t:sections.all.layout.options__4.label"
+        }
+      ],
+      "default": "full-width",
+      "label": "t:sections.all.layout.header"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.all.image.label"
+    },
+    {
+      "type": "text",
+      "id": "preheading",
+      "default": "New in",
+      "label": "t:sections.all.heading.preheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "default": "<p>Sale Off 30%</p>",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "label": "t:sections.all.product.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.settings.header"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_tag.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_tag.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_tag.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_tag.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_tag.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_tag.options__6.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_tag.label",
+      "info": "t:sections.all.heading_tag.info"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h-custom-v1",
+          "label": "t:sections.all.heading_size.options__custom1.label"
+        },
+        {
+          "value": "h-custom",
+          "label": "t:sections.all.heading_size.options__custom.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__0.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_size.options__6.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.color_options.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_colors",
+      "default": true,
+      "label": "t:sections.all.color_options.use_custom_colors"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "t:sections.all.color_options.color_background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color_background",
+      "id": "color_background_gradient",
+      "label": "t:sections.all.color_options.color_background_gradient"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_overlay",
+      "default": false,
+      "label": "t:sections.all.colors.use_overlay.label"
+    },
+    {
+      "type": "color",
+      "id": "colors_overlay",
+      "label": "t:sections.all.colors.colors_overlay.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "label": "t:sections.all.colors.overlay_opacity.label",
+      "default": 0.3
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.custom.header"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "t:sections.all.custom.custom_id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "t:sections.all.custom.custom_class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hotspots",
+      "name": "t:sections.image-with-hotspots-v1.block.label",
+      "settings": [
+        {
+          "type": "range",
+          "id": "vertical_position",
+          "label": "t:sections.image-with-hotspots-v1.block.vertical_label",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50,
+          "unit": "%"
+        },
+        {
+          "type": "range",
+          "id": "horizontal_position",
+          "label": "t:sections.image-with-hotspots-v1.block.horizontal_label",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 50,
+          "unit": "%"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.all.product.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.image-with-hotspots-v1.presets.name",
+      "blocks": [
+        {
+          "type": "hotspots",
+          "settings": {
+            "vertical_position": 25,
+            "horizontal_position": 25
+          }
+        },
+        {
+          "type": "hotspots",
+          "settings": {
+            "vertical_position": 75,
+            "horizontal_position": 75
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

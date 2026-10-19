@@ -1,0 +1,326 @@
+<script src="{{ 'copy-text.js' | asset_url }}" defer="defer"></script>
+
+{% if section.settings.show %}
+  <div class="announcement-bar-wrap">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'marque' %}
+          {% style %}
+            {% if block.settings.use_custom_colors %}
+              .block-extras-color-{{ block.id }} {
+              --gradient-background-block: {% if block.settings.color_background_gradient != blank %}{{ block.settings.color_background_gradient }}{% else %}{{ block.settings.color_background }}{% endif %};
+              --color-background-block: {{ block.settings.color_background.red }}, {{ block.settings.color_background.green }}, {{ block.settings.color_background.blue }};
+              --color-foreground-block: {{ block.settings.color_text.red }}, {{ block.settings.color_text.green }}, {{ block.settings.color_text.blue }};
+              }
+            {% endif %}
+          {% endstyle %}
+          <div class="marque-container overflow-hidden d-flex flex-row py-1 {% if block.settings.use_custom_colors %}block-extras-color block-extras-color-{{ block.id }}  {% endif %}">
+            <div
+                    class="marque overflow-hidden d-flex flex-row align-items-center"
+                    style="animation: kf-marque {{ block.settings.time }}s linear 0s  infinite;"
+            >
+              <div class="marque-content overflow-hidden remove-spacing">
+                {{ block.settings.content }}
+              </div>
+            </div>
+            <div
+                    class="marque overflow-hidden d-flex flex-row align-items-center"
+                    style="animation: kf-marque {{ block.settings.time }}s linear 0s  infinite;"
+            >
+              <div class="marque-content overflow-hidden remove-spacing">
+                {{ block.settings.content }}
+              </div>
+            </div>
+          </div>
+
+        {% when 'image' %}
+          {% if block.settings.image_link %}
+            <a class="d-block lh-0" href="{{ block.settings.image_link }}" {{ block.shopify_attributes }}>
+          {% endif %}
+          {% if block.settings.image %}
+            {% render 'image', lazyload: true, image: block.settings.image %}
+          {% endif %}
+          {% if block.settings.image_link %}
+            </a>
+          {% endif %}
+        {% when 'announcement' %}
+          {% style %}
+            {% if block.settings.use_custom_colors %}
+              .block-extras-color-{{ block.id }} {
+              --gradient-background-block: {% if block.settings.color_background_gradient != blank %}{{ block.settings.color_background_gradient }}{% else %}{{ block.settings.color_background }}{% endif %};
+              --color-background-block: {{ block.settings.color_background.red }}, {{ block.settings.color_background.green }}, {{ block.settings.color_background.blue }};
+              --color-foreground-block: {{ block.settings.color_text.red }}, {{ block.settings.color_text.green }}, {{ block.settings.color_text.blue }};
+              }
+            {% endif %}
+          {% endstyle %}
+          <div
+                  class="announcement-bar text-center py-2 position-relative {% if block.settings.use_custom_colors %}block-extras-color block-extras-color-{{ block.id }}  {% endif %}"
+                  {{ block.shopify_attributes }}
+          >
+            <div class="announcement-bar-inner px-5">
+              <div class="text position-relative">
+                {% if block.settings.button_link != blank %}
+                  <a class="full-width-link" href="{{ block.settings.button_link }}"></a>
+                {% endif %}
+                {% if block.settings.text != blank %}
+                  <p class="fs-12-767 mb-1 fs-14 fw-bold text-uppercase">{{ block.settings.text }}</p>
+                {% endif %}
+                {% if block.settings.subtext != blank %}
+                  <div class="remove-spacing fs-12-767">{{ block.settings.subtext }}</div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="js-close icon-close position-absolute end-0 p-2">
+              <span class="close-button"> </span>
+            </div>
+          </div>
+
+        {% when 'code' %}
+          {% style %}
+            {% if block.settings.use_custom_colors %}
+              .block-extras-color-{{ block.id }} {
+              --gradient-background-block: {% if block.settings.color_background_gradient != blank %}{{ block.settings.color_background_gradient }}{% else %}{{ block.settings.color_background }}{% endif %};
+              --color-background-block: {{ block.settings.color_background.red }}, {{ block.settings.color_background.green }}, {{ block.settings.color_background.blue }};
+              --color-foreground-block: {{ block.settings.color_text.red }}, {{ block.settings.color_text.green }}, {{ block.settings.color_text.blue }};
+              }
+            {% endif %}
+          {% endstyle %}
+          <div
+                  class="announcement-bar-code text-center py-2 position-relative {% if block.settings.use_custom_colors %}block-extras-color block-extras-color-{{ block.id }}  {% endif %}"
+                  {{ block.shopify_attributes }}
+          >
+            <div class="announcement-bar-inner px-2">
+              <div class="d-flex align-items-center flex-wrap justify-content-center">
+                {% if block.settings.text != blank %}
+                  <p class="fs-12-767 mb-1 fs-14">{{ block.settings.text }}</p>
+                {% endif %}
+                <div class="d-flex flex-nowrap align-items-center">
+                  <code-copier class="input-group d-flex align-items-center w-auto ms-3 me-2 py-1">
+                    <input class="custom-code" type="text" value="{{ block.settings.code | strip_html }}" data-js-code>
+                    <button class="btn btn-white text-primary mw-auto rounded-0 py-2 px-3 fs-12" data-js-btn data-success="{{ block.settings.code_active }}" data-default="{{ block.settings.code_button }}">
+                      {{ block.settings.code_button }}
+                    </button>
+                  </code-copier>
+
+                  {% if block.settings.time != '' %}
+                    <countdown-timer class="js-time bg-white px-2 px-lg-3">
+                      <input class="d-none js-date" type="date" value="{{ block.settings.time }}">
+                      <p class="mb-0 text-primary fs-14 js-countdown"></p>
+                    </countdown-timer>
+                  {% endif %}
+                </div>
+
+              </div>
+            </div>
+            <div class="js-close icon-close position-absolute end-0 top-0 p-2">
+              <span class="close-button"> </span>
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "default": true,
+      "label": "t:sections.announcement-bar.settings.show-announcement.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "code",
+      "name": "t:sections.announcement-bar.blocks.code.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Up to 20% OFF. Use Coupon",
+          "label": "t:sections.announcement-bar.blocks.code.settings.text.label"
+        },
+        {
+          "type": "text",
+          "id": "code",
+          "default": "FREESHIP20",
+          "label": "t:sections.announcement-bar.blocks.code.settings.code.label"
+        },
+        {
+          "type": "text",
+          "id": "code_button",
+          "default": "COPY",
+          "label": "t:sections.announcement-bar.blocks.code.settings.code_button.label"
+        },
+        {
+          "type": "text",
+          "id": "code_active",
+          "default": "COPIED",
+          "label": "t:sections.announcement-bar.blocks.code.settings.code_active.label"
+        },
+        {
+          "type": "text",
+          "id": "time",
+          "label": "t:sections.announcement-bar.blocks.code.settings.time.label",
+          "default": "2026-01-01",
+          "info": "t:sections.announcement-bar.blocks.code.settings.time.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.color_options.header"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_custom_colors",
+          "default": false,
+          "label": "t:sections.all.color_options.use_custom_colors"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "t:sections.all.color_options.color_text",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "t:sections.all.color_options.color_background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color_background",
+          "id": "color_background_gradient",
+          "label": "t:sections.all.color_options.color_background_gradient"
+        }
+      ]
+    },
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "20% Off for black style",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Shop over 180 USD and get a Jump Rope (valued at 29 USD) with your order. *Offer valid until stocks last.</p>",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.subtext.label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.button_link.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.color_options.header"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_custom_colors",
+          "default": false,
+          "label": "t:sections.all.color_options.use_custom_colors"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "t:sections.all.color_options.color_text",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "t:sections.all.color_options.color_background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color_background",
+          "id": "color_background_gradient",
+          "label": "t:sections.all.color_options.color_background_gradient"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.announcement-bar.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.all.image.label"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "t:sections.announcement-bar.blocks.image.settings.image_link.label"
+        }
+      ]
+    },
+    {
+      "type": "marque",
+      "name": "t:sections.all.marque.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "default": "<p>Shop over 180 USD and get a Jump Rope (valued at 29 USD) with your order. *Offer valid until stocks last.</p>",
+          "label": "t:sections.all.content.name"
+        },
+        {
+          "type": "range",
+          "id": "time",
+          "min": 1,
+          "max": 100,
+          "step": 1,
+          "unit": "s",
+          "default": 30,
+          "label": "t:sections.all.marque.settings.time"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.color_options.header"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_custom_colors",
+          "default": false,
+          "label": "t:sections.all.color_options.use_custom_colors"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "t:sections.all.color_options.color_text",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "color_background",
+          "label": "t:sections.all.color_options.color_background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "color_background",
+          "id": "color_background_gradient",
+          "label": "t:sections.all.color_options.color_background_gradient"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "announcement"
+      }
+    ]
+  }
+}
+{% endschema %}

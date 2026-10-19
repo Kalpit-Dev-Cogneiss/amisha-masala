@@ -1,0 +1,204 @@
+.animation-left-to-right .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(-40px, 0, 0);
+    opacity: 0;
+}
+
+.animation-left-to-right .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(-40px, 0, 0);
+}
+
+.animation-left-to-right .sub-3 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(-40px, 0, 0);
+    opacity: 0;
+}
+
+.animation-left-to-right .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(-40px, 0, 0);
+    opacity: 0;
+}
+
+.animation-right-to-left .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-right-to-left .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(70px, 0, 0);
+}
+
+.animation-right-to-left .sub-3 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-right-to-left .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+.animation-right-to-left-short .sub-1 {
+    transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-right-to-left-short .sub-2 {
+    opacity: 0;
+    transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(70px, 0, 0);
+}
+
+.animation-right-to-left-short .sub-3 {
+    transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-right-to-left-short .sub-4 {
+    transition: all .5s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-top-to-bottom .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(0, -20%, 0);
+    opacity: 0;
+}
+
+.animation-top-to-bottom .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(0, -20%, 0);
+}
+
+.animation-top-to-bottom .sub-3 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(0, -20%, 0);
+}
+
+.animation-top-to-bottom .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(0, -20%, 0);
+    opacity: 0;
+}
+
+.animation-bottom-to-top .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+.animation-bottom-to-top .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(0, 40px, 0);
+}
+
+.animation-bottom-to-top .sub-3 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(0, 40px, 0);
+}
+
+.animation-bottom-to-top .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+
+.animation-left-right-odds .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.25s;
+    transform: translate3d(-40px, 0, 0);
+    opacity: 0;
+}
+
+.animation-left-right-odds .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.35s;
+    transform: translate3d(70px, 0, 0);
+}
+
+.animation-left-right-odds .sub-3 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.45s;
+    transform: translate3d(-40px, 0, 0);
+}
+
+.animation-left-right-odds .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.55s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-random .sub-1 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
+    transform: translate3d(0, -40px, 0);
+    opacity: 0;
+}
+
+.animation-random .sub-2 {
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
+    transform: translate3d(-40px, 0, 0);
+}
+
+.animation-random .sub-3 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
+    transform: translate3d(70px, 0, 0);
+    opacity: 0;
+}
+
+.animation-random .sub-4 {
+    transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1) .5s;
+    transform: translate3d(0, 40px, 0);
+    opacity: 0;
+}
+.hero-slider.style-v1 .image-wrap-1{
+    transform: translateX(-30px);
+    transition: all .4s;
+}
+.hero-slider.style-v1 .image-wrap-2{
+    transform: translateX(30px);
+    transition: all .4s;
+}
+.swiper-slide.swiper-slide-active .animation-active .sub-1,
+.swiper-slide.swiper-slide-active .animation-active .sub-2,
+.swiper-slide.swiper-slide-active .animation-active .sub-3,
+.swiper-slide.swiper-slide-active .animation-active .sub-4 {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+
+.hero-slider.style-v1 .swiper-slide.swiper-slide-active .image-wrap-2,
+.hero-slider.style-v1 .swiper-slide.swiper-slide-active .image-wrap-1{
+    transform: translateX(0);
+}
+.hero-slider.style-v1 .swiper-slide .card-img-top img,.hero-slider.style-v1 .swiper-slide .card-img-top video {
+    transform: scale(1.1);
+    transition: all 2s;
+
+}
+
+.hero-slider.style-v1 .swiper-slide.swiper-slide-active .card-img-top img {
+    transform: scale(1);
+}
+
+.hero-slider.style-v1 .swiper-slide.swiper-slide-active .card-img-top video {
+    transform: scale(1);
+}
+.swiper-slide.swiper-slide-active .card-banner-hero-v2 {
+    &::after{
+        height: 100%;
+    }
+}

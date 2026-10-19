@@ -1,0 +1,507 @@
+{% style %}
+    .section-extras-spacing-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-margin-top: {{ section.settings.margin_top }}px;
+    --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+    {% if section.settings.use_custom_colors %}
+        .section-extras-color-{{ section.id }} {
+        --gradient-background: {% if section.settings.color_background_gradient != blank %}{{ section.settings.color_background_gradient }}{% else %}{{ section.settings.color_background }}{% endif %};
+        --color-background: {{ section.settings.color_background.red }}, {{ section.settings.color_background.green }}, {{ section.settings.color_background.blue }};
+        --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+        }
+    {% endif %}
+{% endstyle %}
+
+<div
+        class="position-relative banner-creative-v4 overflow-hidden section-extras-spacing section-extras-spacing-{{ section.id }}
+
+    {% if section.settings.custom_class != blank %} {{ section.settings.custom_class }}{% endif %}
+  "
+        {% if section.settings.custom_id != blank %}
+            id="{{ section.settings.custom_id }}"
+        {% endif %}
+>
+    <div class="{{ section.settings.layout }}">
+
+        <div class="cs-section-header {{ section.settings.heading_alignment }}">
+            {% render 'heading',
+                    heading: section.settings.heading,
+                    class: 'heading',
+                    heading_alignment: section.settings.heading_alignment,
+                    heading_tag: section.settings.heading_tag,
+                    heading_size: section.settings.heading_size,
+                    preheading: section.settings.preheading,
+                    subheading: section.settings.subheading
+            %}
+        </div>
+        <div class="creative-banner {% if section.settings.use_custom_colors %} section-extras-color section-extras-color-{{ section.id }} {% endif %}">
+            <div class="row row-cols-1 row-cols-lg-2 row-height" style="min-height: {{ section.settings.banner_height }}px">
+                <div class="col col-height" style="min-height: {{ section.settings.banner_height }}px;">
+                    <div class="item-1 position-relative h-100 hover-style-1 card-hover-overlay-dark">
+                        {% if section.settings.button_link_1 %}
+                            <a class="full-width-link" href="{{ section.settings.button_link_1 }}">
+                                <span class="d-none">{{ section.settings.heading_1 }}</span>
+                            </a>
+                        {% endif %}
+                        {% if section.settings.image_1 != blank %}
+                            {% render 'image', lazyload: true, image: section.settings.image_1 %}
+                        {% else %}
+                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                        {% endif %}
+                        {% if section.settings.heading_1 != '' or section.settings.subheading_1 != '' %}
+                        <div class="card-content position-absolute bottom-0 start-0 z-2 p-4">
+                          {% if section.settings.heading_1 != '' %}
+                          <h3 class="h3 mb-0">{{ section.settings.heading_1 }}</h3>
+                          {% endif %}
+                          {% if section.settings.subheading_1 != '' %}
+                            <div class="rte rte-custom mt-2">{{ section.settings.subheading_1 }}</div>
+                          {% endif %}
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row row-cols-1 h-100">
+                        <div class="col mb-4 h-50">
+                            <div class="item-2 position-relative h-100 hover-style-1 card-hover-overlay-dark">
+                                {% if section.settings.button_link_2 %}
+                                    <a class="full-width-link" href="{{ section.settings.button_link_2 }}">
+                                        <span class="d-none">{{ section.settings.heading_2 }}</span>
+                                    </a>
+                                {% endif %}
+                                {% if section.settings.image_2 != blank %}
+                                    {% render 'image', lazyload: true, image: section.settings.image_2 %}
+                                {% else %}
+                                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                                {% endif %}
+                              {% if section.settings.heading_2 != '' or section.settings.subheading_2 != '' %}
+                                <div class="card-content position-absolute bottom-0 start-0 z-2 p-4">
+                                  {% if section.settings.heading_2 != '' %}
+                                    <h3 class="h3 mb-0">{{ section.settings.heading_2 }}</h3>
+                                  {% endif %}
+                                  {% if section.settings.subheading_2 != '' %}
+                                    <div class="rte rte-custom mt-2">{{ section.settings.subheading_2 }}</div>
+                                  {% endif %}
+                                </div>
+                              {% endif %}
+                            </div>
+                        </div>
+                        <div class="col h-50">
+                            <div class="row row-cols-1 row-cols-sm-2 h-100">
+                                <div class="col mb-4">
+                                    <div class="item-3 position-relative h-100 hover-style-1 card-hover-overlay-dark">
+                                        {% if section.settings.button_link_3 %}
+                                            <a class="full-width-link" href="{{ section.settings.button_link_3 }}">
+                                                <span class="d-none">{{ section.settings.heading_3 }}</span>
+                                            </a>
+                                        {% endif %}
+                                        {% if section.settings.image_3 != blank %}
+                                            {% render 'image', lazyload: true, image: section.settings.image_3 %}
+                                        {% else %}
+                                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                                        {% endif %}
+                                      {% if section.settings.heading_3 != '' or section.settings.subheading_3 != '' %}
+                                        <div class="card-content position-absolute bottom-0 start-0 z-2 p-4">
+                                          {% if section.settings.heading_3 != '' %}
+                                            <h3 class="h4 mb-0">{{ section.settings.heading_3 }}</h3>
+                                          {% endif %}
+                                          {% if section.settings.subheading_3 != '' %}
+                                            <div class="rte rte-custom mt-2">{{ section.settings.subheading_3 }}</div>
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col mb-4">
+                                    <div class="item-4 position-relative h-100 hover-style-1 card-hover-overlay-dark">
+                                        {% if section.settings.button_link_4 %}
+                                            <a class="full-width-link" href="{{ section.settings.button_link_4 }}">
+                                                <span class="d-none">{{ section.settings.heading_4 }}</span>
+                                            </a>
+                                        {% endif %}
+                                        {% if section.settings.image_4 != blank %}
+                                            {% render 'image', lazyload: true, image: section.settings.image_4 %}
+                                        {% else %}
+                                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                                        {% endif %}
+                                      {% if section.settings.heading_4 != '' or section.settings.subheading_4 != '' %}
+                                        <div class="card-content position-absolute bottom-0 start-0 z-2 p-4">
+                                          {% if section.settings.heading_4 != '' %}
+                                            <h3 class="h4 mb-0">{{ section.settings.heading_4 }}</h3>
+                                          {% endif %}
+                                          {% if section.settings.subheading_4 != '' %}
+                                            <div class="rte rte-custom mt-2">{{ section.settings.subheading_4 }}</div>
+                                          {% endif %}
+                                        </div>
+                                      {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.banner-creative-v4.name",
+  "tag": "section",
+  "disabled_on": {
+    "groups": [
+      "header"
+    ]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.layout.header"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "container page-width",
+          "label": "t:sections.all.layout.options__1.label"
+        },
+        {
+          "value": "container container-inner",
+          "label": "t:sections.all.layout.options__2.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.all.layout.options__3.label"
+        },
+        {
+          "value": "full-width",
+          "label": "t:sections.all.layout.options__4.label"
+        }
+      ],
+      "default": "container page-width",
+      "label": "t:sections.all.layout.header"
+    },
+    {
+      "type": "range",
+      "id": "banner_height",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "default": 500,
+      "label": "t:sections.banner-creative-v4.height"
+    },
+    {
+      "type": "text",
+      "id": "preheading",
+      "default": "New in",
+      "label": "t:sections.all.heading.preheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h-custom",
+          "label": "t:sections.all.heading_size.options__custom.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__0.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_size.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_size.options__6.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_tag.options__1.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_tag.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_tag.options__3.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_tag.options__4.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_tag.options__5.label"
+        },
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_tag.options__6.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_tag.label",
+      "info": "t:sections.all.heading_tag.info"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "t:sections.all.heading_alignment.label",
+      "options": [
+        {
+          "value": "text-start",
+          "label": "t:sections.all.heading_alignment.options__1.label"
+        },
+        {
+          "value": "text-center",
+          "label": "t:sections.all.heading_alignment.options__2.label"
+        },
+        {
+          "value": "text-end",
+          "label": "t:sections.all.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "text-center"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.settings.item_1.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "t:sections.all.image.label"
+    },
+    {
+      "type": "text",
+      "id": "heading_1",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading_1",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "default": "/collections/all",
+      "label": "t:sections.all.button.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.settings.item_2.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:sections.all.image.label"
+    },
+    {
+      "type": "text",
+      "id": "heading_2",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading_2",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "default": "/collections/all",
+      "label": "t:sections.all.button.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.settings.item_3.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "t:sections.all.image.label"
+    },
+    {
+      "type": "text",
+      "id": "heading_3",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading_3",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "url",
+      "id": "button_link_3",
+      "default": "/collections/all",
+      "label": "t:sections.all.button.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.settings.item_4.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_4",
+      "label": "t:sections.all.image.label"
+    },
+    {
+      "type": "text",
+      "id": "heading_4",
+      "default": "Image with text",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading_4",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "url",
+      "id": "button_link_4",
+      "default": "/collections/all",
+      "label": "t:sections.all.button.button_link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.color_options.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_colors",
+      "default": false,
+      "label": "t:sections.all.color_options.use_custom_colors"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "t:sections.all.color_options.color_background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color_background",
+      "id": "color_background_gradient",
+      "label": "t:sections.all.color_options.color_background_gradient"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.custom.header"
+    },
+    {
+      "type": "text",
+      "id": "custom_id",
+      "label": "t:sections.all.custom.custom_id"
+    },
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "t:sections.all.custom.custom_class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.banner-creative-v4.presets.name"
+    }
+  ]
+}
+{% endschema %}

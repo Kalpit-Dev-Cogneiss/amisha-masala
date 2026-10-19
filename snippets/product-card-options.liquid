@@ -1,0 +1,43 @@
+{% assign keys = settings.product_options_color | split: ',' %}
+{% for key in keys %}
+    {% if product.options contains key %}
+        <div class="show-options d-flex flex-wrap align-items-center mt-2 {{ class }}">
+            {% for color_option in product.options_by_name[key].values %}
+                {% for variant in product.variants %}
+                    {% if variant.options contains color_option %}
+                        {% assign variant_title = color_option %}
+                        {% if variant.image %}
+                            {% assign variant_image = variant.image | image_url: width: 28 %}
+                            {% assign variant_image_full = variant.image | image_url: width: 1200 %}
+                            {% assign background_style = 'url(' | append: variant_image | append: ')' %}
+                        {% else %}
+                            {% assign background_style = color_option %}
+                        {% endif %}
+                        {% if variant.metafields.color.swatch %}
+                            {% assign background_style = variant.metafields.color.swatch %}
+                        {% endif %}
+                        {% if variant.metafields.image.swatch %}
+                            {% assign background_style = 'url(' | append: variant.metafields.image.swatch | append: ')' %}
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+
+                {% assign variants_length = forloop.length %}
+                <div class="html_color_names mb-1 me-1" {% if forloop.index > 4 %}style="display: none;"{% endif %}
+                     data-image-hover="{{ variant_image_full }}">
+          <span
+                  class="b_swatch_type_html_color_names"
+                  style="background: {{ background_style }} center center no-repeat;"
+                  data-color="{{ variant_title | handle }}"
+          ></span>
+                </div>
+            {% endfor %}
+
+            {% if variants_length > 4 %}
+                <div class="fs-12">+{{ variants_length | minus: 4 }}</div>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endfor %}
+
+

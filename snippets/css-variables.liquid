@@ -1,0 +1,85 @@
+{% comment %}
+  This is used to create CSS custom variables with Liquid references
+  The file variables.scss is referring these CSS custom variables as Sass variables
+  to use throughout the stylesheet
+{% endcomment %}
+{% style %}
+    :root, [data-bs-theme=light] {
+    --page-width: {{ settings.page_width }}px;
+    --bs-body-font-family: {{ settings.type_base_font.family }}, {{ settings.type_base_font.fallback_families }};
+    --bs-font-body-style: {{ settings.type_base_font.style }};
+    --bs-body-font-weight: {{ settings.type_base_font.weight }};
+
+    --bs-font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+    --bs-font-heading-style: {{ settings.type_header_font.style }};
+    --bs-font-heading-weight: {{ settings.type_header_font.weight }};
+
+    --bs-font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+    --bs-font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+    --bs-font-navigation-family: var(--bs-font-{{ settings.type_font }}-family);
+    --bs-font-product-card-family: var(--bs-font-{{ settings.type_card_product_font }}-family);
+    --bs-font-navigation-size: {{ settings.type_navigation_size }}px;
+    --bs-font-navigation-weight: var(--bs-font-{{ settings.type_font }}-weight);
+    --bs-font-button-family: var(--bs-font-{{ settings.type_button_font }}-family);
+    --bs-font-button-size: {{ settings.type_button_size }}px;
+    --bs-buttons-text-style: {{ settings.buttons_text_style }};
+    --bs-body-color: #212529;
+    --bs-body-color-rgb: 33, 37, 41;
+    --bs-nav-link-color: #222;
+    --bs-primary: {{ settings.color_primary }};
+    --bs-body-bg: {{ settings.body_bg }};
+    --bs-body-color: {{ settings.body_color }};
+    --bs-body-bg-rgb: {{ settings.body_bg.red }}, {{ settings.body_bg.green }}, {{ settings.body_bg.blue }};
+    --bs-body-color-rgb: {{ settings.body_color.red }}, {{ settings.body_color.green }}, {{ settings.body_color.blue }};
+    --bs-border-color: {{ settings.color_border_main }};
+    --bs-color-border-card: {{ settings.color_border }};
+    --bs-bg-card-product: {{ settings.background_card }};
+    --bs-bg-card-product-gradient: {% if settings.background_card_gradient != blank %}{{ settings.background_card_gradient }}{% else %}{{ settings.background_card }}{% endif %};
+    --bs-btn-primary-color: {{ settings.button_color_primary }};
+    --bs-primary-rgb: {{ settings.color_primary | color_to_rgb | remove: 'rgb(' | remove: 'rgba(' | remove: ')' | remove: ', 0.0' }};
+    --bs-heading-h0: 5rem;
+    --bs-btn-color-primary: #000;
+    --bs-bg-mode: #000000;
+    --bs-color-mode: #ffffff;
+    --bs-link-color: #000;
+    --bs-link-color-rgb: 0, 0, 0;
+    --bs-link-decoration: underline;
+    --bs-link-hover-color: #0c1c01;
+    --bs-link-hover-color-rgb: 12, 28, 1;
+    --bs-success-bg-subtle: #abfdd8;
+    --font-size-header: {{ settings.type_header_base_size }}px;
+    --font-size-base: {{ settings.type_base_size }}px;
+    --font-h0-desktop: {{ settings.type_header_base_size | times: 5 | floor }}px;
+    --font-h1-desktop: {{ settings.type_header_base_size | times: 3 | floor }}px;
+    --font-h2-desktop: {{ settings.type_header_base_size | times: 2.5 | floor }}px;
+    --font-h3-desktop: {{ settings.type_header_base_size | times: 2 | floor }}px;
+    --font-h4-desktop: {{ settings.type_header_base_size | times: 1.7 | floor }}px;
+    --font-h5-desktop: {{ settings.type_header_base_size | times: 1.5 | floor }}px;
+    --font-h6-desktop: {{ settings.type_header_base_size | times: 1.2 | floor }}px;
+    --font-h0-mobile: {{ settings.type_header_base_size | times: 3 | floor }}px;
+    --font-h1-mobile: {{ settings.type_header_base_size | times: 2.5 | floor }}px;
+    --font-h2-mobile: {{ settings.type_header_base_size | times: 2 | floor }}px;
+    --font-h3-mobile: {{ settings.type_header_base_size | times: 1.8 | floor }}px;
+    --font-h4-mobile: {{ settings.type_header_base_size | times: 1.5 | floor }}px;
+    --font-h5-mobile: {{ settings.type_header_base_size | times: 1.3 | floor }}px;
+    --font-h6-mobile: {{ settings.type_header_base_size | times: 1.2 | floor }}px;
+    }
+    [data-bs-theme=dark] {
+    color-scheme: dark;
+    --bs-body-bg: #18191a;
+    --bs-tertiary-bg-rgb: 0, 0, 0;
+    --bs-body-color: #fff;
+    --bs-bg-mode: #ffffff;
+    --bs-color-mode: #000000;
+    --bs-link-color: #fff;
+    --bs-nav-link-color: #fff;
+    --bs-link-color-rgb: 255, 255, 255;
+    }
+    {% if settings.show_border %}
+        .settings-card {
+        border: 1px solid {{ settings.color_border }};
+        overflow: hidden;
+        }
+    {% endif %}
+{% endstyle %}

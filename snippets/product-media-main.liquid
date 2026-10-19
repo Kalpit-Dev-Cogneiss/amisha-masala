@@ -1,0 +1,85 @@
+{% if media.media_type == 'image' %}
+  {% if enable_image_zoom %}
+    {% capture zoom_media_id %}ImageZoom-{{ section.id }}-{{ media.id }}{% endcapture %}
+  {% endif %}
+  <div
+    {% if enable_image_zoom %}
+      id="{{ zoom_media_id }}"
+    {% endif %}
+    style="padding-top:{{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;"
+    class="product-single__media{% if enable_image_zoom %} js-zoom-enabled cursor-pointer{% endif %}"
+    {% if enable_image_zoom %}
+      data-image-zoom-wrapper data-zoom="{{ media | image_url: width: 1400, height: 1400 }}"
+    {% endif %}
+    data-image-loading-animation
+  >
+    {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+    <img
+      id="{{ media_id }}"
+      class="img-fluid w-100"
+      {% if enable_image_zoom %}
+        data-image-zoom
+      {% endif %}
+      srcset="
+        {% if media.preview_image.width >= 533 %}{{ media.preview_image | image_url: width: 533 }} 533w,{% endif %}
+        {% if media.preview_image.width >= 720 %}{{ media.preview_image | image_url: width: 720 }} 720w,{% endif %}
+        {% if media.preview_image.width >= 1000 %}{{ media.preview_image | image_url: width: 1000 }} 1000w,{% endif %}
+        {% if media.preview_image.width >= 1500 %}{{ media.preview_image | image_url: width: 1500 }} 1500w,{% endif %}
+        {{ media.preview_image.src | image_url }} {{ media.preview_image.src.width }}w
+      "
+      width="{{ media.preview_image.width }}"
+      height="{{ media.preview_image.height }}"
+      src="{{ media.preview_image | image_url }}"
+      alt="{{ media.preview_image.alt | escape }}"
+    >
+    {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+  </div>
+
+{% else %}
+  {% liquid
+    case media.media_type
+      when 'external_video'
+        assign media_class_name = 'responsive_iframe'
+        assign media_style_css = 1 | divided_by: media.aspect_ratio | times: 100
+      when 'model'
+        assign media_class_name = 'responsive_model_viewer'
+    endcase
+  %}
+  <div
+    {% if media_class_name %}
+      class="{{ media_class_name }}"
+    {% endif %}
+    {% if media_style_css %}
+      style="padding-top: {{ media_style_css }}%;"
+    {% endif %}
+  >
+    {% liquid
+      case media.media_type
+        when 'external_video'
+          assign video_class = 'js-' | append: media.host
+          if media.host == 'youtube'
+            echo media | external_video_url: autoplay: false, loop: loop, playlist: media.external_id | external_video_tag: class: video_class, loading: 'lazy'
+          else
+            echo media | external_video_url: autoplay: false, loop: loop | external_video_tag: class: video_class, loading: 'lazy'
+          endif
+          echo media.preview_image | image_url: width: 416 | image_tag: class: 'd-none', loading: 'lazy', alt: media.alt
+        when 'video'
+          echo media | media_tag: image_size: '416x', autoplay: false, loop: loop, muted: false, controls: true, preload: 'none'
+        when 'model'
+          echo media | media_tag: image_size: '2048x', toggleable: true
+          echo media.preview_image | image_url: width: 416 | image_tag: class: 'd-none', loading: 'lazy', alt: media.alt
+      endcase
+    %}
+  </div>
+{% endif %}
+
+{% if media.media_type == 'video' or media.media_type == 'external_video' %}
+  <div class="product-single__thumbnail-badge">
+    {% render 'icon-video-badge-full-color' %}
+  </div>
+{% endif %}
+{% if media.media_type == 'model' %}
+  <div class="product-single__thumbnail-badge">
+    <i class="bi bi-hexagon-half"></i>
+  </div>
+{% endif %}

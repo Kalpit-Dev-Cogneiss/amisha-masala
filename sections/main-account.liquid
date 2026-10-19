@@ -1,0 +1,113 @@
+<main class="py-5">
+  <div class="container page-width">
+    {% render 'breadcrumb' %}
+    <div class="row position-relative">
+      {% render 'main-customer-sidebar', active: 'order' %}
+      <div class="col-12 col-xl-8 col-xxl-9 mt-2">
+        <div class="border-bottom py-4 mb-2">
+          <div class="heading">
+            <h2 class="lh-1 h4 mb-2">{{ 'customer.orders.title' | t }}</h2>
+            <p class="mb-0">{{ 'customer.orders.info_title' | t }}</p>
+          </div>
+        </div>
+
+        {% paginate customer.orders by 10 %}
+          {%- if customer.orders.size > 0 -%}
+            {%- for order in customer.orders -%}
+              <div class="order-item py-4 mb-2">
+                <div class="order-status border-bottom mb-4 pb-2">
+                  <div class="row">
+                    <div class="col-12 col-lg-3 mb-3">
+                      <span class="text-uppercase fw-bold fs-18">{{ 'customer.orders.fulfillment_status' | t }}</span>
+                      <strong class="d-inline d-lg-block text-uppercase fw-bold fs-18">
+                        {{- order.fulfillment_status_label -}}
+                      </strong>
+                    </div>
+                    <div class="col-12 col-lg-2 mb-1">
+                      <span class="text-uppercase fw-bold fs-12 mb-2 d-lg-block letter-spacing-2">
+                        {{- 'customer.orders.order_number' | t -}}
+                      </span>
+                      <span class="d-inline fw-bold d-lg-block">{{ order.name }}</span>
+                    </div>
+                    <div class="col-12 col-lg-2 mb-1">
+                      <span class="text-uppercase fw-bold fs-12 mb-2 d-lg-block letter-spacing-2">
+                        {{- 'customer.orders.date' | t -}}
+                      </span>
+                      <span class="d-inline fw-bold d-lg-block">{{ order.created_at | time_tag: '%d %b, %Y' }}</span>
+                    </div>
+                    <div class="col-12 col-lg-2 mb-1">
+                      <span class="text-uppercase fw-bold fs-12 mb-2 d-lg-block letter-spacing-2">
+                        {{- 'customer.orders.payment_status' | t -}}
+                      </span>
+                      <span class="d-inline fw-bold d-lg-block">{{ order.financial_status_label }}</span>
+                    </div>
+                    <div class="col-12 col-lg-3 mb-1">
+                      <span class="text-uppercase fw-bold fs-12 mb-2 d-lg-block letter-spacing-2">
+                        {{- 'customer.orders.total' | t -}}
+                      </span>
+                      <span class="product-price fw-bold">{{ order.total_price | money_with_currency }}</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-info">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-3">
+                      <div class="row">
+                        {%- for line_item in order.line_items -%}
+                          {%- if forloop.index < 4 -%}
+                            <div class="col-3">
+                              <div class="card-img-top card-img-custom-height h-ratio-1-1 lh-0">
+                                <a class="full-width-link" href="{{ line_item.url }}">
+                                  <span class="d-none">{{ line_item.title }}</span>
+                                </a>
+                                {% render 'image', lazyload: true, image: line_item.image, size: 'small' %}
+                              </div>
+                            </div>
+                          {%- endif -%}
+                          {%- if forloop.index > 4 and forloop.last -%}
+                            <div class="col-3">
+                              <a
+                                class="bg-div"
+                                href="{{ order.customer_url }}"
+                              >
+                                <div class="position-absolute top-50 start-50 translate-middle font-weight-bold small text-center">
+                                  +{{ forloop.length | minus: 4 }}
+                                  <br>
+                                  {{ 'customer.orders.more' | t }}
+                                </div>
+                              </a>
+                            </div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <a href="{{ order.customer_url }}" class="btn btn-primary w-100">
+                        {{- 'customer.orders.view_order' | t -}}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            <p>{{ 'customer.orders.none' | t }}</p>
+          {%- endif -%}
+
+          {% if paginate.pages > 1 %}
+            {% render 'pagination', paginate: paginate %}
+          {% endif %}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</main>
+
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+
+  ]
+}
+{% endschema %}

@@ -1,0 +1,2116 @@
+{{ 'popup-modal.css' | asset_url | stylesheet_tag }}
+<div
+        class="{{ section.settings.layout }} product-template__container pt-4"
+        id="ProductSection-{{ section.id }}"
+        data-section-id="{{ section.id }}"
+        data-section-type="product-template"
+        data-enable-history-state="true"
+        data-ajax-enabled="{{ settings.enable_ajax }}"
+>
+    <div class="mb-2">
+        {% render 'breadcrumb' %}
+    </div>
+    {% liquid
+        assign current_variant = product.selected_or_first_available_variant
+    %}
+    {% liquid
+        case section.settings.media_size
+            when 'small'
+                assign product_media_width = 'col-12 col-md-5'
+                assign product_description_width = 'col-12 col-md-7'
+            when 'medium'
+                assign product_media_width = 'col-12 col-md-6'
+                assign product_description_width = 'col-12 col-md-6'
+            when 'large'
+                assign product_media_width = 'col-12 col-md-7'
+                assign product_description_width = 'col-12 col-md-5'
+            when 'x-large'
+                assign product_media_width = 'col-12 col-md-8'
+                assign product_description_width = 'col-12 col-md-4'
+            when 'full'
+                assign product_media_width = 'col-12'
+                assign product_description_width = 'col-12 col-md-10'
+        endcase
+    %}
+    <div class="row gx-3 gx-lg-5">
+        {% if section.settings.enable_collection_list %}
+            <div class="col-12 col-lg-2 d-none d-lg-block">
+                <ul class="list-unstyled sticky-top top-10">
+                    {% for collection in section.settings.collection_list %}
+                        <li>
+                            <a
+                                    class="hover-change-icon d-flex align-items-center justify-content-between fs-18 fw-bold py-2"
+                                    href="{{ collection.url }}"
+                                    aria-label="{{ collection.title }}"
+                            >
+                                {{ collection.title }}
+                                <i class="bi bi-chevron-right ms-3 fs-14"></i>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        <div class="col-12 {% if section.settings.enable_collection_list %}col-lg-10{% endif %}">
+            <div class="row gx-4 gx-custom-lg-6 product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.media_size }}-media{% endif %}{% if section.settings.media_right %} flex-column flex-md-row-reverse{% endif %}">
+                <div
+                        class="col product-single__media-group {{ product_media_width }} position-relative mb-3 mb-lg-0"
+                        data-product-single-media-group
+                >
+                    {% liquid
+                        case section.settings.media_style
+                            when 'thumbs_horizontal'
+                                assign media_render = 'single-product-1'
+                                assign media_style = ''
+                            when 'thumbs_vertical'
+                                assign media_render = 'single-product-1'
+                                assign media_style = 'style-vertical'
+                            when '1_column'
+                                assign media_render = 'single-product-2'
+                                assign media_style = '1'
+                            when '2_columns'
+                                assign media_render = 'single-product-2'
+                                assign media_style = '2'
+                            when '3_columns'
+                                assign media_render = 'single-product-2'
+                                assign media_style = '3'
+                            when 'mix_columns'
+                                assign media_render = 'single-product-2'
+                                assign media_style = '1-2-3'
+                            when 'sticky_columns'
+                                assign media_render = 'single-product-3'
+                                assign media_style = 'sticky'
+                        endcase
+                    %}
+                    <div class="sticky-md-top top-10">
+                        {% case media_render %}
+                           {%  when 'single-product-1' %}
+                               {% render 'single-product-1',
+                                       product: product,
+                                       section_id: section.id,
+                                       style: media_style,
+                                       enable_image_zoom: section.settings.enable_image_zoom,
+                                       enable_video_looping: section.settings.enable_video_looping
+                               %}
+                            {%  when 'single-product-3' %}
+                            {% render 'single-product-3',
+                                    product: product,
+                                    section_id: section.id,
+                                    style: media_style,
+                                    enable_image_zoom: section.settings.enable_image_zoom,
+                                    enable_video_looping: section.settings.enable_video_looping
+                            %}
+                            {%  else %}
+                            {% render 'single-product-2',
+                                    product: product,
+                                    section_id: section.id,
+                                    style: media_style,
+                                    enable_image_zoom: section.settings.enable_image_zoom,
+                                    enable_video_looping: section.settings.enable_video_looping
+                            %}
+                        {% endcase %}
+                        <div class="content-description-more">
+                            {% for block in section.blocks %}
+                                {% case block.type %}
+                                    {% when 'collapsible-row' %}
+                                        {% if block.settings.style == 'style-2' %}
+                                            <div
+                                                    class="accordion style-1 mb-{{ block.settings.margin_bottom }} mt-5 d-none d-md-block"
+                                                    id="accordion-{{ block.id }}"
+                                                    {{ block.shopify_attributes }}
+                                            >
+                                                {% if block.settings.heading1 != blank %}
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseOne"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="collapseOne">
+                                                                {{ block.settings.heading1 | default: block.settings.page.title1 }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne"
+                                                             class="accordion-collapse collapse show"
+                                                             data-bs-parent="#accordion-{{ block.id }}">
+                                                            <div class="accordion-body rte rte-custom-2">
+                                                                {{ block.settings.row_content1 }}
+                                                                {{ block.settings.page.content1 }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                                {% if block.settings.heading2 != blank %}
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseTwo"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="collapseTwo">
+                                                                {{ block.settings.heading2 | default: block.settings.page.title2 }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseTwo"
+                                                             class="accordion-collapse collapse"
+                                                             data-bs-parent="#accordion-{{ block.id }}">
+                                                            <div class="accordion-body rte rte-custom-2">
+                                                                {{ block.settings.row_content2 }}
+                                                                {{ block.settings.page.content2 }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                                {% if block.settings.heading3 != blank %}
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseThree"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="collapseThree">
+                                                                {{ block.settings.heading3 | default: block.settings.page.title3 }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseThree"
+                                                             class="accordion-collapse collapse"
+                                                             data-bs-parent="#accordion-{{ block.id }}">
+                                                            <div class="accordion-body rte rte-custom-2">
+                                                                {{ block.settings.row_content3 }}
+                                                                {{ block.settings.page.content3 }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                                {% if block.settings.heading4 != blank %}
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header">
+                                                            <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                    type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseFour"
+                                                                    aria-expanded="true"
+                                                                    aria-controls="collapseFour">
+                                                                {{ block.settings.heading4 | default: block.settings.page.title4 }}
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseFour"
+                                                             class="accordion-collapse collapse"
+                                                             data-bs-parent="#accordion-{{ block.id }}">
+                                                            <div class="accordion-body rte rte-custom-2">
+                                                                {{ block.settings.row_content4 }}
+                                                                {{ block.settings.page.content4 }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    {% when 'tab' %}
+                                        {% if block.settings.style == 'style-2' %}
+                                            <div
+                                                    class="mb-{{ block.settings.margin_bottom }} mt-5 d-none d-md-block"
+                                                    {{ block.shopify_attributes }}
+                                            >
+                                                <div class="ms-tab">
+                                                    <ul class="nav nav-tabs"
+                                                        role="tablist">
+                                                        {% if block.settings.heading1 != blank %}
+                                                            <li class="nav-item" role="presentation">
+                                                                <button class="nav-link active" id="ms-tab1"
+                                                                        data-bs-toggle="tab"
+                                                                        data-bs-target="#ms-tab1-pane"
+                                                                        type="button" role="tab"
+                                                                        aria-controls="ms-tab1-pane"
+                                                                        aria-selected="true">{{ block.settings.heading1 | default: block.settings.page.title1 }}</button>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if block.settings.heading2 != blank %}
+                                                            <li class="nav-item" role="presentation">
+                                                                <button class="nav-link" id="ms-tab2"
+                                                                        data-bs-toggle="tab"
+                                                                        data-bs-target="#ms-tab2-pane" type="button"
+                                                                        role="tab"
+                                                                        aria-controls="ms-tab2-pane"
+                                                                        aria-selected="false">
+                                                                    {{ block.settings.heading2 | default: block.settings.page.title2 }}
+                                                                </button>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if block.settings.heading3 != blank %}
+                                                            <li class="nav-item" role="presentation">
+                                                                <button class="nav-link" id="ms-tab3"
+                                                                        data-bs-toggle="tab"
+                                                                        data-bs-target="#ms-tab3-pane" type="button"
+                                                                        role="tab" aria-controls="ms-tab3-pane"
+                                                                        aria-selected="false">
+                                                                    {{ block.settings.heading3 | default: block.settings.page.title3 }}
+                                                                </button>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if block.settings.heading4 != blank %}
+                                                            <li class="nav-item" role="presentation">
+                                                                <button class="nav-link" id="ms-tab4"
+                                                                        data-bs-toggle="tab"
+                                                                        data-bs-target="#ms-tab4-pane" type="button"
+                                                                        role="tab" aria-controls="ms-tab4-pane"
+                                                                        aria-selected="false">
+                                                                    {{ block.settings.heading4 | default: block.settings.page.title4 }}
+                                                                </button>
+                                                            </li>
+                                                        {% endif %}
+                                                    </ul>
+                                                    <div class="tab-content" id="myTabContent">
+                                                        {% if block.settings.heading1 != blank %}
+                                                            <div class="tab-pane rte rte-custom-2 fade show active" id="ms-tab1-pane"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="ms-tab1" tabindex="0">
+                                                                {{ block.settings.row_content1 }}
+                                                                {{ block.settings.page.content1 }}
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if block.settings.heading2 != blank %}
+                                                            <div class="tab-pane rte rte-custom-2 fade" id="ms-tab2-pane"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="ms-tab2" tabindex="0">
+                                                                {{ block.settings.row_content2 }}
+                                                                {{ block.settings.page.content2 }}
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if block.settings.heading3 != blank %}
+                                                            <div class="tab-pane rte rte-custom-2 fade" id="ms-tab3-pane"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="ms-tab3" tabindex="0">
+                                                                {{ block.settings.row_content3 }}
+                                                                {{ block.settings.page.content3 }}
+                                                            </div>
+                                                        {% endif %}
+                                                        {% if block.settings.heading4 != blank %}
+                                                            <div class="tab-pane rte rte-custom-2 fade" id="ms-tab4-pane"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="ms-tab4" tabindex="0">
+                                                                {{ block.settings.row_content4 }}
+                                                                {{ block.settings.page.content4 }}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                {% endcase %}
+                            {% endfor %}
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col product-single__description {{ product_description_width }}">
+                    <div class="product-single__meta overflow-hidden {% if section.settings.enable_sticky_content %}sticky-md-top top-10{% endif %}">
+                        <div class="content-inner">
+                            {% for block in section.blocks %}
+                                {% case block.type %}
+                                    {% when '@app' %}
+                                        {% render block %}
+                                    {% when 'text' %}
+                                        <p
+                                                class="{% if block.settings.style == 'style-2' %} fs-14 mb-0 opacity-85 fst-italic font-monospace{% else %} fs-15{% endif %} mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }} rte"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {{ block.settings.text }}
+                                        </p>
+                                    {% when 'title' %}
+
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <h1 class="mb-0 {{ block.settings.heading_size }}">{{ product.title }}</h1>
+
+                                            </div>
+                                        </div>
+                                    {% when 'payment' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <div class="position-relative text-center">
+                                                {% if block.settings.heading != blank %}
+                                                    <h3 class="fs-14 text-uppercase bg-body content-in-box">{{ block.settings.heading }}</h3>
+                                                {% endif %}
+                                                <ul class="payment-icons list--inline">
+                                                    {% for type in shop.enabled_payment_types %}
+                                                        <li class="payment-icon mx-1 mb-2">
+                                                            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    {% when 'price' %}
+
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }} border-bottom pb-3"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                <div class="product__price style-large mb-0">
+                                                    <div class="d-flex flex-nowrap align-items-center">
+                                                        {% render 'product-price',
+                                                                variant: current_variant,
+                                                                show_vendor: false,
+                                                                style: 'large',
+                                                                show_badges: true
+                                                        %}
+                                                        {% if cart.taxes_included or shop.shipping_policy.body != blank %}
+                                                            <div class="product__policies rte fs-14" data-product-policies>
+                                                                {% if cart.taxes_included %}
+                                                                    {{ 'products.product.include_taxes' | t }}
+                                                                {% endif %}
+                                                                {% if shop.shipping_policy.body != blank %}
+                                                                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                                                                {% endif %}
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+
+                                                {% if block.settings.enable_rating_badge_stars %}
+                                                    <div class="star-wrap">
+                                                        <!-- Start of Judge.me code -->
+                                                        <div class='jdgm-widget jdgm-preview-badge'>
+                                                            {{ product.metafields.judgeme.badge }}
+                                                        </div>
+                                                        <!-- End of Judge.me code -->
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+
+                                        </div>
+                                    {% when 'product_form' %}
+                                        <div
+                                                class="{% if block.settings.picker_type == 'dropdown' %} style-dropdown {% endif %} mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {% capture form_classes %}
+                                                product-form product-form-{{ section.id }}
+                                                {% if section.settings.enable_payment_button and product.has_only_default_variant %} product-form--payment-btn-no-variants {% endif %}
+                                                {% if current_variant.available == false %} product-form--variant-sold-out {% endif %}
+                                            {% endcapture %}
+                                            <ajax-cart-product-form>
+                                                {% form 'product', product, class: form_classes, novalidate: 'novalidate', data-product-form: '' %}
+                                                    {{ form | payment_terms }}
+                                                    {% render 'product-variant-picker', product: product, block: block %}
+                                                    <select name="id" id="ProductSelect-{{ section.id }}"
+                                                            class="form-select product-form__variants no-js">
+                                                        {% for variant in product.variants %}
+                                                            <option
+                                                                    value="{{ variant.id }}"
+                                                                    {% if variant == current_variant %}
+                                                                        selected="selected"
+                                                                    {% endif %}
+                                                            >
+                                                                {{ variant.title }}
+                                                                {% if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                                                            </option>
+                                                        {% endfor %}
+                                                    </select>
+                                                    {% render 'custom-field', section: section, block: block %}
+                                                    <div class="d-flex align-items-end">
+                                                        {% if block.settings.show_quantity_selector %}
+                                                            <div class="product-form__controls-group product-quantity">
+                                                                <div class="product-form__item-2">
+                                                                    <label>{{ 'products.product.quantity' | t }}</label>
+                                                                    <div class="d-flex align-items-center flex-nowrap">
+                                                                        <div class="quantity-selector d-flex">
+                                                                            <button class="quantity__button disabled"
+                                                                                    name="minus"
+                                                                                    type="button"
+                                                                                    onclick="updateQuantity(this, -1)"><i
+                                                                                        class="bi bi-dash"></i>
+                                                                            </button>
+                                                                            <input
+                                                                                    type="number"
+                                                                                    name="quantity"
+                                                                                    value="1"
+                                                                                    class="product-form__input product-form__input--quantity"
+                                                                                    data-quantity-input
+                                                                            >
+                                                                            <button class="quantity__button" name="plus"
+                                                                                    type="button"
+                                                                                    onclick="updateQuantity(this, 1)"><i
+                                                                                        class="bi bi-plus"></i>
+                                                                            </button>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        {% endif %}
+                                                        {%- if settings.enable_wishlist -%}
+                                                            <div class="ms-3 mb-3 icon-btn">
+                                                                {% render 'button-wishlist', product: product, text: 'show' %}
+                                                            </div>
+                                                        {%- endif -%}
+                                                    </div>
+                                                    <div
+                                                            class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if block.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+                                                            data-error-message-wrapper
+                                                            role="alert"
+                                                    >
+                                                        <span class="d-none">{{ 'general.accessibility.error' | t }} </span>
+                                                        <i class="bi bi-exclamation-circle"></i>
+                                                        <span
+                                                                class="product-form__error-message"
+                                                                data-error-message
+                                                        >
+                        {{- 'products.product.quantity_minimum_message' | t -}}
+                      </span>
+                                                    </div>
+
+                                                    <div class="product-form__controls-group product-form__controls-group--submit">
+                                                        <div
+                                                                class="
+                          product-form__item product-form__item--submit
+                          {% if block.settings.enable_payment_button %} product-form__item--payment-button {% endif %}
+                          {% if product.has_only_default_variant %} product-form__item--no-variants {% endif %}
+                        "
+                                                        >
+                                                            <button
+                                                                    type="submit"
+                                                                    name="add"
+                                                                    {% unless current_variant.available %}
+                                                                        aria-disabled="true"
+                                                                    {% endunless %}
+                                                                    aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                                                                    class="btn w-100 mb-0 btn-primary{% if block.settings.enable_payment_button %} mb-2{% endif %}"
+                                                                    {% if settings.enable_ajax %}
+                                                                        aria-haspopup="dialog"
+                                                                    {% endif %}
+                                                                    data-add-to-cart
+                                                            >
+                          <span data-add-to-cart-text>
+                            {% unless current_variant.available %}
+                                {{ 'products.product.sold_out' | t }}
+                            {% else %}
+                                {{ 'products.product.add_to_cart' | t }}
+                            {% endunless %}
+                          </span>
+                                                                <span class="hide" data-loader>
+                           <span class="icon-repeat"><i class="bi bi-arrow-repeat"></i></span>
+                          </span>
+                                                            </button>
+                                                            {% if block.settings.enable_payment_button %}
+                                                                {{ form | payment_button }}
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                            class="product-single__store-availability-container"
+                                                            data-store-availability-container
+                                                            data-product-title="{{ product.title | escape }}"
+                                                            data-has-only-default-variant="{{ product.has_only_default_variant }}"
+                                                            data-base-url="{{ shop.url }}{{ routes.root_url }}"
+                                                    ></div>
+                                                {% endform %}
+                                            </ajax-cart-product-form>
+
+                                        </div>
+
+                                    {% when 'collapsible-row' %}
+                                        <div
+                                                class="accordion style-2 mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}{% if block.settings.style == 'style-2' %} d-block d-md-none{% endif %}"
+                                                id="accordion-more-{{ block.id }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {% if block.settings.heading1 != blank %}
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseOneMore"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseOneMore">
+                                                            {{ block.settings.heading1 | default: block.settings.page.title1 }}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseOneMore"
+                                                         class="accordion-collapse collapse show"
+                                                         data-bs-parent="#accordion-more-{{ block.id }}">
+                                                        <div class="accordion-body rte rte-custom-2">
+                                                            {{ block.settings.row_content1 }}
+                                                            {{ block.settings.page.content1 }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.heading2 != blank %}
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseTwoMore"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseTwoMore">
+                                                            {{ block.settings.heading2 | default: block.settings.page.title2 }}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseTwoMore"
+                                                         class="accordion-collapse collapse"
+                                                         data-bs-parent="#accordion-more-{{ block.id }}">
+                                                        <div class="accordion-body rte rte-custom-2">
+                                                            {{ block.settings.row_content2 }}
+                                                            {{ block.settings.page.content2 }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.heading3 != blank %}
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseThreeMore"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseThreeMore">
+                                                            {{ block.settings.heading3 | default: block.settings.page.title3 }}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseThreeMore"
+                                                         class="accordion-collapse collapse"
+                                                         data-bs-parent="#accordion-more-{{ block.id }}">
+                                                        <div class="accordion-body rte rte-custom-2">
+                                                            {{ block.settings.row_content3 }}
+                                                            {{ block.settings.page.content3 }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.heading4 != blank %}
+                                                <div class="accordion-item">
+                                                    <h2 class="accordion-header">
+                                                        <button class="accordion-button text-uppercase collapsed fs-15"
+                                                                type="button"
+                                                                data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseFourMore"
+                                                                aria-expanded="true"
+                                                                aria-controls="collapseFourMore">
+                                                            {{ block.settings.heading4 | default: block.settings.page.title4 }}
+                                                        </button>
+                                                    </h2>
+                                                    <div id="collapseFourMore"
+                                                         class="accordion-collapse collapse"
+                                                         data-bs-parent="#accordion-more-{{ block.id }}">
+                                                        <div class="accordion-body rte rte-custom-2">
+                                                            {{ block.settings.row_content4 }}
+                                                            {{ block.settings.page.content4 }}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    {% when 'complementary' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <product-recommendations
+                                                    class="product-recommendations style-2"
+                                                    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=2&intent=complementary"
+                                            >
+                                                {%- if recommendations.performed? and recommendations.products_count > 0 -%}
+                                                    {% if block.settings.heading %}
+                                                        <div class="heading heading-wrap mb-3">
+                                                            <h3 class="fw-bold fs-20">{{ block.settings.heading }}</h3>
+                                                        </div>
+                                                    {% endif %}
+                                                    <div class="row row-cols-2 gx-2">
+                                                        {%- for product in recommendations.products -%}
+                                                            <div class="col mb-2">
+                                                                {% render 'product-card-grid',
+                                                                        product: product,
+                                                                        image_position: block.settings.image_position,
+                                                                        image_height: block.settings.image_height,
+                                                                        show_quick_add: block.settings.enable_quick_add,
+                                                                        style_product: 'style-1'
+                                                                %}
+                                                            </div>
+                                                        {%- endfor -%}
+                                                    </div>
+                                                {%- endif -%}
+                                            </product-recommendations>
+                                        </div>
+                                    {% when 'tab' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}{% if block.settings.style == 'style-2' %} d-block d-md-none{% endif %}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <div class="ms-tab">
+                                                <ul class="nav nav-tabs"
+                                                    role="tablist">
+                                                    {% if block.settings.heading1 != blank %}
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link active" id="ms-tab1-more"
+                                                                    data-bs-toggle="tab"
+                                                                    data-bs-target="#ms-tab1-more-pane"
+                                                                    type="button" role="tab"
+                                                                    aria-controls="ms-tab1-more-pane"
+                                                                    aria-selected="true">{{ block.settings.heading1 | default: block.settings.page.title1 }}</button>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% if block.settings.heading2 != blank %}
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="ms-tab2-more"
+                                                                    data-bs-toggle="tab"
+                                                                    data-bs-target="#ms-tab2-more-pane" type="button"
+                                                                    role="tab"
+                                                                    aria-controls="ms-tab2-more-pane"
+                                                                    aria-selected="false">
+                                                                {{ block.settings.heading2 | default: block.settings.page.title2 }}
+                                                            </button>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% if block.settings.heading3 != blank %}
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="ms-tab3-more"
+                                                                    data-bs-toggle="tab"
+                                                                    data-bs-target="#ms-tab3-more-pane" type="button"
+                                                                    role="tab" aria-controls="ms-tab3-more-pane"
+                                                                    aria-selected="false">
+                                                                {{ block.settings.heading3 | default: block.settings.page.title3 }}
+                                                            </button>
+                                                        </li>
+                                                    {% endif %}
+                                                    {% if block.settings.heading4 != blank %}
+                                                        <li class="nav-item" role="presentation">
+                                                            <button class="nav-link" id="ms-tab4-more"
+                                                                    data-bs-toggle="tab"
+                                                                    data-bs-target="#ms-tab4-more-pane" type="button"
+                                                                    role="tab" aria-controls="ms-tab4-more-pane"
+                                                                    aria-selected="false">
+                                                                {{ block.settings.heading4 | default: block.settings.page.title4 }}
+                                                            </button>
+                                                        </li>
+                                                    {% endif %}
+                                                </ul>
+                                                <div class="tab-content" id="myTabContent">
+                                                    {% if block.settings.heading1 != blank %}
+                                                        <div class="tab-pane rte rte-custom-2 fade show active"
+                                                             id="ms-tab1-more-pane"
+                                                             role="tabpanel"
+                                                             aria-labelledby="ms-tab1-more" tabindex="0">
+                                                            {{ block.settings.row_content1 }}
+                                                            {{ block.settings.page.content1 }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if block.settings.heading2 != blank %}
+                                                        <div class="tab-pane rte rte-custom-2 fade" id="ms-tab2-more-pane"
+                                                             role="tabpanel"
+                                                             aria-labelledby="ms-tab2-more" tabindex="0">
+                                                            {{ block.settings.row_content2 }}
+                                                            {{ block.settings.page.content2 }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if block.settings.heading3 != blank %}
+                                                        <div class="tab-pane rte rte-custom-2 fade" id="ms-tab3-more-pane"
+                                                             role="tabpanel"
+                                                             aria-labelledby="ms-tab3-more" tabindex="0">
+                                                            {{ block.settings.row_content3 }}
+                                                            {{ block.settings.page.content3 }}
+                                                        </div>
+                                                    {% endif %}
+                                                    {% if block.settings.heading4 != blank %}
+                                                        <div class="tab-pane rte rte-custom-2 fade" id="ms-tab4-more-pane"
+                                                             role="tabpanel"
+                                                             aria-labelledby="ms-tab4-more" tabindex="0">
+                                                            {{ block.settings.row_content4 }}
+                                                            {{ block.settings.page.content4 }}
+                                                        </div>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% when 'description' %}
+                                        <div
+                                                class="rte rte-custom-2 mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {% if block.settings.heading != '' %}
+                                                <h3 class="fw-bold text-uppercase mb-2 {{ block.settings.heading_size }}">{{ block.settings.heading }}</h3>
+                                            {% endif %}
+                                            {% if block.settings.enable_length %}
+                                                <p class=" mb-0">{{ product.description | strip_html | truncatewords: block.settings.length }}</p>
+                                            {% else %}
+                                                {{ product.description }}
+                                            {% endif %}
+                                        </div>
+
+                                    {% when 'icon_with_text' %}
+                                        {% if block.settings.show_1
+                                        or block.settings.show_2
+                                        or block.settings.show_3
+                                        or block.settings.show_4
+                                        or block.settings.show_5
+                                        %}
+                                            <div
+                                                    class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }} icon-with-text d-flex flex-wrap {{ block.settings.layout }}"
+                                                    {{ block.shopify_attributes }}
+                                            >
+                                                {% render 'icon-with-text',
+                                                        size: 'icon-small',
+                                                        layout: block.settings.layout,
+                                                        block: block
+                                                %}
+                                            </div>
+                                        {% endif %}
+                                    {% when 'share' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {% render 'social-sharing',
+                                                    border: 'none',
+                                                    share_title: product.title,
+                                                    share_permalink: product.url,
+                                                    share_image: product.featured_media
+                                            %}
+                                        </div>
+                                    {% when 'custom_liquid' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            {{ block.settings.custom_liquid }}
+                                        </div>
+                                    {% when 'popup' %}
+                                        <div
+                                                class="mb-{{ block.settings.margin_bottom }} mt-{{ block.settings.margin_top }}"
+                                                {{ block.shopify_attributes }}
+                                        >
+                                            <modal-opener
+                                                    class="pop-up-modal__opener no-js-hidden quick-add-hidden"
+                                                    data-modal="#PopupModal-{{ block.id }}"
+                                            >
+                                                <div class="d-inline-flex align-items-center trigger-pop-up-wrap mb-3">
+                                                    <i class="bi {{ block.settings.icon }}"></i>
+                                                    <button
+                                                            id="ProductPopup-{{ block.id }}"
+                                                            type="button"
+                                                            aria-haspopup="dialog"
+                                                            class="pop-up-modal__button link trigger-pop-up underline-anm underline-anm-1 {% if block.settings.icon != 'none' %} ms-2 {% endif %}"
+                                                    >
+                                                        {{ block.settings.text | default: block.settings.page.title }}
+                                                    </button>
+                                                </div>
+                                            </modal-opener>
+                                        </div>
+                                {% endcase %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <p
+                            class="d-none"
+                            data-product-status
+                            aria-live="polite"
+                            role="status"
+                    ></p>
+                    <p
+                            class="d-none"
+                            data-loader-status
+                            aria-live="assertive"
+                            role="alert"
+                            aria-hidden="true"
+                    >
+                        {{ 'products.product.loader_label' | t }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% assign popups = section.blocks | where: 'type', 'popup' %}
+{%- for block in popups -%}
+    <modal-dialog id="PopupModal-{{ block.id }}" class="pop-up-modal" {{ block.shopify_attributes }}>
+        <div
+                role="dialog"
+                aria-label="{{ block.settings.text }}"
+                aria-modal="true"
+                class="pop-up-content"
+                tabindex="-1"
+        >
+            <div class="pop-up-content-header">
+                <h2 class="fs-20 fw-bold">{{ block.settings.page.title }}</h2>
+                <span
+                        id="ModalClose-{{ block.id }}"
+                        type="button"
+                        class="modal__toggle close-button"
+                ></span>
+            </div>
+            <div class="pop-up-content-inner rte-custom-2">
+                {{ block.settings.page.content }}
+            </div>
+        </div>
+    </modal-dialog>
+{%- endfor -%}
+{% unless product == empty %}
+    <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+
+
+
+    </script>
+    <script type="application/json" id="ModelJson-{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+
+
+
+    </script>
+{% endunless %}
+<script>
+    // Override default values of shop.strings for each template.
+    // Alternate product templates can change values of
+    // add to cart button, sold out, and unavailable states here.
+    theme.productStrings = {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+    };
+</script>
+{%- liquid
+    if product.selected_or_first_available_variant.featured_media
+        assign seo_media = product.selected_or_first_available_variant.featured_media
+    else
+        assign seo_media = product.featured_media
+    endif
+-%}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": {{ product.title | json }},
+    "url": {{ request.origin | append: product.url | json }},
+    {% if seo_media -%}
+      "image": [
+        {{ seo_media | image_url: width: 1920 | prepend: "https:" | json }}
+      ],
+    {%- endif %}
+    "description": {{ product.description | strip_html | json }},
+    {% if product.selected_or_first_available_variant.sku != blank -%}
+      "sku": {{ product.selected_or_first_available_variant.sku | json }},
+    {%- endif %}
+    "brand": {
+      "@type": "Brand",
+      "name": {{ product.vendor | json }}
+    },
+    "offers": [
+    {%- for variant in product.variants -%}
+        {
+          "@type" : "Offer",
+          {%- if variant.sku != blank -%}
+            "sku": {{ variant.sku | json }},
+          {%- endif -%}
+        {%- if variant.barcode.size == 12 -%}
+            "gtin12": {{ variant.barcode }},
+          {%- endif -%}
+        {%- if variant.barcode.size == 13 -%}
+            "gtin13": {{ variant.barcode }},
+          {%- endif -%}
+        {%- if variant.barcode.size == 14 -%}
+            "gtin14": {{ variant.barcode }},
+          {%- endif -%}
+          "availability" : "http://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+          "price" : {{ variant.price | divided_by: 100.00 | json }},
+          "priceCurrency" : {{ cart.currency.iso_code | json }},
+          "url" : {{ request.origin | append: variant.url | json }}
+        }{% unless forloop.last %}{% endunless %}
+    {%- endfor -%}
+    ]
+  }
+</script>
+<script src="{{ 'popup-modal.js' | asset_url }}" defer="defer"></script>
+{% schema %}
+{
+  "name": "t:sections.product-template.name",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "container page-width",
+          "label": "t:sections.all.layout.options__1.label"
+        },
+        {
+          "value": "container container-inner",
+          "label": "t:sections.all.layout.options__2.label"
+        },
+        {
+          "value": "container-fluid",
+          "label": "t:sections.all.layout.options__3.label"
+        },
+        {
+          "value": "full-width",
+          "label": "t:sections.all.layout.options__4.label"
+        }
+      ],
+      "default": "container page-width",
+      "label": "t:sections.all.layout.header"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.product-template.settings.header__1.content",
+      "info": "t:sections.product-template.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "media_right",
+      "label": "t:sections.product-template.settings.media_right.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_content",
+      "label": "t:sections.product-template.settings.enable_sticky_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_collection_list",
+      "default": true,
+      "label": "t:sections.product-template.settings.enable_collections_list.label"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "t:sections.product-template.settings.enable_collections_list.name",
+      "limit": 50
+    },
+    {
+      "type": "select",
+      "id": "media_style",
+      "label": "t:sections.product-template.settings.media_style.label",
+      "options": [
+        {
+          "value": "thumbs_horizontal",
+          "label": "t:sections.product-template.settings.media_style.options__1.label"
+        },
+        {
+          "value": "thumbs_vertical",
+          "label": "t:sections.product-template.settings.media_style.options__2.label"
+        },
+        {
+          "value": "1_column",
+          "label": "t:sections.product-template.settings.media_style.options__3.label"
+        },
+        {
+          "value": "2_columns",
+          "label": "t:sections.product-template.settings.media_style.options__4.label"
+        },
+        {
+          "value": "3_columns",
+          "label": "t:sections.product-template.settings.media_style.options__5.label"
+        },
+        {
+          "value": "mix_columns",
+          "label": "t:sections.product-template.settings.media_style.options__6.label"
+        },
+        {
+          "value": "sticky_columns",
+          "label": "t:sections.product-template.settings.media_style.options__7.label"
+        }
+      ],
+      "default": "thumbs_horizontal"
+    },
+    {
+      "type": "select",
+      "id": "media_size",
+      "label": "t:sections.product-template.settings.media_size.label",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.product-template.settings.media_size.options__1.label"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.product-template.settings.media_size.options__2.label"
+        },
+        {
+          "value": "large",
+          "label": "t:sections.product-template.settings.media_size.options__3.label"
+        },
+        {
+          "value": "x-large",
+          "label": "t:sections.product-template.settings.media_size.options__31.label"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.product-template.settings.media_size.options__4.label"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_image_zoom",
+      "label": "t:sections.product-template.settings.enable_image_zoom.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "t:sections.product-template.settings.enable_video_looping.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "text",
+      "name": "t:sections.product-template.blocks.text.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "default": "Text block",
+          "label": "t:sections.product-template.blocks.text.name"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "style-1",
+              "label": "t:sections.all.style.options__1.label"
+            },
+            {
+              "value": "style-2",
+              "label": "t:sections.all.style.options__2.label"
+            }
+          ],
+          "default": "style-1",
+          "label": "t:sections.all.style.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.product-template.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h0",
+              "label": "t:sections.all.heading_size.options__0.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h4",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "t:sections.product-template.blocks.price.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_rating_badge_stars",
+          "label": "t:sections.product-template.blocks.price.enable_star_ratings.label",
+          "default": true,
+          "info": "t:sections.product-template.blocks.price.enable_star_ratings.info"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "product_form",
+      "name": "t:sections.product-template.blocks.product_form.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.product-template.blocks.quantity_selector.name"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_quantity_selector",
+          "label": "t:sections.product-template.blocks.quantity_selector.settings.show_quantity_selector.label",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.product.blocks.variant_picker.name"
+        },
+        {
+          "type": "select",
+          "id": "picker_type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.all.product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.all.product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "button",
+          "label": "t:sections.all.product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.product.blocks.variant_picker.settings.header__1.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.all.product.blocks.variant_picker.settings.paragraph__1.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_color_swatches",
+          "default": true,
+          "label": "t:sections.all.product.blocks.variant_picker.settings.enable_color_swatches.label",
+          "info": "t:sections.all.product.blocks.variant_picker.settings.enable_color_swatches.info"
+        },
+        {
+          "type": "text",
+          "id": "swatch_option_name",
+          "label": "t:sections.all.product.blocks.variant_picker.settings.swatch_option_name.label",
+          "default": "Color"
+        },
+        {
+          "type": "select",
+          "id": "swatch_type",
+          "options": [
+            {
+              "value": "variant_img",
+              "label": "t:sections.all.product.blocks.variant_picker.settings.swatch_type.options__1.label"
+            },
+            {
+              "value": "btn_with_variant_img",
+              "label": "t:sections.all.product.blocks.variant_picker.settings.swatch_type.options__2.label"
+            },
+            {
+              "value": "html_color_names",
+              "label": "t:sections.all.product.blocks.variant_picker.settings.swatch_type.options__3.label"
+            }
+          ],
+          "default": "btn_with_variant_img",
+          "label": "t:sections.all.product.blocks.variant_picker.settings.swatch_type.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.product-template.blocks.buy_buttons.name"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_payment_button",
+          "label": "t:sections.product-template.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.product-template.blocks.buy_buttons.settings.show_dynamic_checkout.info",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "custom_field",
+      "name": "t:sections.all.product.blocks.custom_field.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "field_type",
+          "label": "t:sections.all.product.blocks.custom_field.settings.field_type.label",
+          "options": [
+            {
+              "value": "text_short",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.text_short.label"
+            },
+            {
+              "value": "text_long",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.text_long.label"
+            },
+            {
+              "value": "radio_buttons",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.radio_buttons.label"
+            },
+            {
+              "value": "drop_down",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.drop_down.label"
+            },
+            {
+              "value": "checkbox",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.checkbox.label"
+            },
+            {
+              "value": "checkbox_group",
+              "label": "t:sections.all.product.blocks.custom_field.settings.field_type.checkbox_group.label"
+            }
+          ],
+          "default": "text_short"
+        },
+        {
+          "type": "text",
+          "id": "field_label",
+          "label": "t:sections.all.product.blocks.custom_field.settings.field_label.label",
+          "default": "Field label"
+        },
+        {
+          "type": "textarea",
+          "id": "field_options",
+          "label": "t:sections.all.product.blocks.custom_field.settings.field_options.label",
+          "info": "t:sections.all.product.blocks.custom_field.settings.field_options.info",
+          "default": "Option 1, Option 2, Option 3"
+        },
+        {
+          "type": "checkbox",
+          "id": "field_required",
+          "label": "t:sections.all.product.blocks.custom_field.settings.field_required.label",
+          "info": "t:sections.all.product.blocks.custom_field.settings.field_required.info",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_at_checkout",
+          "label": "t:sections.all.product.blocks.custom_field.settings.show_at_checkout.label",
+          "info": "t:sections.all.product.blocks.custom_field.settings.show_at_checkout.info",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "t:sections.product-template.blocks.description.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h5",
+              "label": "t:sections.all.heading_size.options__5.label"
+            },
+            {
+              "value": "h6",
+              "label": "t:sections.all.heading_size.options__6.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_length",
+          "default": false,
+          "label": "t:sections.product-template.blocks.description.settings.enable_length.label"
+        },
+        {
+          "type": "range",
+          "id": "length",
+          "min": 5,
+          "max": 50,
+          "step": 1,
+          "label": "t:sections.product-template.blocks.description.settings.enable_length.length",
+          "default": 15
+        }
+      ]
+    },
+    {
+      "type": "payment",
+      "name": "t:sections.product-template.blocks.payment.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "t:sections.product-template.blocks.share.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 1
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.product-template.blocks.custom_liquid.name",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.product-template.blocks.custom_liquid.settings.custom_liquid.label",
+          "info": "t:sections.product-template.blocks.custom_liquid.settings.custom_liquid.info"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "collapsible-row",
+      "name": "t:sections.collapsible-content.blocks.collapsible_row.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "style-1",
+              "label": "t:sections.all.style.options__1.label"
+            },
+            {
+              "value": "style-2",
+              "label": "t:sections.all.style.options__2.label"
+            }
+          ],
+          "default": "style-1",
+          "label": "t:sections.all.style.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.collapsible-content.blocks.collapsible_row.header_1"
+        },
+        {
+          "type": "text",
+          "id": "heading1",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content1",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.name"
+        },
+        {
+          "type": "page",
+          "id": "page1",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.page.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.collapsible-content.blocks.collapsible_row.header_2"
+        },
+        {
+          "type": "text",
+          "id": "heading2",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content2",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.name"
+        },
+        {
+          "type": "page",
+          "id": "page2",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.page.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.collapsible-content.blocks.collapsible_row.header_3"
+        },
+        {
+          "type": "text",
+          "id": "heading3",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content3",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.name"
+        },
+        {
+          "type": "page",
+          "id": "page3",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.page.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.collapsible-content.blocks.collapsible_row.header_4"
+        },
+        {
+          "type": "text",
+          "id": "heading4",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content4",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.name"
+        },
+        {
+          "type": "page",
+          "id": "page4",
+          "label": "t:sections.collapsible-content.blocks.collapsible_row.page.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "complementary",
+      "name": "t:sections.product-template.blocks.complementary_products.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.product-template.blocks.complementary_products.settings.paragraph.content"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:sections.all.heading.label",
+          "default": "Pairs well with"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.header.product-card"
+        },
+        {
+          "type": "select",
+          "id": "image_height",
+          "options": [
+            {
+              "group": "t:sections.all.image.image_height.adapt",
+              "value": "adapt",
+              "label": "t:sections.all.image.image_height.adapt"
+            },
+            {
+              "group": "t:sections.all.image.image_height.portrait",
+              "value": "h-ratio-2-1",
+              "label": "2:1"
+            },
+            {
+              "group": "t:sections.all.image.image_height.portrait",
+              "value": "h-ratio-16-9",
+              "label": "16:9"
+            },
+            {
+              "group": "t:sections.all.image.image_height.portrait",
+              "value": "h-ratio-8-5",
+              "label": "8:5"
+            },
+            {
+              "group": "t:sections.all.image.image_height.portrait",
+              "value": "h-ratio-3-2",
+              "label": "3:2"
+            },
+            {
+              "group": "t:sections.all.image.image_height.portrait",
+              "value": "h-ratio-4-3",
+              "label": "4:3"
+            },
+            {
+              "group": "t:sections.all.image.image_height.squared",
+              "value": "h-ratio-1-1",
+              "label": "1:1"
+            },
+            {
+              "group": "t:sections.all.image.image_height.landscape",
+              "value": "h-ratio-4-5",
+              "label": "4:5"
+            },
+            {
+              "group": "t:sections.all.image.image_height.landscape",
+              "value": "h-ratio-3-4",
+              "label": "3:4"
+            },
+            {
+              "group": "t:sections.all.image.image_height.landscape",
+              "value": "h-ratio-2-3",
+              "label": "2:3"
+            },
+            {
+              "group": "t:sections.all.image.image_height.landscape",
+              "value": "h-ratio-1-2",
+              "label": "1:2"
+            }
+          ],
+          "default": "adapt",
+          "label": "t:sections.all.image.image_height.label_ratio",
+          "info": "t:sections.all.image.image_height.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_secondary_image",
+          "label": "t:sections.featured-collection.settings.show_secondary_image.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_vendor",
+          "label": "t:sections.featured-collection.settings.show_vendor.label",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_quick_add",
+          "default": false,
+          "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "tab",
+      "name": "t:sections.tab.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "style-1",
+              "label": "t:sections.all.style.options__1.label"
+            },
+            {
+              "value": "style-2",
+              "label": "t:sections.all.style.options__2.label"
+            }
+          ],
+          "default": "style-1",
+          "label": "t:sections.all.style.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tab.blocks.tab_item.header_1"
+        },
+        {
+          "type": "text",
+          "id": "heading1",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content1",
+          "label": "t:sections.tab.blocks.tab_item.name"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tab.blocks.tab_item.header_2"
+        },
+        {
+          "type": "text",
+          "id": "heading2",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content2",
+          "label": "t:sections.tab.blocks.tab_item.name"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tab.blocks.tab_item.header_3"
+        },
+        {
+          "type": "text",
+          "id": "heading3",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content3",
+          "label": "t:sections.tab.blocks.tab_item.name"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.tab.blocks.tab_item.header_4"
+        },
+        {
+          "type": "text",
+          "id": "heading4",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "richtext",
+          "id": "row_content4",
+          "label": "t:sections.tab.blocks.tab_item.name"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "popup",
+      "name": "t:sections.product-template.blocks.popup.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Pop-up link text",
+          "label": "t:sections.product-template.blocks.popup.settings.link_label.label"
+        },
+        {
+          "id": "page",
+          "type": "page",
+          "label": "t:sections.product-template.blocks.popup.settings.page.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 3
+        }
+      ]
+    },
+    {
+      "type": "icon_with_text",
+      "name": "t:sections.product-template.blocks.icon_with_text.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "layout",
+          "options": [
+            {
+              "value": "horizontal",
+              "label": "t:sections.all.style_layout.horizontal.label"
+            },
+            {
+              "value": "vertical",
+              "label": "t:sections.all.style_layout.vertical.label"
+            }
+          ],
+          "default": "vertical",
+          "label": "t:sections.all.style_layout.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.all.content.name",
+          "info": "t:sections.all.icons.info"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_1",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_1.show_1.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "icon_1",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_1.image_1.label"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "default": "Icon with text",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_1.text_1.label"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_1.link_1.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_2",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_2.show_2.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "icon_2",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_2.image_2.label"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "default": "Icon with text",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_2.text_2.label"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_2.link_2.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_3",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_3.show_3.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "icon_3",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_3.image_3.label"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "default": "Icon with text",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_3.text_3.label"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_3.link_3.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_4",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_4.show_4.label",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "icon_4",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_4.image_4.label"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "default": "Icon with text",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_4.text_4.label"
+        },
+        {
+          "type": "url",
+          "id": "link_4",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_4.link_4.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_5",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_5.show_5.label",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "icon_5",
+          "default": "bi bi-check",
+          "label": "t:sections.all.icon.label",
+          "info": "t:sections.all.icon.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_5.image_5.label"
+        },
+        {
+          "type": "text",
+          "id": "text_5",
+          "default": "Icon with text",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_5.text_5.label"
+        },
+        {
+          "type": "url",
+          "id": "link_5",
+          "label": "t:sections.product-template.blocks.icon_with_text.settings.block_5.link_5.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "t:sections.all.margin.margin_bottom",
+          "default": 1
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

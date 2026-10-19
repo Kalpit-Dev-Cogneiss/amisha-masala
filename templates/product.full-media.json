@@ -1,0 +1,461 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "text_tWqjBw": {
+          "type": "text",
+          "settings": {
+            "text": "By {{ product.vendor }}",
+            "style": "style-2",
+            "margin_bottom": 1
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h3",
+            "margin_top": 1,
+            "margin_bottom": 2
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "enable_rating_badge_stars": true,
+            "margin_top": 4,
+            "margin_bottom": 3
+          }
+        },
+        "description_yDNXk9": {
+          "type": "description",
+          "settings": {
+            "heading": "",
+            "heading_size": "h6",
+            "margin_top": 0,
+            "margin_bottom": 3,
+            "enable_length": false,
+            "length": 20
+          }
+        },
+        "product-form": {
+          "type": "product_form",
+          "settings": {
+            "show_quantity_selector": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "swatch_option_name": "Color",
+            "swatch_type": "btn_with_variant_img",
+            "enable_payment_button": true,
+            "margin_top": 0,
+            "margin_bottom": 2
+          }
+        },
+        "payment_9RYf8K": {
+          "type": "payment",
+          "settings": {
+            "heading": "Guarantee safe checkout",
+            "margin_top": 4,
+            "margin_bottom": 4
+          }
+        },
+        "icon_with_text_wmUhir": {
+          "type": "icon_with_text",
+          "settings": {
+            "layout": "horizontal",
+            "show_1": true,
+            "icon_1": "bi-check2-circle",
+            "text_1": "90-day risk-free trial",
+            "link_1": "",
+            "show_2": true,
+            "icon_2": "bi-check2-circle",
+            "text_2": "Price match promise",
+            "link_2": "",
+            "show_3": true,
+            "icon_3": "bi-check2-circle",
+            "text_3": "Complimentary shipping & returns",
+            "link_3": "",
+            "show_4": false,
+            "icon_4": "bi-check2-circle",
+            "text_4": "Pay later with   or Afterpay",
+            "link_4": "",
+            "show_5": false,
+            "icon_5": "bi bi-check",
+            "text_5": "Icon with text",
+            "link_5": "",
+            "margin_top": 0,
+            "margin_bottom": 1
+          }
+        },
+        "ae827487-cc77-47f2-8f0e-a1198900e605": {
+          "type": "collapsible-row",
+          "settings": {
+            "style": "style-1",
+            "heading1": "",
+            "row_content1": "",
+            "page1": "",
+            "heading2": "Shipping Policy",
+            "row_content2": "<p>Orders over $65 and subscriptions ship for free! Orders under $65 have a $5 flat rate shipping fee. Depending on your order value and destination, your order will either ship by USPS First Class\/Priority or UPS Ground.<br\/><br\/>We ships to anywhere in the U.S., including U.S. territories. Currently, international shipping is not offered, but we hope to soon.<\/p>",
+            "page2": "",
+            "heading3": "Returns & Exchanges",
+            "row_content3": "<p>Returns and exchanges are offered within 30 days of purchase on non-perishable items. Note, fruit & herbal infusions are considered perishable barring any item defect and therefore not eligible for return or exchange. Items marked as final sale are non-returnable.<\/p>",
+            "page3": "",
+            "heading4": "",
+            "row_content4": "",
+            "page4": "",
+            "margin_top": 3,
+            "margin_bottom": 5
+          }
+        },
+        "complementary_tgTVNw": {
+          "type": "complementary",
+          "disabled": true,
+          "settings": {
+            "heading": "PAIRS WELL WITH",
+            "image_height": "adapt",
+            "show_secondary_image": true,
+            "show_vendor": true,
+            "enable_quick_add": true,
+            "margin_bottom": 4
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "tab_ixVRqq": {
+          "type": "tab",
+          "disabled": true,
+          "settings": {
+            "style": "style-2",
+            "heading1": "Product details",
+            "row_content1": "{{ product.description }}",
+            "heading2": "Shipping Policy",
+            "row_content2": "<p>under $65 have a $5 flat rate shipping fee. Depending on your order value and destination, your order will either ship by USPS First Class\/Priority or UPS Ground.<br\/><br\/>We ships to anywhere in the U.S., including U.S. territories. Currently, international shipping is not offered, but we hope to soon.<\/p>",
+            "heading3": "Returns & Exchanges",
+            "row_content3": "<p>Returns and exchanges are offered within 30 days of purchase on non-perishable items. Note, fruit & herbal infusions are considered perishable barring any item defect and therefore not eligible for return or exchange. Items marked as final sale are non-returnable.<\/p>",
+            "heading4": "",
+            "row_content4": "",
+            "margin_top": 5,
+            "margin_bottom": 3
+          }
+        },
+        "text_d3bk7x": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "style": "style-1",
+            "margin_bottom": 3
+          }
+        }
+      },
+      "block_order": [
+        "text_tWqjBw",
+        "title",
+        "price",
+        "description_yDNXk9",
+        "product-form",
+        "payment_9RYf8K",
+        "icon_with_text_wmUhir",
+        "ae827487-cc77-47f2-8f0e-a1198900e605",
+        "complementary_tgTVNw",
+        "share",
+        "tab_ixVRqq",
+        "text_d3bk7x"
+      ],
+      "settings": {
+        "layout": "container page-width",
+        "media_right": false,
+        "enable_sticky_content": true,
+        "enable_collection_list": false,
+        "collection_list": [
+          "newarrivals",
+          "herbaceou",
+          "miso-gluten-free",
+          "hot-spicy",
+          "original",
+          "sweet-honey"
+        ],
+        "media_style": "sticky_columns",
+        "media_size": "full",
+        "enable_image_zoom": true,
+        "enable_video_looping": true
+      }
+    },
+    "169396685711cf39d5": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_P8Vemp": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_P8Vemp"
+      ],
+      "settings": {
+        "layout": "container container-inner",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "layout": "container page-width",
+        "heading": "RELATED PRODUCTS",
+        "heading_tag": "h2",
+        "heading_size": "h2",
+        "heading_alignment": "text-start",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_tablet": 4,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "banner_parallax_pRc7za": {
+      "type": "banner-parallax",
+      "settings": {
+        "layout": "full-width",
+        "image": "shopify:\/\/shop_images\/Frame_129_1.jpg",
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.5,
+        "preheading": "high-quality",
+        "heading": "Lafonre",
+        "subheading": "<p>Welcome to our website! Since 2003, our goal has been to provide high-quality sauces that enhance your culinary experiences while ensuring sustainability and reliability. Whether you're a home cook or a professional chef, our wide range of premium sauces is crafted to elevate your dishes to the next level.<\/p>",
+        "button_label": "All Collections",
+        "button_link": "shopify:\/\/collections",
+        "button_style": "primary",
+        "enable_scroll": false,
+        "id_scroll": "",
+        "max_width": 600,
+        "image_height": "h-100vh",
+        "heading_tag": "h2",
+        "heading_size": "h-custom",
+        "text_box_position": "flex-middle-left",
+        "text_alignment": "text-md-start text-lg-start",
+        "use_custom_colors": true,
+        "color_text": "#fcfcfc",
+        "color_background": "rgba(0,0,0,0)",
+        "color_background_gradient": "",
+        "use_overlay": true,
+        "colors_overlay": "#1b1f2d",
+        "overlay_opacity": 0.3,
+        "margin_top": 50,
+        "margin_bottom": 90,
+        "image_height_mobile": "h-mb-600",
+        "text_alignment_mobile": "text-start",
+        "show_border": false,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "featured_blog_dKtGaH": {
+      "type": "featured-blog",
+      "settings": {
+        "blog": "news",
+        "preheading": "",
+        "heading": "NEWS",
+        "subheading": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "heading_alignment": "text-start",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "post_limit": 3,
+        "blog_show_date": true,
+        "blog_show_excerpt": false,
+        "blog_show_comment": false,
+        "blog_show_read_more": false,
+        "show_view_all": false,
+        "button_style": "primary",
+        "enable_slider": false,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "columns_desktop": 3,
+        "columns_tablet": 2,
+        "columns_mobile": "1",
+        "gutter": 4,
+        "border_radius": 0,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "margin_top": 60,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "newsletter_9pqkFR": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_xYpQFc": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_pikVVR": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "email_form_cxLUXC": {
+          "type": "email_form",
+          "settings": {
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xYpQFc",
+        "paragraph_pikVVR",
+        "email_form_cxLUXC"
+      ],
+      "disabled": true,
+      "settings": {
+        "use_custom_colors": false,
+        "color_text": "#1b1f2d",
+        "color_background": "#fcfcfc",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "border_radius": 0,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 70,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "icon_with_text_EcfQ6N": {
+      "type": "icon-with-text",
+      "blocks": {
+        "card_icon_cYmFUA": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"000\"><path d=\"M480.07-485.39q29.85 0 51.04-21.26 21.2-21.26 21.2-51.11 0-29.85-21.26-51.05Q509.79-630 479.93-630q-29.85 0-51.04 21.26-21.2 21.26-21.2 51.12 0 29.85 21.26 51.04 21.26 21.19 51.12 21.19ZM480-179.46q117.38-105.08 179.65-201.58 62.27-96.5 62.27-169.04 0-109.38-69.5-179.84-69.5-70.46-172.42-70.46-102.92 0-172.42 70.46-69.5 70.46-69.5 179.84 0 72.54 62.27 169.04 62.27 96.5 179.65 201.58Zm0 79.84Q329-230.46 253.54-343.15q-75.46-112.7-75.46-206.93 0-138.46 89.57-224.19Q357.23-860 480-860t212.35 85.73q89.57 85.73 89.57 224.19 0 94.23-75.46 206.93Q631-230.46 480-99.62Zm0-458.07Z\"><\/path><\/svg>",
+            "heading": "Our Store",
+            "subheading": "<p>123 Fake St. Toronto, Canada<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_pjaNk7": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"000\"><path d=\"M480.07-100q-78.84 0-148.21-29.92t-120.68-81.21q-51.31-51.29-81.25-120.63Q100-401.1 100-479.93q0-78.84 29.92-148.21t81.21-120.68q51.29-51.31 120.63-81.25Q401.1-860 479.93-860q78.84 0 148.21 29.92t120.68 81.21q51.31 51.29 81.25 120.63Q860-558.9 860-480.07q0 78.84-29.92 148.21t-81.21 120.68q-51.29 51.31-120.63 81.25Q558.9-100 480.07-100ZM440-162v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm276-102q20-22 36-47.5t26.5-53q10.5-27.5 16-56.5t5.5-59q0-98.29-54.31-179.53T600-776.77V-760q0 33-23.5 56.5T520-680h-80v80q0 17-11.5 28.5T400-560h-80v80h240q17 0 28.5 11.5T600-440v120h40q26 0 47 15.5t29 40.5Z\"><\/path><\/svg>",
+            "heading": "Free Shipping",
+            "subheading": "<p>Free shipping on oder over $99<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_ebMq3y": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"000\"><path d=\"M455.39-140v-60h292.3q5 0 8.66-3.08 3.65-3.07 3.65-8.07v-279.77q0-114.7-82.08-193.12-82.07-78.42-197.92-78.42t-197.92 78.42Q200-605.62 200-490.92v235.53h-30q-28.77 0-49.38-20.03Q100-295.46 100-324.23v-77.69q0-19.46 11.08-35.66 11.08-16.19 28.92-26.03l1.85-51.08q4.92-65.31 33.92-121t74.38-96.96q45.39-41.27 104.77-64.31Q414.31-820 480-820t124.77 23.04q59.08 23.04 104.77 64t74.38 96.65q28.69 55.7 34.23 121l1.85 50.08q17.46 8.23 28.73 23.54Q860-426.38 860-407.54v89.31q0 18.84-11.27 34.15-11.27 15.31-28.73 23.54v49.39q0 29.53-21.19 50.34Q777.61-140 747.69-140h-292.3Zm-87.7-269.23q-14.69 0-25.04-9.96-10.34-9.96-10.34-24.66 0-14.69 10.34-24.84 10.35-10.16 25.04-10.16 14.7 0 25.04 10.16 10.35 10.15 10.35 24.84 0 14.7-10.35 24.66-10.34 9.96-25.04 9.96Zm224.62 0q-14.7 0-25.04-9.96-10.35-9.96-10.35-24.66 0-14.69 10.35-24.84 10.34-10.16 25.04-10.16 14.69 0 25.04 10.16 10.34 10.15 10.34 24.84 0 14.7-10.34 24.66-10.35 9.96-25.04 9.96ZM254.85-472q-6.23-97.92 60.92-167.58 67.15-69.65 166.23-69.65 83.23 0 146.88 51.5 63.66 51.5 77.27 133.34-85.23-1-157.5-44.76-72.27-43.77-110.96-120-15.23 74.61-63.84 131.92-48.62 57.31-119 85.23Z\"><\/path><\/svg>",
+            "heading": "Support",
+            "subheading": "<p>Our support team is available 24\/7<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        },
+        "card_icon_iAdDXa": {
+          "type": "card-icon",
+          "settings": {
+            "icon": "bi bi-check",
+            "enable_svg": true,
+            "svg": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" height=\"24px\" viewbox=\"0 -960 960 960\" width=\"24px\" fill=\"000\"><path d=\"M860-707.69v455.38Q860-222 839-201q-21 21-51.31 21H172.31Q142-180 121-201q-21-21-21-51.31v-455.38Q100-738 121-759q21-21 51.31-21h615.38Q818-780 839-759q21 21 21 51.31Zm-700 83.85h640v-83.85q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H172.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v83.85Zm0 127.68v243.85q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85h615.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-243.85H160ZM160-240v-480 480Z\"><\/path><\/svg>",
+            "heading": "Secure Payment",
+            "subheading": "<p>All payments are processed securely<\/p>",
+            "button_link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "card_icon_cYmFUA",
+        "card_icon_pjaNk7",
+        "card_icon_ebMq3y",
+        "card_icon_iAdDXa"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "container page-width",
+        "preheading": "",
+        "heading": "",
+        "subheading": "",
+        "heading_tag": "h3",
+        "heading_size": "h2",
+        "heading_alignment": "text-center",
+        "show_read_more": false,
+        "button_label": "Buy it now",
+        "button_link": "shopify:\/\/collections\/all",
+        "button_style": "primary",
+        "columns_desktop": 4,
+        "columns_tablet": 2,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#fcfcfc",
+        "color_background_gradient": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "169396685711cf39d5",
+    "related-products",
+    "banner_parallax_pRc7za",
+    "featured_blog_dKtGaH",
+    "newsletter_9pqkFR",
+    "icon_with_text_EcfQ6N"
+  ]
+}

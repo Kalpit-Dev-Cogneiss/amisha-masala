@@ -1,0 +1,194 @@
+{% style %}
+  .section-extras-color-{{ section.id }} {
+  --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+  }
+  .section-extras-spacing-{{ section.id }} {
+  --section-padding-top: {{ section.settings.padding_top }}px;
+  --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  --section-margin-top: {{ section.settings.margin_top }}px;
+  --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+
+  --color-border-card: {{ section.settings.color_border.red }}, {{ section.settings.color_border.green }}, {{ section.settings.color_border.blue }};
+  }
+{% endstyle %}
+<div class="section-extras-color section-extras-color-{{ section.id }}">
+  {% render 'breadcrumb-banner',
+          banner_image: section.settings.banner_image,
+          layout_container: section.settings.layout,
+          heading: page.title,
+          class_img: 'mb-4 mb-lg-5'
+  %}
+</div>
+<div class="container page-width section-extras-spacing section-extras-spacing-{{ section.id }}">
+  <div class="row d-flex justify-content-center">
+    <div class="col col-lg-6">
+      <div class="form-vertical">
+        <h1 class="text-center h5 mb-2">{{ 'customer.register.title' | t }}</h1>
+        <p class="opacity-85">{{ 'customer.register.info_heading' | t }}</p>
+        {% assign form_id = 'RegisterForm' %}
+        {% form 'create_customer', id: form_id, novalidate: 'novalidate' %}
+          {% render 'form-status', form: form, form_id: form_id %}
+          <div class="row gx-2 gx-lg-4 row-cols-2 row-cols-lg-2">
+            <div class="col">
+              <label for="{{ form_id }}-FirstName">{{ 'customer.register.first_name' | t }}</label>
+              <input
+                type="text"
+                name="customer[first_name]"
+                id="{{ form_id }}-FirstName"
+                class="form-control"
+                {% if form.first_name %}
+                  value="{{ form.first_name }}"
+                {% endif %}
+                autocomplete="given-name"
+              >
+            </div>
+            <div class="col">
+              <label for="{{ form_id }}-LastName">{{ 'customer.register.last_name' | t }}</label>
+              <input
+                type="text"
+                name="customer[last_name]"
+                class="form-control"
+                id="{{ form_id }}-LastName"
+                {% if form.last_name %}
+                  value="{{ form.last_name }}"
+                {% endif %}
+                autocomplete="family-name"
+              >
+            </div>
+          </div>
+          <label for="{{ form_id }}-email">{{ 'customer.register.email' | t }}</label>
+          <input
+            type="email"
+            name="customer[email]"
+            id="{{ form_id }}-email"
+            class="form-control {% if form.errors contains 'email' %} input--error{% endif %}"
+            {% if form.email %}
+              value="{{ form.email }}"
+            {% endif %}
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            aria-required="true"
+            {% if form.errors contains 'email' %}
+              aria-invalid="true"
+              aria-describedby="{{ form_id }}-email-error"
+            {% endif %}
+          >
+          {% if form.errors contains 'email' %}
+            <span id="{{ form_id }}-email-error" class="input-error-message">
+              <span class="d-none">{{ 'general.accessibility.error' | t }} </span>
+              <i class="bi bi-exclamation-circle"></i>
+              <span>
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email }}.</span
+              >
+            </span>
+          {% endif %}
+
+          <label for="{{ form_id }}-password">{{ 'customer.register.password' | t }}</label>
+          <input
+            type="password"
+            name="customer[password]"
+            id="{{ form_id }}-password"
+            class="form-control {% if form.errors contains 'password' %} input--error{% endif %}"
+            aria-required="true"
+            {% if form.errors contains 'password' %}
+              aria-invalid="true"
+              aria-describedby="{{ form_id }}-password-error"
+            {% endif %}
+          >
+          {% if form.errors contains 'password' %}
+            <span id="{{ form_id }}-password-error" class="input-error-message">
+              <i class="bi bi-exclamation-circle"></i>
+              <span>
+                {{- form.errors.translated_fields.password | capitalize }}
+                {{ form.errors.messages.password }}.</span
+              >
+            </span>
+          {% endif %}
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-100 d-block">
+              {{ 'customer.register.submit' | t }}
+            </button>
+            <p class="mb-0">
+              {{ 'customer.register.submit_info' | t -}}
+              <span class="ms-2 hover-underline">{{ 'customer.register.signin' | t | customer_login_link }}</span>
+            </p>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-register.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.page_title.name"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "t:sections.all.page_title.settings.background"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.margin.section_margin_heading"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.margin.margin_bottom",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 100
+    }
+  ]
+}
+{% endschema %}

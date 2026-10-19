@@ -1,0 +1,71 @@
+{% comment %}
+  Renders a list of products from a collection
+
+  Accepts:
+  - collection: {Object} Collection Liquid object (required)
+
+  Usage:
+  {% render 'collection-grid-item', collection: collection %}
+{% endcomment %}
+
+{% liquid
+  if b_enable
+    assign collection_image = b_img
+    assign collection_title = b_title
+    assign collection_url = b_url
+  else
+    if collection.image
+      assign collection_image = collection.image
+    elsif collection.products.first and collection.products.first.media != empty
+      assign collection_image = collection.products.first.featured_media.preview_image
+    else
+      assign collection_image = blank
+    endif
+
+    if collection.title == blank
+      assign collection_title = 'homepage.onboarding.collection_title' | t
+    else
+      assign collection_title = collection.title
+    endif
+
+    if collection.products == empty
+      assign collection_url = '#'
+    else
+      assign collection_url = collection.url
+    endif
+  endif
+%}
+
+<div class="collection-grid position-relative {{ style }}{% if b_bg != '' and style == 'style-1' or style == 'style-2'  %} p-3 rounded-3{% endif %}" {% if b_bg != '' %}style="background-color: {{ b_bg }};" {% endif %}>
+  <a class="stretched-link" href="{{ collection_url }}"><span class="d-none">{{ collection_title }}</span></a>
+  <div
+    class="card-image d-block overflow-hidden position-relative text-center"
+  >
+    {% if collection_url %}
+      <a class="full-width-link" href="{{ collection_url }}">
+        <span class="d-none">{{ collection_title }}</span>
+      </a>
+    {% endif %}
+    {% unless collection_image == '' %}
+      <div class="card-img-top lh-0">
+        {% render 'image', lazyload: true, image: collection_image, class: image_position %}
+      </div>
+    {% else %}
+      {% if collection == empty %}
+        <div class="card-img-top lh-0">
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% else %}
+        {% render 'image', lazyload: true, image: collection_image, class: image_position %}
+      {% endif %}
+    {% endunless %}
+  </div>
+
+  <div class="card-content{% if style == 'style-1' or style == 'style-2' %} px-3{% endif %} ">
+    <{{ heading_tag }} class="{{ heading_size }} mb-0{% if style == 'style-3' or style == 'style-4' %} text-center{% else %} py-2{% endif %}">
+      <a href="{{ collection_url }}" class="px-0 d-block hover-underline-1 p-2">
+        {{ collection_title }}
+      </a>
+    </{{ heading_tag }}>
+  </div>
+</div>

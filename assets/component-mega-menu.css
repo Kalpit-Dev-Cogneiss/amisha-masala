@@ -1,0 +1,93 @@
+.site-nav.list--inline > li.mega-menu {
+    position: inherit;
+}
+
+.site-nav.list--inline > li.mega-menu.site-nav--has-dropdown ul .bi-chevron-down {
+    display: none;
+}
+
+.site-nav.list--inline > li.mega-menu ul {
+    left: 0;
+    right: 0;
+    min-width: 100%;
+    width: 100%;
+    padding: 10px;
+}
+.site-nav.list--inline > li.mega-menu .product-card  a{
+    padding: 0;
+    display: inline-block;
+}
+.site-nav.list--inline > li.mega-menu .collection-grid  a{
+    display: inline-block;
+    white-space: inherit;
+    word-break: break-word;
+
+}
+.site-nav.list--inline > li.mega-menu ul ul {
+    position: relative;
+    left: 0 !important;
+    right: 0;
+    transform: none !important;
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    box-shadow: none;
+    border: navajowhite;
+    padding: 0;
+}
+
+.site-nav.list--inline > li.mega-menu .site-nav__link_mega {
+    font-weight: bold;
+    font-size: var(--bs-font-navigation-size);
+}
+.site-nav.list--inline > li.mega-menu .site-nav__child-link--parent{
+    position: relative;
+}
+.site-nav.list--inline > li.mega-menu .site-nav__child-link--parent::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    height: 2px;
+    width: 30px;
+    background: var(--color-sale-background);
+}
+.site-nav.list--inline > li.mega-menu > .site-nav__item {
+    position: inherit;
+}
+
+.site-nav.list--inline > li.mega-menu > .site-nav__item > ul {
+    left: 0;
+}
+
+.site-nav.list--inline > li.mega-menu > .site-nav__item:hover > ul {
+    left: 0;
+}
+
+.site-nav.list--inline > li.mega-menu > .site-nav__item .site-nav__item:hover > ul {
+    left: 0;
+    top: 0;
+    pointer-events: visible;
+}
+
+.site-nav.list--inline > li.mega-menu .col {
+    margin: 10px 0;
+}
+
+.site-nav.list--inline .site-nav__link_mega {
+    margin-bottom: 10px;
+}
+
+.cs-offcanvas .site-nav .mega-menu .container, .cs-offcanvas .site-nav .mega-menu .row, .cs-offcanvas .site-nav .mega-menu .col {
+    padding: 0;
+    margin: 0;
+}
+
+.cs-offcanvas .site-nav .mega-menu .col {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cs-offcanvas .site-nav .mega-menu .col:last-child {
+    margin-bottom: 0;
+}

@@ -1,0 +1,65 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "cart_ajax_enable": true,
+        "cart_notes_enable": true,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "featured_collection_7jAYah": {
+      "type": "featured-collection",
+      "settings": {
+        "layout": "container page-width",
+        "style": "style-1",
+        "preheading": "",
+        "heading": "You May Also Like",
+        "heading_tag": "h2",
+        "heading_size": "h4",
+        "subheading": "",
+        "collection": "newarrivals",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_tablet": 3,
+        "columns_mobile": "2",
+        "gutter": 4,
+        "show_view_all": true,
+        "button_label": "Shop All",
+        "button_link": "shopify:\/\/collections\/all",
+        "enable_slider": true,
+        "style_slider": "slide-dark",
+        "enable_navigation": true,
+        "navigation_icon": "style-2",
+        "enable_pagination": true,
+        "slider_visual": "bullets",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "loop": true,
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "enable_quick_add": true,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#ffffff",
+        "color_background_gradient": "",
+        "enable_parallax": true,
+        "type": "scroll",
+        "speed": 0.5,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_collection_7jAYah"
+  ]
+}

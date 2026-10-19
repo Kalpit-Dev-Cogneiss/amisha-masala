@@ -1,0 +1,76 @@
+{% style %}
+    {% if use_custom_colors_block %}
+        .block-extras-color-{{ block_id }} {
+        --color-foreground-block: {{ color_text_block.red }}, {{ color_text_block.green }}, {{ color_text_block.blue }};
+        }
+    {% endif %}
+    {% if use_overlay %}
+        .card-overlay-{{ block_id }} {
+        --color-overlay: {{ colors_overlay.red }}, {{ colors_overlay.green }}, {{ colors_overlay.blue }};
+        --color-overlay-opacity: {{ overlay_opacity }};
+        }
+    {% endif %}
+{% endstyle %}
+
+<div
+        class="cs-card card-banner card-banner-hover hover-scale-image {{ style }} {{ style_hover }}{% if use_custom_colors_block %} block-extras-color block-extras-color-{{ block_id }}{% endif %}"
+>
+    {% if button_link %}
+        <a class="full-width-link" href="{{ button_link }}">
+            <span class="d-none">{{ heading }}</span>
+        </a>
+    {% endif %}
+    <div class="clearfix position-relative {% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}">
+        <div class="card-img-top lh-0 d-block overflow-hidden{% if use_overlay %} card-overlay card-overlay-{{ block_id }}{% endif %}">
+            {% if video_mobile != blank %}
+                <div class="d-block d-md-none">
+                    {{ video_mobile | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false }}
+                </div>
+            {% else %}
+                {% if image_mobile != blank %}
+                    <div class="d-block d-md-none">
+                        {% render 'image', lazyload: true, image: image_mobile %}
+                    </div>
+                {% endif %}
+            {% endif %}
+
+            {% if video != blank %}
+                <div class="media-wrap{% if image_mobile != blank or video_mobile != blank %} d-none d-md-flex{% else %} d-flex{% endif %}">
+                    {{ video | video_tag: image_size: '600x', autoplay: true, loop: true, muted: true, controls: false }}
+                </div>
+            {% else %}
+                {% if image != blank %}
+                    <div class="media-wrap{% if image_mobile != blank or video_mobile != blank %} d-none d-md-flex{% else %} d-flex{% endif %}">
+                        {% render 'image', lazyload: true, image: image %}
+                    </div>
+                {% else %}
+                    <div class="media-wrap{% if image_mobile != blank or video_mobile != blank %} d-none d-md-flex{% else %} d-flex{% endif %}">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg bg-body-tertiary' }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+        <div class="cs-card-body {{ text_box_position }} {{ text_alignment }} {{ text_alignment_mobile }}">
+            <div class="cs-card-body-inner p-4 {{ card_content_layout }}">
+                <div class="card-top overflow-hidden">
+                    {% if preheading or heading or subheading %}
+                        <div class="heading heading-wrap{{ class }} {{ heading_alignment_mobile }} {{ heading_alignment }}">
+                            {% if heading %}
+                            <{{ heading_tag }} class="heading hover-underline mb-0 d-inline-block {{ heading_size }}">
+                            {{ heading }}
+                        </{{ heading_tag }}>
+                            {% endif %}
+                            {% if subheading != blank %}
+                                <div class="sub-3 subheading rte mt-2 {{ subheading_class }}" >
+                                    <div class="opacity-85">
+                                        {{ subheading }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

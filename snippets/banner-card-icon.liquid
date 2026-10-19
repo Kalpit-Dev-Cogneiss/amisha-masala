@@ -1,0 +1,31 @@
+<div class="card-icon hover-flip horizontal position-relative {{ class }}">
+  {% if icon != ''  or image != '' or svg != ''  %}
+    <div
+    class="card-icon-top item-hover mb-3 {% if style == 'vertical' %} me-3 {% endif %}"
+  >
+    {% if image != blank %}
+      {% render 'image', lazyload: true, image: image %}
+    {% else %}
+      {% if enable_svg and svg != '' %}
+        {{ svg }}
+      {% else %}
+          <div class="fs-20">
+             <i class="bi {{ icon }}"></i>
+          </div>
+      {% endif %}
+    {% endif %}
+  </div>
+    {% endif %}
+  <div class="card-icon-body">
+    {% if heading != '' %}
+      <{{ heading_tag }} class="mb-1 h6">
+        {{ heading }}
+      </{{ heading_tag }}>
+    {% endif %}
+    {% if subheading != '' %}
+      <div class="rte card-text subheading opacity-85 rte-inline {{ class_subheading }}">
+        {{ subheading }}
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{% style %}
+  .section-extras-color-{{ section.id }} {
+  --color-foreground: {{ section.settings.color_text.red }}, {{ section.settings.color_text.green }}, {{ section.settings.color_text.blue }};
+  }
+{% endstyle %}
+<div class="clearfix {% if section.settings.background_image != blank %} bg-image{% endif %}" {% if section.settings.background_image != blank %} style="background-image: url('{{ section.settings.background_image | image_url : width: 1920 }}')" {% endif %}>
+    <div class="container page-width section-extras-color section-extras-color-{{ section.id }}">
+        <div class="empty-page-content text-center">
+            <h1 class="h1 mb-4 font-body">{{ 'general.404.title' | t }}</h1>
+            <p class="opacity-85 mb-5">{{ 'general.404.subtext' | t }}</p>
+            <p>
+                <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary">
+                    {{- 'general.404.link' | t -}}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.404.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "t:sections.all.image.background_image.label"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "t:sections.all.color_options.color_text",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}

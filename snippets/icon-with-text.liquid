@@ -1,0 +1,118 @@
+{% if block.settings.show_1 %}
+    <div class="card-icon w-100 mb-2 me-3 position-relative d-flex align-items-center{% if block.settings.link_1 != blank %} color-link{% endif %} {% if layout == 'vertical' %} flex-column justify-content-between text-center {% endif %}">
+        {% if block.settings.link_1 != blank %}
+            <a class="full-width-link" href="{{ block.settings.link_1 }}">
+                <span class="d-none">{{ text_1 }}</span>
+            </a>
+        {% endif %}
+        <div class="clearfix lh-0 item-hover {% if layout == 'vertical' %} {{ size }}{% endif %}">
+            {% if block.settings.image_1 != blank %}
+                {% render 'image', lazyload: true,
+                        image: block.settings.image_1
+                %}
+            {% else %}
+                <i class="bi text-success {{  block.settings.icon_1 }}"></i>
+            {% endif %}
+        </div>
+        {% if block.settings.text_1 != blank %}
+            <p class="fs-14 opacity-85 mb-0 mt-1 mx-auto{% if layout == 'horizontal' %} ms-2{% endif %}">
+                {{ block.settings.text_1 }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+{% if block.settings.show_2 %}
+    <div class="card-icon w-100 mb-2 me-3 position-relative d-flex align-items-center{% if block.settings.link_2 != blank %} color-link{% endif %} {% if layout == 'vertical' %} flex-column justify-content-between text-center {% endif %}">
+        {% if block.settings.link_2 != blank %}
+            <a class="full-width-link" href="{{ block.settings.link_2 }}">
+                <span class="d-none">{{ text_2 }}</span>
+            </a>
+        {% endif %}
+        <div class="clearfix lh-0 item-hover {% if layout == 'vertical' %} {{ size }}{% endif %}">
+            {% if block.settings.image_2 != blank %}
+                {% render 'image', lazyload: true,
+                        image: block.settings.image_2
+                %}
+            {% else %}
+                <i class="bi text-success {{  block.settings.icon_2 }}"></i>
+            {% endif %}
+        </div>
+        {% if block.settings.text_2 != blank %}
+            <p class="fs-14 opacity-85 mb-0 mt-1 mx-auto{% if layout == 'horizontal' %} ms-2{% endif %}">
+                {{ block.settings.text_2 }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+{% if block.settings.show_3 %}
+    <div class="card-icon w-100 mb-2 me-3 position-relative d-flex align-items-center{% if block.settings.link_3 != blank %} color-link{% endif %} {% if layout == 'vertical' %} flex-column justify-content-between text-center {% endif %}">
+        {% if block.settings.link_3 != blank %}
+            <a class="full-width-link" href="{{ block.settings.link_3 }}">
+                <span class="d-none">{{ text_3 }}</span>
+            </a>
+        {% endif %}
+        <div class="clearfix lh-0 item-hover {% if layout == 'vertical' %} {{ size }}{% endif %}">
+            {% if block.settings.image_3 != blank %}
+                {% render 'image', lazyload: true,
+                        image: block.settings.image_3
+                %}
+            {% else %}
+                <i class="bi text-success {{  block.settings.icon_3 }}"></i>
+            {% endif %}
+        </div>
+        {% if block.settings.text_3 != blank %}
+            <p class="fs-14 opacity-85 mb-0 mt-1 mx-auto{% if layout == 'horizontal' %} ms-2{% endif %}">
+                {{ block.settings.text_3 }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+{% if block.settings.show_4 %}
+    <div class="card-icon w-100 mb-2 me-3 position-relative d-flex align-items-center{% if block.settings.link_4 != blank %} color-link{% endif %} {% if layout == 'vertical' %} flex-column justify-content-between text-center {% endif %}">
+        {% if block.settings.link_4 != blank %}
+            <a class="full-width-link" href="{{ block.settings.link_4 }}">
+                <span class="d-none">{{ text_4 }}</span>
+            </a>
+        {% endif %}
+        <div class="clearfix lh-0 item-hover {% if layout == 'vertical' %} {{ size }}{% endif %}">
+            {% if block.settings.image_4 != blank %}
+                {% render 'image', lazyload: true,
+                        image: block.settings.image_4
+                %}
+            {% else %}
+                <i class="bi text-success {{  block.settings.icon_4 }}"></i>
+            {% endif %}
+        </div>
+        {% if block.settings.text_4 != blank %}
+            <p class="fs-14 opacity-85 mb-0 mt-1 mx-auto{% if layout == 'horizontal' %} ms-2{% endif %}">
+                {{ block.settings.text_4 }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+
+{% if block.settings.show_5 %}
+    <div class="card-icon w-100 mb-2 me-3 position-relative d-flex align-items-center{% if block.settings.link_5 != blank %} color-link{% endif %} {% if layout == 'vertical' %} flex-column justify-content-between text-center {% endif %}">
+        {% if block.settings.link_5 != blank %}
+            <a class="full-width-link" href="{{ block.settings.link_5 }}">
+                <span class="d-none">{{ text_5 }}</span>
+            </a>
+        {% endif %}
+        <div class="clearfix lh-0 item-hover {% if layout == 'vertical' %} {{ size }}{% endif %}">
+            {% if block.settings.image_5 != blank %}
+                {% render 'image', lazyload: true,
+                        image: block.settings.image_5
+                %}
+            {% else %}
+                <i class="bi text-success {{  block.settings.icon_5 }}"></i>
+            {% endif %}
+        </div>
+        {% if block.settings.text_5 != blank %}
+            <p class="fs-14 opacity-85 mb-0 mt-1 mx-auto{% if layout == 'horizontal' %} ms-2{% endif %}">
+                {{ block.settings.text_5 }}
+            </p>
+        {% endif %}
+    </div>
+{% endif %}
+
+

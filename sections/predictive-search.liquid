@@ -1,0 +1,144 @@
+<script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
+<div class="result position-relative mb-3 p-4 bg-body">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <div class="p-0 pb-3">
+                <div class="widget-title mb-3">
+                    {% if predictive_search.terms == "popular" %}
+                        <h3 class="h6 text-uppercase fw-bold alert0">{{ settings.title_collection }}</h3>
+                    {% else %}
+                        {%- if predictive_search.resources.products.size > 0 -%}
+                            <h3 class="h6 text-uppercase fw-bold alert0">{{ settings.title_collection }}</h3>
+                        {%- else -%}
+                            <h3 class="fs-18 text-uppercase alert2">{{ 'general.search.no_result1' | t }}<span
+                                        class="fs-14 text-capitalize font-body">{{ 'general.search.no_result2' | t }}</span></h3>
+                        {%- endif -%}
+                    {%- endif -%}
+                </div>
+                <div class="row row-cols-2 row-cols-lg-5 gx-2">
+                    {%- if predictive_search.resources.products.size > 0 -%}
+                        {%- for product in predictive_search.resources.products -%}
+                            {%- render 'product-card-grid-small', product: product -%}
+                        {%- endfor -%}
+                    {%- else -%}
+                        {% for product in settings.collection.products limit: 5 %}
+                            {%- render 'product-card-grid-small', product: product -%}
+                        {% else %}
+                            {% for i in (1..5) %}
+                                <div class="col mb-2">
+                                    <div class="product-card position-relative">
+                                        <a class="full-width-link" href="#">
+                                            <span class="d-none">{{ 'homepage.onboarding.product_title' | t }}</span>
+                                        </a>
+                                        <div class="card-img-top mb-2 card-adapt">
+                                            {% capture current %}{% cycle 1, 2, 3, 4 %}{% endcapture %}
+                                            {{ 'product-apparel-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                                        </div>
+                                        <h3 class="fs-base mb-1"
+                                            aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</h3>
+                                        {% render 'product-price-listing', product: product %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+              <div class="d-none d-lg-block">
+                  <a class="btn btn-primary mt-4"
+                     href="/collections/all">{{ 'general.search.view_all' | t }}</a>
+              </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="p-2 p-lg-4">
+                {%- if predictive_search.resources.queries.size > 0 -%}
+                    <div class="widget mb-4">
+                        <div class="widget-title mb-3">
+                            <h3 class="h6 text-uppercase fw-bold alert0">{{ 'general.search.result_query' | t }}</h3>
+                        </div>
+                        <ul class="list-unstyled list-item p-0 m-0">
+                            {%- for query_suggestions in predictive_search.resources.queries -%}
+                                <li>
+                                    <a class="d-inline-block" href="{{ query_suggestions.url }}"
+                                       title="{{ query_suggestions.text }}">
+                                        {{- query_suggestions.styled_text -}}
+                                    </a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+                    {%- if predictive_search.resources.collections.size > 0 -%}
+                        <div class="widget mb-4">
+                            <div class="widget-title mb-3">
+                                <h3 class="h6 text-uppercase fw-bold alert0">{{ 'general.search.result_collections' | t }}</h3>
+                            </div>
+                            <ul class="list-unstyled list-item p-0 m-0">
+                                {%- for collection in predictive_search.resources.collections -%}
+
+                                    <li>
+                                        <a class="d-inline-block"
+                                           href="{{ collection.url }}">{{ collection.title }}
+                                            ({{ collection.products_count }})</a>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {%- endif -%}
+                    {%- if predictive_search.resources.pages.size > 0 -%}
+                        <div class="widget mb-4">
+                            <div class="widget-title mb-3">
+                                <h3 class="h6 text-uppercase fw-bold alert0">{{ 'general.search.result_pages' | t }}</h3>
+                            </div>
+                            <ul class="list-unstyled list-item p-0 m-0">
+                                {%- for page in predictive_search.resources.pages -%}
+                                    <li>
+                                        <a class="d-inline-block" href="{{ page.url }}">{{ page.title }}</a>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {%- endif -%}
+                    {%- if predictive_search.resources.articles.size > 0 -%}
+                        <div class="widget mb-4">
+                            <div class="widget-title mb-3">
+                                <h3 class="h6 text-uppercase fw-bold alert0">{{ 'general.search.result_blog' | t }}</h3>
+                            </div>
+                            <ul class="list-unstyled list-item p-0 m-0">
+                                {%- for article in predictive_search.resources.articles -%}
+                                    <li>
+                                        <a class="d-inline-block" href="{{ article.url }}">{{ article.title }}</a>
+                                    </li>
+                                {%- endfor -%}
+                            </ul>
+                        </div>
+                    {%- endif -%}
+                    <div class="clearfix">
+                        <button class="btn btn-dark w-100 d-block text-break">{{ 'general.search.search_for' | t }}
+                            "{{ predictive_search.terms }}
+                            "
+                        </button>
+                    </div>
+                {%- else -%}
+                    <div class="widget mb-4">
+                        <div class="widget-title mb-3">
+                            <h3 class="h6 text-uppercase fw-bold alert0">{{ 'general.search.result_collections1' | t }}</h3>
+                        </div>
+                        <ul class="list-unstyled list-item p-0 m-0">
+                            {%- for collection in collections limit: 6-%}
+                                <li>
+                                    <a class="d-inline-block"
+                                       href="{{ collection.url }}">{{ collection.title }}
+                                        ({{ collection.products_count }})</a>
+                                </li>
+                            {%- endfor -%}
+                        </ul>
+                    </div>
+                {%- endif -%}
+            </div>
+            <div class="d-block d-lg-none">
+                <a class="btn btn-dark mt-4"
+                   href="/collections/all">{{ 'general.search.view_all' | t }}</a>
+            </div>
+        </div>
+    </div>
+</div>

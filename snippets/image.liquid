@@ -1,0 +1,14 @@
+{% liquid
+    assign stacked_sizes = '(min-width: 750px) 60vw, 120vw'
+    assign widths = '900, 1500, 1700, 1920'
+%}
+{{
+image
+| image_url: width: 1500
+| image_tag:
+width: image.width,
+height: image.height,
+class: class,
+sizes: stacked_sizes,
+widths: widths
+}}

@@ -1,0 +1,118 @@
+{% assign custom_fields = section.blocks | where: 'type', 'custom_field' %}
+{% for block in custom_fields %}
+  {% liquid
+    assign field_label = block.settings.field_label
+    assign field_handle = block.settings.field_label | handleize
+    if block.settings.field_required
+      assign field_required = 'required class="required"'
+    else
+      assign field_required = ''
+    endif
+    if block.settings.show_at_checkout
+      assign show_at_checkout = ''
+    else
+      assign show_at_checkout = '_'
+    endif
+    assign field_name = show_at_checkout | append: field_label
+    assign field_options = block.settings.field_options | remove: '  ' | replace: ', ', ',' | replace: ' ,', ',' | split: ','
+  %}
+  <div class="line-item-property__field mb-3" {{ block.shopify_attributes }}>
+    {% case block.settings.field_type %}
+      {% when 'text_short' %}
+        <label class="fw-bold" for="{{ field_handle }}-{{ block.id }}">{{ field_label }}</label>
+        <input
+          {{ field_required }}
+          id="{{ field_handle }}-{{ block.id }}"
+          type="text"
+          name="properties[{{ field_name }}]"
+        >
+      {% when 'text_long' %}
+        <label class="fw-bold" for="{{ field_handle }}-{{ block.id }}">{{ field_label }}</label>
+        <textarea
+          rows="5"
+          {{ field_required }}
+          id="{{ field_handle }}-{{ block.id }}"
+          name="properties[{{ field_name }}]"
+        ></textarea>
+      {% when 'radio_buttons' %}
+        <label class="fw-bold">{{ field_label }}</label>
+        {% if field_options.size > 0 %}
+          {% for field_option in field_options %}
+            <div class="field field-radio">
+              <input
+                {{ field_required }}
+                type="radio"
+                name="properties[{{ field_name }}]"
+                value="{{ field_option }}"
+                id="radio-{{ field_handle }}-{{ field_option | handleize | capitalize }}-{{ block.id }}"
+              >
+              <label for="radio-{{ field_handle }}-{{ field_option | handleize | capitalize }}-{{ block.id }}">
+                {{- field_option -}}
+              </label>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% when 'drop_down' %}
+        <div class="selector-wrapper">
+          <label class="fw-bold">{{ field_label }}</label>
+          <select {{ field_required }} id="{{ field_handle }}" name="properties[{{ field_name }}]">
+            {% if field_options.size > 0 %}
+              {% for field_option in field_options %}
+                <option value="{{ field_option }}">{{ field_option }}</option>
+              {% endfor %}
+            {% endif %}
+          </select>
+        </div>
+      {% when 'checkbox' %}
+        <div class="field field-checkbox">
+          <input type="hidden" name="properties[{{ field_label }}]" value="No">
+          <input
+            id="{{ field_handle }}-{{ block.id }}"
+            {{ field_required }}
+            type="checkbox"
+            name="properties[{{ field_name }}]"
+            value="Yes"
+          >
+          <label for="{{ field_handle }}-{{ block.id }}">{{ field_label }}</label>
+        </div>
+      {% when 'checkbox_group' %}
+        <label class="fw-bold">{{ field_label }}</label>
+        {% if field_options.size > 0 %}
+          {% for field_option in field_options %}
+            <div class="field field-checkbox">
+              <input
+                {{ field_required }}
+                type="checkbox"
+                id="checkgroup-{{ field_handle }}-{{ field_option | handleize | capitalize }}-{{ block.id }}"
+                hidden-data="{{ field_handle }}"
+                onchange="fillHiddenCustomField('{{ field_handle }}')"
+                value="{{ field_option }}"
+              >
+              <label for="checkgroup-{{ field_handle }}-{{ field_option | handleize | capitalize }}-{{ block.id }}">
+                {{- field_option -}}
+              </label>
+            </div>
+          {% endfor %}
+        {% endif %}
+        <input type="hidden" id="{{ field_handle }}" name="properties[{{ field_name }}]">
+        <script>
+          function fillHiddenCustomField(hiddenname) {
+            var checkboxes = document.querySelectorAll('[hidden-data="' + hiddenname + '"]');
+            var hiddenfield = document.getElementById(hiddenname);
+            hiddenfield.value = ""
+            var i;
+            for (i = 0; i < checkboxes.length; i++) {
+              var x = checkboxes[i];
+              if (x.checked) {
+                if (hiddenfield.value == "") {
+                  hiddenfield.value = x.value;
+                } else {
+                  hiddenfield.value = hiddenfield.value + ", " + x.value;
+                }
+              }
+            }
+          }
+        </script>
+    {% endcase %}
+  </div>
+{% endfor %}

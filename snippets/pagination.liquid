@@ -1,0 +1,104 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+  - pagination: {String} (optional) How additional pages of products are navigated
+{% endcomment %}
+{% if pagination == 'infinite' or pagination == 'click' %}
+  <paginate-infinite
+    data-paginate-infinite-container
+    class="d-block mw-320px text-center mx-auto py-4"
+    data-url="{{ paginate.next.url }}"
+    data-trigger="{{ pagination }}"
+  >
+    <small class="d-block">
+      {{ 'general.pagination.paginate_count' | t: count: paginate_count, total: paginate.items }}
+    </small>
+    <div class="progress my-4" style="height: 1px;">
+      {% assign paginate_progress = paginate.items
+        | minus: paginate.items
+        | minus: paginate_count
+        | times: 100.0
+        | divided_by: paginate.items
+        | round
+        | remove: '-'
+      %}
+      <div
+        class="progress-bar bg-dark"
+        role="progressbar"
+        aria-label="Progress Bar"
+        style="width: {{ paginate_progress }}%;"
+        aria-valuenow="{{ paginate_count }}"
+        aria-valuemin="0"
+        aria-valuemax="{{ paginate.items }}"
+      ></div>
+    </div>
+    {% if paginate.next %}
+      <button
+        data-paginate-infinite-btn
+        class="btn button-outline-primary d-inline-flex justify-content-center align-items-center"
+        type="button"
+      >
+        <span class="lh-1 me-2"><i class="bi bi-chevron-double-down"></i></span>
+        {{ 'general.pagination.load_more' | t }}
+      </button>
+    {% endif %}
+  </paginate-infinite>
+{% else %}
+  <nav aria-label="{{ 'general.pagination.label' | t }}" class="mt-4 mb-4">
+    <ul class="cs-pagination list-unstyled d-flex justify-content-start align-items-center">
+      {% if paginate.previous %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginate.previous.url }}{{ anchor }}">
+            <i class="bi bi-chevron-left"></i>
+          </a>
+        </li>
+      {% endif %}
+
+      {% for part in paginate.parts %}
+        {% if part.is_link %}
+          <li class="page-item">
+            <a
+              class="page-link"
+              href="{{ part.url }}{{ anchor }}"
+              aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+            >
+              {{ part.title }}
+            </a>
+          </li>
+        {% else %}
+          {% if part.title == paginate.current_page %}
+            <li class="page-item active">
+              <span
+                class="page-link"
+                aria-current="page"
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+              >
+                {{- part.title -}}
+              </span>
+            </li>
+          {% else %}
+            <li class="page-item">
+              <span class="three-dots">{{ part.title }}</span>
+            </li>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      {% if paginate.next %}
+        <li class="page-item">
+          <a class="page-link" href="{{ paginate.next.url }}{{ anchor }}">
+            <i class="bi bi-chevron-right"></i>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

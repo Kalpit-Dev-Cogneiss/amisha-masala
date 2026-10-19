@@ -1,0 +1,69 @@
+{% assign featured_media = product.selected_or_first_available_variant.featured_media
+        | default: product.featured_media
+%}
+<div class="row gx-3">
+    <div class="col-9 col-md-8">
+        {% for media in product.media %}
+            {% if forloop.index0 == 0 %}
+                <div
+                        class="position-sticky top-10 item mb-3"
+                        data-target="{{ section_id }}-{{ media.id }}"
+                        data-media-position="{{ forloop.index0 }}"
+                >
+                    <div class="border">
+                        {% render 'product-media-main', media: media, loop: enable_video_looping, enable_image_zoom: enable_image_zoom %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="col-3 col-md-4">
+        {% for media in product.media %}
+            {% if forloop.index0 != 0 %}
+                <div
+                        class="item mb-3"
+                        data-target="{{ section_id }}-{{ media.id }}"
+                        data-media-position="{{ forloop.index0 }}"
+                >
+                    <div class="border">
+                        {% render 'product-media-main', media: media, loop: enable_video_looping, enable_image_zoom: enable_image_zoom %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<noscript>
+    {% capture product_image_size %}{{ height }}x{% endcapture %}
+    <img
+            src="{{ featured_media | image_url: product_image_size, scale: product_image_scale }}"
+            loading="lazy"
+            alt="{{ featured_media.alt }}"
+            id="FeaturedMedia-{{ section_id }}"
+            class="product-featured-media"
+            width="auto"
+            height="auto"
+            style="max-width: {{ height }}px;"
+    >
+</noscript>
+
+{% assign three_d_model_media = product.media | where: 'media_type', 'model' | first %}
+
+{% if three_d_model_media %}
+    <button
+            aria-label="{{ 'products.product.view_in_space_label' | t }}"
+            class="product-single__view-in-space"
+            data-shopify-xr
+            data-shopify-model3d-id="{{ three_d_model_media.id }}"
+            data-shopify-title="{{ product.title | escape }}"
+            data-shopify-xr-hidden
+    >
+        <i class="bi bi-hexagon-half"></i>
+        <span
+                class="product-single__view-in-space-text"
+        >
+      {{- 'products.product.view_in_space' | t -}}
+    </span>
+    </button>
+{% endif %}

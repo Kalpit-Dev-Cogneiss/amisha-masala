@@ -1,0 +1,13 @@
+{% if product.available == false or product.compare_at_price > product.price and product.available %}
+  <div class="price__badges price__badges--listing d-inline-block">
+    {% if product.available == false %}
+      <span class="price__badge price__badge--sold-out d-block">
+        <span>{{ 'products.product.sold_out' | t }}</span>
+      </span>
+    {% elsif product.compare_at_price > product.price and product.available %}
+      <span class="price__badge price__badge--sale d-block" aria-hidden="true">
+        <span>{{ 'products.product.on_sale' | t }}</span>
+      </span>
+    {% endif %}
+  </div>
+{% endif %}

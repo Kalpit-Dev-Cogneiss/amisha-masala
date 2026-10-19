@@ -1,0 +1,187 @@
+{% comment %}
+  Renders a product card using "List" style
+
+  Accepts:
+  - product: {Object} Product Liquid object (required)
+  - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+
+  Usage:
+  {% render 'product-card-list', product: product, show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+<div class="product-card position-relative mb-4 pb-4 border-bottom">
+    <div class="row d-flex align-items-center">
+        {% unless product.featured_media == null %}
+            <div class="col-12 col-md-12 col-lg-4">
+                <div class="mb-4 mb-lg-2 overflow-hidden position-relative">
+                    <a class="full-width-link" href="{{ product.url }}">
+                        <span class="d-none">{{ product.title }}</span>
+                    </a>
+                    <div class="card-img-top hover-secondary-image {% if image_height == 'adapt' %} card-adapt{% else %} card-img-custom-height {{ image_height }} {% endif %}">
+                        {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+                        {% render 'image', lazyload: true, image: product.featured_media, class: image_position %}
+
+                        {% if product.media[1] != null %}
+                            {% render 'image', lazyload: true, image: product.media[1], class: image_position %}
+                        {% endif %}
+
+                        {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+                    </div>
+                    {% render 'product-badge', product: product %}
+                </div>
+            </div>
+        {% endunless %}
+        <div class="col-12 col-md-12 col-lg-5">
+            {% if settings.enable_rating_badge_stars %}
+                <div class="star-wrap fs-12">
+                    <!-- Start of Judge.me code -->
+                    <div class='jdgm-widget jdgm-preview-badge'>
+                        {{ product.metafields.judgeme.badge }}
+                    </div>
+                    <!-- End of Judge.me code -->
+                </div>
+            {% endif %}
+            {% render 'product-vendor-type', product: product, show_vendor: show_vendor %}
+            <h3 class="h6 mb-0" aria-hidden="true">
+                <a class="text-decoration-none" href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
+            <div class="clearfix">
+                <div class="mb-4">
+                    {% render 'product-price-listing', product: product, show_vendor: false, style: '' %}
+                </div>
+
+                {% if show_quick_add %}
+                    {% if product.variants.size > 1 %}
+                        <a
+                                href="{{ product.url }}"
+                                class="mw-auto card-button mt-2 px-2 btn btn-{{ button_style }} w-100 mt-2 product-form__cart-submit"
+                        >
+                            {{- 'products.product.choose_options' | t -}}
+                        </a>
+                    {% else %}
+                        <div
+                                id="ProductSection-{{ section.id }}"
+                                data-section-id="{{ section.id }}"
+                                data-section-type="product"
+                                data-enable-history-state="true"
+                                data-ajax-enabled="{{ settings.enable_ajax }}"
+                                class="card-button mt-2"
+                        >
+                            {% assign current_variant = product.selected_or_first_available_variant %}
+                            {% form 'product', product, class: form_classes, novalidate: 'novalidate', data-product-form: '' %}
+                                <select name="id" id="ProductSelect-{{ section.id }}"
+                                        class="product-form__variants form-select no-js">
+                                    {% for variant in product.variants %}
+                                        <option
+                                                value="{{ variant.id }}"
+                                                {% if variant == current_variant %}
+                                                    selected="selected"
+                                                {% endif %}
+                                        >
+                                            {{ variant.title }}
+                                            {% if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                                {% unless product.has_only_default_variant %}
+                                    <div class="product-form__controls-group d-none">
+                                        {% for option in product.options_with_values %}
+                                            <div class="selector-wrapper js product-form__item">
+                                                <label
+                                                        for="SingleOptionSelector-{{ product.id }}-{{ forloop.index0 }}"
+                                                        class="label-option{{ forloop.index }}"
+                                                >
+                                                    {{ option.name }}: <span data-variant-selected-name></span>
+                                                </label>
+                                                <select
+                                                        class="single-option-selector single-option-selector-{{ section.id }} product-form__input"
+                                                        id="SingleOptionSelector-{{ product.id }}-{{ forloop.index0 }}"
+                                                        data-index="option{{ forloop.index }}"
+                                                >
+                                                    {% for value in option.values %}
+                                                        <option
+                                                                value="{{ value | escape }}"
+                                                                {% if option.selected_value == value %}
+                                                                    selected="selected"
+                                                                {% endif %}
+                                                        >
+                                                            {{ value }}
+                                                        </option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endunless %}
+                                <div
+                                        class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}"
+                                        data-error-message-wrapper
+                                        role="alert"
+                                >
+                                    <span class="d-none">{{ 'general.accessibility.error' | t }}</span>
+                                    <i class="bi bi-exclamation-circle"></i>
+                                    <span class="product-form__error-message" data-error-message>
+                    {{- 'products.product.quantity_minimum_message' | t -}}
+                  </span>
+                                </div>
+                                <input
+                                        type="hidden"
+                                        id="Quantity-{{ section.id }}"
+                                        name="quantity"
+                                        value="1"
+                                        min="1"
+                                        pattern="[0-9]*"
+                                        class="product-form__input product-form__input--quantity"
+                                        data-quantity-input
+                                >
+                                <button
+                                        type="submit"
+                                        name="add"
+                                        {% unless current_variant.available %}
+                                            aria-disabled="true"
+                                        {% endunless %}
+                                        aria-label="{% unless current_variant.available %}{{ 'products.product.sold_out' | t }}{% else %}{{ 'products.product.add_to_cart' | t }}{% endunless %}"
+                                        class="mw-auto px-2 btn btn-{{ button_style }} w-100 mt-2 product-form__cart-submit"
+                                        {% if settings.enable_ajax %}
+                                            aria-haspopup="dialog"
+                                        {% endif %}
+                                        data-add-to-cart
+                                >
+                  <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                        {{ 'products.product.sold_out' | t }}
+                    {% else %}
+                        {{ 'products.product.add_to_cart' | t }}
+                    {% endunless %}
+                  </span>
+                                    <span class="hide" data-loader>
+                   <span class="icon-repeat"><i class="bi bi-arrow-repeat"></i></span>
+                  </span>
+                                </button>
+                            {% endform %}
+                            <p
+                                    class="d-none"
+                                    data-loader-status
+                                    aria-live="assertive"
+                                    role="alert"
+                                    aria-hidden="true"
+                            >
+                                {{ 'products.product.loader_label' | t }}
+                            </p>
+                        </div>
+
+                    {% unless product == empty %}
+                        <script type="application/json" id="ProductJson-{{ section.id }}">
+                {{ product | json }}
+
+                        </script>
+                        <script type="application/json" id="ModelJson-{{ section.id }}">
+                {{ product.media | where: 'media_type', 'model' | json }}
+
+                        </script>
+                    {% endunless %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

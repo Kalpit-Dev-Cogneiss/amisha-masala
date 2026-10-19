@@ -1,0 +1,26 @@
+<div class="position-relative header-top">
+    <div class="{% if banner_image == blank %} py-5{% else %} mb-5{% endif %} text-center">
+
+        {% if banner_image != blank %}
+            <div
+                    class="jarallax position-relative overflow-hidden"
+                    data-jarallax data-speed="1.2" data-type="scroll"
+            >
+                <div class="card-img-top card-img-custom-height h-400">
+                    <div class="media-wrap">
+                        {% render 'image-lg', lazyload: true, image: banner_image, class: 'w-100 jarallax-img' %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        <div class="clearfix{% if banner_image != blank %} w-100 position-absolute top-50 start-50 translate-middle {% endif %}">
+            {% liquid
+                if banner_image != blank
+                    render 'breadcrumb', heading: page_title, layout: layout_container, background: 'none', background_second: banner_image
+                else
+                    render 'breadcrumb', heading: page_title, layout: layout_container
+                endif
+            %}
+        </div>
+    </div>
+</div>

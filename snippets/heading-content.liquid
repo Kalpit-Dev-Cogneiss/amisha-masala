@@ -1,0 +1,35 @@
+{% if preheading or heading or subheading %}
+<div class="heading heading-wrap mb-3 {{ class }} {{ heading_alignment_mobile }} {{ heading_alignment }}">
+    {% if preheading != blank %}
+        <h6 class="sub-1 preheading fs-18 mb-3 text-uppercase font-body" {% if animation != "off" %} data-aos="fade-up"{% endif %}>
+            {{ preheading }}
+        </h6>
+    {% endif %}
+    {% if heading %}
+        <{{ heading_tag }} class="sub-2 heading mb-0 {{ heading_size }}" {% if animation != "off" %} data-aos="fade-up" data-aos-delay="100"{% endif %}>
+        {{ heading }}
+        </{{ heading_tag }}>
+    {% endif %}
+    {% if subheading != blank %}
+        <div class="sub-3 subheading rte mt-2 {{ subheading_class }}" {% if animation != "off" %} data-aos="fade-up" data-aos-delay="200"{% endif %}>
+            <div class="opacity-85">
+                {{ subheading }}
+            </div>
+        </div>
+    {% endif %}
+    {% if button_link and button_label != '' %}
+        <div class="card-bottom" {% if animation != "off" %} data-aos="fade-up" data-aos-delay="300"{% endif %}>
+            <a
+                    {% if button_link == blank %}
+                        role="link" aria-disabled="true"
+                    {% else %}
+                        href="{{ button_link }}"
+                    {% endif %}
+                    class="btn btn-{{ button_style }} position-relative z-index-1"
+            >
+                <span>{{- button_label | escape -}}</span>
+            </a>
+        </div>
+    {% endif %}
+    </div>
+{% endif %}

@@ -1,0 +1,94 @@
+<div
+        class="cart-popup-wrapper px-0 cart-popup-wrapper--hidden critical-hidden container container-sm bg-body py-2"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="CartPopupHeading"
+        data-cart-popup-wrapper
+>
+    <div class="cart-popup p-4 px-lg-5 py-2 py-lg-3" data-cart-popup tabindex="-1">
+        <div class="cart-popup__header d-flex align-items-center justify-content-between">
+            <div class="clearfix">
+                <h3 class="mb-2"><span class="me-2">{{ 'cart.general.your_order' | t }}</span></h3>
+            </div>
+            <button data-cart-popup-dismiss
+                    class="cart-popup__close close-button style-body me-0"
+                    aria-label="{{ 'general.accessibility.close_modal' | t }}"
+                    data-cart-popup-close
+            >
+            </button>
+        </div>
+        <div class="alert alert-light w-100 py-2 px-3 fs-14 fs-12-767">
+            <strong class="me-1 text-primary" data-cart-popup-title1></strong> {{ 'cart.general.add_success' | t }}
+        </div>
+        {% if settings.cart_goal_enable %}
+            {% render 'cart-goal' %}
+        {% endif %}
+        <div class="cart-popup-item shadow-sm p-1 align-items-center">
+            <div class="cart-popup-item__image-wrapper hide" data-cart-popup-image-wrapper
+                 data-image-loading-animation></div>
+            <div class="cart-popup-item__description">
+                <div class="row w-100">
+                    <div class="col-12 col-sm-8">
+                        <div class="clearfix">
+                            <h3 class="cart-popup-item__title fs-16 card-product-title" data-cart-popup-title></h3>
+                            <ul class="product-details ms-3 fs-14 opacity-85"
+                                aria-label="{{ 'cart.popup.product_details' | t }}"
+                                data-cart-popup-product-details
+                            ></ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-4 text-start text-sm-end">
+                        <div class="cart-popup-item__quantity">
+                            <span class="d-none" data-cart-popup-quantity-label></span>
+                            <span class="mb-1 fs-12" aria-hidden="true">{{ 'cart.popup.quantity' | t }}:</span>
+                            <span aria-hidden="true" data-cart-popup-quantity></span>
+                            <div class="mt-2" data-cart-popup-price></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 d-flex align-items-center">
+            <div class="col mb-2">
+                <a href="{{ routes.cart_url }}" class="btn btn-primary w-100 text-center">
+                    {{ 'products.product.view_cart' | t }} (<span data-cart-popup-cart-quantity></span>)
+                </a>
+            </div>
+            <div class="col mb-2">
+                <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+                    <button class="btn btn-outline-primary w-100 text-center" name="checkout">
+                        {{ 'cart.general.checkout' | t }}
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% if settings.title_collection_suggest != null %}
+            <h3 class="my-3 h5">{{ settings.title_collection_suggest }}</h3>
+        {% else %}
+            <h3 class="my-3 h5">{{ 'cart.general.all_so_like' | t }}</h3>
+        {% endif %}
+        <div class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 pb-2 gx-2">
+            {% for product in settings.collection_suggest.products limit: 6 %}
+                {%- render 'product-card-grid-small', product: product -%}
+            {% else %}
+                {% for i in (1..6) %}
+                    <div class="col mb-2">
+                        <div class="product-card position-relative">
+                            <a class="full-width-link" href="#">
+                                <span class="d-none">{{ 'homepage.onboarding.product_title' | t }}</span>
+                            </a>
+                            <div class="card-img-top mb-2 card-adapt">
+                                {% capture current %}{% cycle 1, 2, 3, 4 %}{% endcapture %}
+                                {{ 'product-apparel-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            </div>
+                            <h3 class="fs-base mb-1"
+                                aria-hidden="true">{{ 'homepage.onboarding.product_title' | t }}</h3>
+                            {% render 'product-price-listing', product: product %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+
+</div>

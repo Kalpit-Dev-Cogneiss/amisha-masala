@@ -1,0 +1,710 @@
+{% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
+{% liquid
+    assign footer_text_color = section.settings.color_footer_text
+    assign footer_text_color_brightness = section.settings.color_footer_text | color_brightness
+    if footer_text_color_brightness <= 26
+        assign footer_text_color_hover = footer_text_color | color_lighten: 25
+    elsif footer_text_color_brightness <= 65
+        assign footer_text_color_hover = footer_text_color | color_lighten: 15
+    else
+        assign footer_text_color_hover = footer_text_color | color_darken: 10
+    endif
+%}
+
+<style>
+    .site-footer p,
+    .site-footer__linklist-item a,
+    .site-footer__rte a,
+    .site-footer h2,
+    .site-footer a,
+    .disclosure__toggle,
+    .site-footer small,
+    .site-footer__copyright-content a,
+    .site-footer__newsletter-error,
+    .site-footer__social-icons .social-icons__link {
+        color: {{ section.settings.color_footer_text }};
+    }
+
+    .disclosure__toggle:hover {
+        color: {{ section.settings.color_footer_text }};
+        opacity: .75;
+    }
+
+    .site-footer {
+        color: {{ section.settings.color_footer_text }};
+        background-color: {{ section.settings.color_footer_bg }};
+    }
+
+    .site-footer__rte a:hover,
+    .site-footer__linklist-item a:hover,
+    .site-footer__copyright-content a:hover {
+        color: {{ footer_text_color_hover }};
+    }
+
+    .site-footer__social-icons .social-icons__link:hover {
+        color: {{ footer_text_color_hover }};
+    }
+    {% if section.settings.border_top %}
+    .site-footer{
+        position: relative;
+    }
+    .site-footer::before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1;
+        height: 60px;
+        border-radius: 50% 50% 0 0;
+        background: {{ section.settings.color_footer_bg }};
+    }
+    {% endif %}
+</style>
+
+<footer
+        class="site-footer critical-hidden"
+        role="contentinfo"
+        data-section-id="{{ section.id }}"
+        data-section-type="footer-section"
+>
+    <div class="container page-width">
+        <div class="row d-flex justify-content-between">
+            <div class="col-12 col-lg-4 mb-5">
+                <h2 class="h5 mb-4">{{ section.settings.heading }}</h2>
+                {% if section.settings.subheading != blank %}
+                    <div class="site-footer__rte opacity-75 fs-18">
+                        {{ section.settings.subheading }}
+                    </div>
+                {% endif %}
+                {% if section.settings.show_newsletter %}
+                    <div class="site-footer__newsletter">
+                        {% assign form_id = 'ContactFooter' %}
+                        {% form 'customer', id: form_id, novalidate: 'novalidate' %}
+                            {% if form.posted_successfully? %}
+                                <p class="form-message form-message--success" tabindex="-1"
+                                   data-form-status>
+                                    {{ 'general.newsletter_form.confirmation' | t }}
+                                </p>
+                            {% endif %}
+                            <input type="hidden" name="contact[tags]" value="newsletter">
+                            <div class="input-group {% if form.errors %} input-group--error{% endif %}">
+                                <input
+                                        type="email"
+                                        name="contact[email]"
+                                        id="{{ form_id }}-email"
+                                        class="mb-0 form-control h-auto py-4 input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+                                        value="{{ form.email }}"
+                                        placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                        aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+                                        aria-required="true"
+                                        required
+                                        autocorrect="off"
+                                        autocapitalize="off"
+                                        {% if form.errors %}
+                                            aria-invalid="true"
+                                            aria-describedby="{{ form_id }}-email-error"
+                                            data-form-status
+                                        {% endif %}
+                                >
+                                <span class="input-group__btn z-index-10">
+                      <button type="submit" class="btn btn-primary rounded-0 mw-auto px-3 px-md-4" name="commit">
+                            <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+                      </button>
+                    </span>
+                            </div>
+                            {% if form.errors contains 'email' %}
+                                <span id="{{ form_id }}-email-error" class="input-error-message">
+                      <span class="d-none">{{ 'general.accessibility.error' | t }} </span>
+                      <i class="bi bi-exclamation-circle"></i>
+                      <span class="site-footer__newsletter-error">
+                        {{- form.errors.translated_fields.email | capitalize }}
+                          {{ form.errors.messages.email }}.</span
+                      >
+                    </span>
+                            {% endif %}
+                        {% endform %}
+                    </div>
+                {% endif %}
+                {% if section.settings.show_socials_icons %}
+                    <div class="mt-4">
+                        {% render 'social', class: '' %}
+                    </div>
+                {% endif %}
+
+            </div>
+            <div class="col-12 col-lg-7">
+                <div class="row">
+                    {% for block in section.blocks %}
+                        {% case block.type %}
+                            {% when '@app' %}
+                                <div class="col-12 col-lg-4 mb-5" {{ block.shopify_attributes }}>
+                                    <h2 class="h5 mb-4">{{ block.settings.title }}</h2>
+                                    {% render block %}
+                                </div>
+                            {% when 'text' %}
+                                <div class="col-12 col-lg-4 mb-5" {{ block.shopify_attributes }}>
+                                    <h2 class="h5 mb-4">{{ block.settings.title }}</h2>
+                                    {% if block.settings.text != blank %}
+                                        <div class="site-footer__rte opacity-75"
+                                        >
+                                            {{ block.settings.text }}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            {% when 'gallery' %}
+                                <div class="col-12 col-lg-4 mb-5" {{ block.shopify_attributes }}>
+                                    <h2 class="h5 mb-4">{{ block.settings.title }}</h2>
+                                    <div class="gallery">
+                                        <div class="row gx-2 row-cols-{{ block.settings.columns_mobile }}
+                  row-cols-md-{{ block.settings.columns_tablet }}
+                  row-cols-lg-{{ block.settings.columns_desktop }}">
+                                            {% if block.settings.image1 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image1 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image2 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image2 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image3 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image3 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image4 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image4 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image5 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image5 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image6 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image6 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image7 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image7 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image8 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image8 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                            {% if block.settings.image9 != blank %}
+                                                <div class="col mb-2">
+                                                    <div class="overflow-hidden hover-scale-image position-relative">
+                                                        {% if block.settings.link %}
+                                                            <a class="full-width-link" href="{{ block.settings.link }}">
+                                                                <span class="d-none">{{ block.settings.title }}</span>
+                                                            </a>
+                                                        {% endif %}
+                                                        {% render 'image', lazyload: true, image: block.settings.image1 %}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% when 'link_list' %}
+                                <div class="col-6 col-lg-4 mb-5" {{ block.shopify_attributes }}>
+                                    <h2 class="h5 mb-4">{{ block.settings.title }}</h2>
+                                    {% assign footer_linklist = block.settings.menu %}
+                                    <ul class="site-footer__linklist">
+                                        {% for link in linklists[footer_linklist].links %}
+                                            <li class="site-footer__linklist-item">
+                                                <a
+                                                        href="{{ link.url }}"
+                                                        {% if link.current %}
+                                                            aria-current="page"
+                                                        {% endif %}
+                                                >
+                                                    {{ link.title | escape }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                        {% endcase %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {%- if shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+        <div class="container page-width">
+            <div class="footer__follow-on-shop">
+                {% comment %} TODO: enable theme-check once `login_button` is accepted as valid filter {% endcomment %}
+                {% # theme-check-disable %}
+                {{ shop | login_button: action: 'follow' }}
+                {% # theme-check-enable %}
+            </div>
+        </div>
+    {%- endif -%}
+
+    {%- if section.settings.show_policy or section.settings.show_locale_selector or section.settings.show_currency_selector -%}
+        <div class="bg-black style-white-color py-3" data-bs-theme="dark">
+            <div class="container page-width">
+                <div class="d-flex align-items-center justify-content-between flex-wrap">
+                    {%- if section.settings.show_policy -%}
+                        <ul class="policies site-footer__linklist">
+                            {%- for policy in shop.policies -%}
+                                {%- if policy != blank -%}
+                                    <li class="site-footer__linklist-item d-inline-block pe-4 mb-0 py-0">
+                                        <a class="text-white text-uppercase fs-12"
+                                           href="{{ policy.url }}">{{ policy.title }}</a>
+                                    </li>
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </ul>
+                    {%- endif -%}
+                    {% if section.settings.show_locale_selector or section.settings.show_currency_selector %}
+                        <div class="mt-2">
+                            {% form 'localization', class: 'selectors-form mb-0', data-disclosure-form: '' %}
+                                {% if section.settings.show_currency_selector %}
+                                    <div class="selectors-form__item mb-2">
+                                        <h2 class="d-none" id="country-heading">
+                                            {{ 'general.country.dropdown_label' | t }}
+                                        </h2>
+                                        {% assign current_currency_symbol = localization.country.currency.symbol %}
+                                        {% assign current_currency_iso_code = localization.country.currency.iso_code %}
+                                        <div class="disclosure" data-disclosure-country>
+                                            <button
+                                                    type="button"
+                                                    class="disclosure__toggle px-3 mw-auto text-decoration-none btn btn-light"
+                                                    aria-expanded="false"
+                                                    aria-controls="country-list"
+                                                    aria-describedby="country-heading"
+                                                    data-disclosure-toggle
+                                            >
+                                                {% if current_currency_symbol %}
+                                                    {{ localization.country.name }} ({{ current_currency_iso_code }}
+                                                    {{ current_currency_symbol }})
+                                                {% else %}
+                                                    {{ localization.country.name }} ({{ current_currency_iso_code }})
+                                                {% endif %}
+                                                <i class="bi bi-chevron-down ms-1"></i>
+                                            </button>
+                                            <ul id="country-list" class="disclosure-list" data-disclosure-list>
+                                                {% for country in form.available_countries %}
+                                                    {% assign currency_symbol = country.currency.symbol %}
+                                                    {% assign currency_iso_code = country.currency.iso_code %}
+                                                    <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                                                        <a
+                                                                class="disclosure-list__option"
+                                                                href="#"
+                                                                {% if country.iso_code == localization.country.iso_code %}
+                                                                    aria-current="true"
+                                                                {% endif %}
+                                                                data-value="{{ country.iso_code }}"
+                                                                data-disclosure-option
+                                                        >
+                                                            {% if currency_symbol %}
+                                                                {{ country.name }} ({{ currency_iso_code }}
+                                                                {{ currency_symbol }})
+                                                            {% else %}
+                                                                {{ country.name }} ({{ currency_iso_code }})
+                                                            {% endif %}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <input
+                                                    type="hidden"
+                                                    name="country_code"
+                                                    id="CountrySelector"
+                                                    value="{{ localization.country.iso_code }}"
+                                                    data-disclosure-input
+                                            >
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if section.settings.show_locale_selector %}
+                                    <div class="{% if section.settings.show_currency_selector %}ms-2{% endif %} selectors-form__item mb-2">
+                                        <h2 class="d-none" id="lang-heading">
+                                            {{ 'general.language.dropdown_label' | t }}
+                                        </h2>
+
+                                        <div class="disclosure" data-disclosure-locale>
+                                            <button
+                                                    type="button"
+                                                    class="disclosure__toggle px-3 mw-auto text-decoration-none btn btn-light"
+                                                    aria-expanded="false"
+                                                    aria-controls="lang-list"
+                                                    aria-describedby="lang-heading"
+                                                    data-disclosure-toggle
+                                            >
+                                                {{ localization.language.endonym_name }}
+                                                <i class="bi bi-chevron-down ms-1"></i>
+                                            </button>
+                                            <ul id="lang-list" class="disclosure-list" data-disclosure-list>
+                                                {% for language in localization.available_languages %}
+                                                    <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                                                        <a
+                                                                class="disclosure-list__option"
+                                                                href="#"
+                                                                lang="{{ language.iso_code }}"
+                                                                {% if language.iso_code == localization.language.iso_code %}
+                                                                    aria-current="true"
+                                                                {% endif %}
+                                                                data-value="{{ language.iso_code }}"
+                                                                data-disclosure-option
+                                                        >
+                                                            {{ language.endonym_name }}
+                                                        </a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <input
+                                                    type="hidden"
+                                                    name="locale_code"
+                                                    id="LocaleSelector"
+                                                    value="{{ form.current_locale.iso_code }}"
+                                                    data-disclosure-input
+                                            >
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endform %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {%- endif -%}
+    <div class="container page-width">
+        <div class="d-flex justify-content-between align-items-center flex-wrap pt-3">
+            {% if section.settings.copyright != '' %}
+                <div class="pb-2 text-center small rte-inline">
+                    {{ section.settings.copyright }}
+                </div>
+            {% else %}
+                <div class="pb-2 text-center">
+                    <small>
+                        &copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}
+                        .</small
+                    >
+                    <small>
+                        {{- powered_by_link -}}
+                    </small>
+                </div>
+            {% endif %}
+            {% if section.settings.show_payment_icons %}
+                <div class="pb-2">
+                    <div class="site-footer__payment-icons">
+                        <span class="d-none">{{ 'general.payment.method' | t }}</span>
+                        <ul class="payment-icons list--inline site-footer__icon-list">
+                            {% for type in shop.enabled_payment_types %}
+                                <li class="payment-icon">
+                                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.all.heading.label",
+      "default": "Our Store"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.all.heading.subheading"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_socials_icons",
+      "label": "t:sections.footer.settings.show_socials_icons.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "t:sections.footer.settings.show_newsletter.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "default": false,
+      "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "t:sections.footer.settings.show_payment_icons.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_bg",
+      "label": "t:sections.footer.settings.color_footer_bg.label",
+      "default": "#f6f6f6"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_text",
+      "label": "t:sections.footer.settings.color_footer_text.label",
+      "default": "#333232"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "t:sections.footer.settings.border_top.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__3.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_currency_selector",
+      "label": "t:sections.footer.settings.show_currency_selector.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__4.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "t:sections.footer.settings.show_locale_selector.label",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "copyright",
+      "label": "t:sections.footer.settings.copyright.label",
+      "default": "<p>© 2024, Lirea. Powered by Shopify</p>"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.footer.blocks.link_list.settings.title.label",
+          "default": "Quick links"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:sections.footer.blocks.link_list.settings.link_list.label",
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.footer.blocks.text.settings.title.label",
+          "default": "Talk about your business"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.footer.blocks.text.settings.text.label",
+          "default": "<p>Share store details, promotions, or brand content with your customers.</p>"
+        }
+      ]
+    },
+    {
+      "type": "gallery",
+      "name": "t:sections.footer.blocks.gallery.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.footer.blocks.text.settings.title.label",
+          "default": "Instagram"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.footer.blocks.gallery.settings.url.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image4",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image5",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image6",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_6"
+        },
+        {
+          "type": "image_picker",
+          "id": "image7",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_7"
+        },
+        {
+          "type": "image_picker",
+          "id": "image8",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_8"
+        },
+        {
+          "type": "image_picker",
+          "id": "image9",
+          "label": "t:sections.footer.blocks.gallery.settings.images.image_9"
+        },
+        {
+          "type": "range",
+          "id": "columns_desktop",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 4,
+          "label": "t:sections.all.columns.columns_desktop"
+        },
+        {
+          "type": "range",
+          "id": "columns_tablet",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 4,
+          "label": "t:sections.all.columns.columns_tablet"
+        },
+        {
+          "type": "range",
+          "id": "columns_mobile",
+          "min": 1,
+          "max": 4,
+          "step": 1,
+          "default": 4,
+          "label": "t:sections.all.columns.columns_mobile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
