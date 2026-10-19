@@ -478,6 +478,7 @@
                     {% if filter_type == 'horizontal' %}
                         <div class="active-facets active-facets-desktop">
                             {% for filter in results.filters %}
+                                {% if filter.param_name == 'filter.v.price' or filter.param_name == 'filter.v.availability' %}{% continue %}{% endif %}
                                 {%- for value in filter.active_values -%}
                                     <facet-remove>
                                         <a
@@ -723,6 +724,7 @@
                                 {% endif %}
                                 {% if enable_filtering %}
                                     {% for filter in results.filters %}
+                                        {% if filter.param_name == 'filter.v.price' or filter.param_name == 'filter.v.availability' %}{% continue %}{% endif %}
                                         {% case filter.type %}
                                             {% when 'boolean', 'list' %}
                                                 <details
@@ -1046,6 +1048,7 @@
 
     <div class="active-facets active-facets-mobile d-flex flex-wrap d-block d-lg-none">
         {% for filter in results.filters %}
+            {% if filter.param_name == 'filter.v.price' or filter.param_name == 'filter.v.availability' %}{% continue %}{% endif %}
             {% for value in filter.active_values %}
                 <facet-remove>
                     <a href="{{ value.url_to_remove }}" class="active-facets__button active-facets__button--light">
@@ -1162,6 +1165,7 @@
             <form id="FacetFiltersPillsForm" class="facets__form">
                 <div class="active-facets active-facets-desktop">
                     {% for filter in results.filters %}
+                        {% if filter.param_name == 'filter.v.price' or filter.param_name == 'filter.v.availability' %}{% continue %}{% endif %}
                         {% for value in filter.active_values %}
                             <facet-remove>
                                 <a
