@@ -206,6 +206,12 @@ async function publishAll() {
   }
 }
 
+// ---------------------------------------------------------------- list uploaded files (diagnostics, read-only)
+async function listFiles() {
+  const d = await gql(`{files(first:100, sortKey:CREATED_AT, reverse:true){nodes{id fileStatus alt ... on MediaImage{image{url} originalSource{fileSize}} ... on GenericFile{url}}}}`);
+  for (const f of d.files.nodes) console.log(f.fileStatus, f.alt || "", f.image?.url ?? f.url ?? "(no url yet)");
+}
+
 // STEPS=collections,pages,menus node data/setup-store.mjs  (default: files,products,collections,pages,menus; "publish" is run separately)
 const steps = (process.env.STEPS ?? "files,products,collections,pages,menus").split(",");
 if (steps.includes("files")) { console.log("1/5 theme images -> Files"); await uploadFiles(); }
@@ -213,5 +219,6 @@ if (steps.includes("products")) { console.log("2/5 products"); await createProdu
 if (steps.includes("collections")) { console.log("3/5 collections"); await createCollections(); }
 if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); await deletePages(); }
 if (steps.includes("menus")) { console.log("5/5 menus"); await setMenus(); }
+if (steps.includes("listfiles")) { console.log("files in store"); await listFiles(); }
 if (steps.includes("publish")) { console.log("publish to Online Store"); await publishAll(); }
 console.log("done.");
