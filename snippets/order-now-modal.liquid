@@ -30,7 +30,7 @@
 <style>
   /* prices and cart are not used on this store */
   .price, [data-price], .product__price, .product-form__controls-group--submit .shopify-payment-button,
-  .product-form__cart-submit, .product-quantity, .dropdown-button, a[href="/cart"] { display: none !important; }
+  .product-form__cart-submit, .product-quantity, .dropdown-button { display: none !important; }
   .order-now { border: 0; padding: 0; max-width: 560px; width: calc(100% - 32px); border-radius: 6px; }
   .order-now::backdrop { background: rgba(0,0,0,.55); }
   .order-now__box { padding: 28px; position: relative; max-height: 90vh; overflow: auto; }
@@ -53,6 +53,17 @@
     var btn = dlg.querySelector('[data-order-submit]');
 
     document.addEventListener('click', function (e) {
+      var cartIcon = e.target.closest('.site-header__cart');
+      if (cartIcon) {
+        e.preventDefault();
+        dlg.querySelector('[data-order-product]').textContent = 'General order enquiry';
+        dlg.querySelector('[data-order-product-input]').value = 'General order enquiry';
+        dlg.querySelector('[data-order-link-input]').value = location.origin;
+        dlg.querySelector('[data-order-size]').value = '';
+        form.hidden = false; done.hidden = true; err.hidden = true;
+        dlg.showModal();
+        return;
+      }
       var opener = e.target.closest('[data-order-now]');
       if (opener) {
         e.preventDefault();

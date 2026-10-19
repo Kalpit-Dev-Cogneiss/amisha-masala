@@ -180,10 +180,10 @@
             {% if section.settings.logo_position == 'middle-center' %}
                 <div class="container page-width">
                     <div class="row d-flex align-items-center">
-                        <div class="col-5 d-none d-lg-block">
+                        <div class="col-5 d-none d-lg-flex justify-content-end">
                             <div class="header__inline-menu">
                                 {% # theme-check-disable %}
-                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline' %}
+                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline', limit: 3 %}
                                 {% # theme-check-enable %}
                             </div>
                         </div>
@@ -225,7 +225,12 @@
                             </h1>
                             {% endif %}
                         </div>
-                        <div class="col-6 col-lg-5 d-flex justify-content-end">
+                        <div class="col-6 col-lg-5 d-flex justify-content-end justify-content-lg-between align-items-center">
+                            <div class="header__inline-menu d-none d-lg-block">
+                                {% # theme-check-disable %}
+                                {% render 'site-nav', linklist: section.settings.main_linklist, class: 'list--inline', offset: 3 %}
+                                {% # theme-check-enable %}
+                            </div>
                             <div class="site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
                                 <div class="site-header__icons-wrapper d-flex align-items-center">
                                     {% if section.settings.enable_search %}

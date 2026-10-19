@@ -3,12 +3,17 @@
     Accepts:
     - linklist: {Object} Linklist Liquid object (required)
     - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+    - offset / limit: {Number} render only part of the menu (optional, used to split the header menu left/right)
 
     Usage:
     {% render 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
 {% endcomment %}
+{% liquid
+    assign nav_offset = offset | default: 0
+    assign nav_limit = limit | default: 100
+%}
 <ul class="site-nav {{ class }}{% if class == 'list--inline' %} d-flex flex-wrap {% endif %} {% if wrapper_class != blank %} {{ wrapper_class }}{% endif %}">
-    {% for link in linklists[linklist].links %}
+    {% for link in linklists[linklist].links offset: nav_offset limit: nav_limit %}
 
         {% comment %}
           Check if third-level nav exists on each parent link.
