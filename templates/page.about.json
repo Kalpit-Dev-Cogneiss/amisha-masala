@@ -364,93 +364,86 @@
         "custom_class": ""
       }
     },
-    "icon_with_text_pride": {
-      "type": "icon-with-text",
+    "owners_pride": {
+      "type": "owners-pride",
       "blocks": {
-        "card_icon_pride1": {
-          "type": "card-icon",
+        "pillar_1": {
+          "type": "pillar",
           "settings": {
             "icon": "bi-people",
-            "enable_svg": false,
-            "svg": "",
             "heading": "Long Term Relationships",
-            "subheading": "<p>At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers.</p>",
-            "button_link": ""
+            "text": "At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers."
           }
         },
-        "card_icon_pride2": {
-          "type": "card-icon",
+        "pillar_2": {
+          "type": "pillar",
           "settings": {
             "icon": "bi-patch-check",
-            "enable_svg": false,
-            "svg": "",
             "heading": "Quality at Each Stage",
-            "subheading": "<p>To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery &amp; distribution.</p>",
-            "button_link": ""
+            "text": "To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery & distribution."
           }
         },
-        "card_icon_pride3": {
-          "type": "card-icon",
+        "pillar_3": {
+          "type": "pillar",
           "settings": {
             "icon": "bi-geo-alt",
-            "enable_svg": false,
-            "svg": "",
             "heading": "Easy Accessibility",
-            "subheading": "<p>We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest.</p>",
-            "button_link": ""
+            "text": "We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest."
           }
         },
-        "card_icon_pride4": {
-          "type": "card-icon",
+        "pillar_4": {
+          "type": "pillar",
           "settings": {
             "icon": "bi-tag",
-            "enable_svg": false,
-            "svg": "",
             "heading": "Best at a Reasonable Price",
-            "subheading": "<p>Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene &amp; quality.</p>",
-            "button_link": ""
+            "text": "Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene & quality."
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "25+",
+            "label": "Years of experience"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "Tons cold storage"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "Factory units in Vadodara"
           }
         }
       },
       "block_order": [
-        "card_icon_pride1",
-        "card_icon_pride2",
-        "card_icon_pride3",
-        "card_icon_pride4"
+        "pillar_1",
+        "pillar_2",
+        "pillar_3",
+        "pillar_4",
+        "stat_1",
+        "stat_2",
+        "stat_3"
       ],
       "settings": {
-        "layout": "container page-width",
         "preheading": "J. B. Food Products",
         "heading": "Owner's Pride",
-        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.</p>",
-        "heading_tag": "h2",
-        "heading_size": "h1",
-        "heading_alignment": "text-center",
-        "show_read_more": false,
-        "button_label": "",
-        "button_link": "",
-        "button_style": "primary",
-        "columns_desktop": 4,
-        "columns_tablet": 2,
-        "columns_mobile": "1",
-        "gutter": 4,
-        "use_custom_colors": true,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "margin_top": 0,
-        "margin_bottom": 60,
-        "padding_top": 70,
-        "padding_bottom": 40,
-        "custom_id": "",
-        "custom_class": ""
+        "watermark": "PRIDE",
+        "quote": "Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.",
+        "background_image": "shopify://shop_images/about-pride-bg.webp",
+        "edge_color": "#ffffff"
       }
     }
   },
   "order": [
     "main",
     "image_with_text_story",
-    "icon_with_text_pride",
+    "owners_pride",
     "image_with_text_quality",
     "image_with_text_packaging",
     "multicolumn_9TgiUX",
