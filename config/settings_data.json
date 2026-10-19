@@ -48,7 +48,7 @@
     "enable_ajax": true,
     "enable_drawer_cart": false,
     "title_collection_suggest": "You may also like these products",
-    "collection_suggest": "spices",
+    "collection_suggest": "all",
     "text_style": "uppercase",
     "background_card_image": "#f8f7f4",
     "spacing_header": 50,

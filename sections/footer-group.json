@@ -18,6 +18,13 @@
             "title": "COMPANY",
             "menu": "footer"
           }
+        },
+        "text_facilities": {
+          "type": "text",
+          "settings": {
+            "title": "OUR FACILITIES",
+            "text": "<p><strong>Factory Unit 1</strong><br>C1/145/A, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p><p><strong>Factory Unit 2</strong><br>984/2, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p><p>Fax: +91-265-2420440</p>"
+          }
         }
       },
       "block_order": [
@@ -39,9 +46,3 @@
         "show_locale_selector": false,
         "copyright": "<p>© 2026 Amisha Masala (J. B. Food Products). All rights reserved.</p>"
       }
-    }
-  },
-  "order": [
-    "footer"
-  ]
-}
