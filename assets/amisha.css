@@ -184,3 +184,13 @@ html.am-js [data-reveal].is-in { opacity: 1; transform: none; }
   transition: transform 0.3s var(--am-ease), box-shadow 0.3s;
 }
 .card-product .order-now-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(236, 29, 29, 0.4); }
+
+/* ---- product page: Order Now and Call side by side ---- */
+.am-pd-actions { display: flex; flex-wrap: nowrap; gap: 12px; margin: 0 0 14px; }
+.am-pd-actions .order-now-btn { flex: 1 1 0; margin: 0 !important; width: auto !important; padding-left: 14px; padding-right: 14px; }
+.am-pd-actions .am-pd-call { flex: 1 1 0; justify-content: center; margin: 0 !important; padding: 18px 14px; white-space: nowrap; font-size: 15px; letter-spacing: 0.08em; }
+.am-pd-call__label { display: none; }
+@media (max-width: 480px) {
+  .am-pd-call__num { display: none; }
+  .am-pd-call__label { display: inline; }
+}
