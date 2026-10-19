@@ -89,185 +89,6 @@
         "custom_class": ""
       }
     },
-    "rich_text_ciTEVL": {
-      "type": "rich-text",
-      "settings": {
-        "layout": "container page-width",
-        "full_width": false,
-        "style": "style-1",
-        "preheading": "About Us",
-        "heading": "<p>Amisha Masala</p>",
-        "heading_tag": "h2",
-        "heading_size": "h0",
-        "subheading": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
-        "button_label": "Our Story",
-        "button_link": "shopify://pages/about-us",
-        "button_style": "outline-dark",
-        "text_alignment": "text-md-center text-lg-center",
-        "text_alignment_mobile": "text-center",
-        "use_custom_colors": false,
-        "color_text": "#ec1d1d",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "enable_parallax": false,
-        "type": "scroll",
-        "speed": 0.5,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 40,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "counter_Bxwxad": {
-      "type": "counter",
-      "blocks": {
-        "item_HRLNPD": {
-          "type": "item",
-          "settings": {
-            "heading": "Experience in Spice Powders",
-            "number": "25",
-            "info_number": "+ Years"
-          }
-        },
-        "item_awM4w9": {
-          "type": "item",
-          "settings": {
-            "heading": "Cold Storage Capacity",
-            "number": "400",
-            "info_number": "Tons"
-          }
-        },
-        "item_KbacUr": {
-          "type": "item",
-          "settings": {
-            "heading": "Factory Units, Vadodara",
-            "number": "2",
-            "info_number": ""
-          }
-        },
-        "item_GVPBYY": {
-          "type": "item",
-          "settings": {
-            "heading": "Spice Products",
-            "number": "27",
-            "info_number": "+"
-          }
-        }
-      },
-      "block_order": [
-        "item_HRLNPD",
-        "item_awM4w9",
-        "item_KbacUr",
-        "item_GVPBYY"
-      ],
-      "settings": {
-        "layout": "container container-inner",
-        "preheading": "",
-        "heading": "",
-        "subheading": "",
-        "heading_tag": "h2",
-        "heading_size": "h2",
-        "heading_alignment": "text-start",
-        "columns_desktop": 4,
-        "columns_tablet": 2,
-        "columns_mobile": 2,
-        "gutter": 4,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 80,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "banner_grid_aXYRit": {
-      "type": "banner-grid",
-      "blocks": {
-        "card_banner_8waFAF": {
-          "type": "card-banner",
-          "settings": {
-            "image": "shopify://shop_images/banner-plain-spices.webp",
-            "heading": "Plain Spices",
-            "subheading": "Chilli, turmeric, coriander & more",
-            "button_link": "shopify://collections/plain-spices",
-            "use_custom_colors": true,
-            "color_text": "#ffffff",
-            "use_overlay": true,
-            "colors_overlay": "#0b0b0b",
-            "overlay_opacity": 0.3
-          }
-        },
-        "card_banner_R3GBVm": {
-          "type": "card-banner",
-          "settings": {
-            "image": "shopify://shop_images/banner-mixed-spices.webp",
-            "heading": "Mixed Spices",
-            "subheading": "Masalas for every dish",
-            "button_link": "shopify://collections/mixed-spices",
-            "use_custom_colors": true,
-            "color_text": "#ffffff",
-            "use_overlay": true,
-            "colors_overlay": "#0b0b0b",
-            "overlay_opacity": 0.3
-          }
-        },
-        "card_banner_JXRiat": {
-          "type": "card-banner",
-          "settings": {
-            "image": "shopify://shop_images/banner-other-spices.webp",
-            "heading": "Others",
-            "subheading": "Kasuri methi, batrisu vasanu, hing",
-            "button_link": "shopify://collections/other-spices",
-            "use_custom_colors": true,
-            "color_text": "#ffffff",
-            "use_overlay": true,
-            "colors_overlay": "#0b0b0b",
-            "overlay_opacity": 0.3
-          }
-        }
-      },
-      "block_order": [
-        "card_banner_8waFAF",
-        "card_banner_R3GBVm",
-        "card_banner_JXRiat"
-      ],
-      "settings": {
-        "layout": "full-width",
-        "style": "style-v2",
-        "preheading": "",
-        "heading": "",
-        "subheading": "",
-        "heading_size": "h2",
-        "heading_tag": "h2",
-        "heading_alignment": "text-center",
-        "image_height": "adapt",
-        "heading_size_card": "h4",
-        "heading_tag_card": "h3",
-        "text_box_position": "flex-bottom-left",
-        "text_alignment": "text-md-start text-lg-start",
-        "columns_desktop": 3,
-        "columns_tablet": 2,
-        "columns_mobile": "1",
-        "gutter": 4,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 70,
-        "text_alignment_mobile": "text-start",
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
     "featured_collection_KeyN9p": {
       "type": "featured-collection",
       "settings": {
@@ -345,130 +166,10 @@
         "colors_overlay": "#0b0b0b",
         "overlay_opacity": 0.3,
         "margin_top": 0,
-        "margin_bottom": 70,
+        "margin_bottom": 0,
         "image_height_mobile": "h-mb-400",
         "text_alignment_mobile": "text-center",
         "show_border": false,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "image_with_text_fQAnNi": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_YHdX8L": {
-          "type": "heading",
-          "settings": {
-            "heading": "Nothing but the BEST!",
-            "heading_tag": "h2",
-            "heading_size": "h2",
-            "margin_top": 0
-          }
-        },
-        "text_crhiCU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our products conform to stringent international quality standards. We have testing facilities to assure purity, quality and safety, and an in-house cold storage with a capacity of 400 tons. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
-            "margin_top": 3
-          }
-        },
-        "button_EPKqwa": {
-          "type": "button",
-          "settings": {
-            "button_label": "Know More",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "outline",
-            "margin_top": 3
-          }
-        }
-      },
-      "block_order": [
-        "heading_YHdX8L",
-        "text_crhiCU",
-        "button_EPKqwa"
-      ],
-      "settings": {
-        "style_layout": "style-1",
-        "image": "shopify://shop_images/about-quality.webp",
-        "layout": "full-width",
-        "image_second": false,
-        "image_width": "50",
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "text_box_position": "flex-middle-center",
-        "text_alignment": "text-md-start text-lg-start",
-        "enable_controls": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "color_background_block": "#ffffff",
-        "color_background_gradient_block": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 54,
-        "text_alignment_mobile": "text-start",
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "image_with_text_HaJHHa": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_iHBabU": {
-          "type": "heading",
-          "settings": {
-            "heading": "Packaging for every need",
-            "heading_tag": "h2",
-            "heading_size": "h2",
-            "margin_top": 0
-          }
-        },
-        "text_7jctwb": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging, starting from a 7 g pouch up to a 10 kg bag.</p>",
-            "margin_top": 3
-          }
-        },
-        "button_QmpWR8": {
-          "type": "button",
-          "settings": {
-            "button_label": "Know More",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "outline",
-            "margin_top": 3
-          }
-        }
-      },
-      "block_order": [
-        "heading_iHBabU",
-        "text_7jctwb",
-        "button_QmpWR8"
-      ],
-      "settings": {
-        "style_layout": "style-2",
-        "image": "shopify://shop_images/about-packaging.webp",
-        "layout": "full-width",
-        "image_second": true,
-        "image_width": "50",
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "text_box_position": "flex-middle-left",
-        "text_alignment": "text-md-end text-lg-end",
-        "enable_controls": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "color_background_block": "#ffffff",
-        "color_background_gradient_block": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 50,
-        "text_alignment_mobile": "text-end",
         "custom_id": "",
         "custom_class": ""
       }
@@ -620,17 +321,210 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "amisha_story": {
+      "type": "amisha-story",
+      "settings": {
+        "eyebrow": "About Us",
+        "heading": "Amisha Masala",
+        "lead": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p>",
+        "text": "<p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "button_label": "Our story",
+        "button_link": "shopify://pages/about-us",
+        "image_main": "shopify://shop_images/story-main.webp",
+        "image_small": "shopify://shop_images/story-small.webp",
+        "badge_number": "25+",
+        "badge_label": "Years of experience"
+      },
+      "blocks": {
+        "counter_1": {
+          "type": "counter",
+          "settings": {
+            "number": "25",
+            "suffix": "+",
+            "label": "Years of experience"
+          }
+        },
+        "counter_2": {
+          "type": "counter",
+          "settings": {
+            "number": "400",
+            "suffix": "",
+            "label": "Tons cold storage"
+          }
+        },
+        "counter_3": {
+          "type": "counter",
+          "settings": {
+            "number": "2",
+            "suffix": "",
+            "label": "Factory units"
+          }
+        },
+        "counter_4": {
+          "type": "counter",
+          "settings": {
+            "number": "27",
+            "suffix": "+",
+            "label": "Spice products"
+          }
+        }
+      },
+      "block_order": [
+        "counter_1",
+        "counter_2",
+        "counter_3",
+        "counter_4"
+      ]
+    },
+    "amisha_categories": {
+      "type": "amisha-categories",
+      "settings": {
+        "eyebrow": "Our Range",
+        "heading": "Explore Our Spices",
+        "subheading": "From pure single spice powders to ready masala blends, made at our own facilities in Vadodara."
+      },
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/banner-plain-spices.webp",
+            "title": "Plain Spices",
+            "text": "Chilli, turmeric, coriander, black pepper and more",
+            "cta": "Explore",
+            "link": "shopify://collections/plain-spices"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/banner-mixed-spices.webp",
+            "title": "Mixed Spices",
+            "text": "Masalas and blends for every dish",
+            "cta": "Explore",
+            "link": "shopify://collections/mixed-spices"
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/banner-other-spices.webp",
+            "title": "Other Spices",
+            "text": "Kasuri methi, batrisu vasanu and hing",
+            "cta": "Explore",
+            "link": "shopify://collections/other-spices"
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3"
+      ]
+    },
+    "amisha_feature_quality": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "left",
+        "background": "white",
+        "eyebrow": "Quality Assurance",
+        "heading": "Nothing but the BEST!",
+        "text": "<p>Our products conform to stringent international quality standards. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
+        "image": "shopify://shop_images/about-quality.webp",
+        "badge_number": "400",
+        "badge_label": "Tons cold storage",
+        "button_label": "Know more",
+        "button_link": "shopify://pages/about-us"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Tested for purity, quality and safety: pesticide residues, aflatoxin and heavy metals"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Microbiological tests including total plate count, Salmonella, E. coli and yeast & mould"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Curcumin, capsaicin, Scoville index, pungency and colour value checked"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "International protocols followed: ASTA, AOAC, AOCS and EU"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "amisha_feature_packaging": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "cream",
+        "eyebrow": "Packaging",
+        "heading": "Packaging for every need",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging.</p>",
+        "image": "shopify://shop_images/about-packaging.webp",
+        "badge_number": "7 g - 10 kg",
+        "badge_label": "Pouch to bag",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Pouches and boxes for everyday use"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Jars for masalas"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Bags up to 10 kg for bulk needs"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "Designed to preserve aroma and freshness"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
     }
   },
   "order": [
     "slideshow_qcVyxa",
-    "rich_text_ciTEVL",
-    "counter_Bxwxad",
-    "banner_grid_aXYRit",
+    "amisha_story",
+    "amisha_categories",
     "featured_collection_KeyN9p",
     "banner_parallax_GPyY6j",
-    "image_with_text_fQAnNi",
-    "image_with_text_HaJHHa",
+    "amisha_feature_quality",
+    "amisha_feature_packaging",
     "marque_UN9zh3",
     "featured_collection_t9P7ba",
     "newsletter_aKwrQr"

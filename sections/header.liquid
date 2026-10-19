@@ -187,7 +187,7 @@
                                 {% # theme-check-enable %}
                             </div>
                         </div>
-                        <div class="col-6 col-lg-2 d-flex align-items-center">
+                        <div class="col-6 col-lg-2 d-flex align-items-center justify-content-lg-center">
                             <div class="d-flex d-lg-none">
                                 <div class="hamburger-menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu"
                                      aria-controls="offcanvasMenu">
@@ -201,7 +201,7 @@
                                 {% endif %}
                                 {% if settings.logo %}
                                     <a href="{{ routes.root_url }}"
-                                       class="site-header__logo-image d-flex align-items-center justify-content-start justify-content-lg-center"
+                                       class="site-header__logo-image d-flex align-items-center justify-content-start justify-content-lg-center mx-lg-auto"
                                        data-image-loading-animation>
                                         {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
                                         {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio -%}

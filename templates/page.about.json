@@ -63,81 +63,6 @@
         "custom_class": ""
       }
     },
-    "multicolumn_9TgiUX": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_Phaz6Q": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/facility-office.webp",
-            "preheading": "",
-            "heading": "Corporate Office",
-            "subheading": "A-74, Hathikhana, Vadodara-390 006, Gujarat",
-            "button_label": "",
-            "button_link": "shopify://pages/contact",
-            "button_style": "primary"
-          }
-        },
-        "column_REPTMd": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/facility-factory-unit-1.webp",
-            "preheading": "",
-            "heading": "Factory Unit 1",
-            "subheading": "C1/145/A, GIDC, Makarpura, Vadodara - 390 010",
-            "button_label": "",
-            "button_link": "shopify://pages/contact",
-            "button_style": "primary"
-          }
-        },
-        "column_TnHjH7": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/facility-factory-unit-2.webp",
-            "preheading": "",
-            "heading": "Factory Unit 2",
-            "subheading": "984/2, GIDC, Makarpura, Vadodara - 390 010",
-            "button_label": "",
-            "button_link": "shopify://pages/contact",
-            "button_style": "primary"
-          }
-        }
-      },
-      "block_order": [
-        "column_Phaz6Q",
-        "column_REPTMd",
-        "column_TnHjH7"
-      ],
-      "settings": {
-        "layout": "container page-width",
-        "style": "style-1",
-        "preheading": "",
-        "heading": "Our Facilities",
-        "subheading": "",
-        "heading_tag": "h2",
-        "heading_size": "h2",
-        "heading_alignment": "text-center",
-        "image_width": "100",
-        "image_height": "adapt",
-        "text_alignment": "text-center",
-        "heading_size_card": "h6",
-        "heading_tag_card": "h3",
-        "border_radius": 0,
-        "columns_desktop": 3,
-        "columns_tablet": 2,
-        "gutter": 4,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#ffffff",
-        "color_background_gradient": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 36,
-        "custom_id": "team",
-        "custom_class": ""
-      }
-    },
     "newsletter_aKwrQr": {
       "type": "newsletter",
       "blocks": {
@@ -180,186 +105,6 @@
         "margin_bottom": 0,
         "padding_top": 100,
         "padding_bottom": 100,
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "image_with_text_quality": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_YHdX8L": {
-          "type": "heading",
-          "settings": {
-            "heading": "Nothing but the BEST!",
-            "heading_tag": "h2",
-            "heading_size": "h2",
-            "margin_top": 0
-          }
-        },
-        "text_crhiCU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our products conform to stringent international quality standards. We have testing facilities to assure purity, quality and safety, and an in-house cold storage with a capacity of 400 tons. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
-            "margin_top": 3
-          }
-        },
-        "button_EPKqwa": {
-          "type": "button",
-          "settings": {
-            "button_label": "Know More",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "outline",
-            "margin_top": 3
-          }
-        }
-      },
-      "block_order": [
-        "heading_YHdX8L",
-        "text_crhiCU",
-        "button_EPKqwa"
-      ],
-      "settings": {
-        "style_layout": "style-1",
-        "image": "shopify://shop_images/about-quality.webp",
-        "layout": "full-width",
-        "image_second": false,
-        "image_width": "50",
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "text_box_position": "flex-middle-center",
-        "text_alignment": "text-md-start text-lg-start",
-        "enable_controls": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "color_background_block": "#ffffff",
-        "color_background_gradient_block": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 54,
-        "text_alignment_mobile": "text-start",
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "image_with_text_packaging": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_iHBabU": {
-          "type": "heading",
-          "settings": {
-            "heading": "Packaging for every need",
-            "heading_tag": "h2",
-            "heading_size": "h2",
-            "margin_top": 0
-          }
-        },
-        "text_7jctwb": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging, starting from a 7 g pouch up to a 10 kg bag.</p>",
-            "margin_top": 3
-          }
-        },
-        "button_QmpWR8": {
-          "type": "button",
-          "settings": {
-            "button_label": "Know More",
-            "button_link": "shopify://pages/about-us",
-            "button_style": "outline",
-            "margin_top": 3
-          }
-        }
-      },
-      "block_order": [
-        "heading_iHBabU",
-        "text_7jctwb",
-        "button_QmpWR8"
-      ],
-      "settings": {
-        "style_layout": "style-2",
-        "image": "shopify://shop_images/about-packaging.webp",
-        "layout": "full-width",
-        "image_second": true,
-        "image_width": "50",
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "text_box_position": "flex-middle-left",
-        "text_alignment": "text-md-end text-lg-end",
-        "enable_controls": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "color_background_block": "#ffffff",
-        "color_background_gradient_block": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 0,
-        "padding_bottom": 54,
-        "text_alignment_mobile": "text-end",
-        "custom_id": "",
-        "custom_class": ""
-      }
-    },
-    "image_with_text_story": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_YHdX8L": {
-          "type": "heading",
-          "settings": {
-            "heading": "About Amisha Masala",
-            "heading_tag": "h2",
-            "heading_size": "h2",
-            "margin_top": 0
-          }
-        },
-        "text_crhiCU": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
-            "margin_top": 3
-          }
-        },
-        "button_EPKqwa": {
-          "type": "button",
-          "settings": {
-            "button_label": "Shop Spices",
-            "button_link": "shopify://collections/spices",
-            "button_style": "outline",
-            "margin_top": 3
-          }
-        }
-      },
-      "block_order": [
-        "heading_YHdX8L",
-        "text_crhiCU",
-        "button_EPKqwa"
-      ],
-      "settings": {
-        "style_layout": "style-1",
-        "image": "shopify://shop_images/about-story.webp",
-        "layout": "full-width",
-        "image_second": true,
-        "image_width": "50",
-        "image_height": "adapt",
-        "image_position": "object_position_middle_center",
-        "text_box_position": "flex-middle-center",
-        "text_alignment": "text-md-start text-lg-start",
-        "enable_controls": false,
-        "use_custom_colors": false,
-        "color_text": "#000000",
-        "color_background": "#e5ddbc",
-        "color_background_gradient": "",
-        "color_background_block": "#ffffff",
-        "color_background_gradient_block": "",
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 54,
-        "text_alignment_mobile": "text-start",
         "custom_id": "",
         "custom_class": ""
       }
@@ -438,15 +183,169 @@
         "background_image": "shopify://shop_images/about-pride-bg.webp",
         "edge_color": "#ffffff"
       }
+    },
+    "amisha_feature_story": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "white",
+        "eyebrow": "Our Story",
+        "heading": "About Amisha Masala",
+        "text": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "image": "shopify://shop_images/about-story.webp",
+        "badge_number": "25+",
+        "badge_label": "Years of experience",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      }
+    },
+    "amisha_feature_quality": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "left",
+        "background": "white",
+        "eyebrow": "Quality Assurance",
+        "heading": "Nothing but the BEST!",
+        "text": "<p>Our products conform to stringent international quality standards. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
+        "image": "shopify://shop_images/about-quality.webp",
+        "badge_number": "400",
+        "badge_label": "Tons cold storage",
+        "button_label": "Know more",
+        "button_link": "shopify://pages/about-us"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Tested for purity, quality and safety: pesticide residues, aflatoxin and heavy metals"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Microbiological tests including total plate count, Salmonella, E. coli and yeast & mould"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Curcumin, capsaicin, Scoville index, pungency and colour value checked"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "International protocols followed: ASTA, AOAC, AOCS and EU"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "amisha_feature_packaging": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "cream",
+        "eyebrow": "Packaging",
+        "heading": "Packaging for every need",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging.</p>",
+        "image": "shopify://shop_images/about-packaging.webp",
+        "badge_number": "7 g - 10 kg",
+        "badge_label": "Pouch to bag",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      },
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Pouches and boxes for everyday use"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Jars for masalas"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Bags up to 10 kg for bulk needs"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "Designed to preserve aroma and freshness"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ]
+    },
+    "amisha_locations": {
+      "type": "amisha-locations",
+      "settings": {
+        "background": "white",
+        "eyebrow": "Find Us",
+        "heading": "Our Facilities"
+      },
+      "blocks": {
+        "place_1": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-office.webp",
+            "tag": "Corporate Office",
+            "name": "Corporate Office",
+            "address": "A-74, Hathikhana,\nVadodara-390 006, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=J+B+Food+Products+Hathikhana+Vadodara"
+          }
+        },
+        "place_2": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-1.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 1",
+            "address": "C1/145/A, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=C1/145/A+GIDC+Makarpura+Vadodara"
+          }
+        },
+        "place_3": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-2.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 2",
+            "address": "984/2, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=984/2+GIDC+Makarpura+Vadodara"
+          }
+        }
+      },
+      "block_order": [
+        "place_1",
+        "place_2",
+        "place_3"
+      ]
     }
   },
   "order": [
     "main",
-    "image_with_text_story",
+    "amisha_feature_story",
     "owners_pride",
-    "image_with_text_quality",
-    "image_with_text_packaging",
-    "multicolumn_9TgiUX",
+    "amisha_feature_quality",
+    "amisha_feature_packaging",
+    "amisha_locations",
     "marque_UN9zh3",
     "newsletter_aKwrQr"
   ]

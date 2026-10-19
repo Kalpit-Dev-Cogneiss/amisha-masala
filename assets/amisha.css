@@ -1,0 +1,102 @@
+/* Amisha Masala - shared design tokens, reveal animation, typography helpers and buttons */
+:root {
+  --am-red: #ec1d1d;
+  --am-wine: #4a0808;
+  --am-ink: #170202;
+  --am-gold: #f5b83d;
+  --am-gold-soft: #ffd36b;
+  --am-cream: #f7f1e3;
+  --am-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ---- scroll reveal (only active when amisha.js is running) ---- */
+html.am-js [data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s var(--am-ease) calc(var(--i, 0) * 0.12s),
+    transform 0.9s var(--am-ease) calc(var(--i, 0) * 0.12s);
+}
+html.am-js [data-reveal="left"] { transform: translateX(-52px); }
+html.am-js [data-reveal="right"] { transform: translateX(52px); }
+html.am-js [data-reveal="zoom"] { transform: scale(0.92); }
+html.am-js [data-reveal].is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html.am-js [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- typography helpers ---- */
+.am-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--am-red);
+}
+.am-eyebrow::before {
+  content: "";
+  width: 44px;
+  height: 2px;
+  background: currentColor;
+}
+.am-eyebrow--center::after {
+  content: "";
+  width: 44px;
+  height: 2px;
+  background: currentColor;
+}
+.am-eyebrow--light { color: var(--am-gold); }
+
+.am-title {
+  margin: 16px 0 22px;
+  font-family: var(--bs-font-heading-family);
+  font-size: clamp(38px, 5.4vw, 82px);
+  line-height: 1.02;
+  color: var(--am-ink);
+}
+.am-title--light { color: #fff; }
+.am-title em { font-style: normal; color: var(--am-red); }
+.am-title--gold {
+  background: linear-gradient(90deg, #fff 0%, var(--am-gold-soft) 55%, var(--am-gold) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.am-lead {
+  font-size: clamp(18px, 1.7vw, 23px);
+  line-height: 1.65;
+  color: #3b2a2a;
+}
+.am-lead p, .am-body p { margin: 0 0 16px; }
+.am-body { font-size: 17px; line-height: 1.8; color: #4b3a3a; }
+
+/* ---- buttons ---- */
+.am-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 30px;
+  border: 0;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--am-red);
+  color: #fff;
+  box-shadow: 0 14px 30px rgba(236, 29, 29, 0.35);
+  transition: transform 0.35s var(--am-ease), box-shadow 0.35s, background 0.35s;
+}
+.am-btn i { transition: transform 0.35s var(--am-ease); }
+.am-btn:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(236, 29, 29, 0.45); color: #fff; }
+.am-btn:hover i { transform: translateX(6px); }
+.am-btn--gold {
+  background: linear-gradient(135deg, var(--am-gold-soft), var(--am-gold));
+  color: #3a0606;
+  box-shadow: 0 14px 30px rgba(245, 184, 61, 0.35);
+}
+.am-btn--gold:hover { color: #3a0606; box-shadow: 0 20px 40px rgba(245, 184, 61, 0.5); }

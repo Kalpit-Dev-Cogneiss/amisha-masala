@@ -1,0 +1,198 @@
+{% comment %}
+  Amisha Masala - contact page: dark hero, three quick-contact cards, map and a message form.
+  The form posts to Shopify's built-in contact form (email goes to the store's customer email).
+{% endcomment %}
+{%- liquid
+  assign bg = section.settings.background_image
+  assign phone_digits = section.settings.phone | replace: ' ', '' | replace: '-', ''
+-%}
+<section id="AmContact-{{ section.id }}" class="am-contact">
+  <div class="am-contact__hero">
+    <div class="am-contact__bg"{% if bg != blank %} style="background-image: url('{{ bg | image_url: width: 2400 }}');"{% endif %}></div>
+    <div class="am-contact__shade"></div>
+    <div class="container page-width am-contact__hero-inner" data-watermark="{{ section.settings.watermark | escape }}">
+      <span class="am-eyebrow am-eyebrow--center am-eyebrow--light" data-reveal>{{ section.settings.eyebrow | escape }}</span>
+      <h1 class="am-title am-title--gold" data-reveal style="--i: 1;">{{ section.settings.heading | escape }}</h1>
+      <p class="am-contact__intro" data-reveal style="--i: 2;">{{ section.settings.intro | escape }}</p>
+    </div>
+  </div>
+
+  <div class="container page-width am-contact__cards-wrap">
+    <div class="am-contact__cards">
+      <a class="am-ccard" href="tel:{{ phone_digits }}" data-reveal style="--i: 0;">
+        <span class="am-ccard__icon"><i class="bi bi-telephone-fill"></i></span>
+        <span class="am-ccard__label">Call us</span>
+        <span class="am-ccard__value">{{ section.settings.phone | escape }}</span>
+        {%- if section.settings.fax != blank -%}<span class="am-ccard__sub">Fax: {{ section.settings.fax | escape }}</span>{%- endif -%}
+      </a>
+      <a class="am-ccard" href="mailto:{{ section.settings.email }}" data-reveal style="--i: 1;">
+        <span class="am-ccard__icon"><i class="bi bi-envelope-fill"></i></span>
+        <span class="am-ccard__label">Email us</span>
+        <span class="am-ccard__value">{{ section.settings.email | escape }}</span>
+        <span class="am-ccard__sub">We reply as soon as we can</span>
+      </a>
+      <a class="am-ccard" href="{{ section.settings.map_link }}" target="_blank" rel="noopener" data-reveal style="--i: 2;">
+        <span class="am-ccard__icon"><i class="bi bi-geo-alt-fill"></i></span>
+        <span class="am-ccard__label">Visit us</span>
+        <span class="am-ccard__value">{{ section.settings.address | escape | newline_to_br }}</span>
+        <span class="am-ccard__sub">Open in Google Maps</span>
+      </a>
+    </div>
+
+    <div class="am-contact__main">
+      <div class="am-contact__map" data-reveal="left">
+        {%- if section.settings.map_embed_url != blank -%}
+          <iframe src="{{ section.settings.map_embed_url }}" title="Map to J. B. Food Products" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        {%- endif -%}
+      </div>
+
+      <div class="am-contact__formcard" data-reveal="right">
+        <h2 class="am-contact__formtitle">{{ section.settings.form_heading | escape }}</h2>
+        <p class="am-contact__formintro">{{ section.settings.form_text | escape }}</p>
+        {%- form 'contact', id: 'AmContactForm', class: 'am-form' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="am-form__ok" role="status"><i class="bi bi-check-circle-fill"></i> {{ section.settings.success_text | escape }}</div>
+          {%- endif -%}
+          {%- if form.errors -%}
+            <div class="am-form__err" role="alert">{{ form.errors | default_errors }}</div>
+          {%- endif -%}
+          <div class="am-form__row">
+            <label>Name<input type="text" name="contact[name]" value="{{ form.name }}" autocomplete="name" required></label>
+            <label>Phone<input type="tel" name="contact[phone]" value="{{ form.phone }}" autocomplete="tel"></label>
+          </div>
+          <label>Email<input type="email" name="contact[email]" value="{{ form.email }}" autocomplete="email" required></label>
+          <label>Message<textarea name="contact[body]" rows="5" required>{{ form.body }}</textarea></label>
+          <button type="submit" class="am-btn">Send message <i class="bi bi-send-fill"></i></button>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  #AmContact-{{ section.id }} { position: relative; background: var(--am-cream); padding-bottom: clamp(70px, 8vw, 120px); }
+  #AmContact-{{ section.id }} .am-contact__hero {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: clamp(80px, 9vw, 140px) 0 clamp(150px, 15vw, 230px);
+    background: radial-gradient(circle at 18% 0%, #9b1212 0%, #4a0808 48%, #170202 100%);
+    isolation: isolate;
+  }
+  #AmContact-{{ section.id }} .am-contact__bg { position: absolute; inset: 0; z-index: -3; background-size: cover; background-position: center; opacity: 0.3; }
+  #AmContact-{{ section.id }} .am-contact__shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgba(23, 2, 2, 0.5), rgba(23, 2, 2, 0.75)); }
+  #AmContact-{{ section.id }} .am-contact__hero-inner { position: relative; text-align: center; }
+  #AmContact-{{ section.id }} .am-contact__hero-inner::before {
+    content: attr(data-watermark);
+    position: absolute;
+    top: -0.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--bs-font-heading-family);
+    font-size: clamp(110px, 22vw, 340px);
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.11);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: -1;
+  }
+  #AmContact-{{ section.id }} .am-contact__intro { max-width: 640px; margin: 0 auto; font-size: clamp(17px, 1.8vw, 22px); line-height: 1.65; color: rgba(255, 255, 255, 0.88); }
+
+  #AmContact-{{ section.id }} .am-contact__cards-wrap { position: relative; margin-top: clamp(-150px, -11vw, -90px); z-index: 2; }
+  #AmContact-{{ section.id }} .am-contact__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  #AmContact-{{ section.id }} .am-ccard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 38px 26px 34px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--am-ink);
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 28px 60px rgba(74, 8, 8, 0.2);
+    transition: transform 0.45s var(--am-ease), box-shadow 0.45s;
+  }
+  #AmContact-{{ section.id }} .am-ccard:hover { transform: translateY(-12px); box-shadow: 0 40px 80px rgba(74, 8, 8, 0.32); color: var(--am-ink); }
+  #AmContact-{{ section.id }} .am-ccard__icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    font-size: 28px;
+    color: #3a0606;
+    background: linear-gradient(135deg, var(--am-gold-soft), var(--am-gold));
+    box-shadow: 0 0 0 9px rgba(245, 184, 61, 0.2);
+    transition: transform 0.5s var(--am-ease);
+  }
+  #AmContact-{{ section.id }} .am-ccard:hover .am-ccard__icon { transform: rotate(-10deg) scale(1.1); }
+  #AmContact-{{ section.id }} .am-ccard__label { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--am-red); }
+  #AmContact-{{ section.id }} .am-ccard__value { font-family: var(--bs-font-heading-family); font-size: clamp(20px, 1.9vw, 26px); line-height: 1.3; word-break: break-word; }
+  #AmContact-{{ section.id }} .am-ccard__sub { font-size: 14px; color: #6b5a5a; }
+
+  #AmContact-{{ section.id }} .am-contact__main { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 28px; margin-top: 28px; align-items: stretch; }
+  #AmContact-{{ section.id }} .am-contact__map { min-height: 460px; border-radius: 32px; overflow: hidden; box-shadow: 0 28px 60px rgba(74, 8, 8, 0.2); background: #e8e1d2; }
+  #AmContact-{{ section.id }} .am-contact__map iframe { display: block; width: 100%; height: 100%; min-height: 460px; border: 0; }
+  #AmContact-{{ section.id }} .am-contact__formcard { padding: clamp(28px, 3.4vw, 50px); border-radius: 32px; background: #fff; box-shadow: 0 28px 60px rgba(74, 8, 8, 0.2); border-top: 6px solid var(--am-red); }
+  #AmContact-{{ section.id }} .am-contact__formtitle { margin: 0 0 8px; font-family: var(--bs-font-heading-family); font-size: clamp(28px, 3vw, 42px); color: var(--am-ink); }
+  #AmContact-{{ section.id }} .am-contact__formintro { margin: 0 0 24px; font-size: 16px; color: #5a4848; }
+  #AmContact-{{ section.id }} .am-form { display: grid; gap: 18px; }
+  #AmContact-{{ section.id }} .am-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  #AmContact-{{ section.id }} .am-form label { display: grid; gap: 8px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #4b3a3a; }
+  #AmContact-{{ section.id }} .am-form input,
+  #AmContact-{{ section.id }} .am-form textarea {
+    width: 100%;
+    padding: 15px 18px;
+    border: 2px solid #eadfcf;
+    border-radius: 16px;
+    background: #fbf8f1;
+    font: inherit;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--am-ink);
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  }
+  #AmContact-{{ section.id }} .am-form input:focus,
+  #AmContact-{{ section.id }} .am-form textarea:focus { outline: 0; border-color: var(--am-red); background: #fff; box-shadow: 0 0 0 5px rgba(236, 29, 29, 0.12); }
+  #AmContact-{{ section.id }} .am-form .am-btn { justify-self: start; margin-top: 6px; }
+  #AmContact-{{ section.id }} .am-form__ok { padding: 16px 20px; border-radius: 16px; font-weight: 600; color: #14532d; background: #dcfce7; }
+  #AmContact-{{ section.id }} .am-form__err { padding: 16px 20px; border-radius: 16px; color: #7f1d1d; background: #fee2e2; }
+  #AmContact-{{ section.id }} .am-form__err ul { margin: 0; padding-left: 18px; }
+
+  @media (max-width: 991px) {
+    #AmContact-{{ section.id }} .am-contact__cards { grid-template-columns: 1fr; }
+    #AmContact-{{ section.id }} .am-contact__main { grid-template-columns: 1fr; }
+    #AmContact-{{ section.id }} .am-contact__cards-wrap { margin-top: -110px; }
+  }
+  @media (max-width: 575px) { #AmContact-{{ section.id }} .am-form__row { grid-template-columns: 1fr; } }
+</style>
+
+{% schema %}
+{
+  "name": "Amisha - Contact",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small heading", "default": "Get in touch" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Reach Us" },
+    { "type": "text", "id": "watermark", "label": "Big outlined background word", "default": "HELLO" },
+    { "type": "textarea", "id": "intro", "label": "Intro text" },
+    { "type": "image_picker", "id": "background_image", "label": "Hero photo" },
+    { "type": "text", "id": "phone", "label": "Phone" },
+    { "type": "text", "id": "fax", "label": "Fax" },
+    { "type": "text", "id": "email", "label": "Email" },
+    { "type": "textarea", "id": "address", "label": "Address" },
+    { "type": "url", "id": "map_link", "label": "Google Maps link" },
+    { "type": "url", "id": "map_embed_url", "label": "Google Maps embed link (the src of the embed code)" },
+    { "type": "text", "id": "form_heading", "label": "Form heading", "default": "Drop Us a Line" },
+    { "type": "text", "id": "form_text", "label": "Form intro", "default": "Tell us what you need and we will get back to you." },
+    { "type": "text", "id": "success_text", "label": "Message after sending", "default": "Thank you! Your message has been sent. We will contact you shortly." }
+  ],
+  "presets": [{ "name": "Amisha - Contact" }]
+}
+{% endschema %}

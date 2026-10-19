@@ -145,6 +145,11 @@
     <script src="{{ 'menu.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
+{{ 'amisha.css' | asset_url | stylesheet_tag }}
+<script>
+  document.documentElement.classList.add('am-js');
+  setTimeout(function () { if (!window.__amReady) document.documentElement.classList.remove('am-js'); }, 3000);
+</script>
 </head>
 <body class="template-{{ request.page_type | handle }}{% if settings.enable_shadow %} shadow-style{% endif %} {% if settings.dark_mode %} dark-mode{% endif %}">
 {%- liquid
@@ -206,5 +211,6 @@
     <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {% render 'order-now-modal' %}
+<script src="{{ 'amisha.js' | asset_url }}" defer="defer"></script>
 </body>
 </html>

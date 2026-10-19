@@ -1,0 +1,121 @@
+{% comment %}
+  Amisha Masala - category showcase: tall photo cards with zoom-on-hover and an arrow call to action.
+{% endcomment %}
+<section id="AmCats-{{ section.id }}" class="am-cats">
+  <div class="container page-width">
+    <header class="am-cats__head">
+      {%- if section.settings.eyebrow != blank -%}
+        <span class="am-eyebrow am-eyebrow--center" data-reveal>{{ section.settings.eyebrow | escape }}</span>
+      {%- endif -%}
+      <h2 class="am-title" data-reveal style="--i: 1;">{{ section.settings.heading | escape }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="am-lead" data-reveal style="--i: 2;">{{ section.settings.subheading | escape }}</p>
+      {%- endif -%}
+    </header>
+
+    <div class="am-cats__grid">
+      {%- for block in section.blocks -%}
+        <a class="am-cat" href="{{ block.settings.link | default: '#' }}" data-reveal style="--i: {{ forloop.index0 }};" {{ block.shopify_attributes }}>
+          <span class="am-cat__img">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '400, 700, 1000', sizes: '(min-width: 992px) 33vw, 90vw', alt: block.settings.title }}
+            {%- endif -%}
+          </span>
+          <span class="am-cat__shade"></span>
+          <span class="am-cat__num">0{{ forloop.index }}</span>
+          <span class="am-cat__body">
+            <span class="am-cat__title">{{ block.settings.title | escape }}</span>
+            <span class="am-cat__text">{{ block.settings.text | escape }}</span>
+            <span class="am-cat__cta">{{ block.settings.cta | default: 'Explore' | escape }} <i class="bi bi-arrow-right"></i></span>
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  #AmCats-{{ section.id }} { padding: clamp(50px, 6vw, 90px) 0 clamp(60px, 7vw, 100px); }
+  #AmCats-{{ section.id }} .am-cats__head { text-align: center; max-width: 760px; margin: 0 auto clamp(36px, 5vw, 64px); }
+  #AmCats-{{ section.id }} .am-cats__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+  #AmCats-{{ section.id }} .am-cat {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    border-radius: 30px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    isolation: isolate;
+    box-shadow: 0 24px 50px rgba(74, 8, 8, 0.22);
+    transition: transform 0.5s var(--am-ease), box-shadow 0.5s;
+  }
+  #AmCats-{{ section.id }} .am-cat:hover { transform: translateY(-12px); box-shadow: 0 36px 70px rgba(74, 8, 8, 0.4); color: #fff; }
+  #AmCats-{{ section.id }} .am-cat__img { position: absolute; inset: 0; z-index: -2; }
+  #AmCats-{{ section.id }} .am-cat__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--am-ease); }
+  #AmCats-{{ section.id }} .am-cat:hover .am-cat__img img { transform: scale(1.1); }
+  #AmCats-{{ section.id }} .am-cat__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(23, 2, 2, 0.05) 30%, rgba(23, 2, 2, 0.88) 100%);
+    transition: opacity 0.5s;
+  }
+  #AmCats-{{ section.id }} .am-cat__num {
+    position: absolute;
+    top: 14px;
+    left: 24px;
+    font-family: var(--bs-font-heading-family);
+    font-size: 78px;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.75);
+  }
+  #AmCats-{{ section.id }} .am-cat__body { position: absolute; left: 0; right: 0; bottom: 0; display: block; padding: 28px 30px 32px; }
+  #AmCats-{{ section.id }} .am-cat__title { display: block; font-family: var(--bs-font-heading-family); font-size: clamp(28px, 2.6vw, 40px); line-height: 1.1; }
+  #AmCats-{{ section.id }} .am-cat__text { display: block; margin-top: 10px; font-size: 16px; line-height: 1.55; color: rgba(255, 255, 255, 0.86); }
+  #AmCats-{{ section.id }} .am-cat__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #3a0606;
+    background: linear-gradient(135deg, var(--am-gold-soft), var(--am-gold));
+    transition: transform 0.4s var(--am-ease), gap 0.4s;
+  }
+  #AmCats-{{ section.id }} .am-cat:hover .am-cat__cta { gap: 16px; transform: translateX(4px); }
+  @media (max-width: 991px) { #AmCats-{{ section.id }} .am-cats__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575px) { #AmCats-{{ section.id }} .am-cats__grid { grid-template-columns: 1fr; } #AmCats-{{ section.id }} .am-cat { aspect-ratio: 5 / 5.4; } }
+</style>
+
+{% schema %}
+{
+  "name": "Amisha - Category cards",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small heading", "default": "Our Range" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Explore Our Spices" },
+    { "type": "textarea", "id": "subheading", "label": "Intro text" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Category card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Photo" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Plain Spices" },
+        { "type": "textarea", "id": "text", "label": "Short text" },
+        { "type": "text", "id": "cta", "label": "Button text", "default": "Explore" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Amisha - Category cards", "blocks": [{ "type": "card" }, { "type": "card" }, { "type": "card" }] }]
+}
+{% endschema %}
