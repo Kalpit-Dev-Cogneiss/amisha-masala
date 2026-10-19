@@ -167,3 +167,20 @@ html.am-js [data-reveal].is-in { opacity: 1; transform: none; }
 }
 .product-single .hero-slider .js-thumb .swiper-slide:hover { opacity: 1; transform: translateY(-3px); }
 .product-single .hero-slider .js-thumb .swiper-slide-thumb-active { opacity: 1; border-color: var(--am-red); box-shadow: 0 10px 22px rgba(236, 29, 29, 0.25); }
+
+/* ---- card order button (the theme sizes buttons inside product cards as 40px icon buttons) ---- */
+.card-product .order-now-btn {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0;
+  padding: 10px 22px !important;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(236, 29, 29, 0.28);
+  transition: transform 0.3s var(--am-ease), box-shadow 0.3s;
+}
+.card-product .order-now-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(236, 29, 29, 0.4); }
