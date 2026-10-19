@@ -367,7 +367,6 @@
         },
         "text_crhiCU": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p>Our products conform to stringent international quality standards. We have testing facilities to assure purity, quality and safety, and an in-house cold storage with a capacity of 400 tons. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
             "margin_top": 3
@@ -388,7 +387,6 @@
         "text_crhiCU",
         "button_EPKqwa"
       ],
-      "disabled": true,
       "settings": {
         "style_layout": "style-1",
         "image": "shopify://shop_images/about-quality.webp",
@@ -429,7 +427,6 @@
         },
         "text_7jctwb": {
           "type": "text",
-          "disabled": true,
           "settings": {
             "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging, starting from a 7 g pouch up to a 10 kg bag.</p>",
             "margin_top": 3
@@ -450,7 +447,6 @@
         "text_7jctwb",
         "button_QmpWR8"
       ],
-      "disabled": true,
       "settings": {
         "style_layout": "style-2",
         "image": "shopify://shop_images/about-packaging.webp",
