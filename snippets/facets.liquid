@@ -63,7 +63,13 @@
 
                             <div class="active-facets active-facets-desktop">
                                 <div class="active-facets-vertical-filter d-flex justify-content-between align-items-center">
-                                    {% unless results.filters == empty %}
+                                    {% assign amisha_visible_filters = 0 %}
+                                    {% for amisha_f in results.filters %}
+                                        {% unless amisha_f.param_name == 'filter.v.price' or amisha_f.param_name == 'filter.v.availability' %}
+                                            {% assign amisha_visible_filters = amisha_visible_filters | plus: 1 %}
+                                        {% endunless %}
+                                    {% endfor %}
+                                    {% if amisha_visible_filters > 0 %}
                                         <h2
                                                 class="facets__heading facets__heading--vertical caption-large mb-0 h6 font-body fs-16 fw-bold"
                                                 id="verticalTitle"
@@ -71,7 +77,7 @@
                                         >
                                             {{ 'products.facets.filter_by_label' | t }}
                                         </h2>
-                                    {% endunless %}
+                                    {% endif %}
 
                                     <facet-remove class="active-facets__button-wrapper">
                                         <a href="{{ results_url }}" class="hover-underline text-decoration-none ms-3">
