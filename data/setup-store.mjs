@@ -65,7 +65,8 @@ async function stage(file, name) {
 
 async function uploadFiles() {
   const dir = path.join(here, "shop-files");
-  for (const name of await readdir(dir)) {
+  const only = process.env.FILES?.split(",");
+  for (const name of (await readdir(dir)).filter((n) => !only || only.includes(n))) {
     const src = await stage(path.join(dir, name), name);
     const r = await gql(
       `mutation($files:[FileCreateInput!]!){fileCreate(files:$files){files{id} userErrors{message}}}`,
