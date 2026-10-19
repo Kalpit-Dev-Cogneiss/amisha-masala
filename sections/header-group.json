@@ -32,9 +32,9 @@
       "settings": {
         "main_linklist": "main-menu",
         "enable_search": true,
-        "enable_account": true,
+        "enable_account": false,
         "enable_wishlist": false,
-        "enable_cart": true,
+        "enable_cart": false,
         "logo_position": "middle-center",
         "use_custom_colors": true,
         "color_text": "#ffffff",

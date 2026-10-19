@@ -1,14 +1,12 @@
 # Amisha Masala - store data
 
-Theme = repo root (Lafonre v2.3.0, Home 1 as `templates/index.json`). Everything here is content the theme cannot carry.
+Theme = repo root (Lafonre v2.3.0, Home 1 as `templates/index.json`).
+No prices: all variants are 0, the theme hides prices and the cart and shows an **Order Now** popup enquiry form
+(sent through Shopify's contact form: set the store email in Settings > Notifications > Sender email / Customer email).
 
-## Order of setup
-1. **Files + collections + pages + menus**: `SHOP=xxx.myshopify.com TOKEN=shpat_xxx node data/setup-store.mjs`
-   (custom app scopes: write_files, write_products, write_content, write_online_store_navigation).
-   No token? Upload `data/shop-files/*` to Settings > Content > Files (keep file names), create the 3 collections
-   (automated, tag equals `plain-spices` / `mixed-spices` / `other-spices`), pages (`owners-pride` template `about`,
-   `quality`, `packaging`, `contact` template `contact`) and menus (`main-menu`, `spices-menu`, `footer`) by hand.
-2. **Products**: Admin > Products > Import > `data/products.csv`.
-   `Image Src` points to `raw.githubusercontent.com/.../data/product-images/`; that only works while the repo is public.
-   Private repo: make it public for the import, or upload `data/product-images/*` and re-add images.
-3. **Prices are placeholders** (client gave none except Rs 5 / Rs 10 pouches). Every product is tagged `price-tbc`.
+## One command setup
+`SHOP=amisha-masala.myshopify.com TOKEN=shpat_xxx node data/setup-store.mjs`
+Custom app scopes: write_files, write_products, write_content, write_online_store_navigation.
+It uploads theme images to Files, creates 28 products, 3 collections, pages (Owner's Pride, Quality, Packaging, Reach Us) and menus.
+
+`products.csv` is an alternative product import (Admin > Products > Import); images load from this public repo.

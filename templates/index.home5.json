@@ -224,7 +224,7 @@
         "loop": true,
         "image_height": "adapt",
         "image_position": "object_position_middle_center",
-        "enable_quick_add": true,
+        "enable_quick_add": false,
         "use_custom_colors": true,
         "color_text": "#fbfafb",
         "color_background": "#0b0b0b",

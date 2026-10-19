@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
 <head>
+{% if request.page_type == 'cart' %}<meta http-equiv="refresh" content="0; url={{ routes.all_products_collection_url }}">{% endif %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -204,5 +205,6 @@
 {%- if settings.enable_wishlist -%}
     <script src="{{ 'wishlist.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+{% render 'order-now-modal' %}
 </body>
 </html>

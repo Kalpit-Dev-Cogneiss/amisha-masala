@@ -114,7 +114,7 @@
             "image_height": "adapt",
             "show_secondary_image": true,
             "show_vendor": true,
-            "enable_quick_add": true,
+            "enable_quick_add": false,
             "margin_bottom": 4
           }
         },
@@ -213,7 +213,7 @@
         "gutter": 4,
         "image_height": "adapt",
         "image_position": "object_position_middle_center",
-        "enable_quick_add": true,
+        "enable_quick_add": false,
         "use_custom_colors": false,
         "color_text": "#000000",
         "color_background": "#ffffff",

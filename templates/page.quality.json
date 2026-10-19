@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_text": "#0b0b0b",
+        "layout": "container page-width"
+      }
+    },
+    "feature": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YHdX8L": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tested for purity, quality and safety",
+            "heading_tag": "h2",
+            "heading_size": "h2",
+            "margin_top": 0
+          }
+        },
+        "text_crhiCU": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Pesticide residues, aflatoxin, heavy metals, microbiological tests, curcumin, capsaicin, pungency and colour value, using the latest international protocols (ASTA, AOAC, AOCS, EU).</p>",
+            "margin_top": 3
+          }
+        }
+      },
+      "block_order": [
+        "heading_YHdX8L",
+        "text_crhiCU"
+      ],
+      "settings": {
+        "style_layout": "style-1",
+        "image": "shopify://shop_images/about-quality.webp",
+        "layout": "full-width",
+        "image_second": false,
+        "image_width": "50",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "text_box_position": "flex-middle-center",
+        "text_alignment": "text-md-start text-lg-start",
+        "enable_controls": false,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#e5ddbc",
+        "color_background_gradient": "",
+        "color_background_block": "#ffffff",
+        "color_background_gradient_block": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 40,
+        "padding_bottom": 60,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "feature"
+  ]
+}

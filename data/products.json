@@ -1,0 +1,576 @@
+[
+ {
+  "title": "Kashmiri Kumthi Chilli Powder",
+  "handle": "kashmiri-kumthi-chilli-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Kashmiri Kumthi chilli powder from Amisha Masala. Finely ground and quality checked, for vibrant colour in everyday cooking.",
+  "sizes": [
+   "100 g",
+   "200 g",
+   "500 g",
+   "5 kg",
+   "10 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500,
+   "5 kg": 5000,
+   "10 kg": 10000
+  },
+  "images": [
+   "kashmiri-kumthi-chilli-powder.webp",
+   "kashmiri-kumthi-chilli-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Extra Hot Chilli Powder",
+  "handle": "extra-hot-chilli-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Extra hot chilli powder from Amisha Masala. Finely ground, available from a handy pouch up to bulk packs.",
+  "sizes": [
+   "₹5 pouch",
+   "₹10 pouch",
+   "100 g",
+   "200 g",
+   "500 g",
+   "5 kg",
+   "10 kg"
+  ],
+  "grams": {
+   "₹5 pouch": "",
+   "₹10 pouch": "",
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500,
+   "5 kg": 5000,
+   "10 kg": 10000
+  },
+  "images": [
+   "extra-hot-chilli-powder.webp",
+   "extra-hot-chilli-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Patna Chilli Powder",
+  "handle": "patna-chilli-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Patna chilli powder from Amisha Masala. Finely ground and quality checked.",
+  "sizes": [],
+  "grams": {},
+  "images": [
+   "patna-chilli-powder.webp"
+  ]
+ },
+ {
+  "title": "Turmeric Powder",
+  "handle": "turmeric-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Turmeric powder (haldi) from Amisha Masala. Finely ground and quality checked, from pouch to bulk packs.",
+  "sizes": [
+   "₹5 pouch",
+   "₹10 pouch",
+   "100 g",
+   "200 g",
+   "500 g",
+   "5 kg",
+   "10 kg"
+  ],
+  "grams": {
+   "₹5 pouch": "",
+   "₹10 pouch": "",
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500,
+   "5 kg": 5000,
+   "10 kg": 10000
+  },
+  "images": [
+   "turmeric-powder.webp",
+   "turmeric-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Coriander Powder",
+  "handle": "coriander-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Coriander powder (dhania) from Amisha Masala. Finely ground and quality checked, from pouch to bulk packs.",
+  "sizes": [
+   "₹5 pouch",
+   "₹10 pouch",
+   "100 g",
+   "200 g",
+   "500 g",
+   "5 kg",
+   "10 kg"
+  ],
+  "grams": {
+   "₹5 pouch": "",
+   "₹10 pouch": "",
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500,
+   "5 kg": 5000,
+   "10 kg": 10000
+  },
+  "images": [
+   "coriander-powder.webp",
+   "coriander-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Coriander Cumin Powder",
+  "handle": "coriander-cumin-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Ready blend of coriander and cumin powder (dhana jeera) from Amisha Masala.",
+  "sizes": [
+   "₹10 pouch",
+   "100 g",
+   "200 g",
+   "500 g"
+  ],
+  "grams": {
+   "₹10 pouch": "",
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500
+  },
+  "images": [
+   "coriander-cumin-powder.webp",
+   "coriander-cumin-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Black Pepper Powder",
+  "handle": "black-pepper-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Black pepper powder from Amisha Masala. Finely ground and quality checked.",
+  "sizes": [
+   "100 g"
+  ],
+  "grams": {
+   "100 g": 100
+  },
+  "images": [
+   "black-pepper-powder.webp"
+  ]
+ },
+ {
+  "title": "Dry Ginger Powder",
+  "handle": "dry-ginger-powder",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Dry ginger powder (sunth) from Amisha Masala. Finely ground and quality checked.",
+  "sizes": [
+   "50 g",
+   "100 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "100 g": 100
+  },
+  "images": [
+   "dry-ginger-powder.webp",
+   "dry-ginger-powder-2.webp"
+  ]
+ },
+ {
+  "title": "Dry Mango Powder (Aamchur)",
+  "handle": "dry-mango-powder-aamchur",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Dry mango powder (aamchur) from Amisha Masala. Finely ground and quality checked.",
+  "sizes": [
+   "100 g"
+  ],
+  "grams": {
+   "100 g": 100
+  },
+  "images": [
+   "dry-mango-powder-aamchur.webp"
+  ]
+ },
+ {
+  "title": "Ganthoda Powder (Pepramool)",
+  "handle": "ganthoda-powder-pepramool",
+  "type": "Plain Spices",
+  "tag": "plain-spices",
+  "desc": "Ganthoda (Pepramool) powder from Amisha Masala. Finely ground and quality checked.",
+  "sizes": [
+   "50 g",
+   "100 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "100 g": 100
+  },
+  "images": [
+   "ganthoda-powder-pepramool.webp",
+   "ganthoda-powder-pepramool-2.webp"
+  ]
+ },
+ {
+  "title": "Punjabi Chhole Masala",
+  "handle": "punjabi-chhole-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Punjabi Chhole Masala from Amisha Masala, a spice blend for chhole. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "punjabi-chhole-masala.webp",
+   "punjabi-chhole-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Pav Bhaji Masala",
+  "handle": "pav-bhaji-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Pav Bhaji Masala from Amisha Masala, a spice blend for pav bhaji. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "pav-bhaji-masala.webp",
+   "pav-bhaji-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Chaat Masala",
+  "handle": "chaat-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Chaat Masala from Amisha Masala, a tangy spice blend for chaat and snacks. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "chaat-masala.webp",
+   "chaat-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Pani Puri Masala",
+  "handle": "pani-puri-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Pani Puri Masala from Amisha Masala, a spice blend for pani puri. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "15 g",
+   "50 g",
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "15 g": 15,
+   "50 g": 50,
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "pani-puri-masala.webp"
+  ]
+ },
+ {
+  "title": "Sambhar Masala",
+  "handle": "sambhar-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Sambhar Masala from Amisha Masala, a spice blend for sambhar. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "15 g",
+   "50 g",
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "15 g": 15,
+   "50 g": 50,
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "sambhar-masala.webp"
+  ]
+ },
+ {
+  "title": "Biryani Pulav Masala",
+  "handle": "biryani-pulav-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Biryani Pulav Masala from Amisha Masala, a spice blend for biryani and pulav. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "biryani-pulav-masala.webp",
+   "biryani-pulav-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Kitchen King Masala",
+  "handle": "kitchen-king-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Kitchen King Masala from Amisha Masala, an all-purpose spice blend for curries. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "kitchen-king-masala.webp",
+   "kitchen-king-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Meat Masala",
+  "handle": "meat-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Meat Masala from Amisha Masala, a spice blend for meat dishes. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "₹5 pouch",
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "₹5 pouch": "",
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "meat-masala.webp",
+   "meat-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Chicken Masala",
+  "handle": "chicken-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Chicken Masala from Amisha Masala, a spice blend for chicken dishes. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "₹10 pouch",
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "₹10 pouch": "",
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "chicken-masala.webp",
+   "chicken-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Garam Masala",
+  "handle": "garam-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Garam Masala from Amisha Masala, a classic whole-spice blend. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "15 g",
+   "50 g",
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "15 g": 15,
+   "50 g": 50,
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "garam-masala.webp",
+   "garam-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Rajwadi Garam Masala",
+  "handle": "rajwadi-garam-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Rajwadi Garam Masala from Amisha Masala. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "50 g",
+   "100 g",
+   "200 g",
+   "500 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "100 g": 100,
+   "200 g": 200,
+   "500 g": 500
+  },
+  "images": [
+   "rajwadi-garam-masala.webp",
+   "rajwadi-garam-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Supreme Garam Masala",
+  "handle": "supreme-garam-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Supreme Garam Masala from Amisha Masala. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "250 g",
+   "1 kg"
+  ],
+  "grams": {
+   "250 g": 250,
+   "1 kg": 1000
+  },
+  "images": [
+   "supreme-garam-masala.webp",
+   "supreme-garam-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Tea Masala",
+  "handle": "tea-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Tea Masala from Amisha Masala, a spice blend for masala chai. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "₹10 pouch",
+   "50 g",
+   "100 g"
+  ],
+  "grams": {
+   "₹10 pouch": "",
+   "50 g": 50,
+   "100 g": 100
+  },
+  "images": [
+   "tea-masala.webp",
+   "tea-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Pickle Masala",
+  "handle": "pickle-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Pickle Masala from Amisha Masala, a spice blend for homemade pickles. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "200 g",
+   "500 g"
+  ],
+  "grams": {
+   "200 g": 200,
+   "500 g": 500
+  },
+  "images": [
+   "pickle-masala.webp",
+   "pickle-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Spicy Pickle Masala",
+  "handle": "spicy-pickle-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "Spicy Pickle Masala from Amisha Masala, a spicier blend for homemade pickles. Isme Hai Kuch Khaas.",
+  "sizes": [
+   "200 g",
+   "500 g"
+  ],
+  "grams": {
+   "200 g": 200,
+   "500 g": 500
+  },
+  "images": [
+   "spicy-pickle-masala.webp"
+  ]
+ },
+ {
+  "title": "Kasuri Methi",
+  "handle": "kasuri-methi",
+  "type": "Other Spices",
+  "tag": "other-spices",
+  "desc": "Kasuri Methi (dried fenugreek leaves) from Amisha Masala.",
+  "sizes": [
+   "500 g"
+  ],
+  "grams": {
+   "500 g": 500
+  },
+  "images": [
+   "kasuri-methi.webp"
+  ]
+ },
+ {
+  "title": "Batrisu Vasanu",
+  "handle": "batrisu-vasanu",
+  "type": "Other Spices",
+  "tag": "other-spices",
+  "desc": "Batrisu Vasanu from Amisha Masala.",
+  "sizes": [
+   "50 g",
+   "100 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "100 g": 100
+  },
+  "images": [
+   "batrisu-vasanu.webp",
+   "batrisu-vasanu-2.webp"
+  ]
+ },
+ {
+  "title": "Asafoetida (Hing)",
+  "handle": "asafoetida-hing",
+  "type": "Other Spices",
+  "tag": "other-spices",
+  "desc": "Asafoetida (hing) from Amisha Masala.",
+  "sizes": [
+   "50 g",
+   "200 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "200 g": 200
+  },
+  "images": [
+   "asafoetida-hing.webp"
+  ]
+ }
+]

@@ -358,12 +358,7 @@
                                             <div class="d-flex align-items-center justify-content-between flex-wrap">
                                                 <div class="product__price style-large mb-0">
                                                     <div class="d-flex flex-nowrap align-items-center">
-                                                        {% render 'product-price',
-                                                                variant: current_variant,
-                                                                show_vendor: false,
-                                                                style: 'large',
-                                                                show_badges: true
-                                                        %}
+                                                        {% comment %}price hidden{% endcomment %}
                                                         {% if cart.taxes_included or shop.shipping_policy.body != blank %}
                                                             <div class="product__policies rte fs-14" data-product-policies>
                                                                 {% if cart.taxes_included %}
@@ -480,9 +475,14 @@
                           {% if product.has_only_default_variant %} product-form__item--no-variants {% endif %}
                         "
                                                         >
+                                                            <button type="button" class="btn w-100 mb-2 btn-primary order-now-btn"
+                                                                    data-order-now data-product-title="{{ product.title | escape }}"
+                                                                    data-product-url="{{ product.url }}">Order Now</button>
                                                             <button
                                                                     type="submit"
                                                                     name="add"
+                                                                    hidden
+                                                                    style="display:none"
                                                                     {% unless current_variant.available %}
                                                                         aria-disabled="true"
                                                                     {% endunless %}
@@ -505,7 +505,7 @@
                           </span>
                                                             </button>
                                                             {% if block.settings.enable_payment_button %}
-                                                                {{ form | payment_button }}
+                                                                
                                                             {% endif %}
                                                         </div>
                                                     </div>

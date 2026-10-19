@@ -14,7 +14,7 @@
         "pagination": "paginated",
         "image_height": "adapt",
         "image_position": "object_position_middle_center",
-        "enable_quick_add": true,
+        "enable_quick_add": false,
         "enable_collection_list": true,
         "collection_list": [
           "newarrivals",

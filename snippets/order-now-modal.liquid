@@ -1,0 +1,92 @@
+{% comment %} Amisha Masala "Order Now" enquiry popup. Posts to Shopify's built-in contact form (email to the store). {% endcomment %}
+<dialog id="OrderNowModal" class="order-now" aria-labelledby="OrderNowTitle">
+  <div class="order-now__box">
+    <button type="button" class="order-now__close" data-order-close aria-label="Close">&times;</button>
+    <h2 id="OrderNowTitle" class="h4 mb-1">Order Now</h2>
+    <p class="order-now__product mb-3" data-order-product></p>
+    {% form 'contact', id: 'OrderNowForm', class: 'order-now__form' %}
+      <input type="hidden" name="contact[Enquiry type]" value="Order enquiry">
+      <input type="hidden" name="contact[Product]" data-order-product-input>
+      <input type="hidden" name="contact[Product link]" data-order-link-input>
+      <div class="order-now__grid">
+        <label>Your name *<input type="text" name="contact[name]" required autocomplete="name"></label>
+        <label>Phone *<input type="tel" name="contact[phone]" required autocomplete="tel"></label>
+        <label class="order-now__full">Email *<input type="email" name="contact[email]" required autocomplete="email"></label>
+        <label>Pack size<input type="text" name="contact[Size]" data-order-size placeholder="e.g. 100 g, 1 kg"></label>
+        <label>Quantity<input type="text" name="contact[Quantity]" placeholder="e.g. 10 packs"></label>
+        <label class="order-now__full">City / delivery location<input type="text" name="contact[City]"></label>
+        <label class="order-now__full">Message<textarea name="contact[body]" rows="3" placeholder="Anything else we should know?"></textarea></label>
+      </div>
+      <p class="order-now__error" data-order-error hidden>Could not send. Please try again or call +91-757 303 0683.</p>
+      <button type="submit" class="btn btn-primary w-100" data-order-submit>Send Enquiry</button>
+    {% endform %}
+    <div class="order-now__done" data-order-done hidden>
+      <h3 class="h5">Thank you!</h3>
+      <p>We have received your enquiry and will contact you shortly.</p>
+      <button type="button" class="btn btn-primary" data-order-close>Close</button>
+    </div>
+  </div>
+</dialog>
+<style>
+  /* prices and cart are not used on this store */
+  .price, [data-price], .product__price, .product-form__controls-group--submit .shopify-payment-button,
+  .product-form__cart-submit, .product-quantity, .dropdown-button, a[href="/cart"] { display: none !important; }
+  .order-now { border: 0; padding: 0; max-width: 560px; width: calc(100% - 32px); border-radius: 6px; }
+  .order-now::backdrop { background: rgba(0,0,0,.55); }
+  .order-now__box { padding: 28px; position: relative; max-height: 90vh; overflow: auto; }
+  .order-now__close { position: absolute; top: 8px; right: 14px; background: none; border: 0; font-size: 30px; line-height: 1; cursor: pointer; }
+  .order-now__product { font-weight: 600; color: var(--bs-primary, #ec1d1d); }
+  .order-now__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .order-now__grid label { display: flex; flex-direction: column; font-size: 14px; gap: 4px; }
+  .order-now__grid .order-now__full { grid-column: 1 / -1; }
+  .order-now__grid input, .order-now__grid textarea { border: 1px solid #000; padding: 9px 10px; font: inherit; width: 100%; }
+  .order-now__error { color: #b00020; font-size: 14px; }
+  @media (max-width: 575px) { .order-now__grid { grid-template-columns: 1fr; } .order-now__box { padding: 22px 18px; } }
+</style>
+<script>
+  (function () {
+    var dlg = document.getElementById('OrderNowModal');
+    if (!dlg) return;
+    var form = document.getElementById('OrderNowForm');
+    var done = dlg.querySelector('[data-order-done]');
+    var err = dlg.querySelector('[data-order-error]');
+    var btn = dlg.querySelector('[data-order-submit]');
+
+    document.addEventListener('click', function (e) {
+      var opener = e.target.closest('[data-order-now]');
+      if (opener) {
+        e.preventDefault();
+        var title = opener.getAttribute('data-product-title') || '';
+        var size = '';
+        var pf = opener.closest('form[data-product-form]') || document.querySelector('form[data-product-form]');
+        var sel = pf && pf.querySelector('select[name="id"]');
+        if (sel && sel.selectedOptions[0] && !/^default title$/i.test(sel.selectedOptions[0].textContent.trim())) {
+          size = sel.selectedOptions[0].textContent.replace(/\s*-\s*sold out.*/i, '').trim();
+        }
+        dlg.querySelector('[data-order-product]').textContent = title;
+        dlg.querySelector('[data-order-product-input]').value = title;
+        dlg.querySelector('[data-order-link-input]').value = location.origin + (opener.getAttribute('data-product-url') || location.pathname);
+        dlg.querySelector('[data-order-size]').value = size;
+        form.hidden = false; done.hidden = true; err.hidden = true;
+        dlg.showModal();
+      } else if (e.target.closest('[data-order-close]') || e.target === dlg) {
+        dlg.close();
+      }
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      err.hidden = true; btn.disabled = true;
+      fetch(form.action, { method: 'POST', body: new FormData(form), credentials: 'same-origin' })
+        .then(function (res) {
+          if (/[?&]contact_posted=true/.test(res.url)) {
+            form.reset(); form.hidden = true; done.hidden = false;
+          } else if (/challenge/.test(res.url)) {
+            form.submit(); // spam check needed: let Shopify show it
+          } else { err.hidden = false; }
+        })
+        .catch(function () { err.hidden = false; })
+        .then(function () { btn.disabled = false; });
+    });
+  })();
+</script>

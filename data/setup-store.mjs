@@ -4,7 +4,7 @@
 //
 // TOKEN = Admin API access token of a custom app with scopes:
 //   write_files, write_products, write_content, write_online_store_navigation
-// Products are imported separately with data/products.csv (Admin > Products > Import).
+// Also creates all products (no prices: every variant is 0 and the theme hides prices, shows "Order Now").
 import { readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -31,27 +31,60 @@ const userErrors = (label, node) => {
 };
 
 // ---------------------------------------------------------------- 1. theme images -> Files
+async function stage(file, name) {
+  const mime = name.endsWith(".png") ? "image/png" : "image/webp";
+  const buf = await readFile(file);
+  const staged = await gql(
+    `mutation($input:[StagedUploadInput!]!){stagedUploadsCreate(input:$input){stagedTargets{url resourceUrl parameters{name value}} userErrors{message}}}`,
+    { input: [{ filename: name, mimeType: mime, httpMethod: "POST", resource: "FILE", fileSize: String(buf.length) }] },
+  );
+  const t = staged.stagedUploadsCreate.stagedTargets[0];
+  const form = new FormData();
+  t.parameters.forEach((p) => form.append(p.name, p.value));
+  form.append("file", new Blob([buf], { type: mime }), name);
+  const up = await fetch(t.url, { method: "POST", body: form });
+  if (!up.ok) throw new Error(`upload ${name}: ${up.status}`);
+  return t.resourceUrl;
+}
+
 async function uploadFiles() {
   const dir = path.join(here, "shop-files");
-  const names = await readdir(dir);
-  for (const name of names) {
-    const mime = name.endsWith(".png") ? "image/png" : "image/webp";
-    const buf = await readFile(path.join(dir, name));
-    const staged = await gql(
-      `mutation($input:[StagedUploadInput!]!){stagedUploadsCreate(input:$input){stagedTargets{url resourceUrl parameters{name value}} userErrors{message}}}`,
-      { input: [{ filename: name, mimeType: mime, httpMethod: "POST", resource: "FILE", fileSize: String(buf.length) }] },
-    );
-    const t = staged.stagedUploadsCreate.stagedTargets[0];
-    const form = new FormData();
-    t.parameters.forEach((p) => form.append(p.name, p.value));
-    form.append("file", new Blob([buf], { type: mime }), name);
-    const up = await fetch(t.url, { method: "POST", body: form });
-    if (!up.ok) { console.warn(`  ! upload ${name}: ${up.status}`); continue; }
+  for (const name of await readdir(dir)) {
+    const src = await stage(path.join(dir, name), name);
     const r = await gql(
       `mutation($files:[FileCreateInput!]!){fileCreate(files:$files){files{id} userErrors{message}}}`,
-      { files: [{ originalSource: t.resourceUrl, contentType: "IMAGE", filename: name, alt: name.replace(/\.\w+$/, "").replace(/-/g, " ") }] },
+      { files: [{ originalSource: src, contentType: "IMAGE", filename: name, alt: name.replace(/\.\w+$/, "").replace(/-/g, " ") }] },
     );
     if (userErrors(name, r.fileCreate)) console.log("  file", name);
+  }
+}
+
+// ---------------------------------------------------------------- 1b. products (from data/products.json)
+async function createProducts() {
+  const items = JSON.parse(await readFile(path.join(here, "products.json"), "utf8"));
+  for (const p of items) {
+    const sizes = p.sizes.length ? p.sizes : ["Default Title"];
+    const optName = p.sizes.length ? "Size" : "Title";
+    const files = [];
+    for (const img of p.images) {
+      files.push({ originalSource: await stage(path.join(here, "product-images", img), img), contentType: "IMAGE", alt: `Amisha ${p.title}` });
+    }
+    const input = {
+      title: p.title, handle: p.handle, descriptionHtml: `<p>${p.desc}</p>`, vendor: "Amisha Masala", productType: p.type,
+      tags: [p.tag, "spices"], status: "ACTIVE",
+      productOptions: [{ name: optName, values: sizes.map((name) => ({ name })) }],
+      variants: sizes.map((s) => ({
+        optionValues: [{ optionName: optName, name: s }], price: "0",
+        inventoryItem: { sku: `AM-${p.handle}-${s}`.toUpperCase().replace(/[^A-Z0-9]+/g, "-"), requiresShipping: true,
+          ...(p.grams[s] ? { measurement: { weight: { value: p.grams[s], unit: "GRAMS" } } } : {}) },
+      })),
+      files,
+    };
+    const r = await gql(
+      `mutation($input:ProductSetInput!){productSet(input:$input,synchronous:true){product{id} userErrors{message}}}`,
+      { input },
+    );
+    if (userErrors(p.title, r.productSet)) console.log("  product", p.handle);
   }
 }
 
@@ -80,14 +113,14 @@ const pages = [
 <p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market with the help of its service oriented high quality production unit. Our principle is to deliver the best to our customer at the most reasonable price! With no compromise in hygiene &amp; quality.</p>`,
   },
   {
-    title: "Quality Assurance", handle: "quality", templateSuffix: "",
+    title: "Quality Assurance", handle: "quality", templateSuffix: "quality",
     body: `<p>The products manufactured by us conform to the stringent International Quality Standards. We have testing facilities for assurances of purity, quality and safety parameters (pesticide residues, aflatoxin, heavy metals like lead, copper, zinc, cadmium, arsenic, mercury etc.). Microbiological tests (like total plate count, Salmonella, Coliform, E.Coli, Yeast &amp; Mould, S. Aureus, etc.), curcumin, capsaicin, Scoville index, pungency, colour value etc. determine the quality. The latest international protocols are adopted as prescribed in ASTA, AOAC, AOCS, EU etc. while the analysis is carried out using the latest sophisticated instruments.</p>
 <h3>Nothing but the BEST!</h3>
 <p>Amisha comes from a rich vintage of flavor and cuisine - at J. B. Food Products. The principle has always been to deliver the best quality to customers at efficient price. There is no compromise whatsoever on quality or hygiene.</p>
 <p>We are equipped with sophisticated equipment for manufacturing and we also have an in-house cold storage, having a capacity of 400 tons. The strong infrastructure is backed by equally efficient management and teams to produce the most authentic high quality flavored spices. Right from the procuring of raw material to the packing and delivery of product, we ensure that our customers are served with only the very best of flavor.</p>`,
   },
   {
-    title: "Packaging", handle: "packaging", templateSuffix: "",
+    title: "Packaging", handle: "packaging", templateSuffix: "packaging",
     body: `<p>At J. B. Foods, we understand the customers' needs and provide different types of packaging with keeping in mind to preserve the aroma and the freshness of the spices. We have different sizes of pouch, box, jar and bag packaging starting from 7 g pouch up to 10 Kg bag, to satisfy our different customer needs.</p>`,
   },
   { title: "Reach Us", handle: "contact", templateSuffix: "contact", body: "" },
@@ -130,8 +163,9 @@ async function setMenus() {
   }
 }
 
-console.log("1/4 theme images -> Files"); await uploadFiles();
-console.log("2/4 collections"); await createCollections();
-console.log("3/4 pages"); await createPages();
-console.log("4/4 menus"); await setMenus();
-console.log("done. Now import data/products.csv, then check Online Store > Themes.");
+console.log("1/5 theme images -> Files"); await uploadFiles();
+console.log("2/5 products"); await createProducts();
+console.log("3/5 collections"); await createCollections();
+console.log("4/5 pages"); await createPages();
+console.log("5/5 menus"); await setMenus();
+console.log("done.");

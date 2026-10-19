@@ -336,7 +336,7 @@
         "loop": true,
         "image_height": "adapt",
         "image_position": "object_position_middle_center",
-        "enable_quick_add": true,
+        "enable_quick_add": false,
         "use_custom_colors": false,
         "color_text": "#000000",
         "color_background": "#ffffff",
@@ -468,7 +468,7 @@
             "gutter": 4,
             "image_height": "adapt",
             "image_position": "object_position_middle_center",
-            "enable_quick_add": true
+            "enable_quick_add": false
           }
         }
       },
@@ -506,7 +506,7 @@
             "gutter": 4,
             "image_height": "adapt",
             "image_position": "object_position_middle_center",
-            "enable_quick_add": true
+            "enable_quick_add": false
           }
         },
         "content_left_d98d6k": {
