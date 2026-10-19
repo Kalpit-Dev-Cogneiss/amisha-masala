@@ -334,10 +334,71 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "image_with_text_story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YHdX8L": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Amisha Masala",
+            "heading_tag": "h2",
+            "heading_size": "h2",
+            "margin_top": 0
+          }
+        },
+        "text_crhiCU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+            "margin_top": 3
+          }
+        },
+        "button_EPKqwa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Spices",
+            "button_link": "shopify://collections/spices",
+            "button_style": "outline",
+            "margin_top": 3
+          }
+        }
+      },
+      "block_order": [
+        "heading_YHdX8L",
+        "text_crhiCU",
+        "button_EPKqwa"
+      ],
+      "settings": {
+        "style_layout": "style-1",
+        "image": "shopify://shop_images/about-story.webp",
+        "layout": "full-width",
+        "image_second": true,
+        "image_width": "50",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "text_box_position": "flex-middle-center",
+        "text_alignment": "text-md-start text-lg-start",
+        "enable_controls": false,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#e5ddbc",
+        "color_background_gradient": "",
+        "color_background_block": "#ffffff",
+        "color_background_gradient_block": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 54,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "main",
+    "image_with_text_story",
     "rich_text_ciTEVL",
     "image_with_text_quality",
     "image_with_text_packaging",

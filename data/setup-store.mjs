@@ -126,9 +126,7 @@ async function createCollections() {
 const pages = [
   {
     title: "About Us", handle: "about-us", templateSuffix: "about",
-    body: `<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p>
-<p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p>
-<p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market with the help of its service oriented high quality production unit. Our principle is to deliver the best to our customer at the most reasonable price! With no compromise in hygiene &amp; quality.</p>`,
+    body: "",
   },
   { title: "Contact Us", handle: "contact", templateSuffix: "contact", body: "" },
 ];
