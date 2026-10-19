@@ -194,3 +194,13 @@ html.am-js [data-reveal].is-in { opacity: 1; transform: none; }
   .am-pd-call__num { display: none; }
   .am-pd-call__label { display: inline; }
 }
+
+/* ---- uniform gallery frame: every product photo fills the same 4:5 box ---- */
+.product-single .swiper-container-pd-thumb .product-single__media { padding-top: 125% !important; }
+.product-single .swiper-container-pd-thumb .product-single__media > img.img-fluid {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
