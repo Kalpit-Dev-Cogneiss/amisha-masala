@@ -373,8 +373,8 @@
             "icon": "bi-people",
             "enable_svg": false,
             "svg": "",
-            "heading": "Customer Satisfaction",
-            "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We believe in building and maintaining long term relationships, not only in selling quality spices.</p>",
+            "heading": "Long Term Relationships",
+            "subheading": "<p>At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers.</p>",
             "button_link": ""
           }
         },
@@ -422,7 +422,7 @@
         "layout": "container page-width",
         "preheading": "J. B. Food Products",
         "heading": "Owner's Pride",
-        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. We will continuously strive to be the Best.</p>",
+        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.</p>",
         "heading_tag": "h2",
         "heading_size": "h1",
         "heading_alignment": "text-center",
