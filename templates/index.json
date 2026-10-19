@@ -101,7 +101,7 @@
         "heading_size": "h0",
         "subheading": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
         "button_label": "Our Story",
-        "button_link": "shopify://pages/owners-pride",
+        "button_link": "shopify://pages/about-us",
         "button_style": "outline-dark",
         "text_alignment": "text-md-center text-lg-center",
         "text_alignment_mobile": "text-center",
@@ -326,8 +326,8 @@
         "heading": "25+ YEARS",
         "subheading": "<p>of experience in manufacturing spice powders</p>",
         "time": "",
-        "button_label": "Our Quality",
-        "button_link": "shopify://pages/quality",
+        "button_label": "About Us",
+        "button_link": "shopify://pages/about-us",
         "button_style": "light",
         "enable_scroll": false,
         "id_scroll": "",
@@ -376,8 +376,8 @@
         "button_EPKqwa": {
           "type": "button",
           "settings": {
-            "button_label": "Quality Assurance",
-            "button_link": "shopify://pages/quality",
+            "button_label": "Know More",
+            "button_link": "shopify://pages/about-us",
             "button_style": "outline",
             "margin_top": 3
           }
@@ -438,8 +438,8 @@
         "button_QmpWR8": {
           "type": "button",
           "settings": {
-            "button_label": "Packaging",
-            "button_link": "shopify://pages/packaging",
+            "button_label": "Know More",
+            "button_link": "shopify://pages/about-us",
             "button_style": "outline",
             "margin_top": 3
           }

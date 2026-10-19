@@ -123,24 +123,22 @@ async function createCollections() {
 // ---------------------------------------------------------------- 3. pages (copy from the existing website)
 const pages = [
   {
-    title: "Owner's Pride", handle: "owners-pride", templateSuffix: "about",
-    body: `<h3>Easy Accessibility</h3>
-<p>Selecting the finest materials from all over the country, we begin our processing with the best of raw materials. Being centrally located, in Vadodara, (Gujarat) India. Accessible from anywhere in the country enables us to procure and send our material from and to any destination in India at the earliest.</p>
+    title: "About Us", handle: "about-us", templateSuffix: "about",
+    body: `<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p>
+<p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p>
 <p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market with the help of its service oriented high quality production unit. Our principle is to deliver the best to our customer at the most reasonable price! With no compromise in hygiene &amp; quality.</p>`,
   },
-  {
-    title: "Quality Assurance", handle: "quality", templateSuffix: "quality",
-    body: `<p>The products manufactured by us conform to the stringent International Quality Standards. We have testing facilities for assurances of purity, quality and safety parameters (pesticide residues, aflatoxin, heavy metals like lead, copper, zinc, cadmium, arsenic, mercury etc.). Microbiological tests (like total plate count, Salmonella, Coliform, E.Coli, Yeast &amp; Mould, S. Aureus, etc.), curcumin, capsaicin, Scoville index, pungency, colour value etc. determine the quality. The latest international protocols are adopted as prescribed in ASTA, AOAC, AOCS, EU etc. while the analysis is carried out using the latest sophisticated instruments.</p>
-<h3>Nothing but the BEST!</h3>
-<p>Amisha comes from a rich vintage of flavor and cuisine - at J. B. Food Products. The principle has always been to deliver the best quality to customers at efficient price. There is no compromise whatsoever on quality or hygiene.</p>
-<p>We are equipped with sophisticated equipment for manufacturing and we also have an in-house cold storage, having a capacity of 400 tons. The strong infrastructure is backed by equally efficient management and teams to produce the most authentic high quality flavored spices. Right from the procuring of raw material to the packing and delivery of product, we ensure that our customers are served with only the very best of flavor.</p>`,
-  },
-  {
-    title: "Packaging", handle: "packaging", templateSuffix: "packaging",
-    body: `<p>At J. B. Foods, we understand the customers' needs and provide different types of packaging with keeping in mind to preserve the aroma and the freshness of the spices. We have different sizes of pouch, box, jar and bag packaging starting from 7 g pouch up to 10 Kg bag, to satisfy our different customer needs.</p>`,
-  },
-  { title: "Reach Us", handle: "contact", templateSuffix: "contact", body: "" },
+  { title: "Contact Us", handle: "contact", templateSuffix: "contact", body: "" },
 ];
+const removePages = ["owners-pride", "quality", "packaging"];
+async function deletePages() {
+  for (const handle of removePages) {
+    const found = (await gql(`query($q:String!){pages(first:1,query:$q){nodes{id}}}`, { q: `handle:${handle}` })).pages.nodes[0];
+    if (!found) continue;
+    const r = await gql(`mutation($id:ID!){pageDelete(id:$id){deletedPageId userErrors{message}}}`, { id: found.id });
+    if (userErrors(handle, r.pageDelete)) console.log("  page deleted", handle);
+  }
+}
 async function createPages() {
   for (const p of pages) {
     const r = await gql(
@@ -164,15 +162,14 @@ const item = (title, url, items = []) => ({ title, type: "HTTP", url, items });
 const menus = {
   "main-menu": ["Main menu", [
     item("Home", "/"),
+    item("About Us", "/pages/about-us"),
     item("Spices", "/collections/all", [
       item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]),
-    item("Packaging", "/pages/packaging"), item("Owner's Pride", "/pages/owners-pride"),
-    item("Quality", "/pages/quality"), item("Reach Us", "/pages/contact")]],
+    item("Contact Us", "/pages/contact")]],
   "spices-menu": ["Spices", [
     item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]],
   footer: ["Footer menu", [
-    item("Packaging", "/pages/packaging"), item("Owner's Pride", "/pages/owners-pride"),
-    item("Quality", "/pages/quality"), item("Reach Us", "/pages/contact")]],
+    item("About Us", "/pages/about-us"), item("Spices", "/collections/all"), item("Contact Us", "/pages/contact")]],
 };
 async function setMenus() {
   const existing = (await gql(`{menus(first:50){nodes{id handle}}}`)).menus.nodes;
@@ -212,7 +209,7 @@ const steps = (process.env.STEPS ?? "files,products,collections,pages,menus").sp
 if (steps.includes("files")) { console.log("1/5 theme images -> Files"); await uploadFiles(); }
 if (steps.includes("products")) { console.log("2/5 products"); await createProducts(); }
 if (steps.includes("collections")) { console.log("3/5 collections"); await createCollections(); }
-if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); }
+if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); await deletePages(); }
 if (steps.includes("menus")) { console.log("5/5 menus"); await setMenus(); }
 if (steps.includes("publish")) { console.log("publish to Online Store"); await publishAll(); }
 console.log("done.");

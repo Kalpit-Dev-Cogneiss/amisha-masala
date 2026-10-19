@@ -17,7 +17,7 @@
         "heading": "<p>Owner's Pride</p>",
         "heading_tag": "h2",
         "heading_size": "h1",
-        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. To ensure superior quality, we have quality checks at each stage; processing of raw material, packaging and delivery &amp; distribution. We will continuously strive to be the Best.</p>",
+        "subheading": "<p>Our primary motto is the ultimate satisfaction of our customers. We, at J. B. Food Products believe not only in selling quality spices but also in building and maintaining long term relationships with our customers. To ensure superior quality, we have quality checks at each stage; processing of raw material, packaging and delivery &amp; distribution. We will continuously strive to be the Best.</p><p>Selecting the finest materials from all over the country, we begin our processing with the best of raw materials. Being centrally located, in Vadodara, (Gujarat) India. Accessible from anywhere in the country enables us to procure and send our material from and to any destination in India at the earliest.</p>",
         "button_label": "Shop Spices",
         "button_link": "shopify://collections/all",
         "button_style": "link",
@@ -214,13 +214,139 @@
         "custom_id": "",
         "custom_class": ""
       }
+    },
+    "image_with_text_quality": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_YHdX8L": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nothing but the BEST!",
+            "heading_tag": "h2",
+            "heading_size": "h2",
+            "margin_top": 0
+          }
+        },
+        "text_crhiCU": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Our products conform to stringent international quality standards. We have testing facilities to assure purity, quality and safety, and an in-house cold storage with a capacity of 400 tons. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
+            "margin_top": 3
+          }
+        },
+        "button_EPKqwa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Know More",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "outline",
+            "margin_top": 3
+          }
+        }
+      },
+      "block_order": [
+        "heading_YHdX8L",
+        "text_crhiCU",
+        "button_EPKqwa"
+      ],
+      "disabled": true,
+      "settings": {
+        "style_layout": "style-1",
+        "image": "shopify://shop_images/about-quality.webp",
+        "layout": "full-width",
+        "image_second": false,
+        "image_width": "50",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "text_box_position": "flex-middle-center",
+        "text_alignment": "text-md-start text-lg-start",
+        "enable_controls": false,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#e5ddbc",
+        "color_background_gradient": "",
+        "color_background_block": "#ffffff",
+        "color_background_gradient_block": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 54,
+        "text_alignment_mobile": "text-start",
+        "custom_id": "",
+        "custom_class": ""
+      }
+    },
+    "image_with_text_packaging": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iHBabU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Packaging for every need",
+            "heading_tag": "h2",
+            "heading_size": "h2",
+            "margin_top": 0
+          }
+        },
+        "text_7jctwb": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging, starting from a 7 g pouch up to a 10 kg bag.</p>",
+            "margin_top": 3
+          }
+        },
+        "button_QmpWR8": {
+          "type": "button",
+          "settings": {
+            "button_label": "Know More",
+            "button_link": "shopify://pages/about-us",
+            "button_style": "outline",
+            "margin_top": 3
+          }
+        }
+      },
+      "block_order": [
+        "heading_iHBabU",
+        "text_7jctwb",
+        "button_QmpWR8"
+      ],
+      "disabled": true,
+      "settings": {
+        "style_layout": "style-2",
+        "image": "shopify://shop_images/about-packaging.webp",
+        "layout": "full-width",
+        "image_second": true,
+        "image_width": "50",
+        "image_height": "adapt",
+        "image_position": "object_position_middle_center",
+        "text_box_position": "flex-middle-left",
+        "text_alignment": "text-md-end text-lg-end",
+        "enable_controls": false,
+        "use_custom_colors": false,
+        "color_text": "#000000",
+        "color_background": "#e5ddbc",
+        "color_background_gradient": "",
+        "color_background_block": "#ffffff",
+        "color_background_gradient_block": "",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 0,
+        "padding_bottom": 54,
+        "text_alignment_mobile": "text-end",
+        "custom_id": "",
+        "custom_class": ""
+      }
     }
   },
   "order": [
     "main",
     "rich_text_ciTEVL",
-    "marque_UN9zh3",
+    "image_with_text_quality",
+    "image_with_text_packaging",
     "multicolumn_9TgiUX",
+    "marque_UN9zh3",
     "newsletter_aKwrQr"
   ]
 }
