@@ -153,3 +153,17 @@ html.am-js [data-reveal].is-in { opacity: 1; transform: none; }
   border: 1px solid #f2dca0;
 }
 .am-pd-chips i { color: var(--am-red); }
+
+/* ---- gallery thumbnails ---- */
+.product-single .hero-slider .js-thumb { margin-top: 18px; }
+.product-single .hero-slider .js-thumb .swiper-slide {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--am-cream);
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.3s, border-color 0.3s, transform 0.3s var(--am-ease);
+}
+.product-single .hero-slider .js-thumb .swiper-slide:hover { opacity: 1; transform: translateY(-3px); }
+.product-single .hero-slider .js-thumb .swiper-slide-thumb-active { opacity: 1; border-color: var(--am-red); box-shadow: 0 10px 22px rgba(236, 29, 29, 0.25); }

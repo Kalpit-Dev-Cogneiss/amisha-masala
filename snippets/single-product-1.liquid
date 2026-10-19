@@ -1,10 +1,8 @@
 {% assign featured_media = product.selected_or_first_available_variant.featured_media
         | default: product.featured_media
 %}
-{% liquid assign count = 0 %}
-{% for media in product.media %}
-    {% liquid assign count = forloop.index0 %}
-{% endfor %}
+{% comment %} Amisha Masala: count the media (the original counted the last index, which hid thumbnails for products with exactly 2 images) {% endcomment %}
+{% liquid assign count = product.media.size %}
 <div class="content-slide position-relative">
     <div class="hero-slider {{ style }}{% if count < 2 %} hero-nothumb{% endif %}">
         <div
