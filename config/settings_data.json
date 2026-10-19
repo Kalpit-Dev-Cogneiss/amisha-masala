@@ -1,7 +1,7 @@
 {
   "current": {
     "favicon": "shopify://shop_images/amisha-logo.png",
-    "logo": "shopify://shop_images/amisha-logo.png",
+    "logo": "shopify://shop_images/amisha-logo-white.png",
     "logo_white": "shopify://shop_images/amisha-logo-white.png",
     "logo_width": 170,
     "currency_code_enabled": false,
@@ -11,7 +11,7 @@
     "type_header_base_size": 20,
     "type_font": "heading",
     "type_card_product_font": "heading",
-    "type_navigation_size": 18,
+    "type_navigation_size": 15,
     "page_width": 1600,
     "enable_shadow": true,
     "color_primary": "#ec1d1d",
