@@ -258,7 +258,8 @@ async function syncProducts() {
           ...(p.grams[sz] ? { measurement: { weight: { value: p.grams[sz], unit: "GRAMS" } } } : {}) },
       })),
     };
-    if (!found) {
+    // IMAGES=handle1,handle2 re-uploads and replaces the media of those existing products
+    if (!found || process.env.IMAGES?.split(",").includes(p.handle)) {
       input.files = [];
       for (const img of p.images) input.files.push({ originalSource: await stage(path.join(here, "product-images", img), img), contentType: "IMAGE", alt: `Amisha ${p.title}` });
     }
