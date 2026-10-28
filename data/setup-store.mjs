@@ -238,6 +238,62 @@ async function updateDetails() {
   }
 }
 
+// ---------------------------------------------------------------- sync existing store with products.json (update, reorder, remove)
+// Upserts every product by handle (variants/sizes, tags, type, description), deletes Amisha products no longer in
+// products.json, renames the "other-spices" collection and sorts all collections manually in products.json order.
+async function syncProducts() {
+  const items = JSON.parse(await readFile(path.join(here, "products.json"), "utf8"));
+  const keep = new Set(items.map((p) => p.handle));
+  for (const p of items) {
+    const found = (await gql(`query($h:String!){productByIdentifier(identifier:{handle:$h}){id}}`, { h: p.handle })).productByIdentifier;
+    const sizes = p.sizes.length ? p.sizes : ["Default Title"];
+    const optName = p.sizes.length ? "Size" : "Title";
+    const input = {
+      title: p.title, handle: p.handle, descriptionHtml: p.desc, vendor: "Amisha Masala", productType: p.type,
+      tags: [p.tag, "spices"], status: "ACTIVE", metafields: p.metafields,
+      productOptions: [{ name: optName, values: sizes.map((name) => ({ name })) }],
+      variants: sizes.map((sz) => ({
+        optionValues: [{ optionName: optName, name: sz }], price: "0",
+        inventoryItem: { sku: `AM-${p.handle}-${sz}`.toUpperCase().replace(/[^A-Z0-9]+/g, "-"), requiresShipping: true,
+          ...(p.grams[sz] ? { measurement: { weight: { value: p.grams[sz], unit: "GRAMS" } } } : {}) },
+      })),
+    };
+    if (!found) {
+      input.files = [];
+      for (const img of p.images) input.files.push({ originalSource: await stage(path.join(here, "product-images", img), img), contentType: "IMAGE", alt: `Amisha ${p.title}` });
+    }
+    const r = await gql(
+      `mutation($input:ProductSetInput!,$id:ProductSetIdentifiers){productSet(input:$input,identifier:$id,synchronous:true){product{id} userErrors{message}}}`,
+      { input, id: found ? { id: found.id } : undefined },
+    );
+    if (userErrors(p.title, r.productSet)) console.log(found ? "  updated" : "  created", p.handle);
+  }
+  // remove Amisha products that are no longer in the catalogue
+  const all = (await gql(`{products(first:100,query:"vendor:'Amisha Masala'"){nodes{id handle title}}}`)).products.nodes;
+  for (const n of all.filter((x) => !keep.has(x.handle))) {
+    const r = await gql(`mutation($id:ID!){productDelete(input:{id:$id}){userErrors{message}}}`, { id: n.id });
+    if (userErrors(n.title, r.productDelete)) console.log("  deleted", n.handle);
+  }
+  // collection title + manual order
+  const lists = { "spices": items, "plain-spices": items.filter((p) => p.tag === "plain-spices"),
+    "mixed-spices": items.filter((p) => p.tag === "mixed-spices"), "other-spices": items.filter((p) => p.tag === "other-spices") };
+  for (const [handle, list] of Object.entries(lists)) {
+    const c = (await gql(`query($h:String!){collectionByIdentifier(identifier:{handle:$h}){id}}`, { h: handle })).collectionByIdentifier;
+    if (!c) { console.warn(`  ! collection not found: ${handle}`); continue; }
+    const upd = { id: c.id, sortOrder: "MANUAL" };
+    if (handle === "other-spices") { upd.title = "Other Products"; }
+    userErrors(handle, (await gql(`mutation($i:CollectionInput!){collectionUpdate(input:$i){userErrors{message}}}`, { i: upd })).collectionUpdate);
+    const moves = [];
+    for (let i = 0; i < list.length; i++) {
+      const pr = (await gql(`query($h:String!){productByIdentifier(identifier:{handle:$h}){id}}`, { h: list[i].handle })).productByIdentifier;
+      if (pr) moves.push({ id: pr.id, newPosition: String(i) });
+    }
+    userErrors(`${handle} order`, (await gql(`mutation($id:ID!,$m:[MoveInput!]!){collectionReorderProducts(id:$id,moves:$m){userErrors{message}}}`, { id: c.id, m: moves })).collectionReorderProducts);
+    console.log("  ordered", handle);
+  }
+}
+
+// STEPS=sync (updates the live catalogue from products.json: needs TOKEN, then run STEPS=publish for new products)
 // STEPS=collections,pages,menus node data/setup-store.mjs  (default: files,products,collections,pages,menus; "publish" is run separately)
 const steps = (process.env.STEPS ?? "files,products,collections,pages,menus").split(",");
 if (steps.includes("files")) { console.log("1/5 theme images -> Files"); await uploadFiles(); }
@@ -247,5 +303,6 @@ if (steps.includes("pages")) { console.log("4/5 pages"); await createPages(); aw
 if (steps.includes("menus")) { console.log("5/5 menus"); await setMenus(); }
 if (steps.includes("listfiles")) { console.log("files in store"); await listFiles(); }
 if (steps.includes("details")) { console.log("product details"); await updateDetails(); }
+if (steps.includes("sync")) { console.log("sync products"); await syncProducts(); await updateDetails(); await setMenus(); }
 if (steps.includes("publish")) { console.log("publish to Online Store"); await publishAll(); }
 console.log("done.");
