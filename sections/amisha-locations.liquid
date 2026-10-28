@@ -23,7 +23,6 @@
             <h3 class="am-place__name">{{ block.settings.name | escape }}</h3>
             <p class="am-place__addr"><i class="bi bi-geo-alt-fill"></i><span>{{ block.settings.address | escape | newline_to_br }}</span></p>
             {%- if block.settings.map_link != blank -%}
-              <a class="am-place__link" href="{{ block.settings.map_link }}" target="_blank" rel="noopener">Get directions <i class="bi bi-arrow-up-right"></i></a>
             {%- endif -%}
           </div>
         </article>

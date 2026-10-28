@@ -23,7 +23,7 @@
           "type": "text",
           "settings": {
             "title": "OUR FACILITIES",
-            "text": "<p><strong>Factory Unit 1</strong><br>C1/145/A, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p><p><strong>Factory Unit 2</strong><br>984/2, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p><p>Fax: +91-265-2420440</p>"
+            "text": "<p><strong>Factory Unit 1</strong><br>C1/145/A, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p><p><strong>Factory Unit 2</strong><br>984/2, GIDC, Makarpura,<br>Vadodara - 390 010, Gujarat</p>"
           }
         }
       },
@@ -34,7 +34,7 @@
       ],
       "settings": {
         "heading": "AMISHA MASALA",
-        "subheading": "<p>A-74, Hathikhana, Vadodara-390 006, Gujarat, India.</p><p>+91-757 303 0683<br>mail@amishamasala.com</p>",
+        "subheading": "<p>984/2, GIDC, Makarpura, Vadodara - 390 010, Gujarat</p><p>+91-757 303 0683<br>mail@amishamasala.com</p>",
         "show_socials_icons": true,
         "show_newsletter": true,
         "show_policy": true,

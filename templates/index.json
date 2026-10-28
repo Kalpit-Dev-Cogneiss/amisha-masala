@@ -13,7 +13,7 @@
             "heading": "ISME HAI",
             "heading_2": "KUCH KHAAS",
             "heading_size": "h0",
-            "subheading": "<p>Spice powders &amp; masalas from J. B. Food Products, Vadodara</p>",
+            "subheading": "<p>Spices &amp; masalas from J. B. Food Products, Vadodara</p>",
             "button_label": "Shop Spices",
             "button_link": "shopify://collections/spices",
             "button_style": "primary",
@@ -144,8 +144,8 @@
         "type": "scale",
         "speed": 1,
         "preheading": "J. B. Food Products",
-        "heading": "25+ YEARS",
-        "subheading": "<p>of experience in manufacturing spice powders</p>",
+        "heading": "35+ YEARS",
+        "subheading": "<p>of experience in manufacturing spices</p>",
         "time": "",
         "button_label": "About Us",
         "button_link": "shopify://pages/about-us",
@@ -187,7 +187,7 @@
         "marque_CUrAkg": {
           "type": "marque",
           "settings": {
-            "content": "<p>Over 25 years of experience in spice powders</p>",
+            "content": "<p>Over 35 years of experience in spices</p>",
             "link": ""
           }
         },
@@ -201,7 +201,7 @@
         "marque_LcNUHU": {
           "type": "marque",
           "settings": {
-            "content": "<p>Pouch to 10 kg bag packaging</p>",
+            "content": "<p>Pouch, box and jar packaging</p>",
             "link": ""
           }
         }
@@ -327,20 +327,20 @@
       "settings": {
         "eyebrow": "About Us",
         "heading": "Amisha Masala",
-        "lead": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p>",
-        "text": "<p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "lead": "<p>Our Indian cuisine and gourmet delicacies are known all over the world for their delightful taste and aroma. At J. B. Food Products we ensure that this proud legacy continues to strive.</p>",
+        "text": "<p>With over 35 years of experience in manufacturing spices, our endeavor in the spice industry has paid off. The best quality of spices and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spices (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
         "button_label": "Our story",
         "button_link": "shopify://pages/about-us",
         "image_main": "shopify://shop_images/story-main.webp",
         "image_small": "shopify://shop_images/story-small.webp",
-        "badge_number": "25+",
+        "badge_number": "35+",
         "badge_label": "Years of experience"
       },
       "blocks": {
         "counter_1": {
           "type": "counter",
           "settings": {
-            "number": "25",
+            "number": "35",
             "suffix": "+",
             "label": "Years of experience"
           }
@@ -382,7 +382,7 @@
       "settings": {
         "eyebrow": "Our Range",
         "heading": "Explore Our Spices",
-        "subheading": "From pure single spice powders to ready masala blends, made at our own facilities in Vadodara."
+        "subheading": ""
       },
       "blocks": {
         "card_1": {
@@ -390,7 +390,7 @@
           "settings": {
             "image": "shopify://shop_images/banner-plain-spices.webp",
             "title": "Plain Spices",
-            "text": "Chilli, turmeric, coriander, black pepper and more",
+            "text": "Chilli, turmeric and coriander",
             "cta": "Explore",
             "link": "shopify://collections/plain-spices"
           }
@@ -400,7 +400,7 @@
           "settings": {
             "image": "shopify://shop_images/banner-mixed-spices.webp",
             "title": "Mixed Spices",
-            "text": "Masalas and blends for every dish",
+            "text": "Rajwadi garam masala and blends for every dish",
             "cta": "Explore",
             "link": "shopify://collections/mixed-spices"
           }
@@ -409,7 +409,7 @@
           "type": "card",
           "settings": {
             "image": "shopify://shop_images/banner-other-spices.webp",
-            "title": "Other Spices",
+            "title": "Other Products",
             "text": "Kasuri methi, batrisu vasanu and hing",
             "cta": "Explore",
             "link": "shopify://collections/other-spices"
@@ -476,10 +476,10 @@
         "background": "cream",
         "eyebrow": "Packaging",
         "heading": "Packaging for every need",
-        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging.</p>",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box and jar packaging.</p>",
         "image": "shopify://shop_images/about-packaging.webp",
-        "badge_number": "7 g - 10 kg",
-        "badge_label": "Pouch to bag",
+        "badge_number": "50 g - 1 kg",
+        "badge_label": "Pouch packs",
         "button_label": "Shop spices",
         "button_link": "shopify://collections/spices"
       },
@@ -487,33 +487,19 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "text": "Pouches and boxes for everyday use"
+            "text": "Pouches from 50 g to 1 kg"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "text": "Jars for masalas"
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "text": "Bags up to 10 kg for bulk needs"
-          }
-        },
-        "point_4": {
-          "type": "point",
-          "settings": {
-            "text": "Designed to preserve aroma and freshness"
+            "text": "Jars for bulk needs"
           }
         }
       },
       "block_order": [
         "point_1",
-        "point_2",
-        "point_3",
-        "point_4"
+        "point_2"
       ]
     }
   },

@@ -20,7 +20,7 @@
         "marque_CUrAkg": {
           "type": "marque",
           "settings": {
-            "content": "<p>Over 25 years of experience in spice powders</p>",
+            "content": "<p>Over 35 years of experience in spices</p>",
             "link": ""
           }
         },
@@ -34,7 +34,7 @@
         "marque_LcNUHU": {
           "type": "marque",
           "settings": {
-            "content": "<p>Pouch to 10 kg bag packaging</p>",
+            "content": "<p>Pouch, box and jar packaging</p>",
             "link": ""
           }
         }
@@ -147,7 +147,7 @@
         "stat_1": {
           "type": "stat",
           "settings": {
-            "number": "25+",
+            "number": "35+",
             "label": "Years of experience"
           }
         },
@@ -191,9 +191,9 @@
         "background": "white",
         "eyebrow": "Our Story",
         "heading": "About Amisha Masala",
-        "text": "<p>Our Indian cuisine and gourmet delicacies are known world over for their delightful taste and aroma. At J. B. Food Products we strive to ensure that this proud legacy does not die.</p><p>With over 25 years of experience in manufacturing spice powders, our endeavor in the spice industry has paid off. The best quality of spice powders and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spice powders (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "text": "<p>Our Indian cuisine and gourmet delicacies are known all over the world for their delightful taste and aroma. At J. B. Food Products we ensure that this proud legacy continues to strive.</p><p>With over 35 years of experience in manufacturing spices, our endeavor in the spice industry has paid off. The best quality of spices and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spices (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
         "image": "shopify://shop_images/about-story.webp",
-        "badge_number": "25+",
+        "badge_number": "35+",
         "badge_label": "Years of experience",
         "button_label": "Shop spices",
         "button_link": "shopify://collections/spices"
@@ -253,10 +253,10 @@
         "background": "cream",
         "eyebrow": "Packaging",
         "heading": "Packaging for every need",
-        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box, jar and bag packaging.</p>",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box and jar packaging.</p>",
         "image": "shopify://shop_images/about-packaging.webp",
-        "badge_number": "7 g - 10 kg",
-        "badge_label": "Pouch to bag",
+        "badge_number": "50 g - 1 kg",
+        "badge_label": "Pouch packs",
         "button_label": "Shop spices",
         "button_link": "shopify://collections/spices"
       },
@@ -264,33 +264,19 @@
         "point_1": {
           "type": "point",
           "settings": {
-            "text": "Pouches and boxes for everyday use"
+            "text": "Pouches from 50 g to 1 kg"
           }
         },
         "point_2": {
           "type": "point",
           "settings": {
-            "text": "Jars for masalas"
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "text": "Bags up to 10 kg for bulk needs"
-          }
-        },
-        "point_4": {
-          "type": "point",
-          "settings": {
-            "text": "Designed to preserve aroma and freshness"
+            "text": "Jars for bulk needs"
           }
         }
       },
       "block_order": [
         "point_1",
-        "point_2",
-        "point_3",
-        "point_4"
+        "point_2"
       ]
     },
     "amisha_locations": {
@@ -301,16 +287,6 @@
         "heading": "Our Facilities"
       },
       "blocks": {
-        "place_1": {
-          "type": "place",
-          "settings": {
-            "image": "shopify://shop_images/facility-office.webp",
-            "tag": "Corporate Office",
-            "name": "Corporate Office",
-            "address": "A-74, Hathikhana,\nVadodara-390 006, Gujarat, India.",
-            "map_link": "https://www.google.com/maps/search/?api=1&query=J+B+Food+Products+Hathikhana+Vadodara"
-          }
-        },
         "place_2": {
           "type": "place",
           "settings": {
@@ -333,7 +309,6 @@
         }
       },
       "block_order": [
-        "place_1",
         "place_2",
         "place_3"
       ]

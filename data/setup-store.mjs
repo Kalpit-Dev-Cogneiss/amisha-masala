@@ -110,7 +110,7 @@ const collections = [
   ["Spices", "spices", "All Amisha Masala spice powders and masalas."],
   ["Plain Spices", "plain-spices", "Single spice powders: chilli, turmeric, coriander, black pepper and more."],
   ["Mixed Spices", "mixed-spices", "Masalas and spice blends for every dish."],
-  ["Other Spices", "other-spices", "Kasuri methi, batrisu vasanu and asafoetida (hing)."],
+  ["Other Products", "other-spices", "Kasuri methi, batrisu vasanu and asafoetida (hing)."],
 ];
 async function createCollections() {
   for (const [title, handle, desc] of collections) {
@@ -164,10 +164,10 @@ const menus = {
     item("Home", "/"),
     item("About Us", "/pages/about-us"),
     item("Spices", "/collections/spices", [
-      item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]),
+      item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Other Products", "/collections/other-spices")]),
     item("Contact Us", "/pages/contact")]],
   "spices-menu": ["Spices", [
-    item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Others", "/collections/other-spices")]],
+    item("Plain Spices", "/collections/plain-spices"), item("Mixed Spices", "/collections/mixed-spices"), item("Other Products", "/collections/other-spices")]],
   footer: ["Footer menu", [
     item("About Us", "/pages/about-us"), item("Spices", "/collections/spices"), item("Contact Us", "/pages/contact")]],
 };

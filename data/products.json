@@ -4,13 +4,13 @@
   "handle": "kashmiri-kumthi-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "<p>Kashmiri Kumthi chilli powder, finely ground for the rich red colour it gives to everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "desc": "<p>Kashmiri Kumthi chilli powder, finely ground for the rich red colour it gives to everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g and 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from 100 g to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 100 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -28,16 +28,12 @@
   "sizes": [
    "100 g",
    "200 g",
-   "500 g",
-   "5 kg",
-   "10 kg"
+   "500 g"
   ],
   "grams": {
    "100 g": 100,
    "200 g": 200,
-   "500 g": 500,
-   "5 kg": 5000,
-   "10 kg": 10000
+   "500 g": 500
   },
   "images": [
    "kashmiri-kumthi-chilli-powder.webp",
@@ -49,13 +45,13 @@
   "handle": "extra-hot-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "<p>For those who like it hot. Extra hot chilli powder in handy ₹5 and ₹10 pouches, retail packs and bulk bags up to 10 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "desc": "<p>For those who like it hot. Extra hot chilli powder in retail packs of 100 g, 200 g and 500 g.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g and 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 100 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -71,22 +67,14 @@
    }
   ],
   "sizes": [
-   "₹5 pouch",
-   "₹10 pouch",
    "100 g",
    "200 g",
-   "500 g",
-   "5 kg",
-   "10 kg"
+   "500 g"
   ],
   "grams": {
-   "₹5 pouch": "",
-   "₹10 pouch": "",
    "100 g": 100,
    "200 g": 200,
-   "500 g": 500,
-   "5 kg": 5000,
-   "10 kg": 10000
+   "500 g": 500
   },
   "images": [
    "extra-hot-chilli-powder.webp",
@@ -98,13 +86,13 @@
   "handle": "patna-chilli-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "<p>Patna chilli powder, finely ground and quality checked, for everyday curries and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Ask us for the available pack sizes.</p>",
+  "desc": "<p>Patna chilli powder, finely ground and quality checked, for everyday curries and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nEasy-to-store pack\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nPack size: 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -119,8 +107,12 @@
     "value": "Patna chilli"
    }
   ],
-  "sizes": [],
-  "grams": {},
+  "sizes": [
+   "500 g"
+  ],
+  "grams": {
+   "500 g": 500
+  },
   "images": [
    "patna-chilli-powder.webp"
   ]
@@ -130,13 +122,13 @@
   "handle": "turmeric-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "<p>Turmeric (haldi) powder, finely ground, for the golden colour and warm flavour found in almost every Indian kitchen.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "desc": "<p>Turmeric (haldi) powder, finely ground, for the golden colour and warm flavour found in almost every Indian kitchen.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g and 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 100 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -152,22 +144,14 @@
    }
   ],
   "sizes": [
-   "₹5 pouch",
-   "₹10 pouch",
    "100 g",
    "200 g",
-   "500 g",
-   "5 kg",
-   "10 kg"
+   "500 g"
   ],
   "grams": {
-   "₹5 pouch": "",
-   "₹10 pouch": "",
    "100 g": 100,
    "200 g": 200,
-   "500 g": 500,
-   "5 kg": 5000,
-   "10 kg": 10000
+   "500 g": 500
   },
   "images": [
    "turmeric-powder.webp",
@@ -179,13 +163,13 @@
   "handle": "coriander-powder",
   "type": "Plain Spices",
   "tag": "plain-spices",
-  "desc": "<p>Coriander (dhania) powder, finely ground, a base spice for countless curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, ₹10 pouch, 100 g, 200 g, 500 g, 5 kg and 10 kg.</p>",
+  "desc": "<p>Coriander (dhania) powder, finely ground, a base spice for countless curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g and 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from ₹5 pouch to 10 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 100 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -201,105 +185,18 @@
    }
   ],
   "sizes": [
-   "₹5 pouch",
-   "₹10 pouch",
-   "100 g",
-   "200 g",
-   "500 g",
-   "5 kg",
-   "10 kg"
-  ],
-  "grams": {
-   "₹5 pouch": "",
-   "₹10 pouch": "",
-   "100 g": 100,
-   "200 g": 200,
-   "500 g": 500,
-   "5 kg": 5000,
-   "10 kg": 10000
-  },
-  "images": [
-   "coriander-powder.webp",
-   "coriander-powder-2.webp"
-  ]
- },
- {
-  "title": "Coriander Cumin Powder",
-  "handle": "coriander-cumin-powder",
-  "type": "Plain Spices",
-  "tag": "plain-spices",
-  "desc": "<p>A ready blend of coriander and cumin (dhana jeera) powder that saves a step in everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 100 g, 200 g and 500 g.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from ₹10 pouch to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Sabzis, dals, curries and marinades"
-   },
-   {
-    "namespace": "custom",
-    "key": "ingredients",
-    "type": "single_line_text_field",
-    "value": "Coriander and cumin"
-   }
-  ],
-  "sizes": [
-   "₹10 pouch",
    "100 g",
    "200 g",
    "500 g"
   ],
   "grams": {
-   "₹10 pouch": "",
    "100 g": 100,
    "200 g": 200,
    "500 g": 500
   },
   "images": [
-   "coriander-cumin-powder.webp",
-   "coriander-cumin-powder-2.webp"
-  ]
- },
- {
-  "title": "Black Pepper Powder",
-  "handle": "black-pepper-powder",
-  "type": "Plain Spices",
-  "tag": "plain-spices",
-  "desc": "<p>Black pepper powder, finely ground, for warmth and bite in soups, salads, eggs and curries.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nPack size: 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Soups, salads, eggs, curries and marinades"
-   },
-   {
-    "namespace": "custom",
-    "key": "ingredients",
-    "type": "single_line_text_field",
-    "value": "Black pepper"
-   }
-  ],
-  "sizes": [
-   "100 g"
-  ],
-  "grams": {
-   "100 g": 100
-  },
-  "images": [
-   "black-pepper-powder.webp"
+   "coriander-powder.webp",
+   "coriander-powder-2.webp"
   ]
  },
  {
@@ -313,7 +210,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -342,42 +239,6 @@
   ]
  },
  {
-  "title": "Dry Mango Powder (Aamchur)",
-  "handle": "dry-mango-powder-aamchur",
-  "type": "Plain Spices",
-  "tag": "plain-spices",
-  "desc": "<p>Dry mango powder (aamchur), a tangy souring spice that brightens sabzis, chaats and chutneys.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nPack size: 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Chaat, sabzis, chutneys and marinades"
-   },
-   {
-    "namespace": "custom",
-    "key": "ingredients",
-    "type": "single_line_text_field",
-    "value": "Raw mango (aamchur)"
-   }
-  ],
-  "sizes": [
-   "100 g"
-  ],
-  "grams": {
-   "100 g": 100
-  },
-  "images": [
-   "dry-mango-powder-aamchur.webp"
-  ]
- },
- {
   "title": "Ganthoda Powder (Pepramool)",
   "handle": "ganthoda-powder-pepramool",
   "type": "Plain Spices",
@@ -388,7 +249,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Finely ground for easy mixing\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -417,347 +278,44 @@
   ]
  },
  {
-  "title": "Punjabi Chhole Masala",
-  "handle": "punjabi-chhole-masala",
+  "title": "Coriander Cumin Powder",
+  "handle": "coriander-cumin-powder",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "<p>A spice blend made for Punjabi-style chhole, with the flavour that goes with soft chickpeas and a rich gravy.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "desc": "<p>A ready blend of coriander and cumin (dhana jeera) powder that saves a step in everyday cooking.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g, 200 g and 500 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
     "key": "best_for",
     "type": "single_line_text_field",
-    "value": "Chhole, chana and rajma curries"
-   }
-  ],
-  "sizes": [
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "punjabi-chhole-masala.webp",
-   "punjabi-chhole-masala-2.webp"
-  ]
- },
- {
-  "title": "Pav Bhaji Masala",
-  "handle": "pav-bhaji-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A spice blend made for the classic street-style pav bhaji.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Sabzis, dals, curries and marinades"
    },
    {
     "namespace": "custom",
-    "key": "best_for",
+    "key": "ingredients",
     "type": "single_line_text_field",
-    "value": "Pav bhaji, mashed vegetable curries and tawa pulao"
+    "value": "Coriander and cumin"
    }
   ],
   "sizes": [
    "100 g",
-   "1 kg"
+   "200 g",
+   "500 g"
   ],
   "grams": {
    "100 g": 100,
-   "1 kg": 1000
+   "200 g": 200,
+   "500 g": 500
   },
   "images": [
-   "pav-bhaji-masala.webp",
-   "pav-bhaji-masala-2.webp"
-  ]
- },
- {
-  "title": "Chaat Masala",
-  "handle": "chaat-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A tangy chaat masala to sprinkle over snacks, salads and fruit for that street-side flavour.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Chaat, fruit salads, raita and snacks"
-   }
-  ],
-  "sizes": [
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "chaat-masala.webp",
-   "chaat-masala-2.webp"
-  ]
- },
- {
-  "title": "Pani Puri Masala",
-  "handle": "pani-puri-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A masala made for pani puri water, in small 15 g and 50 g packs as well as 100 g and 1 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Pani puri water and chaat"
-   }
-  ],
-  "sizes": [
-   "15 g",
-   "50 g",
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "15 g": 15,
-   "50 g": 50,
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "pani-puri-masala.webp"
-  ]
- },
- {
-  "title": "Sambhar Masala",
-  "handle": "sambhar-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A spice blend for South Indian sambhar, in small 15 g and 50 g packs as well as 100 g and 1 kg.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Sambhar and South Indian lentil stews"
-   }
-  ],
-  "sizes": [
-   "15 g",
-   "50 g",
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "15 g": 15,
-   "50 g": 50,
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "sambhar-masala.webp"
-  ]
- },
- {
-  "title": "Biryani Pulav Masala",
-  "handle": "biryani-pulav-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A masala for fragrant biryani and pulav.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Veg biryani, pulav and flavoured rice"
-   }
-  ],
-  "sizes": [
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "biryani-pulav-masala.webp",
-   "biryani-pulav-masala-2.webp"
-  ]
- },
- {
-  "title": "Kitchen King Masala",
-  "handle": "kitchen-king-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>An all-purpose masala for rich curries and gravies, from everyday sabzis to special-occasion dishes.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Paneer and vegetable curries and gravies"
-   }
-  ],
-  "sizes": [
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "kitchen-king-masala.webp",
-   "kitchen-king-masala-2.webp"
-  ]
- },
- {
-  "title": "Meat Masala",
-  "handle": "meat-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A spice blend for meat curries, in a small ₹5 pouch, jars and bulk packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹5 pouch, 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from ₹5 pouch to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Mutton and meat curries"
-   }
-  ],
-  "sizes": [
-   "₹5 pouch",
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "₹5 pouch": "",
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "meat-masala.webp",
-   "meat-masala-2.webp"
-  ]
- },
- {
-  "title": "Chicken Masala",
-  "handle": "chicken-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A spice blend for chicken curries, in a ₹10 pouch, jars and bulk packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from ₹10 pouch to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Chicken curries, gravies and marinades"
-   }
-  ],
-  "sizes": [
-   "₹10 pouch",
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "₹10 pouch": "",
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "chicken-masala.webp",
-   "chicken-masala-2.webp"
-  ]
- },
- {
-  "title": "Garam Masala",
-  "handle": "garam-masala",
-  "type": "Mixed Spices",
-  "tag": "mixed-spices",
-  "desc": "<p>A classic garam masala to finish curries, dals and sabzis with warmth and aroma.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 15 g, 50 g, 100 g and 1 kg.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 15 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Curries, dals, sabzis and rice"
-   }
-  ],
-  "sizes": [
-   "15 g",
-   "50 g",
-   "100 g",
-   "1 kg"
-  ],
-  "grams": {
-   "15 g": 15,
-   "50 g": 50,
-   "100 g": 100,
-   "1 kg": 1000
-  },
-  "images": [
-   "garam-masala.webp",
-   "garam-masala-2.webp"
+   "coriander-cumin-powder.webp",
+   "coriander-cumin-powder-2.webp"
   ]
  },
  {
@@ -771,7 +329,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 50 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 50 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -802,13 +360,13 @@
   "handle": "supreme-garam-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "<p>Supreme garam masala, in 250 g and 1 kg packs, to finish curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 250 g and 1 kg.</p>",
+  "desc": "<p>Supreme garam masala, in 250 g and 1 kg packs, to finish curries, dals and sabzis.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 250 g, 500 g and 1 kg.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 250 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 250 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -819,10 +377,12 @@
   ],
   "sizes": [
    "250 g",
+   "500 g",
    "1 kg"
   ],
   "grams": {
    "250 g": 250,
+   "500 g": 500,
    "1 kg": 1000
   },
   "images": [
@@ -835,13 +395,13 @@
   "handle": "tea-masala",
   "type": "Mixed Spices",
   "tag": "mixed-spices",
-  "desc": "<p>A tea masala for a spiced cup of masala chai, in a ₹10 pouch and larger packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in ₹10 pouch, 50 g and 100 g.</p>",
+  "desc": "<p>A tea masala for a spiced cup of masala chai, in 50 g and 100 g packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 100 g.</p>",
   "metafields": [
    {
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from ₹10 pouch to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -851,12 +411,10 @@
    }
   ],
   "sizes": [
-   "₹10 pouch",
    "50 g",
    "100 g"
   ],
   "grams": {
-   "₹10 pouch": "",
    "50 g": 50,
    "100 g": 100
   },
@@ -876,7 +434,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -909,7 +467,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready-to-use masala blend\nAvailable from 200 g to 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -931,9 +489,240 @@
   ]
  },
  {
+  "title": "Kitchen King Masala",
+  "handle": "kitchen-king-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>An all-purpose masala for rich curries and gravies, from everyday sabzis to special-occasion dishes.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Paneer and vegetable curries and gravies"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "kitchen-king-masala.webp",
+   "kitchen-king-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Pav Bhaji Masala",
+  "handle": "pav-bhaji-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A spice blend made for the classic street-style pav bhaji.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Pav bhaji, mashed vegetable curries and tawa pulao"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "pav-bhaji-masala.webp",
+   "pav-bhaji-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Punjabi Chhole Masala",
+  "handle": "punjabi-chhole-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A spice blend made for Punjabi-style chhole, with the flavour that goes with soft chickpeas and a rich gravy.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chhole, chana and rajma curries"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "punjabi-chhole-masala.webp",
+   "punjabi-chhole-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Chaat Masala",
+  "handle": "chaat-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A tangy chaat masala to sprinkle over snacks, salads and fruit for that street-side flavour.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chaat, fruit salads, raita and snacks"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "chaat-masala.webp",
+   "chaat-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Biryani Pulav Masala",
+  "handle": "biryani-pulav-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A masala for fragrant biryani and pulav.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Veg biryani, pulav and flavoured rice"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "biryani-pulav-masala.webp",
+   "biryani-pulav-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Meat Masala",
+  "handle": "meat-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A spice blend for meat curries, in 100 g and 1 kg packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Mutton and meat curries"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "meat-masala.webp",
+   "meat-masala-2.webp"
+  ]
+ },
+ {
+  "title": "Chicken Masala",
+  "handle": "chicken-masala",
+  "type": "Mixed Spices",
+  "tag": "mixed-spices",
+  "desc": "<p>A spice blend for chicken curries, in 100 g and 1 kg packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 100 g and 1 kg.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready-to-use masala blend\nAvailable from 100 g to 1 kg\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Chicken curries, gravies and marinades"
+   }
+  ],
+  "sizes": [
+   "100 g",
+   "1 kg"
+  ],
+  "grams": {
+   "100 g": 100,
+   "1 kg": 1000
+  },
+  "images": [
+   "chicken-masala.webp",
+   "chicken-masala-2.webp"
+  ]
+ },
+ {
   "title": "Kasuri Methi",
   "handle": "kasuri-methi",
-  "type": "Other Spices",
+  "type": "Other Products",
   "tag": "other-spices",
   "desc": "<p>Kasuri methi (dried fenugreek leaves) for the signature flavour of restaurant-style gravies, parathas and dals.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 500 g.</p>",
   "metafields": [
@@ -941,7 +730,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready to use in your kitchen\nPack size: 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready to use in your kitchen\nPack size: 500 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -967,9 +756,41 @@
   ]
  },
  {
+  "title": "Compounded Asafoetida (Hing)",
+  "handle": "compounded-asafoetida-hing",
+  "type": "Other Products",
+  "tag": "other-spices",
+  "desc": "<p>Strong compounded asafoetida (hing), for the tadka that gives dals, sabzis and kadhi their familiar aroma.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 200 g.</p>",
+  "metafields": [
+   {
+    "namespace": "custom",
+    "key": "highlights",
+    "type": "multi_line_text_field",
+    "value": "Ready to use in your kitchen\nAvailable from 50 g to 200 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
+   },
+   {
+    "namespace": "custom",
+    "key": "best_for",
+    "type": "single_line_text_field",
+    "value": "Tadka for dals, sabzis, kadhi and pickles"
+   }
+  ],
+  "sizes": [
+   "50 g",
+   "200 g"
+  ],
+  "grams": {
+   "50 g": 50,
+   "200 g": 200
+  },
+  "images": [
+   "compounded-asafoetida-hing.webp"
+  ]
+ },
+ {
   "title": "Batrisu Vasanu",
   "handle": "batrisu-vasanu",
-  "type": "Other Spices",
+  "type": "Other Products",
   "tag": "other-spices",
   "desc": "<p>Batrisu Vasanu from Amisha Masala, in 50 g and 100 g packs.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 100 g.</p>",
   "metafields": [
@@ -977,7 +798,7 @@
     "namespace": "custom",
     "key": "highlights",
     "type": "multi_line_text_field",
-    "value": "Ready to use in your kitchen\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
+    "value": "Ready to use in your kitchen\nAvailable from 50 g to 100 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 35+ years in spices"
    },
    {
     "namespace": "custom",
@@ -997,38 +818,6 @@
   "images": [
    "batrisu-vasanu.webp",
    "batrisu-vasanu-2.webp"
-  ]
- },
- {
-  "title": "Asafoetida (Hing)",
-  "handle": "asafoetida-hing",
-  "type": "Other Spices",
-  "tag": "other-spices",
-  "desc": "<p>Strong compounded asafoetida (hing), for the tadka that gives dals, sabzis and kadhi their familiar aroma.</p><p>Manufactured by J. B. Food Products, Vadodara, with quality checks at every stage from raw material to packing. Available in 50 g and 200 g.</p>",
-  "metafields": [
-   {
-    "namespace": "custom",
-    "key": "highlights",
-    "type": "multi_line_text_field",
-    "value": "Ready to use in your kitchen\nAvailable from 50 g to 200 g\nQuality checked at every stage, from raw material to packing\nMade by J. B. Food Products, Vadodara, with 25+ years in spice powders"
-   },
-   {
-    "namespace": "custom",
-    "key": "best_for",
-    "type": "single_line_text_field",
-    "value": "Tadka for dals, sabzis, kadhi and pickles"
-   }
-  ],
-  "sizes": [
-   "50 g",
-   "200 g"
-  ],
-  "grams": {
-   "50 g": 50,
-   "200 g": 200
-  },
-  "images": [
-   "asafoetida-hing.webp"
   ]
  }
 ]
