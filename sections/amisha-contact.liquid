@@ -31,11 +31,10 @@
         <span class="am-ccard__value">{{ section.settings.email | escape }}</span>
         <span class="am-ccard__sub">We reply as soon as we can</span>
       </a>
-      <a class="am-ccard" href="{{ section.settings.map_link }}" target="_blank" rel="noopener" data-reveal style="--i: 2;">
+      <a class="am-ccard" target="_blank" rel="noopener" data-reveal style="--i: 2;">
         <span class="am-ccard__icon"><i class="bi bi-geo-alt-fill"></i></span>
         <span class="am-ccard__label">Visit us</span>
         <span class="am-ccard__value">{{ section.settings.address | escape | newline_to_br }}</span>
-        <span class="am-ccard__sub">Open in Google Maps</span>
       </a>
     </div>
 
