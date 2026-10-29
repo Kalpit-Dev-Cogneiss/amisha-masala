@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -5,6 +14,210 @@
       "settings": {
         "color_text": "#0b0b0b",
         "layout": "container page-width"
+      }
+    },
+    "amisha_feature_story": {
+      "type": "amisha-feature",
+      "settings": {
+        "image_side": "right",
+        "background": "white",
+        "eyebrow": "Our Story",
+        "heading": "About Amisha Masala",
+        "text": "<p>Our Indian cuisine and gourmet delicacies are known all over the world for their delightful taste and aroma. At J. B. Food Products we ensure that this proud legacy continues to strive.</p><p>With over 35 years of experience in manufacturing spices, our endeavor in the spice industry has paid off. The best quality of spices and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spices (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
+        "image": "shopify://shop_images/about-story.webp",
+        "badge_number": "35+",
+        "badge_label": "Years of experience",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      }
+    },
+    "owners_pride": {
+      "type": "owners-pride",
+      "blocks": {
+        "pillar_1": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-people",
+            "heading": "Long Term Relationships",
+            "text": "At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers."
+          }
+        },
+        "pillar_2": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-patch-check",
+            "heading": "Quality at Each Stage",
+            "text": "To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery & distribution."
+          }
+        },
+        "pillar_3": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-geo-alt",
+            "heading": "Easy Accessibility",
+            "text": "We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest."
+          }
+        },
+        "pillar_4": {
+          "type": "pillar",
+          "settings": {
+            "icon": "bi-tag",
+            "heading": "Best at a Reasonable Price",
+            "text": "Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene & quality."
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "35+",
+            "label": "Years of experience"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "400",
+            "label": "Tons cold storage"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "2",
+            "label": "Factory units in Vadodara"
+          }
+        }
+      },
+      "block_order": [
+        "pillar_1",
+        "pillar_2",
+        "pillar_3",
+        "pillar_4",
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
+      "settings": {
+        "preheading": "J. B. Food Products",
+        "heading": "Owner's Pride",
+        "watermark": "PRIDE",
+        "quote": "Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.",
+        "background_image": "shopify://shop_images/about-pride-bg.webp",
+        "edge_color": "#ffffff"
+      }
+    },
+    "amisha_feature_quality": {
+      "type": "amisha-feature",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Pure, high-quality spices"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Quality checked at every stage, from raw material to packing"
+          }
+        },
+        "point_3": {
+          "type": "point",
+          "settings": {
+            "text": "Made in our own facilities in Vadodara"
+          }
+        },
+        "point_4": {
+          "type": "point",
+          "settings": {
+            "text": "Only the very best of flavour in every pack"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2",
+        "point_3",
+        "point_4"
+      ],
+      "settings": {
+        "image_side": "left",
+        "background": "white",
+        "eyebrow": "Quality Assurance",
+        "heading": "Nothing but the BEST!",
+        "text": "<p>Our products conform to stringent international quality standards. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
+        "image": "shopify://shop_images/about-quality.webp",
+        "badge_number": "400",
+        "badge_label": "Tons cold storage",
+        "button_label": "Know more",
+        "button_link": "shopify://pages/about-us"
+      }
+    },
+    "amisha_feature_packaging": {
+      "type": "amisha-feature",
+      "blocks": {
+        "point_1": {
+          "type": "point",
+          "settings": {
+            "text": "Pouches from 50 g to 1 kg"
+          }
+        },
+        "point_2": {
+          "type": "point",
+          "settings": {
+            "text": "Jars for bulk needs"
+          }
+        }
+      },
+      "block_order": [
+        "point_1",
+        "point_2"
+      ],
+      "settings": {
+        "image_side": "right",
+        "background": "cream",
+        "eyebrow": "Packaging",
+        "heading": "Packaging for every need",
+        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box and jar packaging.</p>",
+        "image": "shopify://shop_images/about-packaging.webp",
+        "badge_number": "50 g - 1 kg",
+        "badge_label": "packaging",
+        "button_label": "Shop spices",
+        "button_link": "shopify://collections/spices"
+      }
+    },
+    "amisha_locations": {
+      "type": "amisha-locations",
+      "blocks": {
+        "place_2": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-1.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 1",
+            "address": "C1/145/A, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=C1/145/A+GIDC+Makarpura+Vadodara"
+          }
+        },
+        "place_3": {
+          "type": "place",
+          "settings": {
+            "image": "shopify://shop_images/facility-factory-unit-2.webp",
+            "tag": "Factory",
+            "name": "Factory Unit 2",
+            "address": "984/2, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
+            "map_link": "https://www.google.com/maps/search/?api=1&query=984/2+GIDC+Makarpura+Vadodara"
+          }
+        }
+      },
+      "block_order": [
+        "place_2",
+        "place_3"
+      ],
+      "settings": {
+        "background": "white",
+        "eyebrow": "Find Us",
+        "heading": "Our Facilities"
       }
     },
     "marque_UN9zh3": {
@@ -108,210 +321,6 @@
         "custom_id": "",
         "custom_class": ""
       }
-    },
-    "owners_pride": {
-      "type": "owners-pride",
-      "blocks": {
-        "pillar_1": {
-          "type": "pillar",
-          "settings": {
-            "icon": "bi-people",
-            "heading": "Long Term Relationships",
-            "text": "At J. B. Food Products we believe not only in selling quality spices but also in building and maintaining long term relationships with our customers."
-          }
-        },
-        "pillar_2": {
-          "type": "pillar",
-          "settings": {
-            "icon": "bi-patch-check",
-            "heading": "Quality at Each Stage",
-            "text": "To ensure superior quality, we have quality checks at each stage: processing of raw material, packaging, and delivery & distribution."
-          }
-        },
-        "pillar_3": {
-          "type": "pillar",
-          "settings": {
-            "icon": "bi-geo-alt",
-            "heading": "Easy Accessibility",
-            "text": "We select the finest materials from all over the country. Centrally located in Vadodara, Gujarat, we can procure and send material from and to any destination in India at the earliest."
-          }
-        },
-        "pillar_4": {
-          "type": "pillar",
-          "settings": {
-            "icon": "bi-tag",
-            "heading": "Best at a Reasonable Price",
-            "text": "Our principle is to deliver the best to our customer at the most reasonable price, with no compromise in hygiene & quality."
-          }
-        },
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "35+",
-            "label": "Years of experience"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "400",
-            "label": "Tons cold storage"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "2",
-            "label": "Factory units in Vadodara"
-          }
-        }
-      },
-      "block_order": [
-        "pillar_1",
-        "pillar_2",
-        "pillar_3",
-        "pillar_4",
-        "stat_1",
-        "stat_2",
-        "stat_3"
-      ],
-      "settings": {
-        "preheading": "J. B. Food Products",
-        "heading": "Owner's Pride",
-        "watermark": "PRIDE",
-        "quote": "Our primary motto is the ultimate satisfaction of our customers. We will continuously strive to be the Best.",
-        "background_image": "shopify://shop_images/about-pride-bg.webp",
-        "edge_color": "#ffffff"
-      }
-    },
-    "amisha_feature_story": {
-      "type": "amisha-feature",
-      "settings": {
-        "image_side": "right",
-        "background": "white",
-        "eyebrow": "Our Story",
-        "heading": "About Amisha Masala",
-        "text": "<p>Our Indian cuisine and gourmet delicacies are known all over the world for their delightful taste and aroma. At J. B. Food Products we ensure that this proud legacy continues to strive.</p><p>With over 35 years of experience in manufacturing spices, our endeavor in the spice industry has paid off. The best quality of spices and spice mixes, maintained by rigid standards of quality control, produced at our modern facilities are sound proof of this.</p><p>With a vast choice of finely ground spices (masalas), J. B. Food Products are able to meet the growing demands in an expanding market.</p>",
-        "image": "shopify://shop_images/about-story.webp",
-        "badge_number": "35+",
-        "badge_label": "Years of experience",
-        "button_label": "Shop spices",
-        "button_link": "shopify://collections/spices"
-      }
-    },
-    "amisha_feature_quality": {
-      "type": "amisha-feature",
-      "settings": {
-        "image_side": "left",
-        "background": "white",
-        "eyebrow": "Quality Assurance",
-        "heading": "Nothing but the BEST!",
-        "text": "<p>Our products conform to stringent international quality standards. Right from procuring raw material to packing and delivery, we ensure our customers are served with only the very best of flavour.</p>",
-        "image": "shopify://shop_images/about-quality.webp",
-        "badge_number": "400",
-        "badge_label": "Tons cold storage",
-        "button_label": "Know more",
-        "button_link": "shopify://pages/about-us"
-      },
-      "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "text": "Pure, high-quality spices"
-          }
-        },
-        "point_2": {
-          "type": "point",
-          "settings": {
-            "text": "Quality checked at every stage, from raw material to packing"
-          }
-        },
-        "point_3": {
-          "type": "point",
-          "settings": {
-            "text": "Made in our own facilities in Vadodara"
-          }
-        },
-        "point_4": {
-          "type": "point",
-          "settings": {
-            "text": "Only the very best of flavour in every pack"
-          }
-        }
-      },
-      "block_order": [
-        "point_1",
-        "point_2",
-        "point_3",
-        "point_4"
-      ]
-    },
-    "amisha_feature_packaging": {
-      "type": "amisha-feature",
-      "settings": {
-        "image_side": "right",
-        "background": "cream",
-        "eyebrow": "Packaging",
-        "heading": "Packaging for every need",
-        "text": "<p>We understand our customers' needs and provide different types of packaging, keeping in mind the need to preserve the aroma and freshness of the spices. We have different sizes of pouch, box and jar packaging.</p>",
-        "image": "shopify://shop_images/about-packaging.webp",
-        "badge_number": "50 g - 1 kg",
-        "badge_label": "Pouch packs",
-        "button_label": "Shop spices",
-        "button_link": "shopify://collections/spices"
-      },
-      "blocks": {
-        "point_1": {
-          "type": "point",
-          "settings": {
-            "text": "Pouches from 50 g to 1 kg"
-          }
-        },
-        "point_2": {
-          "type": "point",
-          "settings": {
-            "text": "Jars for bulk needs"
-          }
-        }
-      },
-      "block_order": [
-        "point_1",
-        "point_2"
-      ]
-    },
-    "amisha_locations": {
-      "type": "amisha-locations",
-      "settings": {
-        "background": "white",
-        "eyebrow": "Find Us",
-        "heading": "Our Facilities"
-      },
-      "blocks": {
-        "place_2": {
-          "type": "place",
-          "settings": {
-            "image": "shopify://shop_images/facility-factory-unit-1.webp",
-            "tag": "Factory",
-            "name": "Factory Unit 1",
-            "address": "C1/145/A, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
-            "map_link": "https://www.google.com/maps/search/?api=1&query=C1/145/A+GIDC+Makarpura+Vadodara"
-          }
-        },
-        "place_3": {
-          "type": "place",
-          "settings": {
-            "image": "shopify://shop_images/facility-factory-unit-2.webp",
-            "tag": "Factory",
-            "name": "Factory Unit 2",
-            "address": "984/2, GIDC, Makarpura,\nVadodara - 390 010, Gujarat, India.",
-            "map_link": "https://www.google.com/maps/search/?api=1&query=984/2+GIDC+Makarpura+Vadodara"
-          }
-        }
-      },
-      "block_order": [
-        "place_2",
-        "place_3"
-      ]
     }
   },
   "order": [
