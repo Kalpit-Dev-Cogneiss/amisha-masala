@@ -190,7 +190,7 @@
         "counter_4": {
           "type": "counter",
           "settings": {
-            "number": "24",
+            "number": "23",
             "suffix": "+",
             "label": "Spice products"
           }
