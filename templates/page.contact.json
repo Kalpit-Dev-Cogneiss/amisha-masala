@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "amisha_contact": {
@@ -9,10 +18,10 @@
         "intro": "Questions about our spices, packaging or bulk orders? Drop us a line and we will get back to you.",
         "background_image": "shopify://shop_images/about-pride-bg.webp",
         "phone": "+91-757 303 0683",
-        "fax": "+91-265-2420440",
+        "fax": "",
         "email": "mail@amishamasala.com",
         "address": "984/2, GIDC, Makarpura,\nVadodara - 390 010, Gujarat",
-        "map_link": "https://www.google.com/maps/search/?api=1&query=984/2+GIDC+Makarpura+Vadodara",
+        "map_link": "",
         "map_embed_url": "",
         "form_heading": "Drop Us a Line",
         "form_text": "Tell us what you need and we will get back to you.",
@@ -21,11 +30,6 @@
     },
     "amisha_locations": {
       "type": "amisha-locations",
-      "settings": {
-        "background": "white",
-        "eyebrow": "Find Us",
-        "heading": "Our Facilities"
-      },
       "blocks": {
         "place_2": {
           "type": "place",
@@ -51,7 +55,12 @@
       "block_order": [
         "place_2",
         "place_3"
-      ]
+      ],
+      "settings": {
+        "background": "white",
+        "eyebrow": "Find Us",
+        "heading": "Our Facilities"
+      }
     }
   },
   "order": [
