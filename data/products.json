@@ -419,6 +419,7 @@
    "100 g": 100
   },
   "images": [
+   "tea-masala-box-render.webp",
    "tea-masala-box-1.webp",
    "tea-masala-box-2.webp",
    "tea-masala-box-3.webp"
@@ -518,6 +519,7 @@
    "1 kg": 1000
   },
   "images": [
+   "kitchen-king-masala-box-render.webp",
    "kitchen-king-masala-box-1.webp",
    "kitchen-king-masala-box-2.webp",
    "kitchen-king-masala-box-3.webp"
@@ -552,6 +554,7 @@
    "1 kg": 1000
   },
   "images": [
+   "pav-bhaji-masala-box-render.webp",
    "pav-bhaji-masala-box-1.webp",
    "pav-bhaji-masala-box-2.webp",
    "pav-bhaji-masala-box-3.webp"
@@ -586,6 +589,7 @@
    "1 kg": 1000
   },
   "images": [
+   "punjabi-chhole-masala-box-render.webp",
    "punjabi-chhole-masala-box-1.webp",
    "punjabi-chhole-masala-box-2.webp",
    "punjabi-chhole-masala-box-3.webp"
@@ -620,6 +624,7 @@
    "1 kg": 1000
   },
   "images": [
+   "chaat-masala-box-render.webp",
    "chaat-masala-box-1.webp",
    "chaat-masala-box-2.webp",
    "chaat-masala-box-3.webp"
@@ -654,6 +659,7 @@
    "1 kg": 1000
   },
   "images": [
+   "biryani-pulav-masala-box-render.webp",
    "biryani-pulav-masala-box-1.webp",
    "biryani-pulav-masala-box-2.webp",
    "biryani-pulav-masala-box-3.webp"
@@ -688,7 +694,7 @@
    "1 kg": 1000
   },
   "images": [
-   "meat-masala.webp",
+   "meat-masala-box-render.webp",
    "meat-masala-2.webp"
   ]
  },
@@ -721,7 +727,7 @@
    "1 kg": 1000
   },
   "images": [
-   "chicken-masala.webp",
+   "chicken-masala-box-render.webp",
    "chicken-masala-2.webp"
   ]
  },
@@ -758,6 +764,7 @@
    "500 g": 500
   },
   "images": [
+   "kasuri-methi-box-render.webp",
    "kasuri-methi-box-1.webp",
    "kasuri-methi-box-2.webp",
    "kasuri-methi-box-3.webp"
